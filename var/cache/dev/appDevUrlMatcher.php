@@ -109,9 +109,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
-        // app_test_number
-        if ($pathinfo === '/test') {
-            return array (  '_controller' => 'AppBundle\\Controller\\test::numberAction',  '_route' => 'app_test_number',);
+        // app_fakegram_fakegram
+        if ($pathinfo === '/FakeGram') {
+            return array (  '_controller' => 'AppBundle\\Controller\\FakeGram::FakeGram',  '_route' => 'app_fakegram_fakegram',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
