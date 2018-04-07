@@ -7,6 +7,8 @@ security:
         in_memory:
             memory: ~
 
+   # encoders:
+         #   AppBudnle\Entity\user: bcrypt # <---- jeśli będzie implementacja useriInterface
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:

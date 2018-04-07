@@ -38,7 +38,7 @@ class user // uważać może powodować błędy ze względu na keyword DB USER
       /**
      * @ORM\Column(type="integer", length=128)
      */
-     private $activatiob_code;
+     private $activation_code;
      /**
      * @ORM\Column(type="string", length=64)
      */
@@ -170,27 +170,27 @@ class user // uważać może powodować błędy ze względu na keyword DB USER
     }
 
     /**
-     * Set activatiobCode
+     * Set activationCode
      *
-     * @param integer $activatiobCode
+     * @param integer $activationCode
      *
      * @return user
      */
-    public function setActivatiobCode($activatiobCode)
+    public function setActivationCode($activationCode)
     {
-        $this->activatiob_code = $activatiobCode;
+        $this->activation_code = $activationCode;
 
         return $this;
     }
 
     /**
-     * Get activatiobCode
+     * Get activationCode
      *
      * @return integer
      */
-    public function getActivatiobCode()
+    public function getActivationCode()
     {
-        return $this->activatiob_code;
+        return $this->activation_code;
     }
 
     /**
