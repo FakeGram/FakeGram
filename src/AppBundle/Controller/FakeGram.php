@@ -17,5 +17,16 @@ class FakeGram extends Controller
         return $this->render('index.html', array(
             'number' => $number));
     }
+
+    /**
+     * @Route("/test")
+     */
+    public function test()
+    {
+        $number=0;
+
+        return $this->render('image_upload.html', array(
+            'number' => $number));
+    }
 }
 ?>

@@ -114,6 +114,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\FakeGram::FakeGram',  '_route' => 'app_fakegram_fakegram',);
         }
 
+        // app_fakegram_test
+        if ($pathinfo === '/test') {
+            return array (  '_controller' => 'AppBundle\\Controller\\FakeGram::test',  '_route' => 'app_fakegram_test',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }
