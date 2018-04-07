@@ -1,0 +1,36 @@
+/* HEADER */
+.logo
+{
+	font-family: serif !important;
+	font-weight: bold !important;
+	font-style: italic !important;
+	font-size: 32px !important;
+	margin-left: 5% !important;
+}
+
+
+.nav-pages
+{
+	margin-right: 10% !important;
+}
+
+
+
+
+/* FOOTER */
+
+.footer{
+	min-height: 80px;
+	background-color: #e7e7e7;
+	margin-top: 35px;
+}
+
+.FooterLogo
+{
+	font-family: serif;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 32px;
+	margin-left: 5%;
+	margin-top: 5%;
+}

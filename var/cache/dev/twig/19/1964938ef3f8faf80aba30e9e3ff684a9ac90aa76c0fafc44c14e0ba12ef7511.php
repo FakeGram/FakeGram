@@ -15,8 +15,8 @@ class __TwigTemplate_71c0a9c6af6b450e807dba2fe75361943a0dbfea641703ca1c614666258
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f0e69c903acb5a70d6ed34f6b808d6b2b51d4cdadb98ed2ead724e0ad55ff855 = $this->env->getExtension("native_profiler");
-        $__internal_f0e69c903acb5a70d6ed34f6b808d6b2b51d4cdadb98ed2ead724e0ad55ff855->enter($__internal_f0e69c903acb5a70d6ed34f6b808d6b2b51d4cdadb98ed2ead724e0ad55ff855_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "index.html"));
+        $__internal_5a96045a4f2c3e5f1be2ee34dd0111a6a9217b18e84824f48c6ccd5d13883dea = $this->env->getExtension("native_profiler");
+        $__internal_5a96045a4f2c3e5f1be2ee34dd0111a6a9217b18e84824f48c6ccd5d13883dea->enter($__internal_5a96045a4f2c3e5f1be2ee34dd0111a6a9217b18e84824f48c6ccd5d13883dea_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "index.html"));
 
         // line 1
         echo "<html>
@@ -60,7 +60,7 @@ class __TwigTemplate_71c0a9c6af6b450e807dba2fe75361943a0dbfea641703ca1c614666258
 \t        <span class=\"icon-bar\"></span>
 \t        <span class=\"icon-bar\"></span> 
 \t      </button>
-\t      <a class=\"navbar-brand logo\" href=\"#\">FakeGram</a>
+\t      <a class=\"navbar-brand\" href=\"#\"><div class=\"logo\">FakeGram</div></a>
 \t    </div>
 \t    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">
 \t      <ul class=\"nav navbar-nav navbar-right\">
@@ -115,7 +115,24 @@ class __TwigTemplate_71c0a9c6af6b450e807dba2fe75361943a0dbfea641703ca1c614666258
 
 \t\t<!-- FOOTER potem do innego pliku wyjebać -->
 
-\t\t<div class=\"footer\"></div>
+\t\t<div class=\"footer\">
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\">
+\t\t\t\t\t<div class=\"FooterLogo\">FakeGram</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\" style=\"margin-top: 2%;\">
+\t\t\t\t\t<p>Projekt z przedmiotu \"systemy multimedialne\". Politechnika Śląska, Wydział Elektryczny. 2018 r.</p>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\">
+\t\t\t\t\t<ul>
+\t\t\t\t\t\tOdjebali:
+\t\t\t\t\t\t<li>Konrad Sladkowski</li>
+\t\t\t\t\t\t<li>Krzysztof Szwej</li>
+\t\t\t\t\t\t<li>Domingo Żurawski</li>
+\t\t\t\t\t</ul>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
 
 \t\t<!-- |||||||||||||||||||||||||||||||||||| -->
 
@@ -124,7 +141,7 @@ class __TwigTemplate_71c0a9c6af6b450e807dba2fe75361943a0dbfea641703ca1c614666258
 </html>
 ";
         
-        $__internal_f0e69c903acb5a70d6ed34f6b808d6b2b51d4cdadb98ed2ead724e0ad55ff855->leave($__internal_f0e69c903acb5a70d6ed34f6b808d6b2b51d4cdadb98ed2ead724e0ad55ff855_prof);
+        $__internal_5a96045a4f2c3e5f1be2ee34dd0111a6a9217b18e84824f48c6ccd5d13883dea->leave($__internal_5a96045a4f2c3e5f1be2ee34dd0111a6a9217b18e84824f48c6ccd5d13883dea_prof);
 
     }
 
@@ -169,7 +186,7 @@ class __TwigTemplate_71c0a9c6af6b450e807dba2fe75361943a0dbfea641703ca1c614666258
 /* 	        <span class="icon-bar"></span>*/
 /* 	        <span class="icon-bar"></span> */
 /* 	      </button>*/
-/* 	      <a class="navbar-brand logo" href="#">FakeGram</a>*/
+/* 	      <a class="navbar-brand" href="#"><div class="logo">FakeGram</div></a>*/
 /* 	    </div>*/
 /* 	    <div class="collapse navbar-collapse" id="myNavbar">*/
 /* 	      <ul class="nav navbar-nav navbar-right">*/
@@ -224,7 +241,24 @@ class __TwigTemplate_71c0a9c6af6b450e807dba2fe75361943a0dbfea641703ca1c614666258
 /* */
 /* 		<!-- FOOTER potem do innego pliku wyjebać -->*/
 /* */
-/* 		<div class="footer"></div>*/
+/* 		<div class="footer">*/
+/* 			<div class="row">*/
+/* 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">*/
+/* 					<div class="FooterLogo">FakeGram</div>*/
+/* 				</div>*/
+/* 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top: 2%;">*/
+/* 					<p>Projekt z przedmiotu "systemy multimedialne". Politechnika Śląska, Wydział Elektryczny. 2018 r.</p>*/
+/* 				</div>*/
+/* 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">*/
+/* 					<ul>*/
+/* 						Odjebali:*/
+/* 						<li>Konrad Sladkowski</li>*/
+/* 						<li>Krzysztof Szwej</li>*/
+/* 						<li>Domingo Żurawski</li>*/
+/* 					</ul>*/
+/* 				</div>*/
+/* 			</div>*/
+/* 		</div>*/
 /* */
 /* 		<!-- |||||||||||||||||||||||||||||||||||| -->*/
 /* */
