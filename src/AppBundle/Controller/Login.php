@@ -36,30 +36,31 @@ class Login extends Controller
 
         if(is_null($user))
         {
-             throw new  $this->createNotFoundException(
-                    'Nie ma takiego adresu E-mail'
-            );
-            $err_comm ="bARDZO ŹLE";
+         //    throw new  $this->createNotFoundException(
+          //          'Nie ma takiego adresu E-mail'
+          //  );
+            $err_comm ="Błędny login ";
                return $this->render('Login/Login.html.twig', array(   // Tablica do wysyłania zmiennych do widoku 
             'err_comm' => $err_comm));
         }
 
+/**
         if(!$email) // sprawdzamy login 
         {
-            throw new  $this->createNotFoundException(
-                    'Nie ma takiego adresu E-mail'
-            );
+//throw new  $this->createNotFoundException(
+         //           'Nie ma takiego adresu E-mail'
+        //    );
             $err_comm ="Zły email";
             
           return $this->render('Login/Login.html.twig', array(   // Tablica do wysyłania zmiennych do widoku 
             'err_comm' => $err_comm));
         }
-     
+     */
         if(!password_verify($pass,$user->getPass())) // sprawdezamy hasło 
         {
-             throw new  $this->createNotFoundException(
-                    'Błędne hasło'
-            );
+           //  throw new  $this->createNotFoundException(
+            //        'Błędne hasło'
+           // );
             $err_comm ="Błędne hasło ";
             
           return $this->render('Login/Login.html.twig', array(   // Tablica do wysyłania zmiennych do widoku 
