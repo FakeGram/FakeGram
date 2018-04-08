@@ -15,8 +15,8 @@ class __TwigTemplate_71c0a9c6af6b450e807dba2fe75361943a0dbfea641703ca1c614666258
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5a96045a4f2c3e5f1be2ee34dd0111a6a9217b18e84824f48c6ccd5d13883dea = $this->env->getExtension("native_profiler");
-        $__internal_5a96045a4f2c3e5f1be2ee34dd0111a6a9217b18e84824f48c6ccd5d13883dea->enter($__internal_5a96045a4f2c3e5f1be2ee34dd0111a6a9217b18e84824f48c6ccd5d13883dea_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "index.html"));
+        $__internal_85d843c10803bf858ad9ae79c201afd2ace362d14af8bdff27b234a905628836 = $this->env->getExtension("native_profiler");
+        $__internal_85d843c10803bf858ad9ae79c201afd2ace362d14af8bdff27b234a905628836->enter($__internal_85d843c10803bf858ad9ae79c201afd2ace362d14af8bdff27b234a905628836_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "index.html"));
 
         // line 1
         echo "<html>
@@ -51,7 +51,6 @@ class __TwigTemplate_71c0a9c6af6b450e807dba2fe75361943a0dbfea641703ca1c614666258
 \t</head>
 \t<body>
 \t<!-- HEADER potem do innego pliku wyjebać -->
-
 \t<nav class=\"navbar navbar-default\">
 \t  <div class=\"container-fluid\">
 \t    <div class=\"navbar-header\">
@@ -76,7 +75,6 @@ class __TwigTemplate_71c0a9c6af6b450e807dba2fe75361943a0dbfea641703ca1c614666258
 \t    </div>
 \t  </div>
 \t</nav>
-
 \t<!-- |||||||||||||||||||||||||||||||||||| -->
 
 \t\t<div class=\"container-fluid\">
@@ -114,7 +112,6 @@ class __TwigTemplate_71c0a9c6af6b450e807dba2fe75361943a0dbfea641703ca1c614666258
 \t\t</div>
 
 \t\t<!-- FOOTER potem do innego pliku wyjebać -->
-
 \t\t<div class=\"footer\">
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\">
@@ -133,15 +130,12 @@ class __TwigTemplate_71c0a9c6af6b450e807dba2fe75361943a0dbfea641703ca1c614666258
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>
-
 \t\t<!-- |||||||||||||||||||||||||||||||||||| -->
-
 \t</body>
-
 </html>
 ";
         
-        $__internal_5a96045a4f2c3e5f1be2ee34dd0111a6a9217b18e84824f48c6ccd5d13883dea->leave($__internal_5a96045a4f2c3e5f1be2ee34dd0111a6a9217b18e84824f48c6ccd5d13883dea_prof);
+        $__internal_85d843c10803bf858ad9ae79c201afd2ace362d14af8bdff27b234a905628836->leave($__internal_85d843c10803bf858ad9ae79c201afd2ace362d14af8bdff27b234a905628836_prof);
 
     }
 
@@ -177,7 +171,6 @@ class __TwigTemplate_71c0a9c6af6b450e807dba2fe75361943a0dbfea641703ca1c614666258
 /* 	</head>*/
 /* 	<body>*/
 /* 	<!-- HEADER potem do innego pliku wyjebać -->*/
-/* */
 /* 	<nav class="navbar navbar-default">*/
 /* 	  <div class="container-fluid">*/
 /* 	    <div class="navbar-header">*/
@@ -202,7 +195,6 @@ class __TwigTemplate_71c0a9c6af6b450e807dba2fe75361943a0dbfea641703ca1c614666258
 /* 	    </div>*/
 /* 	  </div>*/
 /* 	</nav>*/
-/* */
 /* 	<!-- |||||||||||||||||||||||||||||||||||| -->*/
 /* */
 /* 		<div class="container-fluid">*/
@@ -240,7 +232,6 @@ class __TwigTemplate_71c0a9c6af6b450e807dba2fe75361943a0dbfea641703ca1c614666258
 /* 		</div>*/
 /* */
 /* 		<!-- FOOTER potem do innego pliku wyjebać -->*/
-/* */
 /* 		<div class="footer">*/
 /* 			<div class="row">*/
 /* 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">*/
@@ -259,10 +250,7 @@ class __TwigTemplate_71c0a9c6af6b450e807dba2fe75361943a0dbfea641703ca1c614666258
 /* 				</div>*/
 /* 			</div>*/
 /* 		</div>*/
-/* */
 /* 		<!-- |||||||||||||||||||||||||||||||||||| -->*/
-/* */
 /* 	</body>*/
-/* */
 /* </html>*/
 /* */

@@ -119,6 +119,39 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\FakeGram::test',  '_route' => 'app_fakegram_test',);
         }
 
+        // app_login_login
+        if ($pathinfo === '/Login') {
+            return array (  '_controller' => 'AppBundle\\Controller\\Login::Login',  '_route' => 'app_login_login',);
+        }
+
+        // app_login_execute_login
+        if ($pathinfo === '/execute_login') {
+            return array (  '_controller' => 'AppBundle\\Controller\\Login::execute_login',  '_route' => 'app_login_execute_login',);
+        }
+
+        if (0 === strpos($pathinfo, '/Regist')) {
+            // app_login_registration
+            if ($pathinfo === '/Registration') {
+                return array (  '_controller' => 'AppBundle\\Controller\\Login::Registration',  '_route' => 'app_login_registration',);
+            }
+
+            // app_login_register
+            if ($pathinfo === '/Register') {
+                return array (  '_controller' => 'AppBundle\\Controller\\Login::Register',  '_route' => 'app_login_register',);
+            }
+
+        }
+
+        // app_pic_uploader_pic_upload
+        if ($pathinfo === '/upload') {
+            return array (  '_controller' => 'AppBundle\\Controller\\pic_uploader::pic_upload',  '_route' => 'app_pic_uploader_pic_upload',);
+        }
+
+        // app_pic_uploader_pic_edit
+        if ($pathinfo === '/pic_edit') {
+            return array (  '_controller' => 'AppBundle\\Controller\\pic_uploader::pic_edit',  '_route' => 'app_pic_uploader_pic_edit',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }
