@@ -15,8 +15,8 @@ class __TwigTemplate_5d69b57de7e8fe86c546ddaabc67111902179d91c6830bd77cd8f658ccc
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_bdb638d26dcefb03bce668b80f4b348a2508ae6fb2803690ee04f0fb2164439b = $this->env->getExtension("native_profiler");
-        $__internal_bdb638d26dcefb03bce668b80f4b348a2508ae6fb2803690ee04f0fb2164439b->enter($__internal_bdb638d26dcefb03bce668b80f4b348a2508ae6fb2803690ee04f0fb2164439b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "image_upload.html"));
+        $__internal_81f3bd007c82beeb5be7ab82ddb98b60e129d756a7c5c840e4e79457ba42c1b4 = $this->env->getExtension("native_profiler");
+        $__internal_81f3bd007c82beeb5be7ab82ddb98b60e129d756a7c5c840e4e79457ba42c1b4->enter($__internal_81f3bd007c82beeb5be7ab82ddb98b60e129d756a7c5c840e4e79457ba42c1b4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "image_upload.html"));
 
         // line 1
         echo "<html>
@@ -79,17 +79,18 @@ class __TwigTemplate_5d69b57de7e8fe86c546ddaabc67111902179d91c6830bd77cd8f658ccc
 
 <div class=\"container-fluid\">
       <div class=\"panel panel-default\">
-        <div class=\"panel-heading\"><strong>Upload Files</strong> <small>Bootstrap files upload</small></div>
+        <div class=\"panel-heading\"><strong>Upload Files</strong></div>
         <div class=\"panel-body\">
 
           <!-- Standar Form -->
           <h4>Select files from your computer</h4>
-          <form action=\"\" method=\"post\" enctype=\"multipart/form-data\" id=\"js-upload-form\">
+          <form action=\"/pic_edit\" method=\"post\" enctype=\"multipart/form-data\">
             <div class=\"form-inline\">
               <div class=\"form-group\">
-                <input type=\"file\" name=\"files[]\" id=\"js-upload-files\" multiple>
+                <input type=\"file\" name=\"img\" id=\"js-upload-files\" accept=\"image/jpeg\">
               </div>
               <button type=\"submit\" class=\"btn btn-sm btn-primary\" id=\"js-upload-submit\">Upload files</button>
+              <div><input type=\"submit\" value=\"Wyślij\" /></div>
             </div>
           </form>
 
@@ -181,7 +182,7 @@ class __TwigTemplate_5d69b57de7e8fe86c546ddaabc67111902179d91c6830bd77cd8f658ccc
   </script>
 </html>";
         
-        $__internal_bdb638d26dcefb03bce668b80f4b348a2508ae6fb2803690ee04f0fb2164439b->leave($__internal_bdb638d26dcefb03bce668b80f4b348a2508ae6fb2803690ee04f0fb2164439b_prof);
+        $__internal_81f3bd007c82beeb5be7ab82ddb98b60e129d756a7c5c840e4e79457ba42c1b4->leave($__internal_81f3bd007c82beeb5be7ab82ddb98b60e129d756a7c5c840e4e79457ba42c1b4_prof);
 
     }
 
@@ -245,17 +246,18 @@ class __TwigTemplate_5d69b57de7e8fe86c546ddaabc67111902179d91c6830bd77cd8f658ccc
 /* */
 /* <div class="container-fluid">*/
 /*       <div class="panel panel-default">*/
-/*         <div class="panel-heading"><strong>Upload Files</strong> <small>Bootstrap files upload</small></div>*/
+/*         <div class="panel-heading"><strong>Upload Files</strong></div>*/
 /*         <div class="panel-body">*/
 /* */
 /*           <!-- Standar Form -->*/
 /*           <h4>Select files from your computer</h4>*/
-/*           <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">*/
+/*           <form action="/pic_edit" method="post" enctype="multipart/form-data">*/
 /*             <div class="form-inline">*/
 /*               <div class="form-group">*/
-/*                 <input type="file" name="files[]" id="js-upload-files" multiple>*/
+/*                 <input type="file" name="img" id="js-upload-files" accept="image/jpeg">*/
 /*               </div>*/
 /*               <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>*/
+/*               <div><input type="submit" value="Wyślij" /></div>*/
 /*             </div>*/
 /*           </form>*/
 /* */
