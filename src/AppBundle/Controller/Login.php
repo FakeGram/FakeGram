@@ -13,10 +13,10 @@ class Login extends Controller
      */
     public function Login()
     {
-        $number = mt_rand(0, 100); // narazie nie wywalać bo zmienna ta musi istnieć,żeby ją wysłać 
+        $err_comm = "Dev: Narazie działa"; // narazie nie wywalać bo zmienna ta musi istnieć,żeby ją wysłać 
 
         return $this->render('Login/Login.html.twig', array(   // Tablica do wysyłania zmiennych do widoku 
-            'number' => $number));
+            'err_comm' => $err_comm));
     }
 
     /**
@@ -24,9 +24,53 @@ class Login extends Controller
      */
     public function execute_login()
     {
-    	$number = $_POST['pwd'];
-    	  return $this->render('Login/Login.html.twig', array(   // Tablica do wysyłania zmiennych do widoku 
-            'number' => $number));
+
+      $email = $_POST['email'];
+      $pass = $_POST['pwd'];
+      // kwestie bezpieczeństwa 
+     // $login=htmlentities($login,ENT_QUOTES,"utf-8");
+
+        $user = $this->getDoctrine()
+        ->getRepository('AppBundle:user')
+        ->findOneByEmail($email);
+
+        if(is_null($user))
+        {
+             throw new  $this->createNotFoundException(
+                    'Nie ma takiego adresu E-mail'
+            );
+            $err_comm ="bARDZO ŹLE";
+               return $this->render('Login/Login.html.twig', array(   // Tablica do wysyłania zmiennych do widoku 
+            'err_comm' => $err_comm));
+        }
+
+        if(!$email) // sprawdzamy login 
+        {
+            throw new  $this->createNotFoundException(
+                    'Nie ma takiego adresu E-mail'
+            );
+            $err_comm ="Zły email";
+            
+          return $this->render('Login/Login.html.twig', array(   // Tablica do wysyłania zmiennych do widoku 
+            'err_comm' => $err_comm));
+        }
+     
+        if(!password_verify($pass,$user->getPass())) // sprawdezamy hasło 
+        {
+             throw new  $this->createNotFoundException(
+                    'Błędne hasło'
+            );
+            $err_comm ="Błędne hasło ";
+            
+          return $this->render('Login/Login.html.twig', array(   // Tablica do wysyłania zmiennych do widoku 
+            'err_comm' => $err_comm));
+
+        }
+        return new Response('Zalogowano! Dane: id '.$user->getLogin().$user->getId().$user->getEmail());
+       
+
+
+    	
     }
 
     /**
@@ -117,7 +161,7 @@ class Login extends Controller
       
         // return $this->render('Login/Register.html.twig',array(
        // 'err_comm' => $err_comm));
-        return new Response('Saved new product with id '.$user->getId());
+        return new Response('Utworzono nowego usera! Dane: id '.$user->getLogin().$user->getId().$user->getEmail());
        
         }
         catch(Exception $patronus)
