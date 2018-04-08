@@ -44,7 +44,7 @@ class user // uważać może powodować błędy ze względu na keyword DB USER
      */
      private $country;
      /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
      private $registration_date;
      /**

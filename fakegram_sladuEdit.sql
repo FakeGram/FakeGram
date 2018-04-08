@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 08 Kwi 2018, 00:21
+-- Czas generowania: 08 Kwi 2018, 13:30
 -- Wersja serwera: 10.1.28-MariaDB
 -- Wersja PHP: 7.1.11
 
@@ -100,7 +100,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `login`, `pass`, `email`, `name_and_surrname`, `activation_code`, `country`, `registration_date`, `avatar`, `role`, `about`, `status`) VALUES
 (1, 'Ragnar1', '3!PVweemo*_sjqW=xM', 'makabrak@gmail.com', NULL, NULL, NULL, '2018-04-07 21:51:11', NULL, NULL, NULL, 1),
-(2, 'Testowy', '$2y$10$e62os5Sp7R8rXzmI.fvz8O.EqeCe9QjDwbV7XJ5G3dUQ/T0.6SZIK', 'sladkowska@o2.pl', NULL, NULL, NULL, '2018-04-07 22:18:00', NULL, NULL, NULL, 1);
+(2, 'Testowy', '$2y$10$e62os5Sp7R8rXzmI.fvz8O.EqeCe9QjDwbV7XJ5G3dUQ/T0.6SZIK', 'mail@mail.com', NULL, NULL, NULL, '2018-04-07 22:18:00', NULL, NULL, NULL, 1);
 
 --
 -- Indeksy dla zrzutów tabel
