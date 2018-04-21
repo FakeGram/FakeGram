@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+ 
+ <div class="container-fluid">
+  <h1>Witaj {{login}}!</h1>
+  <p>Resize the browser window to see the effect.</p>
+  <p>The columns will automatically stack on top of each other when the screen is less than 768px wide.</p>
+  <div class="row">
+    <div class="col-sm-4" style="background-color:lavender;">.Login: {{login}}</div>
+    <div class="col-sm-8" style="background-color:lavenderblush;">Email: {{email}}</div>
+  </div>
+</div>
+
+<!-- Tutaj avatary zdjęcia etc -->
+<div class="container">
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">Sample Tekst !</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+<!-- Ponieżej formularze Edycji Danych -->
+
+    <form class="form-horizontal" action="/UserLoginUpdated" method="post">
+  <div class="form-group">
+    <label for="login">Edytuj Nazwę Użytkownika:</label>
+    <input type="login" class="form-control" id="edtLogin" name="edtLogin">
+  </div>
+
+    <div class="col-sm-offset-0 col-sm-10">
+      <button type="submit" class="btn btn-default">Wyślij</button>
+
+  </div>
+
+  </form>
+
+ <form class="form-horizontal" action="/UserEmailUpdated" method="post">
+
+    <div class="form-group">
+    <label for="email">Edytuj Adres e-Mail:</label>
+    <input type="email" class="form-control" id="edtEmail" name="edtEmail">
+  </div>
+   <div class="form-group"> 
+    <div class="col-sm-offset-0 col-sm-10">
+      <button type="submit" class="btn btn-default">Wyślij</button>
+    </div>
+  </div>
+  </form>
+
+   <form class="form-horizontal" action="/UserPasswordUpdated" method="post">
+  <div class="form-group">
+    <label for="Hasło">Zmień Hasło</label>
+    <input type="password" class="form-control" id="edtPass" name="edtPass">
+  </div>
+  <div class="form-group">
+    <label for="Hasło">Powtórz Hasło</label>
+    <input type="password" class="form-control" id="edtPass2" name="edtPass2">
+  </div>
+    <div class="form-group"> 
+    <div class="col-sm-offset-0 col-sm-10">
+      <button type="submit" class="btn btn-default">Wyślij</button>
+    </div>
+  </div>
+  <label> {{err_comm}} </label>
+</form>
+<!--
+    <div class="panel panel-primary">
+      <div class="panel-heading">Panel with panel-primary class</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+
+    <div class="panel panel-success">
+      <div class="panel-heading">Panel with panel-success class</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+
+    <div class="panel panel-info">
+      <div class="panel-heading">Panel with panel-info class</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+
+    <div class="panel panel-warning">
+      <div class="panel-heading">Panel with panel-warning class</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+
+    <div class="panel panel-danger">
+      <div class="panel-heading">Panel with panel-danger class</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+  </div>
+-->
+
+
+</div>
+
+</body>
+</html>

@@ -31,10 +31,10 @@ class pic_uploader extends Controller
         if(isset($_POST["submit"])) {
             $check = getimagesize($_FILES["img"]["tmp_name"]);
             if($check !== false) {
-                echo "File is an image - " . $check["mime"] . ".";
+                echo "Plik jest obrazem- " . $check["mime"] . ".";
                 $uploadOk = 1;
             } else {
-                echo "File is not an image.";
+                echo "Plik nie jest obrazem.";
                 $uploadOk = 0;
             }
         }
@@ -58,7 +58,7 @@ class pic_uploader extends Controller
         }
         $target_file=$name.$conc.'.'.$imageFileType;
         if ($_FILES["img"]["size"] > 5000000) {
-            echo "Sorry, your file is too large.";
+            echo "Twój plik jest za duży.";
             $uploadOk = 0;
         }
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") 
@@ -68,7 +68,7 @@ class pic_uploader extends Controller
         if ($uploadOk == 0)
         {
             return $this->render('image_upload.html', array(
-            'err' => 'Sorry, but there were some problems with your picture'));
+            'err' => 'Wystąpiły pewne problemy z obrazem'));
         } 
         else
         {
@@ -80,7 +80,7 @@ class pic_uploader extends Controller
             else
             {
                 return $this->render('image_upload.html', array(
-                'err' => 'Sorry, but there were some problems with your picture'));
+                'err' => 'Wystąpiły pewne problemy z obrazem'));
             }
         }
 

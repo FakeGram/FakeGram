@@ -44,10 +44,10 @@ class Login extends Controller
             'err_comm' => $err_comm));
         }
 
-/**
+        /**
         if(!$email) // sprawdzamy login 
         {
-//throw new  $this->createNotFoundException(
+        //throw new  $this->createNotFoundException(
          //           'Nie ma takiego adresu E-mail'
         //    );
             $err_comm ="Zły email";
@@ -55,7 +55,7 @@ class Login extends Controller
           return $this->render('Login/Login.html.twig', array(   // Tablica do wysyłania zmiennych do widoku 
             'err_comm' => $err_comm));
         }
-     */
+          */
         if(!password_verify($pass,$user->getPass())) // sprawdezamy hasło 
         {
            //  throw new  $this->createNotFoundException(
@@ -67,8 +67,12 @@ class Login extends Controller
             'err_comm' => $err_comm));
 
         }
-        return new Response('Zalogowano! Dane: id '.$user->getLogin().$user->getId().$user->getEmail());
-       
+     //   session_start();
+        $_SESSION["CurrentUser"]=$user;
+
+        return $this->redirect("/Panel");
+        //return new Response('Zalogowano! Dane: id '.$user->getLogin().$user->getId().$user->getEmail()); // dodać render Panelu i przekazać dane logowania 
+       // return UserPanel.Panel()
     }
 
     /**
@@ -102,6 +106,7 @@ class Login extends Controller
         $pwd   = $_POST['pwd'];
         $pwd_ack = $_POST['pwd_ack'];
 
+// Dodać sprawdzanie czy Login jest dotępny 
        if(strlen($login) <3 || strlen($login) > 10)
        {
             $err_comm="Login musi mieć minimum 3 znaki i maksimum 10 znaków";
@@ -159,7 +164,7 @@ class Login extends Controller
       
         // return $this->render('Login/Register.html.twig',array(
        // 'err_comm' => $err_comm));
-        return new Response('Saved new product with id '.$user->getId());
+        return new Response('Stworzono nowego użytkownika z id '.$user->getId());
        
         }
         catch(Exception $patronus)
