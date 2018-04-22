@@ -10,17 +10,8 @@ use AppBundle\Entity\user;
 
 class UserPanel extends Controller
 {
-	 /**
-     * @Route("/PanelT")
-     */
-    public function PanelT() // do Testów
-    {
-       $err_comm = "DEV: It Cannons !";// narazie nie wywalać bo zmienna ta musi istnieć,żeby ją wysłać 
 
-        return $this->render('UserPanel/UserPanel.html.twig', array(   // Tablica do wysyłania zmiennych do widoku 
-            'err_comm' => $err_comm));
-    }
-    
+
      /**
      * @Route("/Panel")
      */
@@ -40,12 +31,24 @@ class UserPanel extends Controller
     		$err_comm = $_SESSION["err_comm"];
     		$_SESSION["err_comm"]="";
     	} 
+    	
+    	 $Actual_avatar = $_SESSION['CurrentUser']->getAvatar();
+    	if(!isset($Actual_avatar)) // Warning 
+    	{
+    		$Actual_avatar="Brak Avatara";
+    	}
+    	else
+    	{
+    		$Actual_avatar=base64_encode($_SESSION['CurrentUser']->getAvatar());
+
+    	}
 
     	return $this->render('UserPanel/UserPanel.html.twig',array(
     	'login'=>$_SESSION["CurrentUser"]->getLogin(),
     	'email'=>$_SESSION["CurrentUser"]->getEmail(),
     	'role'=>$_SESSION["CurrentUser"]->getRole(),
     	'reg_date'=>$_SESSION["CurrentUser"]->getRegistrationDate(),
+    	'Actual_avatar'=> $Actual_avatar,
     	'err_comm'=>$err_comm
     	));
     }
@@ -55,6 +58,7 @@ class UserPanel extends Controller
      */
  	public function UserLoginUpdated()
  	{
+		
 		if(!isset($_SESSION["CurrentUser"]))
     	{
     		 return new Response("Nie posiadasz uprawinień do przeglądania tej strony");
@@ -69,7 +73,7 @@ class UserPanel extends Controller
    			 }
    	  
      
-
+   	    
    		//$loginToEdit = $_POST['edtLogin'];
    		 $loginToEdit = filter_var($_POST['edtLogin'],FILTER_SANITIZE_STRING);
    		$EditedUser->setLogin($loginToEdit);
@@ -147,8 +151,54 @@ class UserPanel extends Controller
    		$EditedUser->setPass($passToEdit_hased);
    		$DoctrineManager->flush();
    		$_SESSION["CurrentUser"]=$EditedUser;
-   		$_SESSION["err_comm"] = "Zaaktualizowano adres Hasło !";
+   		$_SESSION["err_comm"] = "Zaaktualizowano  Hasło !";
     	return $this->redirect("/Panel"); 	
   	  }
+
+
+  	  /**
+     * @Route("/UserAvatarUpdated")
+     */
+  	  public function UserAvatarUpdated()
+  	  {
+	 	if(!isset($_SESSION["CurrentUser"]))
+    	{
+    		 return new Response("Nie posiadasz uprawinień do przeglądania tej strony");
+    	}
+
+    	$DoctrineManager = $this->getDoctrine()->getManager();
+    	$EditedUser=$DoctrineManager->getRepository('AppBundle:user')->findOneByLogin($_SESSION["CurrentUser"]->getLogin());
+
+    	if(!$EditedUser)
+    	{
+    		return new Response("Błąd, nie można znaleźć użytkownika\nERROR: UEU");
+    	}
+  
+    	if(is_uploaded_file($_FILES['avatar']['tmp_name']))
+    	{
+    		$file = file_get_contents($_FILES['avatar']['tmp_name']);
+    		$max = 1024*64; // Max rozdzielczosc
+    		$sizeOfFile= $_FILES['avatar']['size'];
+    		
+    		if($sizeOfFile>$max)
+    		{
+    			$_SESSION["err_comm"]="Przekroczono dopuszczalną wielkość pliku. Rozmiar obrazu to: ".$sizeOfFile."  Dopuszczalna wielkosc to ".$max." !";
+    			
+    			return $this->redirect("\Panel");
+    		//	return new Response(var_dump($sizeOfFile));
+    		}
+    		else
+    		{
+    			$EditedUser->setAvatar($file);
+    			$DoctrineManager->flush();
+    			$_SESSION["CurrentUser"]=$EditedUser;
+    			$_SESSION["err_comm"] = "Zaaktualizowano  Avatara !";
+    			return $this->redirect("/Panel"); 	
+    		}
+    	}
+    	else return $this->redirect("\Panel");
+  	  }
+
+ 
 }
 ?>
