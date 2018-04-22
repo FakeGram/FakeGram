@@ -64,7 +64,7 @@ class UserPanel extends Controller
     		 return new Response("Nie posiadasz uprawinień do przeglądania tej strony");
     	}
     	$DoctrineManager = $this->getDoctrine()->getManager();
-    	$EditedUser=$DoctrineManager->getRepository('AppBundle:user')->findOneByLogin($_SESSION["CurrentUser"]->getLogin());
+    	$EditedUser=$DoctrineManager->getRepository('AppBundle:user')->findOneBylogin($_SESSION["CurrentUser"]->getLogin());
 		
 			 if (!$EditedUser)
 			 {
@@ -72,10 +72,18 @@ class UserPanel extends Controller
     		 
    			 }
    	  
-     
+         $repository = $this->getDoctrine()->getRepository('AppBundle:user');
+		 $loginToEdit = filter_var($_POST['edtLogin'],FILTER_SANITIZE_STRING);
+         $numberOfLogins= count($repository->findBylogin($loginToEdit),COUNT_NORMAL);
+        
+        if($numberOfLogins>0)
+        {          
+           	$_SESSION["err_comm"]="Podany login jest już zajęty.";
+             return $this->redirect("/Panel");
+        }
    	    
    		//$loginToEdit = $_POST['edtLogin'];
-   		 $loginToEdit = filter_var($_POST['edtLogin'],FILTER_SANITIZE_STRING);
+   		
    		$EditedUser->setLogin($loginToEdit);
    		$DoctrineManager->flush();
    		$_SESSION["CurrentUser"]=$EditedUser;
@@ -95,15 +103,23 @@ class UserPanel extends Controller
     	}
 
     	$DoctrineManager = $this->getDoctrine()->getManager();
-    	$EditedUser=$DoctrineManager->getRepository('AppBundle:user')->findOneByLogin($_SESSION["CurrentUser"]->getLogin());
+    	$EditedUser=$DoctrineManager->getRepository('AppBundle:user')->findOneBylogin($_SESSION["CurrentUser"]->getLogin());
 
     	if(!$EditedUser)
     	{
     		return new Response("Błąd, nie można znaleźć użytkownika\nERROR: UEU");
     	}
-  
-
+  	
+  		$repository = $this->getDoctrine()->getRepository('AppBundle:user');
         $emailToEdit = filter_var($_POST['edtEmail'],FILTER_SANITIZE_EMAIL);
+        $numberofMails = count($repository->findByemail($emailToEdit),COUNT_NORMAL);
+
+        if($numberofMails>0)
+        {
+           	$_SESSION["err_comm"]="Podany login jest już zajęty.";
+             return $this->redirect("/Panel");
+        }
+
     	$EditedUser->setEmail($emailToEdit);
     	$DoctrineManager->flush();
     	$_SESSION["CurrentUser"]=$EditedUser;
@@ -121,7 +137,7 @@ class UserPanel extends Controller
     		 return new Response("Nie posiadasz uprawinień do przeglądania tej strony");
     	}
     	$DoctrineManager = $this->getDoctrine()->getManager();
-    	$EditedUser=$DoctrineManager->getRepository('AppBundle:user')->findOneByLogin($_SESSION["CurrentUser"]->getLogin());
+    	$EditedUser=$DoctrineManager->getRepository('AppBundle:user')->findOneBylogin($_SESSION["CurrentUser"]->getLogin());
 
     	if(!$EditedUser)
     	{
@@ -167,7 +183,7 @@ class UserPanel extends Controller
     	}
 
     	$DoctrineManager = $this->getDoctrine()->getManager();
-    	$EditedUser=$DoctrineManager->getRepository('AppBundle:user')->findOneByLogin($_SESSION["CurrentUser"]->getLogin());
+    	$EditedUser=$DoctrineManager->getRepository('AppBundle:user')->findOneBylogin($_SESSION["CurrentUser"]->getLogin());
 
     	if(!$EditedUser)
     	{
@@ -198,7 +214,14 @@ class UserPanel extends Controller
     	}
     	else return $this->redirect("\Panel");
   	  }
-
- 
+ 	
+ 	/**
+     * @Route("/Logout")
+     */
+ 	public function Logout()
+ 	{
+ 		session_destroy();
+ 		return $this->redirect("\Login");
+ 	}
 }
 ?>

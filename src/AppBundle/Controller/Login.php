@@ -143,7 +143,28 @@ class Login extends Controller
        
         $filtered_login = filter_var($login,FILTER_SANITIZE_STRING);
         $filtered_email = filter_var($email,FILTER_SANITIZE_EMAIL);
-      
+        $repository = $this->getDoctrine()->getRepository('AppBundle:user');
+
+        $numberOfLogins=count($repository->findBylogin($filtered_login),COUNT_NORMAL);
+        
+        if($numberOfLogins>0)
+        {
+            $err_comm="Podany Login jest już zajęty";
+           
+             return $this->render('Login/Register.html.twig',array(
+        'err_comm' => $err_comm));
+        }
+
+        $numberOfmails = count($repository->findByemail($filtered_email),COUNT_NORMAL);
+
+         if($numberOfmails>0)
+        {
+            $err_comm="Podany adres e-Mail jest już zajęty";
+           
+             return $this->render('Login/Register.html.twig',array(
+        'err_comm' => $err_comm));
+        }
+
        // $encoder = $this->container->get('security.password_encoder');  | <--- ewentualnie na później jeśli pokusimy sie o implementacje user interface 
        // $pwd_hashed = $encoder->encodePassword($user,$pwd);             |
      
@@ -154,7 +175,7 @@ class Login extends Controller
         $user->setLogin($filtered_login);
         $user->setEmail($filtered_email);
         $user->setPass($pwd_hashed);
-      //  $user->setRegistrationDate()
+      
 
        
         $statement=$this->getDoctrine()->getManager();

@@ -13,7 +13,9 @@
  <div class="container-fluid">
   <h1>Witaj {{login}}!</h1>
   <p>Resize the browser window to see the effect.</p>
-  <p>The columns will automatically stack on top of each other when the screen is less than 768px wide.</p>
+  <form action="/Logout">
+    <button type="submit" class="btn btn-default">Wyloguj się</button>
+  </form>
   <div class="row">
     <div class="col-sm-4" style="background-color:lavender;">.Login: {{login}}</div>
     <div class="col-sm-8" style="background-color:lavenderblush;">Email: {{email}}</div>
