@@ -1,31 +1,33 @@
 <html>
 	<head>
-		<title>Login ver. 0.00001</title>
+		<title>Login</title>
 		<meta charset="utf-8">
 	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}" />
 	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 	</head>
 	<body>
-	<div class="container">
-  <h2>Zaloguj się !</h2>
-  <p>Make the viewport larger than 768px wide to see that all of the form elements are inline, left aligned, and the labels are alongside.</p>
-  <form class="form-inline" action="/execute_login" method="post">
-    <div class="form-group">
-      <label for="email">E-mail:</label>
-      <input type="email" class="form-control" id="email" placeholder="Wprowadź adres E-mail" name="email">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Hasło:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Wprowadź hasło" name="pwd">
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Zapamiętaj mnie</label>
-    </div>
-    <button type="submit" class="btn btn-default">Zaloguj</button>
-    <label>{{err_comm}}</label>
-  </form>
+	<div class="container-fluid">
+    <div class="login-form">
+      <h2 class="log-in">Zaloguj się !</h2>
+      <form class="form-inline" action="/execute_login" method="post">
+        <div class="login-group-sec">
+          <label class="login-label" for="email">E-mail:</label>
+          <input type="email" class="form-control" id="email" placeholder="Wprowadź adres E-mail" name="email">
+        </div>
+        <div class="login-group-sec">
+          <label class="login-label" for="pwd">Hasło:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Wprowadź hasło" name="pwd">
+        </div>
+        <div class="login-group-sec">
+          <label class=""><input type="checkbox" name="remember"> Zapamiętaj mnie</label>
+        </div>
+        <button class="log-submit" type="submit" class="btn btn-default">Zaloguj</button>
+      </form>
+  </div>
 </div>
 	</body>
 </html>

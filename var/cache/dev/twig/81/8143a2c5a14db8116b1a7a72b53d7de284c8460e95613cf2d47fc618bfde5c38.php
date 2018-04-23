@@ -15,8 +15,8 @@ class __TwigTemplate_5d69b57de7e8fe86c546ddaabc67111902179d91c6830bd77cd8f658ccc
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_81f3bd007c82beeb5be7ab82ddb98b60e129d756a7c5c840e4e79457ba42c1b4 = $this->env->getExtension("native_profiler");
-        $__internal_81f3bd007c82beeb5be7ab82ddb98b60e129d756a7c5c840e4e79457ba42c1b4->enter($__internal_81f3bd007c82beeb5be7ab82ddb98b60e129d756a7c5c840e4e79457ba42c1b4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "image_upload.html"));
+        $__internal_2a199d229107dec0ce902b30a966ca0e5e0d1b32a70c54a0b47cd6313eeb5925 = $this->env->getExtension("native_profiler");
+        $__internal_2a199d229107dec0ce902b30a966ca0e5e0d1b32a70c54a0b47cd6313eeb5925->enter($__internal_2a199d229107dec0ce902b30a966ca0e5e0d1b32a70c54a0b47cd6313eeb5925_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "image_upload.html"));
 
         // line 1
         echo "<html>
@@ -50,32 +50,6 @@ class __TwigTemplate_5d69b57de7e8fe86c546ddaabc67111902179d91c6830bd77cd8f658ccc
         echo "\" />
   </head>
   <body>
-  <!-- HEADER potem do innego pliku wyjebać -->
-  <nav class=\"navbar navbar-default\">
-    <div class=\"container-fluid\">
-      <div class=\"navbar-header\">
-        <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">
-          <span class=\"icon-bar\"></span>
-          <span class=\"icon-bar\"></span>
-          <span class=\"icon-bar\"></span> 
-        </button>
-        <a class=\"navbar-brand\" href=\"#\"><div class=\"logo\">FakeGram</div></a>
-      </div>
-      <div class=\"collapse navbar-collapse\" id=\"myNavbar\">
-        <ul class=\"nav navbar-nav navbar-right\">
-          <li><a href=\"#\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>
-          <li><a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>
-        </ul>
-        <ul class=\"nav navbar-nav navbar-right nav-pages\">
-          <li class=\"active\"><a href=\"#\">Home</a></li>
-          <li><a href=\"#\">Page 1</a></li>
-          <li><a href=\"#\">Page 2</a></li> 
-          <li><a href=\"#\">Page 3</a></li> 
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- |||||||||||||||||||||||||||||||||||| -->
 
 <div class=\"container-fluid\">
       <div class=\"panel panel-default\">
@@ -119,26 +93,6 @@ class __TwigTemplate_5d69b57de7e8fe86c546ddaabc67111902179d91c6830bd77cd8f658ccc
       </div>
     </div> <!-- /container -->
 
-    <!-- FOOTER potem do innego pliku wyjebać -->
-    <div class=\"footer\">
-      <div class=\"row\">
-        <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\">
-          <div class=\"FooterLogo\">FakeGram</div>
-        </div>
-        <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\" style=\"margin-top: 2%;\">
-          <p>Projekt z przedmiotu \"systemy multimedialne\". Politechnika Śląska, Wydział Elektryczny. 2018 r.</p>
-        </div>
-        <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\">
-          <ul>
-            Odjebali:
-            <li>Konrad Sladkowski</li>
-            <li>Krzysztof Szwej</li>
-            <li>Domingo Żurawski</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- |||||||||||||||||||||||||||||||||||| -->
   </body>
   <script type=\"text/javascript\">
     + function(\$) {
@@ -182,7 +136,7 @@ class __TwigTemplate_5d69b57de7e8fe86c546ddaabc67111902179d91c6830bd77cd8f658ccc
   </script>
 </html>";
         
-        $__internal_81f3bd007c82beeb5be7ab82ddb98b60e129d756a7c5c840e4e79457ba42c1b4->leave($__internal_81f3bd007c82beeb5be7ab82ddb98b60e129d756a7c5c840e4e79457ba42c1b4_prof);
+        $__internal_2a199d229107dec0ce902b30a966ca0e5e0d1b32a70c54a0b47cd6313eeb5925->leave($__internal_2a199d229107dec0ce902b30a966ca0e5e0d1b32a70c54a0b47cd6313eeb5925_prof);
 
     }
 
@@ -217,32 +171,6 @@ class __TwigTemplate_5d69b57de7e8fe86c546ddaabc67111902179d91c6830bd77cd8f658ccc
 /*   <link rel="stylesheet" href="{{ asset('assets/css/image_upload.css') }}" />*/
 /*   </head>*/
 /*   <body>*/
-/*   <!-- HEADER potem do innego pliku wyjebać -->*/
-/*   <nav class="navbar navbar-default">*/
-/*     <div class="container-fluid">*/
-/*       <div class="navbar-header">*/
-/*         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">*/
-/*           <span class="icon-bar"></span>*/
-/*           <span class="icon-bar"></span>*/
-/*           <span class="icon-bar"></span> */
-/*         </button>*/
-/*         <a class="navbar-brand" href="#"><div class="logo">FakeGram</div></a>*/
-/*       </div>*/
-/*       <div class="collapse navbar-collapse" id="myNavbar">*/
-/*         <ul class="nav navbar-nav navbar-right">*/
-/*           <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>*/
-/*           <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>*/
-/*         </ul>*/
-/*         <ul class="nav navbar-nav navbar-right nav-pages">*/
-/*           <li class="active"><a href="#">Home</a></li>*/
-/*           <li><a href="#">Page 1</a></li>*/
-/*           <li><a href="#">Page 2</a></li> */
-/*           <li><a href="#">Page 3</a></li> */
-/*         </ul>*/
-/*       </div>*/
-/*     </div>*/
-/*   </nav>*/
-/*   <!-- |||||||||||||||||||||||||||||||||||| -->*/
 /* */
 /* <div class="container-fluid">*/
 /*       <div class="panel panel-default">*/
@@ -286,26 +214,6 @@ class __TwigTemplate_5d69b57de7e8fe86c546ddaabc67111902179d91c6830bd77cd8f658ccc
 /*       </div>*/
 /*     </div> <!-- /container -->*/
 /* */
-/*     <!-- FOOTER potem do innego pliku wyjebać -->*/
-/*     <div class="footer">*/
-/*       <div class="row">*/
-/*         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">*/
-/*           <div class="FooterLogo">FakeGram</div>*/
-/*         </div>*/
-/*         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top: 2%;">*/
-/*           <p>Projekt z przedmiotu "systemy multimedialne". Politechnika Śląska, Wydział Elektryczny. 2018 r.</p>*/
-/*         </div>*/
-/*         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">*/
-/*           <ul>*/
-/*             Odjebali:*/
-/*             <li>Konrad Sladkowski</li>*/
-/*             <li>Krzysztof Szwej</li>*/
-/*             <li>Domingo Żurawski</li>*/
-/*           </ul>*/
-/*         </div>*/
-/*       </div>*/
-/*     </div>*/
-/*     <!-- |||||||||||||||||||||||||||||||||||| -->*/
 /*   </body>*/
 /*   <script type="text/javascript">*/
 /*     + function($) {*/

@@ -13,10 +13,10 @@ class Login extends Controller
      */
     public function Login()
     {
-        $err_comm = "DEV: It Cannons !";// narazie nie wywalać bo zmienna ta musi istnieć,żeby ją wysłać 
+       
 
         return $this->render('Login/Login.html.twig', array(   // Tablica do wysyłania zmiennych do widoku 
-            'err_comm' => $err_comm));
+            ));
     }
 
     /**

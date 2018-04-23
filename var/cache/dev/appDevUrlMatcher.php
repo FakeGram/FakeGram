@@ -109,11 +109,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
-        // app_fakegram_fakegram
-        if ($pathinfo === '/FakeGram') {
-            return array (  '_controller' => 'AppBundle\\Controller\\FakeGram::FakeGram',  '_route' => 'app_fakegram_fakegram',);
-        }
-
         // app_fakegram_test
         if ($pathinfo === '/test') {
             return array (  '_controller' => 'AppBundle\\Controller\\FakeGram::test',  '_route' => 'app_fakegram_test',);
@@ -140,6 +135,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'AppBundle\\Controller\\Login::Register',  '_route' => 'app_login_register',);
             }
 
+        }
+
+        if (0 === strpos($pathinfo, '/Panel')) {
+            // app_userpanel_panelt
+            if ($pathinfo === '/PanelT') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::PanelT',  '_route' => 'app_userpanel_panelt',);
+            }
+
+            // app_userpanel_panel
+            if ($pathinfo === '/Panel') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::Panel',  '_route' => 'app_userpanel_panel',);
+            }
+
+        }
+
+        // app_userpanel_userloginupdated
+        if ($pathinfo === '/UserLoginUpdated') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::UserLoginUpdated',  '_route' => 'app_userpanel_userloginupdated',);
         }
 
         // app_pic_uploader_pic_upload
