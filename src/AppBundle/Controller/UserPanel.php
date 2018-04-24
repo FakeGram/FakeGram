@@ -19,7 +19,7 @@ class UserPanel extends Controller
     {																																												//Panel
     	if(!isset($_SESSION["CurrentUser"]))
     	{
-    		 return new Response("Nie posiadasz uprawinień do przeglądania tej strony");
+    		 return new Response("nie bangla");
     	}
     	
     	if(!isset($_SESSION["err_comm"]))
