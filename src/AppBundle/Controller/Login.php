@@ -25,12 +25,16 @@ class Login extends Controller
      */
     public function execute_login()
     {
+<<<<<<< HEAD
 
     if(!isset($_SESSION))
     {
         session_start();
     }
      
+=======
+        session_start();
+>>>>>>> 773ced3c122e757155ac460653471435393aa21b
       $email = $_POST['email'];
       $pass = $_POST['pwd'];
       // kwestie bezpieczeństwa 
@@ -65,7 +69,7 @@ class Login extends Controller
         
 
         $_SESSION["CurrentUser"]=$user;
-
+        
         return $this->redirect("/Panel");
         //return new Response('Zalogowano! Dane: id '.$user->getLogin().$user->getId().$user->getEmail()); // dodać render Panelu i przekazać dane logowania 
        // return UserPanel.Panel()
