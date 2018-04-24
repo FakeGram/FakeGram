@@ -25,16 +25,16 @@ class Login extends Controller
      */
     public function execute_login()
     {
-<<<<<<< HEAD
+
 
     if(!isset($_SESSION))
     {
         session_start();
     }
      
-=======
-        session_start();
->>>>>>> 773ced3c122e757155ac460653471435393aa21b
+
+      //  session_start();
+
       $email = $_POST['email'];
       $pass = $_POST['pwd'];
       // kwestie bezpieczeństwa 
