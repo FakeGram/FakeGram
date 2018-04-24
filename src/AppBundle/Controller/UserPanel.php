@@ -6,7 +6,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\user;
 
-//session_start();
 
 class UserPanel extends Controller
 {
@@ -49,6 +48,7 @@ class UserPanel extends Controller
     	'role'=>$_SESSION["CurrentUser"]->getRole(),
     	'reg_date'=>$_SESSION["CurrentUser"]->getRegistrationDate(),
     	'Actual_avatar'=> $Actual_avatar,
+      'about' =>$_SESSION["CurrentUser"]->getAbout(),
     	'err_comm'=>$err_comm
     	));
     }
@@ -223,5 +223,31 @@ class UserPanel extends Controller
  		session_destroy();
  		return $this->redirect("\Login");
  	}
+
+    /**
+     * @Route("/UserAboutUpdated")
+     */
+  public function UserAboutUpdated()
+  {
+    if(!isset($_SESSION["CurrentUser"]))
+      {
+         return new Response("Nie posiadasz uprawinień do przeglądania tej strony");
+      }
+
+      $DoctrineManager = $this->getDoctrine()->getManager();
+      $EditedUser=$DoctrineManager->getRepository('AppBundle:user')->findOneBylogin($_SESSION["CurrentUser"]->getLogin());
+
+      if(!$EditedUser)
+      {
+        return new Response("Błąd, nie można znaleźć użytkownika\nERROR: UEU");
+      }
+
+      $EditedUser->setAbout($_POST["edtAbout"]);
+      $DoctrineManager->flush();
+      $_SESSION["CurrentUser"]=$EditedUser;
+      $_SESSION["err_comm"] = "Zaaktualizowano  Opis !";
+      return $this->redirect("/Panel");
+
+  }
 }
 ?>

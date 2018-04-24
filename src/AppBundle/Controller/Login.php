@@ -13,9 +13,10 @@ class Login extends Controller
      */
     public function Login()
     {
-       
-
-        return $this->render('Login/Login.html.twig', array(   // Tablica do wysyłania zmiennych do widoku 
+        
+        $err_comm = "";
+        return $this->render('Login/Login.html.twig', array( 
+        'err_comm'=> $err_comm  // Tablica do wysyłania zmiennych do widoku 
             ));
     }
 
@@ -25,6 +26,11 @@ class Login extends Controller
     public function execute_login()
     {
 
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
+     
       $email = $_POST['email'];
       $pass = $_POST['pwd'];
       // kwestie bezpieczeństwa 
@@ -39,23 +45,12 @@ class Login extends Controller
          //    throw new  $this->createNotFoundException(
           //          'Nie ma takiego adresu E-mail'
           //  );
-            $err_comm ="Błędny login ";
+            $err_comm ="Błędny adres E-mail ";
                return $this->render('Login/Login.html.twig', array(   // Tablica do wysyłania zmiennych do widoku 
             'err_comm' => $err_comm));
         }
 
-        /**
-        if(!$email) // sprawdzamy login 
-        {
-        //throw new  $this->createNotFoundException(
-         //           'Nie ma takiego adresu E-mail'
-        //    );
-            $err_comm ="Zły email";
-            
-          return $this->render('Login/Login.html.twig', array(   // Tablica do wysyłania zmiennych do widoku 
-            'err_comm' => $err_comm));
-        }
-          */
+ 
         if(!password_verify($pass,$user->getPass())) // sprawdezamy hasło 
         {
            //  throw new  $this->createNotFoundException(
@@ -67,7 +62,8 @@ class Login extends Controller
             'err_comm' => $err_comm));
 
         }
-     //   session_start();
+        
+
         $_SESSION["CurrentUser"]=$user;
 
         return $this->redirect("/Panel");

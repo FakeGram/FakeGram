@@ -92,6 +92,12 @@
   <button type= "submit" class="btn btn-default">Zmień avatar</button>
 </br>
   <label> {{err_comm}} </label>
+
+</form>
+<form class="form-inline" action="/UserAboutUpdated" method="post" id="aboutForm">
+  <label for="About Me">Opis O Mnie</label>
+  <textarea rows ="25" cols = "90" form ="aboutForm" name="edtAbout" id="edtAbout">{{about}}</textarea>
+<input type= "submit" class="btn btn-default" >Edytuj Opis</button>
 </form>
 <!--
     <div class="panel panel-primary">
