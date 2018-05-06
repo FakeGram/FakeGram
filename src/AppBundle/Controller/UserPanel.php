@@ -30,16 +30,24 @@ class UserPanel extends Controller
     		$err_comm = $_SESSION["err_comm"];
     		$_SESSION["err_comm"]="";
     	} 
-    	
-    	 $Actual_avatar = $_SESSION['CurrentUser']->getAvatar();
+    	// Doctrine
+      // Trochę nieeleganckie ;/ 
+      
+      $DoctrineManager = $this->getDoctrine()->getManager();
+      $User=$DoctrineManager->getRepository('AppBundle:user')->findOneBylogin($_SESSION["CurrentUser"]->getLogin());
+      $Actual_avatar = $User->getAvatar();
+     
+      
     	if(!isset($Actual_avatar)) // Warning 
     	{
     		$Actual_avatar="Brak Avatara";
     	}
     	else
     	{
-    		$Actual_avatar=base64_encode($_SESSION['CurrentUser']->getAvatar());
-
+       
+    		$Actual_avatar=base64_encode(stream_get_contents($Actual_avatar));    // wchodzi do tego momentu 
+       
+         
     	}
 
     	return $this->render('UserPanel/UserPanel.html.twig',array(
@@ -205,11 +213,15 @@ class UserPanel extends Controller
     		}
     		else
     		{
+         
     			$EditedUser->setAvatar($file);
     			$DoctrineManager->flush();
     			$_SESSION["CurrentUser"]=$EditedUser;
+        
+
+      
     			$_SESSION["err_comm"] = "Zaaktualizowano  Avatara !";
-    			return $this->redirect("/Panel"); 	
+    			return $this->redirect("\Panel"); 	
     		}
     	}
     	else return $this->redirect("\Panel");

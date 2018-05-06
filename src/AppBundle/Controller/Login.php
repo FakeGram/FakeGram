@@ -67,7 +67,8 @@ class Login extends Controller
 
         }
         
-
+        // currenUser avatar 
+   
         $_SESSION["CurrentUser"]=$user;
         
         return $this->redirect("/Panel");
@@ -185,9 +186,16 @@ class Login extends Controller
       
         // return $this->render('Login/Register.html.twig',array(
        // 'err_comm' => $err_comm));
-        return new Response('Stworzono nowego użytkownika z id '.$user->getId());
-       
+     
+        if(!isset($_SESSION))
+        {
+            session_start();
         }
+        $_SESSION['err_comm'] = "Teraz możesz się zalogować !";
+      
+        return $this->redirect("\Panel");
+        }
+      
         catch(Exception $patronus)
         {
                 echo '<span style="color:red;">Bład Serwera! Rejestracja tymczasowo niemożliwa</span>';

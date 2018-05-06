@@ -258,7 +258,7 @@ class user // uważać może powodować błędy ze względu na keyword DB USER
     /**
      * Get avatar
      *
-     * @return string
+     * @return blob
      */
     public function getAvatar()
     {
