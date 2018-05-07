@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
   *	@ORM\Table(name="comment")
   */
 
-class comment // uważać może powodować błędy ze względu na keyword DB USER 
+class comment
 {
 	/**
      * @ORM\Column(type="integer")

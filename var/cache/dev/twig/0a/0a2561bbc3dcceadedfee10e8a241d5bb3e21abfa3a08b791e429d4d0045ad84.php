@@ -1,6 +1,6 @@
 <?php
 
-/* Login/Login.html.twig */
+/* login/login.html.twig */
 class __TwigTemplate_20ef2a04e21284b3dad94ce0ebe7f3ec3a7d03babe5ce3c9e4c46d8443e87bee extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_20ef2a04e21284b3dad94ce0ebe7f3ec3a7d03babe5ce3c9e4c46d8443e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_635b59cdb1151dc0a14cff6564956db50fc961b8fe8539bd14aae690fc8edac0 = $this->env->getExtension("native_profiler");
-        $__internal_635b59cdb1151dc0a14cff6564956db50fc961b8fe8539bd14aae690fc8edac0->enter($__internal_635b59cdb1151dc0a14cff6564956db50fc961b8fe8539bd14aae690fc8edac0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Login/Login.html.twig"));
+        $__internal_dcc236584595bbadace6d3eba1fef9af43363504fd4f68171d68c2d421abe95d = $this->env->getExtension("native_profiler");
+        $__internal_dcc236584595bbadace6d3eba1fef9af43363504fd4f68171d68c2d421abe95d->enter($__internal_dcc236584595bbadace6d3eba1fef9af43363504fd4f68171d68c2d421abe95d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "login/login.html.twig"));
 
         // line 1
         echo "<html>
@@ -59,6 +59,10 @@ class __TwigTemplate_20ef2a04e21284b3dad94ce0ebe7f3ec3a7d03babe5ce3c9e4c46d8443e
           <label class=\"\"><input type=\"checkbox\" name=\"remember\"> Zapamiętaj mnie</label>
         </div>
         <button class=\"log-submit\" type=\"submit\" class=\"btn btn-default\">Zaloguj</button>
+        <label>";
+        // line 29
+        echo twig_escape_filter($this->env, (isset($context["err_comm"]) ? $context["err_comm"] : $this->getContext($context, "err_comm")), "html", null, true);
+        echo "</label>
       </form>
   </div>
 </div>
@@ -66,13 +70,13 @@ class __TwigTemplate_20ef2a04e21284b3dad94ce0ebe7f3ec3a7d03babe5ce3c9e4c46d8443e
 </html>
 ";
         
-        $__internal_635b59cdb1151dc0a14cff6564956db50fc961b8fe8539bd14aae690fc8edac0->leave($__internal_635b59cdb1151dc0a14cff6564956db50fc961b8fe8539bd14aae690fc8edac0_prof);
+        $__internal_dcc236584595bbadace6d3eba1fef9af43363504fd4f68171d68c2d421abe95d->leave($__internal_dcc236584595bbadace6d3eba1fef9af43363504fd4f68171d68c2d421abe95d_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "Login/Login.html.twig";
+        return "login/login.html.twig";
     }
 
     public function isTraitable()
@@ -82,7 +86,7 @@ class __TwigTemplate_20ef2a04e21284b3dad94ce0ebe7f3ec3a7d03babe5ce3c9e4c46d8443e
 
     public function getDebugInfo()
     {
-        return array (  40 => 8,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
+        return array (  64 => 29,  40 => 8,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
     }
 }
 /* <html>*/
@@ -113,6 +117,7 @@ class __TwigTemplate_20ef2a04e21284b3dad94ce0ebe7f3ec3a7d03babe5ce3c9e4c46d8443e
 /*           <label class=""><input type="checkbox" name="remember"> Zapamiętaj mnie</label>*/
 /*         </div>*/
 /*         <button class="log-submit" type="submit" class="btn btn-default">Zaloguj</button>*/
+/*         <label>{{err_comm}}</label>*/
 /*       </form>*/
 /*   </div>*/
 /* </div>*/

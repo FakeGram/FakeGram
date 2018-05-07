@@ -15,8 +15,8 @@ class __TwigTemplate_5d69b57de7e8fe86c546ddaabc67111902179d91c6830bd77cd8f658ccc
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_2a199d229107dec0ce902b30a966ca0e5e0d1b32a70c54a0b47cd6313eeb5925 = $this->env->getExtension("native_profiler");
-        $__internal_2a199d229107dec0ce902b30a966ca0e5e0d1b32a70c54a0b47cd6313eeb5925->enter($__internal_2a199d229107dec0ce902b30a966ca0e5e0d1b32a70c54a0b47cd6313eeb5925_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "image_upload.html"));
+        $__internal_8548c570c41e72575e770aebb74e33a61a84b8082cd206b74e56a04d1f22e52a = $this->env->getExtension("native_profiler");
+        $__internal_8548c570c41e72575e770aebb74e33a61a84b8082cd206b74e56a04d1f22e52a->enter($__internal_8548c570c41e72575e770aebb74e33a61a84b8082cd206b74e56a04d1f22e52a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "image_upload.html"));
 
         // line 1
         echo "<html>
@@ -62,6 +62,9 @@ class __TwigTemplate_5d69b57de7e8fe86c546ddaabc67111902179d91c6830bd77cd8f658ccc
             <div class=\"form-inline\">
               <div class=\"form-group\">
                 <input type=\"file\" name=\"img\" id=\"js-upload-files\" accept=\"image/jpeg\">
+              </div>
+              <div class=\"pic_description\">
+                <input type=\"text\" name=\"desc\" id=\"pic_desc\">
               </div>
               <button type=\"submit\" class=\"btn btn-sm btn-primary\" id=\"js-upload-submit\">Upload files</button>
               <div><input type=\"submit\" value=\"Wyślij\" /></div>
@@ -136,7 +139,7 @@ class __TwigTemplate_5d69b57de7e8fe86c546ddaabc67111902179d91c6830bd77cd8f658ccc
   </script>
 </html>";
         
-        $__internal_2a199d229107dec0ce902b30a966ca0e5e0d1b32a70c54a0b47cd6313eeb5925->leave($__internal_2a199d229107dec0ce902b30a966ca0e5e0d1b32a70c54a0b47cd6313eeb5925_prof);
+        $__internal_8548c570c41e72575e770aebb74e33a61a84b8082cd206b74e56a04d1f22e52a->leave($__internal_8548c570c41e72575e770aebb74e33a61a84b8082cd206b74e56a04d1f22e52a_prof);
 
     }
 
@@ -183,6 +186,9 @@ class __TwigTemplate_5d69b57de7e8fe86c546ddaabc67111902179d91c6830bd77cd8f658ccc
 /*             <div class="form-inline">*/
 /*               <div class="form-group">*/
 /*                 <input type="file" name="img" id="js-upload-files" accept="image/jpeg">*/
+/*               </div>*/
+/*               <div class="pic_description">*/
+/*                 <input type="text" name="desc" id="pic_desc">*/
 /*               </div>*/
 /*               <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>*/
 /*               <div><input type="submit" value="Wyślij" /></div>*/

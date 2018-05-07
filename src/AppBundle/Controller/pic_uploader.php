@@ -12,10 +12,17 @@ class pic_uploader extends Controller
      */
     public function pic_upload()
     {
+        if(isset($_SESSION))
+        {
         $number=0;
-
         return $this->render('image_upload.html', array(
             'number' => $number));
+        }
+        else
+        {
+            return $this->render('login/login.html.twig', array(
+            'err_comm' => 'nie jesteś zalogowany kolego'));
+        }
     }
 
     /**
@@ -23,6 +30,7 @@ class pic_uploader extends Controller
      */
     public function pic_edit()
     {
+
         $target_dir = "images/";
         $target_file = $target_dir . basename($_FILES["img"]["name"]);
         $uploadOk = 1;
@@ -74,6 +82,9 @@ class pic_uploader extends Controller
         {
             if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) 
             {
+
+                
+                
                 return $this->render('image_upload.html', array(
             'err' => 'success', 'pic_name' => $target_file));
             }

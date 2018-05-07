@@ -137,22 +137,42 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/Panel')) {
-            // app_userpanel_panelt
-            if ($pathinfo === '/PanelT') {
-                return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::PanelT',  '_route' => 'app_userpanel_panelt',);
+        // app_userpanel_panel
+        if ($pathinfo === '/Panel') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::Panel',  '_route' => 'app_userpanel_panel',);
+        }
+
+        if (0 === strpos($pathinfo, '/User')) {
+            // app_userpanel_userloginupdated
+            if ($pathinfo === '/UserLoginUpdated') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::UserLoginUpdated',  '_route' => 'app_userpanel_userloginupdated',);
             }
 
-            // app_userpanel_panel
-            if ($pathinfo === '/Panel') {
-                return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::Panel',  '_route' => 'app_userpanel_panel',);
+            // app_userpanel_useremailupdated
+            if ($pathinfo === '/UserEmailUpdated') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::UserEmailUpdated',  '_route' => 'app_userpanel_useremailupdated',);
+            }
+
+            // app_userpanel_userpassupdated
+            if ($pathinfo === '/UserPassUpdated') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::UserPassUpdated',  '_route' => 'app_userpanel_userpassupdated',);
+            }
+
+            // app_userpanel_useravatarupdated
+            if ($pathinfo === '/UserAvatarUpdated') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::UserAvatarUpdated',  '_route' => 'app_userpanel_useravatarupdated',);
             }
 
         }
 
-        // app_userpanel_userloginupdated
-        if ($pathinfo === '/UserLoginUpdated') {
-            return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::UserLoginUpdated',  '_route' => 'app_userpanel_userloginupdated',);
+        // app_userpanel_logout
+        if ($pathinfo === '/Logout') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::Logout',  '_route' => 'app_userpanel_logout',);
+        }
+
+        // app_userpanel_useraboutupdated
+        if ($pathinfo === '/UserAboutUpdated') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::UserAboutUpdated',  '_route' => 'app_userpanel_useraboutupdated',);
         }
 
         // app_pic_uploader_pic_upload
