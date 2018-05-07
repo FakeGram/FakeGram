@@ -1,0 +1,26 @@
+.PicturesMainContainer{
+	height:300px;
+	width:300px;
+	float:left;
+}
+
+.PicturesContainer{
+	height:254px;
+	width:254px;
+	border-width:2px;
+	border-style:dotted;
+	border-color:black;
+	text-align:center;
+}
+
+.Pictures{
+	display:block;
+	margin:auto;
+	max-width:250px;
+	max-height:250px;
+	vertical-align:middle;
+}
+
+.PicturesButton{
+	width:250px;
+}
