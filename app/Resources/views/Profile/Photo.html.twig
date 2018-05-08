@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Profile</title>
+		<meta charset="utf-8">
+	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset('assets/css/photo.css') }}" />
+	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	</head>
+	<body>
+	<div class="Container">
+		<div class="PhotoContainer">
+			<img src="/images/{{pic['pic']}}" class="Photo"/>
+		</div>
+		<div class="UserInfoAndTagsContainer">
+			<div class="UserInfoContainer">
+				
+				<img src="data:image/jpeg;base64,{{usr['avatar']}}" class="Avatar"/>
+				
+				<div class="Info">
+					<label>{{usr['login']}}</label>
+					<label>{{usr['email']}}</label>
+					<label>{{usr['nameAndSurrname']}}</label>
+				</info>
+			</div>
+			<div class="TagsContainer">
+				<div class="Tag">
+				TU BĘDĄ TAGI
+				</div>
+			</div>
+			<div class="CommentsContainer">
+				<div class="Comment">
+				Komentarze też będą :V
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	</body>
+</html>

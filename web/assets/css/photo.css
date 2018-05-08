@@ -1,0 +1,45 @@
+.Container{
+	width:1000px;
+}
+
+.PhotoContainer{
+	float:left;
+	width:600px;
+}
+
+.Photo{
+	max-width:600px;
+	max-height:600px;
+}
+
+.UserInfoAndTagsContainer{
+	float:left;
+	width:350px;
+}
+
+
+
+.UserInfoContainer{
+	width:350px;
+	height:350px;
+}
+
+.Avatar{
+	width:100px;
+	height:100px;
+	float:left;
+}
+
+.Info{
+	width:250px;
+	float:left;
+}
+
+.TagsContainer{
+	clear:both;
+}
+
+.CommentsContainer{
+	clear:both;
+}
+

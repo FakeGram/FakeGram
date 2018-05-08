@@ -16,16 +16,17 @@
 		<label>{{user['email']}}</label>
 		<label>{{user['nameAndSurrname']}}</label>
 		<label>{{user['about']}}</label>
-		<label><img width=100px height=100px src="data:image/jpeg;base64,{{user['avatar']}}/>"</label>
+		<label><img width=100px height=100px src="data:image/jpeg;base64,{{user['avatar']}}"/></label>
 		</div>
 		<div>
 			{% if pictures %}
 				{% for pic in pictures %}
 					<div class="PicturesMainContainer">
-					
+						<a href="Photo/{{pic['id']}}">
 						<div class="PicturesContainer">
 							<img src="/images/{{pic['pic']}}" class="Pictures"/>
 						</div>
+						</a>
 						<div class="PicturesButton">
 							<input type="button" value="Lubie to!"/>
 							<input type="button" value="Pokaż komentarze"/>
