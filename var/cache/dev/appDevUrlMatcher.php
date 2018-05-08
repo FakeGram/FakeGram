@@ -151,6 +151,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            // app_profile_photo
+            if (0 === strpos($pathinfo, '/Photo') && preg_match('#^/Photo/(?P<PhotoId>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_photo')), array (  '_controller' => 'AppBundle\\Controller\\Profile::Photo',));
+            }
+
             // app_userpanel_panel
             if ($pathinfo === '/Panel') {
                 return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::Panel',  '_route' => 'app_userpanel_panel',);
