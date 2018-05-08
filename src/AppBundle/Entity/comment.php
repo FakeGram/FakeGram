@@ -26,7 +26,7 @@ class comment
      /**
      * @ORM\Column(type="integer")
      */
-     private $pic_id;
+     private $picid;
      /**
      * @ORM\Column(type="datetime")
      */
@@ -93,26 +93,26 @@ class comment
         return $this->date;
     }
     /**
-     * Set pic_id
+     * Set picid
      *
-     * @param \DateTime $pic_id
+     * @param \DateTime $picid
      *
      * @return comment
      */
-    public function setPic_Id($pic_id)
+    public function setpicid($picid)
     {
-        $this->pic_id = $pic_id;
+        $this->picid = $picid;
 
         return $this;
     }
     /**
-     * Get pic_id
+     * Get picid
      *
      * @return integer
      */
-    public function getPic_Id()
+    public function getpicid()
     {
-        return $this->pic_id;
+        return $this->picid;
     }
      /**
      * Set comments_content

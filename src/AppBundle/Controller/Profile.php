@@ -30,6 +30,12 @@ class Profile extends Controller
 		 ->getRepository('AppBundle:user')->
 		 findOneByLogin($_SESSION["CurrentUser"]->getLogin());
 		 
+		 $comment=$this->GetDoctrine()
+		 ->getRepository('AppBundle:comment')->
+		 findOneByPicid(523)->getComments_Content();
+		 var_dump($comment);
+
+
 		 $usr['login']=$user->getLogin();
 		 $usr['email']=$user->getEmail();
 		 $usr['nameAndSurrname']=$user->getNameAndSurrname();
@@ -135,7 +141,7 @@ class Profile extends Controller
 	 }
 	 
 	 /**
-     * @Route("/Photo/{PhotoId}")
+     * @Route("/Profile/Photo/{PhotoId}")
      */
 	 
 	 public function Photo($PhotoId)

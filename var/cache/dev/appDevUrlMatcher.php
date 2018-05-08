@@ -149,11 +149,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_otherprofile')), array (  '_controller' => 'AppBundle\\Controller\\Profile::OtherProfile',));
                 }
 
-            }
+                // app_profile_photo
+                if (0 === strpos($pathinfo, '/Profile/Photo') && preg_match('#^/Profile/Photo/(?P<PhotoId>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_photo')), array (  '_controller' => 'AppBundle\\Controller\\Profile::Photo',));
+                }
 
-            // app_profile_photo
-            if (0 === strpos($pathinfo, '/Photo') && preg_match('#^/Photo/(?P<PhotoId>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_photo')), array (  '_controller' => 'AppBundle\\Controller\\Profile::Photo',));
             }
 
             // app_userpanel_panel
