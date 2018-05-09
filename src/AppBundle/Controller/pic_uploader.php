@@ -4,7 +4,9 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use AppBundle\Entity\user;
+use AppBundle\Entity\pic;
+use AppBundle\Entity\tags;
 class pic_uploader extends Controller
 {
     /**
@@ -84,8 +86,9 @@ class pic_uploader extends Controller
             {
             $desc=$_POST['desc'];
 
-            $Login=$DoctrineManager->getRepository('AppBundle:user')->findOneBylogin($_SESSION["CurrentUser"]->getLogin());
-
+            $DoctrineManager = $this->getDoctrine()->getManager();
+            //$Login=$DoctrineManager->getRepository('AppBundle:user')->findOneBylogin($_SESSION["CurrentUser"]->getLogin());
+            $Login=$_SESSION["CurrentUser"]->getLogin();
             $pic = new pic();
             $pic->setLogin($Login);
             $pic->setPic($target_file);
@@ -95,7 +98,7 @@ class pic_uploader extends Controller
             $statement->persist($pic);
             $statement->flush();
 
-            
+            /*
             $words=explode(' ', $desc);
             $tags=array();
             foreach ($words as $word)
@@ -108,7 +111,7 @@ class pic_uploader extends Controller
             }
 
             $PicId=$DoctrineManager->getRepository('AppBundle:pic')->findOneBypic();
-            $PicId=$PicId->getId();
+            $PicId=$PicId->getId();*/
 
                 return $this->render('image_upload.html', array(
             'err' => 'success', 'pic_name' => $target_file));
