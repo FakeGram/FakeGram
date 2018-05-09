@@ -41,5 +41,42 @@
 
 .CommentsContainer{
 	clear:both;
+	width:300px;
+	margin:25px;
+	border-color:black;
+	border-width:2px;
+	border-style:solid;
 }
 
+.Comment{
+	margin:5px;
+}
+
+.Date{
+	font-size:10px;
+	float:left;
+	width:50px;
+}
+
+.Author{
+	font-size:10px;
+	float:left;
+	width:75px;
+}
+
+.Content{
+	float:left;
+	width:161;
+}
+
+.CommentInput{
+	margin:5px;
+}
+
+.CommentInputContent{
+	width:257;
+}
+
+.CommentInputButton{
+	width:25px;
+}

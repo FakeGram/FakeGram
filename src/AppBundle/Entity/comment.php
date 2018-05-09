@@ -22,7 +22,7 @@ class comment
      /**
      * @ORM\Column(type="string", length=255)
      */
-     private $comments_content;
+     private $commentscontent;
      /**
      * @ORM\Column(type="integer")
      */
@@ -38,7 +38,7 @@ class comment
      /**
      * @ORM\Column(type="integer")
      */
-     private $tag_id;
+     private $tagid;
      /**
      * Get id
      *
@@ -121,9 +121,9 @@ class comment
      *
      * @return comment
      */
-    public function setComments_Content($comments_content)
+    public function setCommentsContent($commentscontent)
     {
-        $this->comments_content = $comments_content;
+        $this->comments_content = $commentscontent;
 
         return $this;
     }
@@ -132,9 +132,9 @@ class comment
      *
      * @return string
      */
-    public function getComments_Content()
+    public function getCommentsContent()
     {
-        return $this->comments_content;
+        return $this->commentscontent;
     }
     /**
      * Set tag_id
@@ -143,9 +143,9 @@ class comment
      *
      * @return comment
      */
-    public function setTag_Id($tag_id)
+    public function setTagId($tagid)
     {
-        $this->tag_id = $tag_id;
+        $this->tagid = $tag_id;
 
         return $this;
     }
@@ -154,8 +154,8 @@ class comment
      *
      * @return integer
      */
-    public function getTag_Id()
+    public function getTagId()
     {
-        return $this->tag_id;
+        return $this->tagid;
     }
 }

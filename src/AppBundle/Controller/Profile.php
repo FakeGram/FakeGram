@@ -26,14 +26,11 @@ class Profile extends Controller
 		 $pics=$this->GetDoctrine()
 		->getRepository('AppBundle:pic')
         ->findByLogin($_SESSION["CurrentUser"]->getLogin());
+		
 		 $user=$this->GetDoctrine()
 		 ->getRepository('AppBundle:user')->
 		 findOneByLogin($_SESSION["CurrentUser"]->getLogin());
 		 
-		 $comment=$this->GetDoctrine()
-		 ->getRepository('AppBundle:comment')->
-		 findOneByPicid(523)->getComments_Content();
-		 var_dump($comment);
 
 
 		 $usr['login']=$user->getLogin();
@@ -151,6 +148,7 @@ class Profile extends Controller
 		 $pic=$this->GetDoctrine()
 		->getRepository('AppBundle:pic')
         ->findOneById($PhotoId);
+		
 		$pictures['id']=$pic->getId();
 		$pictures['login']=$pic->getLogin();
 		$pictures['pic']=$pic->getPic();
@@ -160,6 +158,7 @@ class Profile extends Controller
 		$usr=$this->GetDoctrine()
 		->getRepository('AppBundle:user')
 		->findOneByLogin($pictures['login']);
+		
 		$user['login']=$usr->getLogin();
 		$user['email']=$usr->getEmail();
 		$user['nameAndSurrname']=$usr->getNameAndSurrname();
@@ -181,14 +180,15 @@ class Profile extends Controller
 		$comms=$this->GetDoctrine()
 		->getRepository('AppBundle:comment')
 		->findByPicid($pictures['id']);
+		
 		$i=0;
 		foreach($comms as $comm)
 		{
 			$comments[$i]['id']=$comm->getId();
-			$comments[$i]['content']=$comm->getComments_Content();
+			$comments[$i]['content']=$comm->getCommentsContent();
 			$comments[$i]['date']=date_format($comm->getDate(),'H:i d/m/y');
 			$comments[$i]['login']=$comm->getLogin();
-			$comments[$i]['tag_id']=$comm->getTag_Id();
+			$comments[$i]['tag_id']=$comm->getTagId();
 			$i++;
 		}
 		
