@@ -145,28 +145,4 @@ class pic
     {
         return $this->tag_id;
     }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     *
-     * @return pic
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
 }

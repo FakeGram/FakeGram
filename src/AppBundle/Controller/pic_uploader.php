@@ -82,9 +82,34 @@ class pic_uploader extends Controller
         {
             if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) 
             {
+            $desc=$_POST['desc'];
 
-                
-                
+            $Login=$DoctrineManager->getRepository('AppBundle:user')->findOneBylogin($_SESSION["CurrentUser"]->getLogin());
+
+            $pic = new pic();
+            $pic->setLogin($Login);
+            $pic->setPic($target_file);
+            $pic->setDescription($desc);
+        
+            $statement=$this->getDoctrine()->getManager();
+            $statement->persist($pic);
+            $statement->flush();
+
+            
+            $words=explode(' ', $desc);
+            $tags=array();
+            foreach ($words as $word)
+            {
+                if($word[0]='#') array_push($tags, $word);
+            }
+            foreach ($tags as $tag)
+            {
+                if($tag[strlen($tag)-1]==','||$tag[strlen($tag)-1]=='.') $tag=substr($tag, 0, strlen($tag)-2);
+            }
+
+            $PicId=$DoctrineManager->getRepository('AppBundle:pic')->findOneBypic();
+            $PicId=$PicId->getId();
+
                 return $this->render('image_upload.html', array(
             'err' => 'success', 'pic_name' => $target_file));
             }
