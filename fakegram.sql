@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 24 Kwi 2018, 22:20
+-- Czas generowania: 09 Maj 2018, 15:08
 -- Wersja serwera: 10.1.26-MariaDB
 -- Wersja PHP: 7.1.9
 
@@ -21,18 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `fakegram`
 --
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `avatar`
---
-
-CREATE TABLE `avatar` (
-  `id` int(11) NOT NULL,
-  `avatar` blob NOT NULL,
-  `logn` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -71,8 +59,9 @@ CREATE TABLE `pic` (
   `id` int(11) NOT NULL,
   `login` varchar(64) NOT NULL,
   `pic` varchar(255) NOT NULL,
-  `date` date NOT NULL,
-  `tag_id` int(11) NOT NULL
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `tag_id` int(11) DEFAULT NULL,
+  `description` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -128,23 +117,21 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `login`, `pass`, `email`, `name_and_surrname`, `activation_code`, `country`, `registration_date`, `avatar`, `role`, `about`, `status`) VALUES
 (1, 'Ragnar1', '3!PVweemo*_sjqW=xM', 'makabrak@gmail.com', NULL, NULL, NULL, '2018-04-07 21:51:11', NULL, NULL, NULL, 1),
 (2, 'Testowy', '$2y$10$e62os5Sp7R8rXzmI.fvz8O.EqeCe9QjDwbV7XJ5G3dUQ/T0.6SZIK', 'mail@mail.com', NULL, NULL, NULL, '2018-04-07 22:18:00', NULL, NULL, NULL, 1),
-(3, 'duuupa', '$2y$10$PJ5/zZRbXfz2coR/wZ8HouEtUEjL2pmWhYy.Yj1P.hyEDDHx24vY6', 'dupa@dupa.pl', NULL, NULL, NULL, '2018-04-24 13:31:39', NULL, NULL, NULL, 1);
+(3, 'duuupa', '$2y$10$PJ5/zZRbXfz2coR/wZ8HouEtUEjL2pmWhYy.Yj1P.hyEDDHx24vY6', 'dupa@dupa.pl', NULL, NULL, NULL, '2018-04-24 13:31:39', NULL, NULL, NULL, 1),
+(4, 'dev', '$2y$10$RSgOuNlaVM9jmnjcaYEeD.rYymqVFtmz0yUI7x4.Wz8TvM77DI/0a', 'd@d.pl', NULL, NULL, NULL, '2018-05-07 16:52:52', NULL, NULL, NULL, 1);
 
 --
 -- Indeksy dla zrzutów tabel
 --
 
 --
--- Indexes for table `avatar`
---
-ALTER TABLE `avatar`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `comment`
 --
 ALTER TABLE `comment`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pic_id` (`pic_id`),
+  ADD KEY `login` (`login`),
+  ADD KEY `tag_id` (`tag_id`);
 
 --
 -- Indexes for table `likes`
@@ -181,12 +168,6 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT dla tabeli `avatar`
---
-ALTER TABLE `avatar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT dla tabeli `comment`
 --
 ALTER TABLE `comment`
@@ -202,7 +183,7 @@ ALTER TABLE `likes`
 -- AUTO_INCREMENT dla tabeli `pic`
 --
 ALTER TABLE `pic`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `subscritptions`
@@ -220,7 +201,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
