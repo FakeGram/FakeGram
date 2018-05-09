@@ -31,9 +31,30 @@
 				</div>
 			</div>
 			<div class="CommentsContainer">
-				<div class="Comment">
-				Komentarze też będą :V
-				</div>
+				
+				{% for comm in comms %}
+					<div class="Comment">
+					
+					<div class="Date">
+						{{comm['date']}} 
+					</div>
+					<div class="Author">
+						{{comm['login']}} 
+					</div>
+					<div class="Content">
+						{{comm['content']}} 
+					</div>
+					<div style="clear:both;"></div>
+					</div>
+				{% endfor %}
+				{% if loggedIn==TRUE %}
+					<div class="CommentAdd">
+						<form>
+							<input type="text" class="Comment"/>
+							<input type="submit" class="CommentButton" value=">"/>
+						</form>
+					</div>
+				{% endif %}
 			</div>
 		</div>
 		
