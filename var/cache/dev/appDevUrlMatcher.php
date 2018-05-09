@@ -137,9 +137,30 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // app_userpanel_panel
-        if ($pathinfo === '/Panel') {
-            return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::Panel',  '_route' => 'app_userpanel_panel',);
+        if (0 === strpos($pathinfo, '/P')) {
+            if (0 === strpos($pathinfo, '/Profile')) {
+                // app_profile_profile
+                if ($pathinfo === '/Profile') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\Profile::Profile',  '_route' => 'app_profile_profile',);
+                }
+
+                // app_profile_otherprofile
+                if (preg_match('#^/Profile/(?P<Login>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_otherprofile')), array (  '_controller' => 'AppBundle\\Controller\\Profile::OtherProfile',));
+                }
+
+                // app_profile_photo
+                if (0 === strpos($pathinfo, '/Profile/Photo') && preg_match('#^/Profile/Photo/(?P<PhotoId>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_photo')), array (  '_controller' => 'AppBundle\\Controller\\Profile::Photo',));
+                }
+
+            }
+
+            // app_userpanel_panel
+            if ($pathinfo === '/Panel') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::Panel',  '_route' => 'app_userpanel_panel',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/User')) {

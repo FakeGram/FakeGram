@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Profile</title>
+		<meta charset="utf-8">
+	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}" />
+	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	</head>
+	<body>
+	<div style="width:900px;margin-left:auto;margin-right:auto;">
+		<div>
+		<label>{{user['login']}}</label>
+		<label>{{user['email']}}</label>
+		<label>{{user['nameAndSurrname']}}</label>
+		<label>{{user['about']}}</label>
+		<label><img width=100px height=100px src="data:image/jpeg;base64,{{user['avatar']}}"/></label>
+		</div>
+		<div>
+			{% if pictures %}
+				{% for pic in pictures %}
+					<div class="PicturesMainContainer">
+						<a href="Photo/{{pic['id']}}">
+						<div class="PicturesContainer">
+							<img src="/images/{{pic['pic']}}" class="Pictures"/>
+						</div>
+						</a>
+						<div class="PicturesButton">
+							<input type="button" value="Lubie to!"/>
+							<input type="button" value="Pokaż komentarze"/>
+						</div>
+					</div>
+				{% endfor %}
+			{% else %}
+				<label>Brak zdjęć</label>
+			{% endif %}
+		</div>
+		
+	</div>
+	</body>
+	</html>
