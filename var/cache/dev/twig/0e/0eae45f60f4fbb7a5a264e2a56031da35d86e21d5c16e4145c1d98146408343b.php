@@ -15,8 +15,8 @@ class __TwigTemplate_e36ba7366dd32db653aee527b3323fae17e7d1a59a238b0e1744ffa2b00
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_10645ac67034d9fe5f07702138e26ea4dd10e73f77b4d818c56595300e2c4123 = $this->env->getExtension("native_profiler");
-        $__internal_10645ac67034d9fe5f07702138e26ea4dd10e73f77b4d818c56595300e2c4123->enter($__internal_10645ac67034d9fe5f07702138e26ea4dd10e73f77b4d818c56595300e2c4123_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
+        $__internal_221dd8c077fad6015d41a871016459d9c0813023a46c22b142908d476c8c09e0 = $this->env->getExtension("native_profiler");
+        $__internal_221dd8c077fad6015d41a871016459d9c0813023a46c22b142908d476c8c09e0->enter($__internal_221dd8c077fad6015d41a871016459d9c0813023a46c22b142908d476c8c09e0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
 
         // line 1
         echo "<html>
@@ -63,14 +63,14 @@ class __TwigTemplate_e36ba7366dd32db653aee527b3323fae17e7d1a59a238b0e1744ffa2b00
         </div>
         <div class=\"collapse navbar-collapse\" id=\"myNavbar\">
           <ul class=\"nav navbar-nav navbar-right\">
-            <li><a href=\"#\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>
-            <li><a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>
+            <li><a href=\"/Registration\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>
+            <li><a href=\"/Login\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>
           </ul>
           <ul class=\"nav navbar-nav navbar-right nav-pages\">
             <li class=\"active\"><a href=\"#\">Home</a></li>
-            <li><a href=\"#\">Page 1</a></li>
-            <li><a href=\"#\">Page 2</a></li> 
-            <li><a href=\"#\">Page 3</a></li> 
+            <li><a href=\"/Profile\">Mój zdjęcia </a></li>
+            <li><a href=\"/test\">Dodaj Zdjęcie</a></li> 
+            <li><a href=\"/Panel\">Ustawienia</a></li> 
           </ul>
         </div>
       </div>
@@ -135,7 +135,7 @@ class __TwigTemplate_e36ba7366dd32db653aee527b3323fae17e7d1a59a238b0e1744ffa2b00
 </html>
 ";
         
-        $__internal_10645ac67034d9fe5f07702138e26ea4dd10e73f77b4d818c56595300e2c4123->leave($__internal_10645ac67034d9fe5f07702138e26ea4dd10e73f77b4d818c56595300e2c4123_prof);
+        $__internal_221dd8c077fad6015d41a871016459d9c0813023a46c22b142908d476c8c09e0->leave($__internal_221dd8c077fad6015d41a871016459d9c0813023a46c22b142908d476c8c09e0_prof);
 
     }
 
@@ -183,14 +183,14 @@ class __TwigTemplate_e36ba7366dd32db653aee527b3323fae17e7d1a59a238b0e1744ffa2b00
 /*         </div>*/
 /*         <div class="collapse navbar-collapse" id="myNavbar">*/
 /*           <ul class="nav navbar-nav navbar-right">*/
-/*             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>*/
-/*             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>*/
+/*             <li><a href="/Registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>*/
+/*             <li><a href="/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>*/
 /*           </ul>*/
 /*           <ul class="nav navbar-nav navbar-right nav-pages">*/
 /*             <li class="active"><a href="#">Home</a></li>*/
-/*             <li><a href="#">Page 1</a></li>*/
-/*             <li><a href="#">Page 2</a></li> */
-/*             <li><a href="#">Page 3</a></li> */
+/*             <li><a href="/Profile">Mój zdjęcia </a></li>*/
+/*             <li><a href="/test">Dodaj Zdjęcie</a></li> */
+/*             <li><a href="/Panel">Ustawienia</a></li> */
 /*           </ul>*/
 /*         </div>*/
 /*       </div>*/

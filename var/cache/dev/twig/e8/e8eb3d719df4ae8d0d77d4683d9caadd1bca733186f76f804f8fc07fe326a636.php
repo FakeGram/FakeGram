@@ -15,8 +15,8 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_0de849d3657b67ef338e5a93b16910182b5512bd0360fb3f4cefd81859984590 = $this->env->getExtension("native_profiler");
-        $__internal_0de849d3657b67ef338e5a93b16910182b5512bd0360fb3f4cefd81859984590->enter($__internal_0de849d3657b67ef338e5a93b16910182b5512bd0360fb3f4cefd81859984590_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserPanel/UserPanel.html.twig"));
+        $__internal_b51ba971c86102af4aad0bc0a38ba8dae0be60deb9aba85cf93e96d8935ba131 = $this->env->getExtension("native_profiler");
+        $__internal_b51ba971c86102af4aad0bc0a38ba8dae0be60deb9aba85cf93e96d8935ba131->enter($__internal_b51ba971c86102af4aad0bc0a38ba8dae0be60deb9aba85cf93e96d8935ba131_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserPanel/UserPanel.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -40,13 +40,16 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
   <form action=\"/Logout\">
     <button type=\"submit\" class=\"btn btn-default\">Wyloguj się</button>
   </form>
+  <form action=\"/\">
+    <button type=\"submit\" class=\"btn btn-default\">Strona Główna</button>
+  </form>
   <div class=\"row\">
     <div class=\"col-sm-4\" style=\"background-color:lavender;\">.Login: ";
-        // line 20
+        // line 23
         echo twig_escape_filter($this->env, (isset($context["login"]) ? $context["login"] : $this->getContext($context, "login")), "html", null, true);
         echo "</div>
     <div class=\"col-sm-8\" style=\"background-color:lavenderblush;\">Email: ";
-        // line 21
+        // line 24
         echo twig_escape_filter($this->env, (isset($context["email"]) ? $context["email"] : $this->getContext($context, "email")), "html", null, true);
         echo "</div>
   </div>
@@ -118,14 +121,14 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
 
 <form class=\"form-inline\" action =\"/UserAvatarUpdated\" method=\"post\" enctype=\"multipart/form-data\">
   <label for=\"avatar\">Twój  Avatar: <img height=\"100\" width=\"100\" src=\"data:image/jpeg;base64,";
-        // line 90
+        // line 93
         echo twig_escape_filter($this->env, (isset($context["Actual_avatar"]) ? $context["Actual_avatar"] : $this->getContext($context, "Actual_avatar")), "html", null, true);
         echo "\" /> </br></br>Edytuj Avatara</label>
   <input type=\"file\" name=\"avatar\" accept=\"image/jpeg,image/gif,image/jpg,image/png\"> </br>
   <button type= \"submit\" class=\"btn btn-default\">Zmień avatar</button>
 </br>
   <label> ";
-        // line 94
+        // line 97
         echo twig_escape_filter($this->env, (isset($context["err_comm"]) ? $context["err_comm"] : $this->getContext($context, "err_comm")), "html", null, true);
         echo " </label>
 
@@ -133,7 +136,7 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
 <form class=\"form-inline\" action=\"/UserAboutUpdated\" method=\"post\" id=\"aboutForm\">
   <label for=\"About Me\">Opis O Mnie</label>
   <textarea rows =\"25\" cols = \"90\" form =\"aboutForm\" name=\"edtAbout\" id=\"edtAbout\">";
-        // line 99
+        // line 102
         echo twig_escape_filter($this->env, (isset($context["about"]) ? $context["about"] : $this->getContext($context, "about")), "html", null, true);
         echo "</textarea>
 <input type= \"submit\" class=\"btn btn-default\" >Edytuj Opis</button>
@@ -173,7 +176,7 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
 </html>
 ";
         
-        $__internal_0de849d3657b67ef338e5a93b16910182b5512bd0360fb3f4cefd81859984590->leave($__internal_0de849d3657b67ef338e5a93b16910182b5512bd0360fb3f4cefd81859984590_prof);
+        $__internal_b51ba971c86102af4aad0bc0a38ba8dae0be60deb9aba85cf93e96d8935ba131->leave($__internal_b51ba971c86102af4aad0bc0a38ba8dae0be60deb9aba85cf93e96d8935ba131_prof);
 
     }
 
@@ -189,7 +192,7 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
 
     public function getDebugInfo()
     {
-        return array (  137 => 99,  129 => 94,  122 => 90,  50 => 21,  46 => 20,  37 => 14,  22 => 1,);
+        return array (  140 => 102,  132 => 97,  125 => 93,  53 => 24,  49 => 23,  37 => 14,  22 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -209,6 +212,9 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
 /*   <p>Resize the browser window to see the effect.</p>*/
 /*   <form action="/Logout">*/
 /*     <button type="submit" class="btn btn-default">Wyloguj się</button>*/
+/*   </form>*/
+/*   <form action="/">*/
+/*     <button type="submit" class="btn btn-default">Strona Główna</button>*/
 /*   </form>*/
 /*   <div class="row">*/
 /*     <div class="col-sm-4" style="background-color:lavender;">.Login: {{login}}</div>*/

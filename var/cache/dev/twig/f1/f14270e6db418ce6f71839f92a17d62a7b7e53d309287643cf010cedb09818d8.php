@@ -15,8 +15,8 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d7fb1748fed7d6d22abb5d789e6ac59a7d471c99abcf71a34d64951ae36bdf1b = $this->env->getExtension("native_profiler");
-        $__internal_d7fb1748fed7d6d22abb5d789e6ac59a7d471c99abcf71a34d64951ae36bdf1b->enter($__internal_d7fb1748fed7d6d22abb5d789e6ac59a7d471c99abcf71a34d64951ae36bdf1b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Photo.html.twig"));
+        $__internal_c3a5752d3f2ea786a0d7c15d4baabacfe90e0f343c70fb05793d738dbc897dc7 = $this->env->getExtension("native_profiler");
+        $__internal_c3a5752d3f2ea786a0d7c15d4baabacfe90e0f343c70fb05793d738dbc897dc7->enter($__internal_c3a5752d3f2ea786a0d7c15d4baabacfe90e0f343c70fb05793d738dbc897dc7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Photo.html.twig"));
 
         // line 1
         echo "<html>
@@ -45,7 +45,7 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 \t<body>
 \t<div class=\"Container\">
 \t\t<div class=\"PhotoContainer\">
-\t\t\t<img src=\"/images/";
+\t\t\t<img src=\"/";
         // line 15
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["pic"]) ? $context["pic"] : $this->getContext($context, "pic")), "pic", array(), "array"), "html", null, true);
         echo "\" class=\"Photo\"/>
@@ -79,10 +79,54 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t\t<div class=\"CommentsContainer\">
-\t\t\t\t<div class=\"Comment\">
-\t\t\t\tKomentarze też będą :V
-\t\t\t\t</div>
-\t\t\t</div>
+\t\t\t\t
+\t\t\t\t";
+        // line 35
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["comms"]) ? $context["comms"] : $this->getContext($context, "comms")));
+        foreach ($context['_seq'] as $context["_key"] => $context["comm"]) {
+            // line 36
+            echo "\t\t\t\t\t<div class=\"Comment\">
+\t\t\t\t\t
+\t\t\t\t\t<div class=\"Date\">
+\t\t\t\t\t\t";
+            // line 39
+            echo twig_escape_filter($this->env, $this->getAttribute($context["comm"], "date", array(), "array"), "html", null, true);
+            echo " 
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"Author\">
+\t\t\t\t\t\t";
+            // line 42
+            echo twig_escape_filter($this->env, $this->getAttribute($context["comm"], "login", array(), "array"), "html", null, true);
+            echo " 
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"Content\">
+\t\t\t\t\t\t";
+            // line 45
+            echo twig_escape_filter($this->env, $this->getAttribute($context["comm"], "content", array(), "array"), "html", null, true);
+            echo " 
+\t\t\t\t\t</div>
+\t\t\t\t\t<div style=\"clear:both;\"></div>
+\t\t\t\t\t</div>
+\t\t\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comm'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 50
+        echo "\t\t\t\t";
+        if (((isset($context["loggedIn"]) ? $context["loggedIn"] : $this->getContext($context, "loggedIn")) == true)) {
+            // line 51
+            echo "\t\t\t\t\t<div class=\"CommentAdd\">
+\t\t\t\t\t\t<form class=\"CommentInput\">
+\t\t\t\t\t\t\t<input type=\"text\" class=\"CommentInputContent\"/>
+\t\t\t\t\t\t\t<input type=\"submit\" class=\"CommentInputButton\" value=\">\"/>
+\t\t\t\t\t\t</form>
+\t\t\t\t\t</div>
+\t\t\t\t";
+        }
+        // line 58
+        echo "\t\t\t</div>
 \t\t</div>
 \t\t
 \t</div>
@@ -90,7 +134,7 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 \t</body>
 </html>";
         
-        $__internal_d7fb1748fed7d6d22abb5d789e6ac59a7d471c99abcf71a34d64951ae36bdf1b->leave($__internal_d7fb1748fed7d6d22abb5d789e6ac59a7d471c99abcf71a34d64951ae36bdf1b_prof);
+        $__internal_c3a5752d3f2ea786a0d7c15d4baabacfe90e0f343c70fb05793d738dbc897dc7->leave($__internal_c3a5752d3f2ea786a0d7c15d4baabacfe90e0f343c70fb05793d738dbc897dc7_prof);
 
     }
 
@@ -106,7 +150,7 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 
     public function getDebugInfo()
     {
-        return array (  72 => 25,  68 => 24,  64 => 23,  58 => 20,  50 => 15,  40 => 8,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
+        return array (  129 => 58,  120 => 51,  117 => 50,  106 => 45,  100 => 42,  94 => 39,  89 => 36,  85 => 35,  72 => 25,  68 => 24,  64 => 23,  58 => 20,  50 => 15,  40 => 8,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
     }
 }
 /* <html>*/
@@ -123,7 +167,7 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 /* 	<body>*/
 /* 	<div class="Container">*/
 /* 		<div class="PhotoContainer">*/
-/* 			<img src="/images/{{pic['pic']}}" class="Photo"/>*/
+/* 			<img src="/{{pic['pic']}}" class="Photo"/>*/
 /* 		</div>*/
 /* 		<div class="UserInfoAndTagsContainer">*/
 /* 			<div class="UserInfoContainer">*/
@@ -142,9 +186,30 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 /* 				</div>*/
 /* 			</div>*/
 /* 			<div class="CommentsContainer">*/
-/* 				<div class="Comment">*/
-/* 				Komentarze też będą :V*/
-/* 				</div>*/
+/* 				*/
+/* 				{% for comm in comms %}*/
+/* 					<div class="Comment">*/
+/* 					*/
+/* 					<div class="Date">*/
+/* 						{{comm['date']}} */
+/* 					</div>*/
+/* 					<div class="Author">*/
+/* 						{{comm['login']}} */
+/* 					</div>*/
+/* 					<div class="Content">*/
+/* 						{{comm['content']}} */
+/* 					</div>*/
+/* 					<div style="clear:both;"></div>*/
+/* 					</div>*/
+/* 				{% endfor %}*/
+/* 				{% if loggedIn==TRUE %}*/
+/* 					<div class="CommentAdd">*/
+/* 						<form class="CommentInput">*/
+/* 							<input type="text" class="CommentInputContent"/>*/
+/* 							<input type="submit" class="CommentInputButton" value=">"/>*/
+/* 						</form>*/
+/* 					</div>*/
+/* 				{% endif %}*/
 /* 			</div>*/
 /* 		</div>*/
 /* 		*/
