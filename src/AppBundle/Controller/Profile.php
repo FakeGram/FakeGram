@@ -238,7 +238,6 @@ class Profile extends Controller
 
 		 $DoctrineManager = $this->getDoctrine()->getManager();
 		$comment = new comment();
-		var_dump($_POST["CommentContent"]);
 		$commentcont= $_POST["CommentContent"];
 		$comment->setCommentsContent($commentcont);
 		$comment->setLogin($_SESSION['CurrentUser']->getLogin());
