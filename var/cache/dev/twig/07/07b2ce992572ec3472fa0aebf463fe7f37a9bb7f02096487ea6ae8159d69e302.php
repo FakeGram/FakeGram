@@ -15,8 +15,8 @@ class __TwigTemplate_46427c3423d61a3a59b760a0d91f6af20b08947d714d26f93cefd6a9b20
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b20d25f644c76118caecb961a98c1c0c63da3bf3870d8b0c03c66be181bb2a2d = $this->env->getExtension("native_profiler");
-        $__internal_b20d25f644c76118caecb961a98c1c0c63da3bf3870d8b0c03c66be181bb2a2d->enter($__internal_b20d25f644c76118caecb961a98c1c0c63da3bf3870d8b0c03c66be181bb2a2d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Login/Login.html.twig"));
+        $__internal_4b43c6cca6c495c05e1f8d299b1595f6ad2d1875f3da8f55c228439ba57f4f86 = $this->env->getExtension("native_profiler");
+        $__internal_4b43c6cca6c495c05e1f8d299b1595f6ad2d1875f3da8f55c228439ba57f4f86->enter($__internal_4b43c6cca6c495c05e1f8d299b1595f6ad2d1875f3da8f55c228439ba57f4f86_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Login/Login.html.twig"));
 
         // line 1
         echo "<html>
@@ -41,8 +41,13 @@ class __TwigTemplate_46427c3423d61a3a59b760a0d91f6af20b08947d714d26f93cefd6a9b20
         echo "\"></script>
 \t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
 
+  </form>
+  <form action=\"/\">
+    <button type=\"submit\" class=\"btn btn-default\">Strona Główna</button>
+  </form>
 \t</head>
-\t<body>
+\t
+  <body>
 \t<div class=\"container-fluid\">
     <div class=\"login-form\">
       <h2 class=\"log-in\">Zaloguj się !</h2>
@@ -60,7 +65,7 @@ class __TwigTemplate_46427c3423d61a3a59b760a0d91f6af20b08947d714d26f93cefd6a9b20
         </div>
         <button class=\"log-submit\" type=\"submit\" class=\"btn btn-default\">Zaloguj</button>
         <label>";
-        // line 29
+        // line 34
         echo twig_escape_filter($this->env, (isset($context["err_comm"]) ? $context["err_comm"] : $this->getContext($context, "err_comm")), "html", null, true);
         echo "</label>
       </form>
@@ -70,7 +75,7 @@ class __TwigTemplate_46427c3423d61a3a59b760a0d91f6af20b08947d714d26f93cefd6a9b20
 </html>
 ";
         
-        $__internal_b20d25f644c76118caecb961a98c1c0c63da3bf3870d8b0c03c66be181bb2a2d->leave($__internal_b20d25f644c76118caecb961a98c1c0c63da3bf3870d8b0c03c66be181bb2a2d_prof);
+        $__internal_4b43c6cca6c495c05e1f8d299b1595f6ad2d1875f3da8f55c228439ba57f4f86->leave($__internal_4b43c6cca6c495c05e1f8d299b1595f6ad2d1875f3da8f55c228439ba57f4f86_prof);
 
     }
 
@@ -86,7 +91,7 @@ class __TwigTemplate_46427c3423d61a3a59b760a0d91f6af20b08947d714d26f93cefd6a9b20
 
     public function getDebugInfo()
     {
-        return array (  64 => 29,  40 => 8,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
+        return array (  69 => 34,  40 => 8,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
     }
 }
 /* <html>*/
@@ -99,8 +104,13 @@ class __TwigTemplate_46427c3423d61a3a59b760a0d91f6af20b08947d714d26f93cefd6a9b20
 /* 	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>*/
 /* 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*/
 /* */
+/*   </form>*/
+/*   <form action="/">*/
+/*     <button type="submit" class="btn btn-default">Strona Główna</button>*/
+/*   </form>*/
 /* 	</head>*/
-/* 	<body>*/
+/* 	*/
+/*   <body>*/
 /* 	<div class="container-fluid">*/
 /*     <div class="login-form">*/
 /*       <h2 class="log-in">Zaloguj się !</h2>*/
