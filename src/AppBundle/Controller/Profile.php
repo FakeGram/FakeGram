@@ -5,7 +5,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\pics;
-
+use AppBundle\Entity\comment;
 class Profile extends Controller
  {
 	/**
@@ -171,8 +171,7 @@ class Profile extends Controller
     	else
     	{
        
-    		$user['avatar']=base64_encode(stream_get_contents($user['avatar']));    // wchodzi do tego momentu 
-       
+    		$user['avatar']=base64_encode(stream_get_contents($user['avatar']));    // wchodzi do tego momentu        
          
     	}
 		
@@ -224,4 +223,33 @@ class Profile extends Controller
 					));
 		}
 	 }
+
+ 	/**
+     * @Route("/Profile/Photo/NewComment/{PhotoId}")
+     */
+	 public function AddComment($PhotoId)
+	 {
+
+	 	if(!isset($_SESSION["CurrentUser"]))
+		 {
+			 return new Response("Nie jesteś zalogowany");
+		 }
+		 
+
+		 $DoctrineManager = $this->getDoctrine()->getManager();
+		$comment = new comment();
+		var_dump($_POST["CommentContent"]);
+		$commentcont= $_POST["CommentContent"];
+		$comment->setCommentsContent($commentcont);
+		$comment->setLogin($_SESSION['CurrentUser']->getLogin());
+		$comment->setpicid($PhotoId);
+		$comment->setTagId("tag");
+		//$comment->setTagId("0"); // narazie bez taga
+
+		$DoctrineManager->persist($comment);
+		$DoctrineManager->flush();
+
+		return $this->redirect("/Profile/Photo/".$PhotoId);
+	}
+
 }

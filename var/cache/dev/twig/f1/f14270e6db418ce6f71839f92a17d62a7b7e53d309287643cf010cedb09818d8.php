@@ -15,8 +15,8 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c3a5752d3f2ea786a0d7c15d4baabacfe90e0f343c70fb05793d738dbc897dc7 = $this->env->getExtension("native_profiler");
-        $__internal_c3a5752d3f2ea786a0d7c15d4baabacfe90e0f343c70fb05793d738dbc897dc7->enter($__internal_c3a5752d3f2ea786a0d7c15d4baabacfe90e0f343c70fb05793d738dbc897dc7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Photo.html.twig"));
+        $__internal_1b1a082254e2d6c996c3294257ac56c3fff34c7954e07ebe011a276ce4d0946e = $this->env->getExtension("native_profiler");
+        $__internal_1b1a082254e2d6c996c3294257ac56c3fff34c7954e07ebe011a276ce4d0946e->enter($__internal_1b1a082254e2d6c996c3294257ac56c3fff34c7954e07ebe011a276ce4d0946e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Photo.html.twig"));
 
         // line 1
         echo "<html>
@@ -118,9 +118,12 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
         if (((isset($context["loggedIn"]) ? $context["loggedIn"] : $this->getContext($context, "loggedIn")) == true)) {
             // line 51
             echo "\t\t\t\t\t<div class=\"CommentAdd\">
-\t\t\t\t\t\t<form class=\"CommentInput\">
-\t\t\t\t\t\t\t<input type=\"text\" class=\"CommentInputContent\"/>
-\t\t\t\t\t\t\t<input type=\"submit\" class=\"CommentInputButton\" value=\">\"/>
+\t\t\t\t\t\t<form class=\"CommentInput\" action=\"/Profile/Photo/NewComment/";
+            // line 52
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["pic"]) ? $context["pic"] : $this->getContext($context, "pic")), "id", array(), "array"), "html", null, true);
+            echo "\" method=\"post\">
+\t\t\t\t\t\t\t<input type=\"text\" class=\"CommentInputContent\"  name=\"CommentContent\" id=\"CommentContent\">
+\t\t\t\t\t\t\t<input type=\"submit\" class=\"CommentInputButton\" value=\"Dodaj Komentarz\"/>
 \t\t\t\t\t\t</form>
 \t\t\t\t\t</div>
 \t\t\t\t";
@@ -134,7 +137,7 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 \t</body>
 </html>";
         
-        $__internal_c3a5752d3f2ea786a0d7c15d4baabacfe90e0f343c70fb05793d738dbc897dc7->leave($__internal_c3a5752d3f2ea786a0d7c15d4baabacfe90e0f343c70fb05793d738dbc897dc7_prof);
+        $__internal_1b1a082254e2d6c996c3294257ac56c3fff34c7954e07ebe011a276ce4d0946e->leave($__internal_1b1a082254e2d6c996c3294257ac56c3fff34c7954e07ebe011a276ce4d0946e_prof);
 
     }
 
@@ -150,7 +153,7 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 
     public function getDebugInfo()
     {
-        return array (  129 => 58,  120 => 51,  117 => 50,  106 => 45,  100 => 42,  94 => 39,  89 => 36,  85 => 35,  72 => 25,  68 => 24,  64 => 23,  58 => 20,  50 => 15,  40 => 8,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
+        return array (  132 => 58,  123 => 52,  120 => 51,  117 => 50,  106 => 45,  100 => 42,  94 => 39,  89 => 36,  85 => 35,  72 => 25,  68 => 24,  64 => 23,  58 => 20,  50 => 15,  40 => 8,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
     }
 }
 /* <html>*/
@@ -204,9 +207,9 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 /* 				{% endfor %}*/
 /* 				{% if loggedIn==TRUE %}*/
 /* 					<div class="CommentAdd">*/
-/* 						<form class="CommentInput">*/
-/* 							<input type="text" class="CommentInputContent"/>*/
-/* 							<input type="submit" class="CommentInputButton" value=">"/>*/
+/* 						<form class="CommentInput" action="/Profile/Photo/NewComment/{{pic['id']}}" method="post">*/
+/* 							<input type="text" class="CommentInputContent"  name="CommentContent" id="CommentContent">*/
+/* 							<input type="submit" class="CommentInputButton" value="Dodaj Komentarz"/>*/
 /* 						</form>*/
 /* 					</div>*/
 /* 				{% endif %}*/

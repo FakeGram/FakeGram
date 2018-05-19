@@ -115,15 +115,15 @@ class comment
         return $this->picid;
     }
      /**
-     * Set comments_content
+     * Set commentscontent
      *
-     * @param string $comments_content
+     * @param string $commentscontent
      *
      * @return comment
      */
     public function setCommentsContent($commentscontent)
     {
-        $this->comments_content = $commentscontent;
+        $this->commentscontent = $commentscontent;
 
         return $this;
     }
@@ -145,7 +145,7 @@ class comment
      */
     public function setTagId($tagid)
     {
-        $this->tagid = $tag_id;
+        $this->tagid = $tagid;
 
         return $this;
     }
