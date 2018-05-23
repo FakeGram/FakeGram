@@ -21,7 +21,7 @@ class likes
       /**
      * @ORM\Column(type="integer")
      */
-     private $pic_id;
+     private $picid;
      /**
      * @ORM\Column(type="string", length=64)
      */
@@ -50,7 +50,7 @@ class likes
      */
     public function setPicId($picId)
     {
-        $this->pic_id = $picId;
+        $this->picid = $picId;
     
         return $this;
     }
@@ -62,7 +62,7 @@ class likes
      */
     public function getPicId()
     {
-        return $this->pic_id;
+        return $this->picid;
     }
 
     /**

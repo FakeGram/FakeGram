@@ -160,6 +160,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                         return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_addcomment')), array (  '_controller' => 'AppBundle\\Controller\\Profile::AddComment',));
                     }
 
+                    // app_profile_like
+                    if (0 === strpos($pathinfo, '/Profile/Photo/AddLike') && preg_match('#^/Profile/Photo/AddLike/(?P<PhotoId>[^/]++)/(?P<login>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_like')), array (  '_controller' => 'AppBundle\\Controller\\Profile::Like',));
+                    }
+
                 }
 
             }

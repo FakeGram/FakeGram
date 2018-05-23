@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\pics;
 use AppBundle\Entity\comment;
+use AppBundle\Entity\likes;
 class Profile extends Controller
  {
 	/**
@@ -191,6 +192,10 @@ class Profile extends Controller
 		
 		if(!isset($tags)) $tags=NULL;
 		
+		$likes=$this->GetDoctrine()
+		->getRepository('AppBundle:likes')
+		->findByPicid($PhotoId);
+		$like=count($likes);
 		$comms=$this->GetDoctrine()
 		->getRepository('AppBundle:comment')
 		->findByPicid($pictures['id']);
@@ -211,6 +216,7 @@ class Profile extends Controller
 		->getRepository('AppBundle:tags')
 		->findBy*/
 		
+		//var_dump($_SESSION);
 		
 		if(isset($_SESSION["CurrentUser"]))
 			$loggedIn=true;
@@ -219,22 +225,22 @@ class Profile extends Controller
 		{
 			if(isset($comments))
 			return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>true,'tags'=>$tags  // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>true,'tags'=>$tags,'login'=>$_SESSION['CurrentUser']->getLogin(),'likes'=>$like  // Tablica do wysyłania zmiennych do widoku 
 					));
 			else 
 				return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>true,'tags'=>$tags // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>true,'tags'=>$tags,'login'=>$_SESSION['CurrentUser']->getLogin(),'likes'=>$like // Tablica do wysyłania zmiennych do widoku 
 					));
 		}
 		else
 		{
 			if(isset($comments))
 			return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>false,'tags'=>$tags  // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>false,'tags'=>$tags,'likes'=>$like  // Tablica do wysyłania zmiennych do widoku 
 					));
 			else 
 				return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>false,'tags'=>$tags  // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>false,'tags'=>$tags,'likes'=>$like  // Tablica do wysyłania zmiennych do widoku 
 					));
 		}
 	 }
@@ -263,6 +269,36 @@ class Profile extends Controller
 		$DoctrineManager->persist($comment);
 		$DoctrineManager->flush();
 
+		return $this->redirect("/Profile/Photo/".$PhotoId);
+	}
+	
+	/**
+     * @Route("/Profile/Photo/AddLike/{PhotoId}/{login}")
+     */
+	public function Like($PhotoId, $login)
+	{
+		if(!isset($_SESSION["CurrentUser"]))
+		{
+			 return new Response("Nie jesteś zalogowany");
+		}
+		$likes=$this->GetDoctrine()
+		->getRepository('AppBundle:likes')
+		->findByPicid($PhotoId);
+		
+		foreach($likes as $like)
+		{
+			if($like->getLogin()==$login) $fail=TRUE;
+		}
+		if(isset($fail)) return new response('Co za dużo lajków to niezdrowo!');
+		$DoctrineManager = $this->getDoctrine()->getManager();
+		$like=new likes();
+		$like->setPicId($PhotoId);
+		$like->setLogin($login);
+		
+		$DoctrineManager->persist($like);
+		$DoctrineManager->flush();
+		
+		
 		return $this->redirect("/Profile/Photo/".$PhotoId);
 	}
 

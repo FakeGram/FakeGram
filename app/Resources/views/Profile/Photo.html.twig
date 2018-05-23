@@ -33,7 +33,9 @@
 				</div>
 			</div>
 			<div class="CommentsContainer">
-				
+				<div class="Likes">
+					Likes:{{likes}}
+				</div>
 				{% for comm in comms %}
 					<div class="Comment">
 					
@@ -54,6 +56,13 @@
 						<form class="CommentInput" action="/Profile/Photo/NewComment/{{pic['id']}}" method="post">
 							<input type="text" class="CommentInputContent"  name="CommentContent" id="CommentContent">
 							<input type="submit" class="CommentInputButton" value="Dodaj Komentarz"/>
+						</form>
+					</div>
+				{% endif %}
+				{% if loggedIn==TRUE %}
+					<div class="LikeButton">
+						<form  action="/Profile/Photo/AddLike/{{pic['id']}}/{{login}}" method="post">
+							<input type="submit" class="CommentInputButton" value="<3"/>
 						</form>
 					</div>
 				{% endif %}
