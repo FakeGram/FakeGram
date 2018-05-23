@@ -29,7 +29,7 @@ class tags
      /**
      * @ORM\Column(type="integer")
      */
-     private $content_id;
+     private $contentid;
     
 
 
@@ -99,9 +99,9 @@ class tags
      *
      * @return tags
      */
-    public function setContentId($contentId)
+    public function setContentid($contentId)
     {
-        $this->content_id = $contentId;
+        $this->contentId = $contentId;
     
         return $this;
     }
@@ -111,8 +111,8 @@ class tags
      *
      * @return integer
      */
-    public function getContentId()
+    public function getContentid()
     {
-        return $this->content_id;
+        return $this->contentId;
     }
 }
