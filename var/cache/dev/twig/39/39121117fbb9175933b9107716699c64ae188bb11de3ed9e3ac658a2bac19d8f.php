@@ -15,8 +15,8 @@ class __TwigTemplate_67c99a84ee2654f70bbcde45d54bc7ab614384f8c6008c19b01143f3dcc
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_988a1e82e8c062181f1e94e71fd754bb39466c613d877efeeba47fa035a7717c = $this->env->getExtension("native_profiler");
-        $__internal_988a1e82e8c062181f1e94e71fd754bb39466c613d877efeeba47fa035a7717c->enter($__internal_988a1e82e8c062181f1e94e71fd754bb39466c613d877efeeba47fa035a7717c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserPanel/UserPanel.html.twig"));
+        $__internal_82de404dba80d4f3449f2302ea116b4d90fb36d3b824e7e02dca0fb83d516afc = $this->env->getExtension("native_profiler");
+        $__internal_82de404dba80d4f3449f2302ea116b4d90fb36d3b824e7e02dca0fb83d516afc->enter($__internal_82de404dba80d4f3449f2302ea116b4d90fb36d3b824e7e02dca0fb83d516afc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserPanel/UserPanel.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -28,25 +28,31 @@ class __TwigTemplate_67c99a84ee2654f70bbcde45d54bc7ab614384f8c6008c19b01143f3dcc
   <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
   <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
   <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
+
+<form action=\"/Logout\">
+    <button type=\"submit\" class=\"btn btn-default\">Wyloguj się</button>
+  </form>
+  <form action=\"/\">
+    <button type=\"submit\" class=\"btn btn-default\">Strona Główna</button>
+  </form>
+
 </head>
 <body>
  
  <div class=\"container-fluid\">
   <h1>Witaj ";
-        // line 14
+        // line 22
         echo twig_escape_filter($this->env, (isset($context["login"]) ? $context["login"] : $this->getContext($context, "login")), "html", null, true);
         echo "!</h1>
   <p>Resize the browser window to see the effect.</p>
-  <form action=\"/Logout\">
-    <button type=\"submit\" class=\"btn btn-default\">Wyloguj się</button>
-  </form>
+  
   <div class=\"row\">
     <div class=\"col-sm-4\" style=\"background-color:lavender;\">.Login: ";
-        // line 20
+        // line 26
         echo twig_escape_filter($this->env, (isset($context["login"]) ? $context["login"] : $this->getContext($context, "login")), "html", null, true);
         echo "</div>
     <div class=\"col-sm-8\" style=\"background-color:lavenderblush;\">Email: ";
-        // line 21
+        // line 27
         echo twig_escape_filter($this->env, (isset($context["email"]) ? $context["email"] : $this->getContext($context, "email")), "html", null, true);
         echo "</div>
   </div>
@@ -57,10 +63,11 @@ class __TwigTemplate_67c99a84ee2654f70bbcde45d54bc7ab614384f8c6008c19b01143f3dcc
 <div class=\"container\">
   <div class=\"panel-group\">
     <div class=\"panel panel-default\">
+      
+      <!--
       <div class=\"panel-heading\">Sample Tekst !</div>
-      <div class=\"panel-body\">Panel Content</div>
-    </div>
-
+      <div class=\"panel-body\">Panel Content</div> -->
+    
 <!-- Ponieżej formularze Edycji Danych -->
 
     <form class=\"form-inline\" action=\"/UserLoginUpdated\" method=\"post\">
@@ -118,14 +125,14 @@ class __TwigTemplate_67c99a84ee2654f70bbcde45d54bc7ab614384f8c6008c19b01143f3dcc
 
 <form class=\"form-inline\" action =\"/UserAvatarUpdated\" method=\"post\" enctype=\"multipart/form-data\">
   <label for=\"avatar\">Twój  Avatar: <img height=\"100\" width=\"100\" src=\"data:image/jpeg;base64,";
-        // line 90
+        // line 97
         echo twig_escape_filter($this->env, (isset($context["Actual_avatar"]) ? $context["Actual_avatar"] : $this->getContext($context, "Actual_avatar")), "html", null, true);
         echo "\" /> </br></br>Edytuj Avatara</label>
   <input type=\"file\" name=\"avatar\" accept=\"image/jpeg,image/gif,image/jpg,image/png\"> </br>
   <button type= \"submit\" class=\"btn btn-default\">Zmień avatar</button>
 </br>
   <label> ";
-        // line 94
+        // line 101
         echo twig_escape_filter($this->env, (isset($context["err_comm"]) ? $context["err_comm"] : $this->getContext($context, "err_comm")), "html", null, true);
         echo " </label>
 
@@ -133,11 +140,14 @@ class __TwigTemplate_67c99a84ee2654f70bbcde45d54bc7ab614384f8c6008c19b01143f3dcc
 <form class=\"form-inline\" action=\"/UserAboutUpdated\" method=\"post\" id=\"aboutForm\">
   <label for=\"About Me\">Opis O Mnie</label>
   <textarea rows =\"25\" cols = \"90\" form =\"aboutForm\" name=\"edtAbout\" id=\"edtAbout\">";
-        // line 99
+        // line 106
         echo twig_escape_filter($this->env, (isset($context["about"]) ? $context["about"] : $this->getContext($context, "about")), "html", null, true);
         echo "</textarea>
 <input type= \"submit\" class=\"btn btn-default\" >Edytuj Opis</button>
 </form>
+
+</div> <!-- koniec kontenera -->
+
 <!--
     <div class=\"panel panel-primary\">
       <div class=\"panel-heading\">Panel with panel-primary class</div>
@@ -173,7 +183,7 @@ class __TwigTemplate_67c99a84ee2654f70bbcde45d54bc7ab614384f8c6008c19b01143f3dcc
 </html>
 ";
         
-        $__internal_988a1e82e8c062181f1e94e71fd754bb39466c613d877efeeba47fa035a7717c->leave($__internal_988a1e82e8c062181f1e94e71fd754bb39466c613d877efeeba47fa035a7717c_prof);
+        $__internal_82de404dba80d4f3449f2302ea116b4d90fb36d3b824e7e02dca0fb83d516afc->leave($__internal_82de404dba80d4f3449f2302ea116b4d90fb36d3b824e7e02dca0fb83d516afc_prof);
 
     }
 
@@ -189,7 +199,7 @@ class __TwigTemplate_67c99a84ee2654f70bbcde45d54bc7ab614384f8c6008c19b01143f3dcc
 
     public function getDebugInfo()
     {
-        return array (  137 => 99,  129 => 94,  122 => 90,  50 => 21,  46 => 20,  37 => 14,  22 => 1,);
+        return array (  144 => 106,  136 => 101,  129 => 97,  56 => 27,  52 => 26,  45 => 22,  22 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -201,15 +211,21 @@ class __TwigTemplate_67c99a84ee2654f70bbcde45d54bc7ab614384f8c6008c19b01143f3dcc
 /*   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">*/
 /*   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*/
 /*   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>*/
+/* */
+/* <form action="/Logout">*/
+/*     <button type="submit" class="btn btn-default">Wyloguj się</button>*/
+/*   </form>*/
+/*   <form action="/">*/
+/*     <button type="submit" class="btn btn-default">Strona Główna</button>*/
+/*   </form>*/
+/* */
 /* </head>*/
 /* <body>*/
 /*  */
 /*  <div class="container-fluid">*/
 /*   <h1>Witaj {{login}}!</h1>*/
 /*   <p>Resize the browser window to see the effect.</p>*/
-/*   <form action="/Logout">*/
-/*     <button type="submit" class="btn btn-default">Wyloguj się</button>*/
-/*   </form>*/
+/*   */
 /*   <div class="row">*/
 /*     <div class="col-sm-4" style="background-color:lavender;">.Login: {{login}}</div>*/
 /*     <div class="col-sm-8" style="background-color:lavenderblush;">Email: {{email}}</div>*/
@@ -221,10 +237,11 @@ class __TwigTemplate_67c99a84ee2654f70bbcde45d54bc7ab614384f8c6008c19b01143f3dcc
 /* <div class="container">*/
 /*   <div class="panel-group">*/
 /*     <div class="panel panel-default">*/
+/*       */
+/*       <!--*/
 /*       <div class="panel-heading">Sample Tekst !</div>*/
-/*       <div class="panel-body">Panel Content</div>*/
-/*     </div>*/
-/* */
+/*       <div class="panel-body">Panel Content</div> -->*/
+/*     */
 /* <!-- Ponieżej formularze Edycji Danych -->*/
 /* */
 /*     <form class="form-inline" action="/UserLoginUpdated" method="post">*/
@@ -293,6 +310,9 @@ class __TwigTemplate_67c99a84ee2654f70bbcde45d54bc7ab614384f8c6008c19b01143f3dcc
 /*   <textarea rows ="25" cols = "90" form ="aboutForm" name="edtAbout" id="edtAbout">{{about}}</textarea>*/
 /* <input type= "submit" class="btn btn-default" >Edytuj Opis</button>*/
 /* </form>*/
+/* */
+/* </div> <!-- koniec kontenera -->*/
+/* */
 /* <!--*/
 /*     <div class="panel panel-primary">*/
 /*       <div class="panel-heading">Panel with panel-primary class</div>*/
