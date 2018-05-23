@@ -175,6 +175,21 @@ class Profile extends Controller
          
     	}
 		
+		$tgs=$this->GetDoctrine()
+		->getRepository('AppBundle:tags')
+		->findByContentid($PhotoId);
+		// $tags[];
+		$i=0;
+		foreach($tgs as $tag)
+		{
+			if($tag->getOf()=='pic') 
+			{
+				$tags[$i]=$tag->getTag();
+				$i++;
+			}
+		}
+		
+		if(!isset($tags)) $tags=NULL;
 		
 		$comms=$this->GetDoctrine()
 		->getRepository('AppBundle:comment')
@@ -204,22 +219,22 @@ class Profile extends Controller
 		{
 			if(isset($comments))
 			return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>true  // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>true,'tags'=>$tags  // Tablica do wysyłania zmiennych do widoku 
 					));
 			else 
 				return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>true  // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>true,'tags'=>$tags // Tablica do wysyłania zmiennych do widoku 
 					));
 		}
 		else
 		{
 			if(isset($comments))
 			return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>false  // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>false,'tags'=>$tags  // Tablica do wysyłania zmiennych do widoku 
 					));
 			else 
 				return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>false  // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>false,'tags'=>$tags  // Tablica do wysyłania zmiennych do widoku 
 					));
 		}
 	 }

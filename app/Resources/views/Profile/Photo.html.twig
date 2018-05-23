@@ -27,7 +27,9 @@
 			</div>
 			<div class="TagsContainer">
 				<div class="Tag">
-				TU BĘDĄ TAGI
+				{% for tag in tags %}
+				<a href="">{{tag}}</a> 
+				{% endfor %}
 				</div>
 			</div>
 			<div class="CommentsContainer">
