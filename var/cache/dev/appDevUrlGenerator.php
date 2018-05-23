@@ -54,6 +54,7 @@ class appDevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         'app_userpanel_useraboutupdated' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\UserPanel::UserAboutUpdated',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/UserAboutUpdated',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'app_pic_uploader_pic_upload' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\pic_uploader::pic_upload',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/upload',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'app_pic_uploader_execute_pic_upload' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\pic_uploader::execute_pic_upload',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/pic_upload',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'app_pic_uploader_save_edited' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\pic_uploader::save_edited',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/save_edited',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
     );
         }
     }

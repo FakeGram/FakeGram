@@ -54,7 +54,8 @@
                   <div class="effect_tile" onclick="apply_effect3();"><canvas id="effect3_canvas" width="100px" height="100px"></canvas></div>
                   <div class="effect_tile" onclick="apply_effect4();"><canvas id="effect4_canvas" width="100px" height="100px"></canvas></div>
                 </div>
-            </div>
+                <button class="btn" onclick="save();">Save Photo</button>
+            </div> 
 
 
 
@@ -171,12 +172,16 @@
 
       function save()
       {
-        var canvasData = canvasElement.toDataURL("image/png");
+        //var data = document.getElementById("edit_picture_cnv").toDataURL();
+        //var canvasData = canvasElement.toDataURL("image/png");
+        var canvasData = document.getElementById("edit_picture_cnv").toDataURL();
+        var PictureName = document.getElementById("hidden_pic_title").innerHTML;
         $.ajax({
-        url:'save_edited.php', 
+        url:'save_edited', 
         type:'POST', 
         data:{
-        data:canvasData
+        name:PictureName,
+        pic:canvasData
         }
         });
       }

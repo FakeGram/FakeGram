@@ -130,7 +130,29 @@ class pic_uploader extends Controller
      */
     public function save_edited()
     {
+        $pic = $_POST['pic'];
+        $pic = substr($pic,strpos($pic,",")+1);
+        $pic = base64_decode($pic);
+        $pic_name=$_POST['name'];
 
+        $user=$_SESSION['CurrentUser']->getLogin();
+        $DoctrineManager = $this->getDoctrine()->getManager();
+        $picNameToCompare = $this->getDoctrine()->getRepository('AppBundle:pic')->findOneByPic($pic_name)->getPic();
+        if($picNameToCompare!=$pic_name||!isset($_SESSION))
+        {
+            return new Response("o ty ty niedobry");
+        }
+        else
+        {
+            //move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
+            //$fp = fopen($pic_name, 'w');
+            //fwrite($fp, $file);
+            file_put_contents($pic_name, $pic);
+            return $this->render('Profile/Profile.html');
+        }
+
+
+/*
         $target_dir = "images/";
         $target_file = $target_dir . basename($_FILES["img"]["name"]);
         $uploadOk = 1;
@@ -186,7 +208,7 @@ class pic_uploader extends Controller
                 return $this->render('ImgOperations/image_upload.html', array(
                 'err' => 'Wystąpiły pewne problemy z obrazem'));
             }
-        }
+        }*/
 
     }
 }

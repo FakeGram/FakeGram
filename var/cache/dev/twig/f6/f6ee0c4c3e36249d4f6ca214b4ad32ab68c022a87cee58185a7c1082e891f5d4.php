@@ -15,8 +15,8 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_51177a9f72f4aad1db40a7fc41c0d53a68d16bf0fae23d80201ef1f99d0bff8e = $this->env->getExtension("native_profiler");
-        $__internal_51177a9f72f4aad1db40a7fc41c0d53a68d16bf0fae23d80201ef1f99d0bff8e->enter($__internal_51177a9f72f4aad1db40a7fc41c0d53a68d16bf0fae23d80201ef1f99d0bff8e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ImgOperations/image_edit.html.twig"));
+        $__internal_8519c3bb175deefe95baf741e82a60d822a5c20e601e6ae92c3f4862204dfa44 = $this->env->getExtension("native_profiler");
+        $__internal_8519c3bb175deefe95baf741e82a60d822a5c20e601e6ae92c3f4862204dfa44->enter($__internal_8519c3bb175deefe95baf741e82a60d822a5c20e601e6ae92c3f4862204dfa44_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ImgOperations/image_edit.html.twig"));
 
         // line 1
         echo "<html>
@@ -99,21 +99,22 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
                   <div class=\"effect_tile\" onclick=\"apply_effect3();\"><canvas id=\"effect3_canvas\" width=\"100px\" height=\"100px\"></canvas></div>
                   <div class=\"effect_tile\" onclick=\"apply_effect4();\"><canvas id=\"effect4_canvas\" width=\"100px\" height=\"100px\"></canvas></div>
                 </div>
-            </div>
+                <button class=\"btn\" onclick=\"save();\">Save Photo</button>
+            </div> 
 
 
 
             <!-- Useful things for js below XD -->
             <div id=\"hidden_pic_title\" style=\"display: none;\">";
-        // line 62
+        // line 63
         echo twig_escape_filter($this->env, (isset($context["pic_name"]) ? $context["pic_name"] : $this->getContext($context, "pic_name")), "html", null, true);
         echo "</div>
             <img id=\"pic_to_redraw\" style=\"display: none;\" width=\"500px\" height=\"500px\" src=\"";
-        // line 63
+        // line 64
         echo twig_escape_filter($this->env, (isset($context["pic_name"]) ? $context["pic_name"] : $this->getContext($context, "pic_name")), "html", null, true);
         echo "\" />
             <img id=\"pic_to_redraw_scale\" style=\"display: none;\" width=\"100px\" height=\"100px\" src=\"";
-        // line 64
+        // line 65
         echo twig_escape_filter($this->env, (isset($context["pic_name"]) ? $context["pic_name"] : $this->getContext($context, "pic_name")), "html", null, true);
         echo "\" />
         </div>
@@ -152,9 +153,6 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
           img = document.getElementById(\"pic_to_redraw\");
           ctx.drawImage(img, 0, 0, 500, 500);
 
-          //cnv.getContext('2d').filter = 'blur(5px) opacity(90%)';
-          //ctx.drawImage(img, 0, 0);
-
           //effects below:
           var effect0 = document.getElementById(\"effect0_canvas\");
           var effect1 = document.getElementById(\"effect1_canvas\");
@@ -187,7 +185,6 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
         cnv = document.getElementById(\"edit_picture_cnv\");
         ctx = cnv.getContext(\"2d\");
         img = document.getElementById(\"pic_to_redraw\");
-        cnv.getContext('2d').filter = 'blur(0px) opacity(0%)';
         ctx.drawImage(img, 0, 0, 500, 500);
       }
 
@@ -227,6 +224,22 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
         ctx.drawImage(img, 0, 0, 500, 500);
       }
 
+      function save()
+      {
+        //var data = document.getElementById(\"edit_picture_cnv\").toDataURL();
+        //var canvasData = canvasElement.toDataURL(\"image/png\");
+        var canvasData = document.getElementById(\"edit_picture_cnv\").toDataURL();
+        var PictureName = document.getElementById(\"hidden_pic_title\").innerHTML;
+        \$.ajax({
+        url:'save_edited', 
+        type:'POST', 
+        data:{
+        name:PictureName,
+        pic:canvasData
+        }
+        });
+      }
+
       \$( document ).ready(function() {
         \$(\".owl-carousel\").owlCarousel();
         \$('.owl-carousel').owlCarousel({
@@ -252,7 +265,7 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 </html>
 ";
         
-        $__internal_51177a9f72f4aad1db40a7fc41c0d53a68d16bf0fae23d80201ef1f99d0bff8e->leave($__internal_51177a9f72f4aad1db40a7fc41c0d53a68d16bf0fae23d80201ef1f99d0bff8e_prof);
+        $__internal_8519c3bb175deefe95baf741e82a60d822a5c20e601e6ae92c3f4862204dfa44->leave($__internal_8519c3bb175deefe95baf741e82a60d822a5c20e601e6ae92c3f4862204dfa44_prof);
 
     }
 
@@ -268,7 +281,7 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 
     public function getDebugInfo()
     {
-        return array (  117 => 64,  113 => 63,  109 => 62,  61 => 17,  57 => 16,  53 => 15,  49 => 14,  43 => 11,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
+        return array (  118 => 65,  114 => 64,  110 => 63,  61 => 17,  57 => 16,  53 => 15,  49 => 14,  43 => 11,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
     }
 }
 /* <html>*/
@@ -327,7 +340,8 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 /*                   <div class="effect_tile" onclick="apply_effect3();"><canvas id="effect3_canvas" width="100px" height="100px"></canvas></div>*/
 /*                   <div class="effect_tile" onclick="apply_effect4();"><canvas id="effect4_canvas" width="100px" height="100px"></canvas></div>*/
 /*                 </div>*/
-/*             </div>*/
+/*                 <button class="btn" onclick="save();">Save Photo</button>*/
+/*             </div> */
 /* */
 /* */
 /* */
@@ -371,9 +385,6 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 /*           img = document.getElementById("pic_to_redraw");*/
 /*           ctx.drawImage(img, 0, 0, 500, 500);*/
 /* */
-/*           //cnv.getContext('2d').filter = 'blur(5px) opacity(90%)';*/
-/*           //ctx.drawImage(img, 0, 0);*/
-/* */
 /*           //effects below:*/
 /*           var effect0 = document.getElementById("effect0_canvas");*/
 /*           var effect1 = document.getElementById("effect1_canvas");*/
@@ -406,7 +417,6 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 /*         cnv = document.getElementById("edit_picture_cnv");*/
 /*         ctx = cnv.getContext("2d");*/
 /*         img = document.getElementById("pic_to_redraw");*/
-/*         cnv.getContext('2d').filter = 'blur(0px) opacity(0%)';*/
 /*         ctx.drawImage(img, 0, 0, 500, 500);*/
 /*       }*/
 /* */
@@ -444,6 +454,22 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 /*         img = document.getElementById("pic_to_redraw");*/
 /*         cnv.getContext('2d').filter = 'sepia(83%)';*/
 /*         ctx.drawImage(img, 0, 0, 500, 500);*/
+/*       }*/
+/* */
+/*       function save()*/
+/*       {*/
+/*         //var data = document.getElementById("edit_picture_cnv").toDataURL();*/
+/*         //var canvasData = canvasElement.toDataURL("image/png");*/
+/*         var canvasData = document.getElementById("edit_picture_cnv").toDataURL();*/
+/*         var PictureName = document.getElementById("hidden_pic_title").innerHTML;*/
+/*         $.ajax({*/
+/*         url:'save_edited', */
+/*         type:'POST', */
+/*         data:{*/
+/*         name:PictureName,*/
+/*         pic:canvasData*/
+/*         }*/
+/*         });*/
 /*       }*/
 /* */
 /*       $( document ).ready(function() {*/
