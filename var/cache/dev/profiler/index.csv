@@ -3120,3 +3120,6 @@ e6f027,127.0.0.1,GET,http://localhost:8000/assets/js/bootstrap.min.js,1527113372
 3f7c7c,127.0.0.1,GET,http://localhost:8000/assets/js/bootstrap.min.js,1527113381,,404
 0e6f09,127.0.0.1,GET,http://localhost:8000/assets/js/bootstrap.min.js,1527113383,a1069f,200
 a1069f,127.0.0.1,GET,http://localhost:8000/assets/js/bootstrap.min.js,1527113383,,404
+6977ca,127.0.0.1,GET,http://localhost:8000/Panel,1527117819,,200
+345ac4,127.0.0.1,GET,http://localhost:8000/Panel,1527117878,,200
+208567,127.0.0.1,GET,http://localhost:8000/Panel,1527117918,,200
