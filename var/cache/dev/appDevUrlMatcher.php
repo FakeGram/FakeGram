@@ -137,43 +137,50 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/P')) {
-            if (0 === strpos($pathinfo, '/Profile')) {
-                // app_profile_profile
-                if ($pathinfo === '/Profile') {
-                    return array (  '_controller' => 'AppBundle\\Controller\\Profile::Profile',  '_route' => 'app_profile_profile',);
+        if (0 === strpos($pathinfo, '/Profile')) {
+            // app_profile_profile
+            if ($pathinfo === '/Profile') {
+                return array (  '_controller' => 'AppBundle\\Controller\\Profile::Profile',  '_route' => 'app_profile_profile',);
+            }
+
+            // app_profile_otherprofile
+            if (preg_match('#^/Profile/(?P<Login>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_otherprofile')), array (  '_controller' => 'AppBundle\\Controller\\Profile::OtherProfile',));
+            }
+
+            if (0 === strpos($pathinfo, '/Profile/Photo')) {
+                // app_profile_photo
+                if (preg_match('#^/Profile/Photo/(?P<PhotoId>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_photo')), array (  '_controller' => 'AppBundle\\Controller\\Profile::Photo',));
                 }
 
-                // app_profile_otherprofile
-                if (preg_match('#^/Profile/(?P<Login>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_otherprofile')), array (  '_controller' => 'AppBundle\\Controller\\Profile::OtherProfile',));
+                // app_profile_addcomment
+                if (0 === strpos($pathinfo, '/Profile/Photo/NewComment') && preg_match('#^/Profile/Photo/NewComment/(?P<PhotoId>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_addcomment')), array (  '_controller' => 'AppBundle\\Controller\\Profile::AddComment',));
                 }
 
-                if (0 === strpos($pathinfo, '/Profile/Photo')) {
-                    // app_profile_photo
-                    if (preg_match('#^/Profile/Photo/(?P<PhotoId>[^/]++)$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_photo')), array (  '_controller' => 'AppBundle\\Controller\\Profile::Photo',));
-                    }
-
-                    // app_profile_addcomment
-                    if (0 === strpos($pathinfo, '/Profile/Photo/NewComment') && preg_match('#^/Profile/Photo/NewComment/(?P<PhotoId>[^/]++)$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_addcomment')), array (  '_controller' => 'AppBundle\\Controller\\Profile::AddComment',));
-                    }
-
-                    // app_profile_like
-                    if (0 === strpos($pathinfo, '/Profile/Photo/AddLike') && preg_match('#^/Profile/Photo/AddLike/(?P<PhotoId>[^/]++)/(?P<login>[^/]++)$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_like')), array (  '_controller' => 'AppBundle\\Controller\\Profile::Like',));
-                    }
-
+                // app_profile_like
+                if (0 === strpos($pathinfo, '/Profile/Photo/AddLike') && preg_match('#^/Profile/Photo/AddLike/(?P<PhotoId>[^/]++)/(?P<login>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_like')), array (  '_controller' => 'AppBundle\\Controller\\Profile::Like',));
                 }
 
             }
 
-            // app_userpanel_panel
-            if ($pathinfo === '/Panel') {
-                return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::Panel',  '_route' => 'app_userpanel_panel',);
-            }
+        }
 
+        // app_profile_explore
+        if ($pathinfo === '/Explore') {
+            return array (  '_controller' => 'AppBundle\\Controller\\Profile::Explore',  '_route' => 'app_profile_explore',);
+        }
+
+        // app_profile_search
+        if ($pathinfo === '/Search') {
+            return array (  '_controller' => 'AppBundle\\Controller\\Profile::Search',  '_route' => 'app_profile_search',);
+        }
+
+        // app_userpanel_panel
+        if ($pathinfo === '/Panel') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::Panel',  '_route' => 'app_userpanel_panel',);
         }
 
         if (0 === strpos($pathinfo, '/User')) {

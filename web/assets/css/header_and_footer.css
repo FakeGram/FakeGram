@@ -15,7 +15,10 @@
 }
 
 
-
+.form-inline
+{
+	float: right;
+}
 
 /* FOOTER */
 

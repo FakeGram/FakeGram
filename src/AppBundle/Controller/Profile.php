@@ -85,6 +85,7 @@ class Profile extends Controller
 	 {
 		 $err_comm='';
 		 
+
 		 $pics=$this->GetDoctrine()
 		->getRepository('AppBundle:pic')
         ->findByLogin($Login);
@@ -300,6 +301,64 @@ class Profile extends Controller
 		
 		
 		return $this->redirect("/Profile/Photo/".$PhotoId);
+	}
+
+	/**
+     * @Route("/Explore")
+     */
+	 public function Explore()
+	 {
+		
+		$err_comm="";
+		$PlaceHolder="Wyszukaj po nazwie użytkownika "; // dodać tagi jak będą gotowe
+
+		$Repository = $this->getDoctrine()->getRepository('AppBundle:pic');
+		
+		$query = $Repository->createQueryBuilder('p')
+		->orderBy('p.date','DESC')
+		->setMaxResults(20) // Tutaj można zmieniać ilość wyświetlanych zdjęć. 
+		->getQuery();
+
+		$pics = $query->getResult();
+		$i = 0 ; 
+	    foreach($pics as $pic)
+	    {
+			 
+			 $pictures[$i]['id']=$pic->getId();
+			 $pictures[$i]['login']=$pic->getLogin();
+			 $pictures[$i]['pic']=$pic->getPic();
+			 $pictures[$i]['date']=$pic->getDate();
+			 $pictures[$i]['tag_id']=$pic->getTagId();
+			 $i++;
+	    }
+
+	    if(isset($pictures))
+		 return $this->render('SearchPanel/Explore.html.twig', array( 
+			'pictures'=> $pictures,'placeholder'=>$PlaceHolder  // Tablica do wysyłania zmiennych do widoku 
+				));
+		else
+		{
+			$pictures='';
+			return $this->render('SearchPanel/Explore.html.twig', array( 
+			'pictures'=> $pictures,'placeholder'=>$PlaceHolder // Tablica do wysyłania zmiennych do widoku 
+				));
+		}
+		
+	 }
+	 
+	/**
+	*@Route("/Search")
+	**/
+	public function Search()
+	{
+		if(!isset($_POST['SearchedArgument']) || empty($_POST['SearchedArgument']))
+		{
+			return $this->redirect("/");
+		}
+
+		// Wyszukiwanie po tagach można machnać tak,że sprawdzi się w if'ie czy pierwsza litera jest haszem 
+		return $this->redirect("/Profile/".$_POST['SearchedArgument']);
+
 	}
 
 }

@@ -32,11 +32,18 @@
           </ul>
           <ul class="nav navbar-nav navbar-right nav-pages">
             <li class="active"><a href="#">Strona Główna</a></li>
+            <li><a href="/Explore">PlaceHolder</a></li>
             <li><a href="/Profile">Moje zdjęcia </a></li>
             <li><a href="/upload">Dodaj Zdjęcie</a></li> 
             <li><a href="/Panel">Ustawienia</a></li> 
           </ul>
         </div>
+          <form class="form-horizontal" action ="/Search" method="post">
+           <div class= form-inline>
+              <input type="text" class ='form-control inputs' id = "SearchedArgument" name ="SearchedArgument" placeholder="Wyszukaj Użytkownika" >
+              <button type="submit" class = "btn btn-default buttons" id="btnSubmit">Wyszukaj</button>
+            </div>
+          </form>
       </div>
     </nav>
     <!-- |||||||||||||||||||||||||||||||||||| -->
