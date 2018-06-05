@@ -26,7 +26,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span> 
           </button>
-          <a class="navbar-brand" href="#"><div class="logo">FakeGram</div></a>
+          <a class="navbar-brand" href="/"><div class="logo">FakeGram</div></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
@@ -34,7 +34,7 @@
             <li><a href="/Login"><span class="glyphicon glyphicon-log-in"></span> Logowanie</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right nav-pages">
-            <li class="active"><a href="#">Strona Główna</a></li>
+            <li class="active"><a href="/">Strona Główna</a></li>
             <li><a href="/Profile">Moje zdjęcia </a></li>
             <li><a href="/upload">Dodaj Zdjęcie</a></li> 
             <li><a href="/Panel">Ustawienia</a></li> 
@@ -53,6 +53,7 @@
                   <div class="effect_tile" onclick="apply_effect2();"><canvas id="effect2_canvas" width="100px" height="100px"></canvas></div>
                   <div class="effect_tile" onclick="apply_effect3();"><canvas id="effect3_canvas" width="100px" height="100px"></canvas></div>
                   <div class="effect_tile" onclick="apply_effect4();"><canvas id="effect4_canvas" width="100px" height="100px"></canvas></div>
+                  <div class="effect_tile" onclick="apply_effect5();"><canvas id="effect5_canvas" width="100px" height="100px"></canvas></div>
                 </div>
                 <button class="btn" onclick="save();">Save Photo</button>
             </div> 
@@ -105,17 +106,20 @@
           var effect2 = document.getElementById("effect2_canvas");
           var effect3 = document.getElementById("effect3_canvas");
           var effect4 = document.getElementById("effect4_canvas");
+          var effect5 = document.getElementById("effect5_canvas");
 
           var ctx_effect0 = effect0.getContext("2d");
           var ctx_effect1 = effect1.getContext("2d");
           var ctx_effect2 = effect2.getContext("2d");
           var ctx_effect3 = effect3.getContext("2d");
           var ctx_effect4 = effect4.getContext("2d");
+          var ctx_effect5 = effect5.getContext("2d");
 
           effect1.getContext('2d').filter = 'blur(2px) opacity(60%)';
           effect2.getContext('2d').filter = 'invert(30%)';
           effect3.getContext('2d').filter = 'saturate(76%)';
           effect4.getContext('2d').filter = 'sepia(83%)';
+          effect5.getContext('2d').filter = 'sepia(83%) invert(100%)';
 
           var img_scale = document.getElementById("pic_to_redraw_scale");
           ctx_effect0.drawImage(img_scale, 0, 0, 100, 100);
@@ -123,7 +127,7 @@
           ctx_effect2.drawImage(img_scale, 0, 0, 100, 100);
           ctx_effect3.drawImage(img_scale, 0, 0, 100, 100);
           ctx_effect4.drawImage(img_scale, 0, 0, 100, 100);
-
+          ctx_effect5.drawImage(img_scale, 0, 0, 100, 100);
       };
 
       function clear_effects()
@@ -131,6 +135,7 @@
         cnv = document.getElementById("edit_picture_cnv");
         ctx = cnv.getContext("2d");
         img = document.getElementById("pic_to_redraw");
+        cnv.getContext('2d').filter = null;
         ctx.drawImage(img, 0, 0, 500, 500);
       }
 
@@ -167,6 +172,15 @@
         ctx = cnv.getContext("2d");
         img = document.getElementById("pic_to_redraw");
         cnv.getContext('2d').filter = 'sepia(83%)';
+        ctx.drawImage(img, 0, 0, 500, 500);
+      }
+
+      function apply_effect5()
+      {
+        cnv = document.getElementById("edit_picture_cnv");
+        ctx = cnv.getContext("2d");
+        img = document.getElementById("pic_to_redraw");
+        cnv.getContext('2d').filter = 'sepia(83%) invert(100%)';
         ctx.drawImage(img, 0, 0, 500, 500);
       }
 
