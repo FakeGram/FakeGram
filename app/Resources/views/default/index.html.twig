@@ -27,14 +27,20 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
+            {% if session.CurrentUser is defined %}
+            <li><a href="/Logout"><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
+            {% else %}
             <li><a href="/Registration"><span class="glyphicon glyphicon-user"></span> Rejestracja</a></li>
             <li><a href="/Login"><span class="glyphicon glyphicon-log-in"></span> Logowanie</a></li>
+            {% endif %}
           </ul>
           <ul class="nav navbar-nav navbar-right nav-pages">
             <li class="active"><a href="#">Strona Główna</a></li>
             <li><a href="/Explore">Odkrywaj</a></li>
             <li><a href="/Profile">Moje zdjęcia </a></li>
+            {% if session.CurrentUser is defined %}
             <li><a onclick="showModal()" style="cursor:pointer;">Dodaj Zdjęcie</a></li> 
+            {% endif %}
             <li><a href="/Panel">Ustawienia</a></li> 
           </ul>
         </div>

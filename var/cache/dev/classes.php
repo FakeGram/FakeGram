@@ -6174,6 +6174,18 @@ protected $dateFormats = array('F j, Y H:i','%d days');
 protected $numberFormat = array(0,'.',',');
 protected $timezone = null;
 protected $escapers = array();
+public function getGlobals()
+{
+if(isset($_SESSION))
+{
+return array('session'=> $_SESSION,
+) ;
+}
+else
+{
+return array();
+}
+}
 public function setEscaper($strategy, $callable)
 {
 $this->escapers[$strategy] = $callable;

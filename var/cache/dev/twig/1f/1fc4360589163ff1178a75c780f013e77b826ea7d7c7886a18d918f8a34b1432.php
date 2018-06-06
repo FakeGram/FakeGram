@@ -15,8 +15,8 @@ class __TwigTemplate_7cb629ed3bb2db05f176776933e58a5e84a7370ce096292599dbb26eed8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f3a61cfc8c698206254f24eaaf8b26a70b1be7b4a271f93c9f14cc6196a5de44 = $this->env->getExtension("native_profiler");
-        $__internal_f3a61cfc8c698206254f24eaaf8b26a70b1be7b4a271f93c9f14cc6196a5de44->enter($__internal_f3a61cfc8c698206254f24eaaf8b26a70b1be7b4a271f93c9f14cc6196a5de44_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
+        $__internal_e8868dd717a3f2641b6d527b87acae0b045fc516d0279beb51c00e3e4122d6f0 = $this->env->getExtension("native_profiler");
+        $__internal_e8868dd717a3f2641b6d527b87acae0b045fc516d0279beb51c00e3e4122d6f0->enter($__internal_e8868dd717a3f2641b6d527b87acae0b045fc516d0279beb51c00e3e4122d6f0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
 
         // line 1
         echo "<html>
@@ -63,15 +63,33 @@ class __TwigTemplate_7cb629ed3bb2db05f176776933e58a5e84a7370ce096292599dbb26eed8
         </div>
         <div class=\"collapse navbar-collapse\" id=\"myNavbar\">
           <ul class=\"nav navbar-nav navbar-right\">
-            <li><a href=\"/Registration\"><span class=\"glyphicon glyphicon-user\"></span> Rejestracja</a></li>
+            ";
+        // line 30
+        if ($this->getAttribute((isset($context["session"]) ? $context["session"] : null), "CurrentUser", array(), "any", true, true)) {
+            // line 31
+            echo "            <li><a href=\"/Logout\"><span class=\"glyphicon glyphicon-log-out\"></span> Wyloguj</a></li>
+            ";
+        } else {
+            // line 33
+            echo "            <li><a href=\"/Registration\"><span class=\"glyphicon glyphicon-user\"></span> Rejestracja</a></li>
             <li><a href=\"/Login\"><span class=\"glyphicon glyphicon-log-in\"></span> Logowanie</a></li>
-          </ul>
+            ";
+        }
+        // line 36
+        echo "          </ul>
           <ul class=\"nav navbar-nav navbar-right nav-pages\">
             <li class=\"active\"><a href=\"#\">Strona Główna</a></li>
             <li><a href=\"/Explore\">Odkrywaj</a></li>
             <li><a href=\"/Profile\">Moje zdjęcia </a></li>
-            <li><a onclick=\"showModal()\" style=\"cursor:pointer;\">Dodaj Zdjęcie</a></li> 
-            <li><a href=\"/Panel\">Ustawienia</a></li> 
+            ";
+        // line 41
+        if ($this->getAttribute((isset($context["session"]) ? $context["session"] : null), "CurrentUser", array(), "any", true, true)) {
+            // line 42
+            echo "            <li><a onclick=\"showModal()\" style=\"cursor:pointer;\">Dodaj Zdjęcie</a></li> 
+            ";
+        }
+        // line 44
+        echo "            <li><a href=\"/Panel\">Ustawienia</a></li> 
           </ul>
         </div>
         <div id=\"Modal\" class=\"modal\">
@@ -172,7 +190,7 @@ class __TwigTemplate_7cb629ed3bb2db05f176776933e58a5e84a7370ce096292599dbb26eed8
 </html>
 ";
         
-        $__internal_f3a61cfc8c698206254f24eaaf8b26a70b1be7b4a271f93c9f14cc6196a5de44->leave($__internal_f3a61cfc8c698206254f24eaaf8b26a70b1be7b4a271f93c9f14cc6196a5de44_prof);
+        $__internal_e8868dd717a3f2641b6d527b87acae0b045fc516d0279beb51c00e3e4122d6f0->leave($__internal_e8868dd717a3f2641b6d527b87acae0b045fc516d0279beb51c00e3e4122d6f0_prof);
 
     }
 
@@ -188,7 +206,7 @@ class __TwigTemplate_7cb629ed3bb2db05f176776933e58a5e84a7370ce096292599dbb26eed8
 
     public function getDebugInfo()
     {
-        return array (  49 => 14,  45 => 13,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
+        return array (  92 => 44,  88 => 42,  86 => 41,  79 => 36,  74 => 33,  70 => 31,  68 => 30,  49 => 14,  45 => 13,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
     }
 }
 /* <html>*/
@@ -220,14 +238,20 @@ class __TwigTemplate_7cb629ed3bb2db05f176776933e58a5e84a7370ce096292599dbb26eed8
 /*         </div>*/
 /*         <div class="collapse navbar-collapse" id="myNavbar">*/
 /*           <ul class="nav navbar-nav navbar-right">*/
+/*             {% if session.CurrentUser is defined %}*/
+/*             <li><a href="/Logout"><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>*/
+/*             {% else %}*/
 /*             <li><a href="/Registration"><span class="glyphicon glyphicon-user"></span> Rejestracja</a></li>*/
 /*             <li><a href="/Login"><span class="glyphicon glyphicon-log-in"></span> Logowanie</a></li>*/
+/*             {% endif %}*/
 /*           </ul>*/
 /*           <ul class="nav navbar-nav navbar-right nav-pages">*/
 /*             <li class="active"><a href="#">Strona Główna</a></li>*/
 /*             <li><a href="/Explore">Odkrywaj</a></li>*/
 /*             <li><a href="/Profile">Moje zdjęcia </a></li>*/
+/*             {% if session.CurrentUser is defined %}*/
 /*             <li><a onclick="showModal()" style="cursor:pointer;">Dodaj Zdjęcie</a></li> */
+/*             {% endif %}*/
 /*             <li><a href="/Panel">Ustawienia</a></li> */
 /*           </ul>*/
 /*         </div>*/

@@ -3425,3 +3425,16 @@ e3f2eb,127.0.0.1,GET,http://localhost:8000/pic_upload,1528303129,2cdae1,200
 43d4cd,127.0.0.1,POST,http://localhost:8000/pic_upload,1528303338,,200
 cb5167,127.0.0.1,POST,http://localhost:8000/pic_upload,1528303389,,200
 3283da,127.0.0.1,POST,http://localhost:8000/pic_upload,1528303472,,200
+23d989,127.0.0.1,GET,http://localhost:8000/,1528303970,,200
+c56b5e,127.0.0.1,GET,http://localhost:8000/Profile,1528303976,,200
+dfc851,127.0.0.1,GET,http://localhost:8000/,1528304145,,200
+a0fa08,127.0.0.1,GET,http://localhost:8000/,1528304156,,200
+3915c8,127.0.0.1,GET,http://localhost:8000/,1528304211,,200
+8ce7df,127.0.0.1,GET,http://localhost:8000/,1528304215,,200
+5656e8,127.0.0.1,GET,http://localhost:8000/,1528304579,,200
+83616c,127.0.0.1,GET,http://localhost:8000/,1528304658,,200
+3aede0,127.0.0.1,GET,http://localhost:8000/,1528304898,,200
+49fa9b,127.0.0.1,GET,http://localhost:8000/,1528304903,,200
+0c31c7,127.0.0.1,GET,http://localhost:8000/,1528304907,,200
+4df6ee,127.0.0.1,GET,http://localhost:8000/,1528305078,,200
+f942cc,127.0.0.1,GET,http://localhost:8000/,1528305081,,200
