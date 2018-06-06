@@ -358,6 +358,10 @@ class Profile extends Controller
 			 $i++;
 	    }
 
+	    $Repository = $this->getDoctrine()->getRepository('AppBundle:tags');
+
+
+
 	    if(isset($pictures))
 		 return $this->render('SearchPanel/Explore.html.twig', array( 
 			'pictures'=> $pictures,'placeholder'=>$PlaceHolder  // Tablica do wysyłania zmiennych do widoku 
@@ -382,9 +386,72 @@ class Profile extends Controller
 			return $this->redirect("/");
 		}
 
+	/*
 		// Wyszukiwanie po tagach można machnać tak,że sprawdzi się w if'ie czy pierwsza litera jest haszem 
 		return $this->redirect("/Profile/".$_POST['SearchedArgument']);
+    */
 
+
+			$err_comm="";
+		$PlaceHolder="Wyszukaj po nazwie użytkownika "; // dodać tagi jak będą gotowe
+
+		$Repository = $this->getDoctrine()->getRepository('AppBundle:user');
+		
+		$query = $Repository->createQueryBuilder('u')
+		->where('u.login LIKE :s')
+		->setParameter('s',$_POST['SearchedArgument'].'%')
+		->getQuery();
+
+		$usrs = $query->getResult();
+		$i = 0 ; 
+	    foreach($usrs as $user)
+	    {
+			 
+			 $users[$i]['login']=$user->getLogin();
+			 $users[$i]['avatar']=$user->getAvatar();
+			if($users[$i]['avatar']!=NULL)
+			{
+				 $users[$i]['avatar']=base64_encode(stream_get_contents($users[$i]['avatar']));
+			}
+			
+			 $i++;
+	    }
+
+	
+	    $Repository = $this->getDoctrine()->getRepository('AppBundle:tags');
+	  
+	    $query = $Repository->createQueryBuilder('t')
+	    ->where('t.tag = :tag')
+	    ->setParameter('tag','#'.$_POST['SearchedArgument'])
+	    ->getQuery();
+
+	    $tgs = $query->getResult();
+/*
+	    $i=0;
+
+	    foreach ($tgs as $tag) 
+	    {
+	    	$tags[$i]['contentId']= $tag->getContentid();
+	    	$pics[$i][]
+	    }
+*/
+	    if(isset($users))
+		 return $this->render('SearchPanel/Results.html.twig', array( 
+			'users'=> $users,'placeholder'=>$PlaceHolder  // Tablica do wysyłania zmiennych do widoku 
+				));
+		else
+		{
+			$users='';
+			return $this->render('SearchPanel/Results.html.twig', array( 
+			'users'=> $users,'placeholder'=>$PlaceHolder // Tablica do wysyłania zmiennych do widoku 
+				));
+		}
+
+
+
+
+
+			
 	}
 	
 	/**
