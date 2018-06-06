@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 23 Maj 2018, 23:49
+-- Czas generowania: 06 Cze 2018, 20:03
 -- Wersja serwera: 10.1.26-MariaDB
 -- Wersja PHP: 7.1.9
 
@@ -73,7 +73,7 @@ CREATE TABLE `likes` (
 --
 
 INSERT INTO `likes` (`id`, `picid`, `login`) VALUES
-(1, 6, 'dominik');
+(4, 6, 'dominik');
 
 -- --------------------------------------------------------
 
@@ -103,14 +103,21 @@ INSERT INTO `pic` (`id`, `login`, `pic`, `date`, `tag_id`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `subscritptions`
+-- Struktura tabeli dla tabeli `subscriptions`
 --
 
-CREATE TABLE `subscritptions` (
+CREATE TABLE `subscriptions` (
   `id` int(11) NOT NULL,
-  `id_subscriber` int(11) NOT NULL,
-  `id_sub2` int(11) NOT NULL
+  `idsubscriber` varchar(64) NOT NULL,
+  `idsub2` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Zrzut danych tabeli `subscriptions`
+--
+
+INSERT INTO `subscriptions` (`id`, `idsubscriber`, `idsub2`) VALUES
+(4, 'dominik', 'dominik');
 
 -- --------------------------------------------------------
 
@@ -194,9 +201,9 @@ ALTER TABLE `pic`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `subscritptions`
+-- Indexes for table `subscriptions`
 --
-ALTER TABLE `subscritptions`
+ALTER TABLE `subscriptions`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -225,7 +232,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT dla tabeli `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `pic`
@@ -234,10 +241,10 @@ ALTER TABLE `pic`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT dla tabeli `subscritptions`
+-- AUTO_INCREMENT dla tabeli `subscriptions`
 --
-ALTER TABLE `subscritptions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `subscriptions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `tags`

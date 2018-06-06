@@ -86,7 +86,7 @@ class pic_uploader extends Controller
             {
             $desc=$_POST['desc'];
 
-            $DoctrineManager = $this->getDoctrine()->getManager();
+            //$DoctrineManager = $this->getDoctrine()->getManager();
             //$Login=$DoctrineManager->getRepository('AppBundle:user')->findOneBylogin($_SESSION["CurrentUser"]->getLogin());
             $Login=$_SESSION["CurrentUser"]->getLogin();
             $pic = new pic();
@@ -98,20 +98,34 @@ class pic_uploader extends Controller
             $statement->persist($pic);
             $statement->flush();
 
-            /*
-            $words=explode(' ', $desc);
-            $tags=array();
-            foreach ($words as $word)
+            if($desc!='')
             {
-                if($word[0]='#') array_push($tags, $word);
-            }
-            foreach ($tags as $tag)
-            {
-                if($tag[strlen($tag)-1]==','||$tag[strlen($tag)-1]=='.') $tag=substr($tag, 0, strlen($tag)-2);
-            }
+                $words=explode(' ', $desc);
+                $tags=array();
+                foreach ($words as $word)
+                {
+                    if($word[0]=='#') array_push($tags, $word);
+                }
+                foreach ($tags as $tag)
+                {
+                    if($tag[strlen($tag)-1]==','||$tag[strlen($tag)-1]=='.') $tag=substr($tag, 0, strlen($tag)-2);
+                }
 
-            $PicId=$DoctrineManager->getRepository('AppBundle:pic')->findOneBypic();
-            $PicId=$PicId->getId();*/
+                $PicId=$statement->getRepository('AppBundle:pic')->findOneByPic($target_file)->getId();
+
+                
+                foreach($tags as $tag)
+                {
+                    $tagObject = new tags();
+                    $tagObject->setTag($tag);
+                    $tagObject->setOf("pic");
+                    $tagObject->setContentid($PicId);
+                    $statement->persist($tagObject);
+                    $statement->flush();
+                }
+            }
+            //csdv
+
 
                 return $this->render('ImgOperations/image_edit.html.twig', array(
             'err' => 'success', 'pic_name' => $target_file));
