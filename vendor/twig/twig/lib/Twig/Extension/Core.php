@@ -20,6 +20,22 @@ class Twig_Extension_Core extends Twig_Extension
     protected $timezone = null;
     protected $escapers = array();
 
+
+    // :(
+    public function getGlobals() 
+    {
+        if(isset($_SESSION))
+        {
+            return array(
+                'session'   => $_SESSION,
+            ) ;
+        }
+        else
+        {
+            return  array();
+        }
+    }
+
     /**
      * Defines a new escaper to be used via the escape filter.
      *

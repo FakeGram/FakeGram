@@ -101,7 +101,7 @@ class tags
      */
     public function setContentid($contentId)
     {
-        $this->contentId = $contentId;
+        $this->contentid = $contentId;
     
         return $this;
     }
