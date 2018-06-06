@@ -5,12 +5,7 @@
 }
 
 .PicturesContainer{
-	height:254px;
-	width:254px;
-	border-width:2px;
-	border-style:dotted;
-	border-color:black;
-	text-align:center;
+	min-width:10px;
 }
 
 .Pictures{
@@ -19,8 +14,26 @@
 	max-width:250px;
 	max-height:250px;
 	vertical-align:middle;
+	width: inherit;
 }
 
 .PicturesButton{
-	width:250px;
+	min-width: 270px;
+    height: 55px;
+    margin-top: 20px;
+    vertical-align: middle;
+    padding-top: 10px;
+    border-top: 1px gray solid;
+    padding-left: 10%;
+}
+
+.single_pic
+{
+
+}
+
+.picture-center
+{
+	vertical-align: middle ;
+	    text-align: center;
 }

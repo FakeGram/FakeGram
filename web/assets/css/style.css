@@ -17,3 +17,21 @@
 {
 	border-radius: 5px;
 }
+
+.likeico
+{
+	margin-right: 2px;
+}
+
+.flexible-tile
+{
+	margin: 50px auto;
+}
+
+@media(max-width: 579px)
+{
+	.flexible-tile
+	{
+		width: auto;
+	}
+}
