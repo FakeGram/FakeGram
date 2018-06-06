@@ -15,8 +15,8 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_69495629e37d5e7848c0e648c0c2826e3f9244d823344b7434a54c779de879ca = $this->env->getExtension("native_profiler");
-        $__internal_69495629e37d5e7848c0e648c0c2826e3f9244d823344b7434a54c779de879ca->enter($__internal_69495629e37d5e7848c0e648c0c2826e3f9244d823344b7434a54c779de879ca_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Photo.html.twig"));
+        $__internal_bca5fdf0b07ceeb341b9e775f757ca76c6dd281b4f33255293ef7ab058dbacfb = $this->env->getExtension("native_profiler");
+        $__internal_bca5fdf0b07ceeb341b9e775f757ca76c6dd281b4f33255293ef7ab058dbacfb->enter($__internal_bca5fdf0b07ceeb341b9e775f757ca76c6dd281b4f33255293ef7ab058dbacfb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Photo.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "Profile/Photo.html.twig", 1)->display($context);
@@ -169,7 +169,7 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
 \t\t\t}
 \t\t\t});
 \t\t\tvar liked=document.getElementById(\"liked\").innerHTML;
-\t\t\tvar likes=document.getElementById(\"likes\").innerHTML;
+\t\t\t
 \t\t\t
 \t\t\tvar count=parseInt(document.getElementById(\"likes\").innerHTML);
 \t\t\t
@@ -195,7 +195,7 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
         // line 103
         $this->loadTemplate("footer.html.twig", "Profile/Photo.html.twig", 103)->display($context);
         
-        $__internal_69495629e37d5e7848c0e648c0c2826e3f9244d823344b7434a54c779de879ca->leave($__internal_69495629e37d5e7848c0e648c0c2826e3f9244d823344b7434a54c779de879ca_prof);
+        $__internal_bca5fdf0b07ceeb341b9e775f757ca76c6dd281b4f33255293ef7ab058dbacfb->leave($__internal_bca5fdf0b07ceeb341b9e775f757ca76c6dd281b4f33255293ef7ab058dbacfb_prof);
 
     }
 
@@ -294,7 +294,7 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
 /* 			}*/
 /* 			});*/
 /* 			var liked=document.getElementById("liked").innerHTML;*/
-/* 			var likes=document.getElementById("likes").innerHTML;*/
+/* 			*/
 /* 			*/
 /* 			var count=parseInt(document.getElementById("likes").innerHTML);*/
 /* 			*/
