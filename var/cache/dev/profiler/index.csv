@@ -3376,3 +3376,4 @@ f46155,127.0.0.1,GET,http://localhost:8000/,1528299404,,200
 45de7b,127.0.0.1,GET,http://localhost:8000/assets/js/bootstrap.min.js,1528299441,,404
 d60b3e,127.0.0.1,GET,http://localhost:8000/images/610d0057a27905f3bc1283e0c39c79ed0.jpg,1528299441,90cdc6,200
 90cdc6,127.0.0.1,GET,http://localhost:8000/images/610d0057a27905f3bc1283e0c39c79ed0.jpg,1528299441,,404
+7364d6,127.0.0.1,GET,http://localhost:8000/,1528299867,,200

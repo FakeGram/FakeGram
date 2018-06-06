@@ -15,8 +15,8 @@ class __TwigTemplate_7cb629ed3bb2db05f176776933e58a5e84a7370ce096292599dbb26eed8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_185810ad36d9fa5675d4b747be6d2ae013cfd5932a82c169ebfd2682d5a02f59 = $this->env->getExtension("native_profiler");
-        $__internal_185810ad36d9fa5675d4b747be6d2ae013cfd5932a82c169ebfd2682d5a02f59->enter($__internal_185810ad36d9fa5675d4b747be6d2ae013cfd5932a82c169ebfd2682d5a02f59_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
+        $__internal_f3a61cfc8c698206254f24eaaf8b26a70b1be7b4a271f93c9f14cc6196a5de44 = $this->env->getExtension("native_profiler");
+        $__internal_f3a61cfc8c698206254f24eaaf8b26a70b1be7b4a271f93c9f14cc6196a5de44->enter($__internal_f3a61cfc8c698206254f24eaaf8b26a70b1be7b4a271f93c9f14cc6196a5de44_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
 
         // line 1
         echo "<html>
@@ -68,7 +68,7 @@ class __TwigTemplate_7cb629ed3bb2db05f176776933e58a5e84a7370ce096292599dbb26eed8
           </ul>
           <ul class=\"nav navbar-nav navbar-right nav-pages\">
             <li class=\"active\"><a href=\"#\">Strona Główna</a></li>
-            <li><a href=\"/Explore\">PlaceHolder</a></li>
+            <li><a href=\"/Explore\">Odkrywaj</a></li>
             <li><a href=\"/Profile\">Moje zdjęcia </a></li>
             <li><a onclick=\"showModal()\" style=\"cursor:pointer;\">Dodaj Zdjęcie</a></li> 
             <li><a href=\"/Panel\">Ustawienia</a></li> 
@@ -172,7 +172,7 @@ class __TwigTemplate_7cb629ed3bb2db05f176776933e58a5e84a7370ce096292599dbb26eed8
 </html>
 ";
         
-        $__internal_185810ad36d9fa5675d4b747be6d2ae013cfd5932a82c169ebfd2682d5a02f59->leave($__internal_185810ad36d9fa5675d4b747be6d2ae013cfd5932a82c169ebfd2682d5a02f59_prof);
+        $__internal_f3a61cfc8c698206254f24eaaf8b26a70b1be7b4a271f93c9f14cc6196a5de44->leave($__internal_f3a61cfc8c698206254f24eaaf8b26a70b1be7b4a271f93c9f14cc6196a5de44_prof);
 
     }
 
@@ -225,7 +225,7 @@ class __TwigTemplate_7cb629ed3bb2db05f176776933e58a5e84a7370ce096292599dbb26eed8
 /*           </ul>*/
 /*           <ul class="nav navbar-nav navbar-right nav-pages">*/
 /*             <li class="active"><a href="#">Strona Główna</a></li>*/
-/*             <li><a href="/Explore">PlaceHolder</a></li>*/
+/*             <li><a href="/Explore">Odkrywaj</a></li>*/
 /*             <li><a href="/Profile">Moje zdjęcia </a></li>*/
 /*             <li><a onclick="showModal()" style="cursor:pointer;">Dodaj Zdjęcie</a></li> */
 /*             <li><a href="/Panel">Ustawienia</a></li> */
