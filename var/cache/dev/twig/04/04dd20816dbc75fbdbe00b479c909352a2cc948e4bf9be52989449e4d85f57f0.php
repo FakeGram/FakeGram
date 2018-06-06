@@ -15,8 +15,8 @@ class __TwigTemplate_66c24ac42568412c47014852d3702d2cabb3590bd1e1595a435e1a826e0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_20e001b3ea5cdcbc3c8bb895804c2772e7076fc28db5c4d651c6731e282224c4 = $this->env->getExtension("native_profiler");
-        $__internal_20e001b3ea5cdcbc3c8bb895804c2772e7076fc28db5c4d651c6731e282224c4->enter($__internal_20e001b3ea5cdcbc3c8bb895804c2772e7076fc28db5c4d651c6731e282224c4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ImgOperations/image_upload.html"));
+        $__internal_c161924188ee36fcd1cf91677a28a2989f15324acb2c62e5f84bd2f4b800f9ff = $this->env->getExtension("native_profiler");
+        $__internal_c161924188ee36fcd1cf91677a28a2989f15324acb2c62e5f84bd2f4b800f9ff->enter($__internal_c161924188ee36fcd1cf91677a28a2989f15324acb2c62e5f84bd2f4b800f9ff_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ImgOperations/image_upload.html"));
 
         // line 1
         echo "<html>
@@ -38,108 +38,39 @@ class __TwigTemplate_66c24ac42568412c47014852d3702d2cabb3590bd1e1595a435e1a826e0
   <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
   <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
   <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
-
-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
   <link rel=\"stylesheet\" href=\"";
-        // line 13
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/header_and_footer.css"), "html", null, true);
-        echo "\" />
-  <link rel=\"stylesheet\" href=\"";
-        // line 14
+        // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/image_upload.css"), "html", null, true);
         echo "\" />
+  
   </head>
   <body>
 
-<div class=\"container-fluid\">
-      <div class=\"panel panel-default\">
-        <div class=\"panel-heading\"><strong>Upload Files</strong></div>
-        <div class=\"panel-body\">
+    <div class=\"container-fluid\">
+        <div class=\"tile\">
 
-          <!-- Standar Form -->
-          <h4>Select files from your computer</h4>
-          <form action=\"/pic_upload\" method=\"post\" enctype=\"multipart/form-data\">
-            <div class=\"form-inline\">
-              <div class=\"form-group\">
-                <input type=\"file\" name=\"img\" id=\"js-upload-files\" accept=\"image/jpeg\">
-              </div>
-              <div class=\"pic_description\">
-                <input type=\"text\" name=\"desc\" id=\"pic_desc\">
-              </div>
-              <button type=\"submit\" class=\"btn btn-sm btn-primary\" id=\"js-upload-submit\">Upload files</button>
-              <div><input type=\"submit\" value=\"Wyślij\" /></div>
-            </div>
-          </form>
+         
+            <form action=\"/pic_upload\" method=\"post\" enctype=\"multipart/form-data\">
+                <div class=\"custom-file\">
+                  <input type=\"file\" name=\"img\" id=\"js-upload-files\" accept=\"image/jpeg\" class=\"form-control\" required>
+                  <label class=\"custom-file-label\" for=\"validatedCustomFile\">Choose file...</label>
+                </div>
+                <div class=\"pic_description\">
+                  <input type=\"text\" name=\"desc\" id=\"pic_desc\" class=\"form-control\">
+                </div>
+                <button type=\"submit\" class=\"btn btn-sm btn-primary\" id=\"js-upload-submit\">Upload files</button>
+            </form>
+   
 
-          <!-- Drop Zone -->
-          <h4>Or drag and drop files below</h4>
-          <div class=\"upload-drop-zone\" id=\"drop-zone\">
-            Just drag and drop files here
-          </div>
-
-          <!-- Progress Bar -->
-          <div class=\"progress\">
-            <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\">
-              <span class=\"sr-only\">60% Complete</span>
-            </div>
-          </div>
-
-          <!-- Upload Finished -->
-          <div class=\"js-upload-finished\">
-            <h3>Processed files</h3>
-            <div class=\"list-group\">
-             <!-- <a href=\"#\" class=\"list-group-item list-group-item-success\"><span class=\"badge alert-success pull-right\">Success</span>image-01.jpg</a>
-              <a href=\"#\" class=\"list-group-item list-group-item-success\"><span class=\"badge alert-success pull-right\">Success</span>image-02.jpg</a>-->
-            </div>
-          </div>
         </div>
-      </div>
-    </div> <!-- /container -->
+      </div> <!-- /container -->
 
   </body>
   <script type=\"text/javascript\">
-    + function(\$) {
-    'use strict';
-
-    // UPLOAD CLASS DEFINITION
-    // ======================
-
-    var dropZone = document.getElementById('drop-zone');
-    var uploadForm = document.getElementById('js-upload-form');
-
-    var startUpload = function(files) {
-        console.log(files)
-    }
-
-    uploadForm.addEventListener('submit', function(e) {
-        var uploadFiles = document.getElementById('js-upload-files').files;
-        e.preventDefault()
-
-        startUpload(uploadFiles)
-    })
-
-    dropZone.ondrop = function(e) {
-        e.preventDefault();
-        this.className = 'upload-drop-zone';
-
-        startUpload(e.dataTransfer.files)
-    }
-
-    dropZone.ondragover = function() {
-        this.className = 'upload-drop-zone drop';
-        return false;
-    }
-
-    dropZone.ondragleave = function() {
-        this.className = 'upload-drop-zone';
-        return false;
-    }
-
-}(jQuery);
   </script>
 </html>";
         
-        $__internal_20e001b3ea5cdcbc3c8bb895804c2772e7076fc28db5c4d651c6731e282224c4->leave($__internal_20e001b3ea5cdcbc3c8bb895804c2772e7076fc28db5c4d651c6731e282224c4_prof);
+        $__internal_c161924188ee36fcd1cf91677a28a2989f15324acb2c62e5f84bd2f4b800f9ff->leave($__internal_c161924188ee36fcd1cf91677a28a2989f15324acb2c62e5f84bd2f4b800f9ff_prof);
 
     }
 
@@ -155,7 +86,7 @@ class __TwigTemplate_66c24ac42568412c47014852d3702d2cabb3590bd1e1595a435e1a826e0
 
     public function getDebugInfo()
     {
-        return array (  49 => 14,  45 => 13,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
+        return array (  43 => 11,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
     }
 }
 /* <html>*/
@@ -168,97 +99,31 @@ class __TwigTemplate_66c24ac42568412c47014852d3702d2cabb3590bd1e1595a435e1a826e0
 /*   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">*/
 /*   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*/
 /*   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>*/
-/* */
-/*   <meta name="viewport" content="width=device-width, initial-scale=1">*/
-/*   <link rel="stylesheet" href="{{ asset('assets/css/header_and_footer.css') }}" />*/
 /*   <link rel="stylesheet" href="{{ asset('assets/css/image_upload.css') }}" />*/
+/*   */
 /*   </head>*/
 /*   <body>*/
 /* */
-/* <div class="container-fluid">*/
-/*       <div class="panel panel-default">*/
-/*         <div class="panel-heading"><strong>Upload Files</strong></div>*/
-/*         <div class="panel-body">*/
+/*     <div class="container-fluid">*/
+/*         <div class="tile">*/
 /* */
-/*           <!-- Standar Form -->*/
-/*           <h4>Select files from your computer</h4>*/
-/*           <form action="/pic_upload" method="post" enctype="multipart/form-data">*/
-/*             <div class="form-inline">*/
-/*               <div class="form-group">*/
-/*                 <input type="file" name="img" id="js-upload-files" accept="image/jpeg">*/
-/*               </div>*/
-/*               <div class="pic_description">*/
-/*                 <input type="text" name="desc" id="pic_desc">*/
-/*               </div>*/
-/*               <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>*/
-/*               <div><input type="submit" value="Wyślij" /></div>*/
-/*             </div>*/
-/*           </form>*/
+/*          */
+/*             <form action="/pic_upload" method="post" enctype="multipart/form-data">*/
+/*                 <div class="custom-file">*/
+/*                   <input type="file" name="img" id="js-upload-files" accept="image/jpeg" class="form-control" required>*/
+/*                   <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>*/
+/*                 </div>*/
+/*                 <div class="pic_description">*/
+/*                   <input type="text" name="desc" id="pic_desc" class="form-control">*/
+/*                 </div>*/
+/*                 <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>*/
+/*             </form>*/
+/*    */
 /* */
-/*           <!-- Drop Zone -->*/
-/*           <h4>Or drag and drop files below</h4>*/
-/*           <div class="upload-drop-zone" id="drop-zone">*/
-/*             Just drag and drop files here*/
-/*           </div>*/
-/* */
-/*           <!-- Progress Bar -->*/
-/*           <div class="progress">*/
-/*             <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">*/
-/*               <span class="sr-only">60% Complete</span>*/
-/*             </div>*/
-/*           </div>*/
-/* */
-/*           <!-- Upload Finished -->*/
-/*           <div class="js-upload-finished">*/
-/*             <h3>Processed files</h3>*/
-/*             <div class="list-group">*/
-/*              <!-- <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>*/
-/*               <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-02.jpg</a>-->*/
-/*             </div>*/
-/*           </div>*/
 /*         </div>*/
-/*       </div>*/
-/*     </div> <!-- /container -->*/
+/*       </div> <!-- /container -->*/
 /* */
 /*   </body>*/
 /*   <script type="text/javascript">*/
-/*     + function($) {*/
-/*     'use strict';*/
-/* */
-/*     // UPLOAD CLASS DEFINITION*/
-/*     // ======================*/
-/* */
-/*     var dropZone = document.getElementById('drop-zone');*/
-/*     var uploadForm = document.getElementById('js-upload-form');*/
-/* */
-/*     var startUpload = function(files) {*/
-/*         console.log(files)*/
-/*     }*/
-/* */
-/*     uploadForm.addEventListener('submit', function(e) {*/
-/*         var uploadFiles = document.getElementById('js-upload-files').files;*/
-/*         e.preventDefault()*/
-/* */
-/*         startUpload(uploadFiles)*/
-/*     })*/
-/* */
-/*     dropZone.ondrop = function(e) {*/
-/*         e.preventDefault();*/
-/*         this.className = 'upload-drop-zone';*/
-/* */
-/*         startUpload(e.dataTransfer.files)*/
-/*     }*/
-/* */
-/*     dropZone.ondragover = function() {*/
-/*         this.className = 'upload-drop-zone drop';*/
-/*         return false;*/
-/*     }*/
-/* */
-/*     dropZone.ondragleave = function() {*/
-/*         this.className = 'upload-drop-zone';*/
-/*         return false;*/
-/*     }*/
-/* */
-/* }(jQuery);*/
 /*   </script>*/
 /* </html>*/

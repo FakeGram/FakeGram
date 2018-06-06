@@ -15,8 +15,8 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_8519c3bb175deefe95baf741e82a60d822a5c20e601e6ae92c3f4862204dfa44 = $this->env->getExtension("native_profiler");
-        $__internal_8519c3bb175deefe95baf741e82a60d822a5c20e601e6ae92c3f4862204dfa44->enter($__internal_8519c3bb175deefe95baf741e82a60d822a5c20e601e6ae92c3f4862204dfa44_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ImgOperations/image_edit.html.twig"));
+        $__internal_0de77eae25cb7d7fb8a2ede1fb0408176a8a1fc677b8b6bf8edca75efc6f202b = $this->env->getExtension("native_profiler");
+        $__internal_0de77eae25cb7d7fb8a2ede1fb0408176a8a1fc677b8b6bf8edca75efc6f202b->enter($__internal_0de77eae25cb7d7fb8a2ede1fb0408176a8a1fc677b8b6bf8edca75efc6f202b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ImgOperations/image_edit.html.twig"));
 
         // line 1
         echo "<html>
@@ -71,7 +71,7 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
             <span class=\"icon-bar\"></span>
             <span class=\"icon-bar\"></span> 
           </button>
-          <a class=\"navbar-brand\" href=\"#\"><div class=\"logo\">FakeGram</div></a>
+          <a class=\"navbar-brand\" href=\"/\"><div class=\"logo\">FakeGram</div></a>
         </div>
         <div class=\"collapse navbar-collapse\" id=\"myNavbar\">
           <ul class=\"nav navbar-nav navbar-right\">
@@ -79,7 +79,7 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
             <li><a href=\"/Login\"><span class=\"glyphicon glyphicon-log-in\"></span> Logowanie</a></li>
           </ul>
           <ul class=\"nav navbar-nav navbar-right nav-pages\">
-            <li class=\"active\"><a href=\"#\">Strona Główna</a></li>
+            <li class=\"active\"><a href=\"/\">Strona Główna</a></li>
             <li><a href=\"/Profile\">Moje zdjęcia </a></li>
             <li><a href=\"/upload\">Dodaj Zdjęcie</a></li> 
             <li><a href=\"/Panel\">Ustawienia</a></li> 
@@ -98,6 +98,7 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
                   <div class=\"effect_tile\" onclick=\"apply_effect2();\"><canvas id=\"effect2_canvas\" width=\"100px\" height=\"100px\"></canvas></div>
                   <div class=\"effect_tile\" onclick=\"apply_effect3();\"><canvas id=\"effect3_canvas\" width=\"100px\" height=\"100px\"></canvas></div>
                   <div class=\"effect_tile\" onclick=\"apply_effect4();\"><canvas id=\"effect4_canvas\" width=\"100px\" height=\"100px\"></canvas></div>
+                  <div class=\"effect_tile\" onclick=\"apply_effect5();\"><canvas id=\"effect5_canvas\" width=\"100px\" height=\"100px\"></canvas></div>
                 </div>
                 <button class=\"btn\" onclick=\"save();\">Save Photo</button>
             </div> 
@@ -106,15 +107,15 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 
             <!-- Useful things for js below XD -->
             <div id=\"hidden_pic_title\" style=\"display: none;\">";
-        // line 63
+        // line 64
         echo twig_escape_filter($this->env, (isset($context["pic_name"]) ? $context["pic_name"] : $this->getContext($context, "pic_name")), "html", null, true);
         echo "</div>
             <img id=\"pic_to_redraw\" style=\"display: none;\" width=\"500px\" height=\"500px\" src=\"";
-        // line 64
+        // line 65
         echo twig_escape_filter($this->env, (isset($context["pic_name"]) ? $context["pic_name"] : $this->getContext($context, "pic_name")), "html", null, true);
         echo "\" />
             <img id=\"pic_to_redraw_scale\" style=\"display: none;\" width=\"100px\" height=\"100px\" src=\"";
-        // line 65
+        // line 66
         echo twig_escape_filter($this->env, (isset($context["pic_name"]) ? $context["pic_name"] : $this->getContext($context, "pic_name")), "html", null, true);
         echo "\" />
         </div>
@@ -159,17 +160,20 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
           var effect2 = document.getElementById(\"effect2_canvas\");
           var effect3 = document.getElementById(\"effect3_canvas\");
           var effect4 = document.getElementById(\"effect4_canvas\");
+          var effect5 = document.getElementById(\"effect5_canvas\");
 
           var ctx_effect0 = effect0.getContext(\"2d\");
           var ctx_effect1 = effect1.getContext(\"2d\");
           var ctx_effect2 = effect2.getContext(\"2d\");
           var ctx_effect3 = effect3.getContext(\"2d\");
           var ctx_effect4 = effect4.getContext(\"2d\");
+          var ctx_effect5 = effect5.getContext(\"2d\");
 
           effect1.getContext('2d').filter = 'blur(2px) opacity(60%)';
           effect2.getContext('2d').filter = 'invert(30%)';
           effect3.getContext('2d').filter = 'saturate(76%)';
           effect4.getContext('2d').filter = 'sepia(83%)';
+          effect5.getContext('2d').filter = 'sepia(83%) invert(100%)';
 
           var img_scale = document.getElementById(\"pic_to_redraw_scale\");
           ctx_effect0.drawImage(img_scale, 0, 0, 100, 100);
@@ -177,7 +181,7 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
           ctx_effect2.drawImage(img_scale, 0, 0, 100, 100);
           ctx_effect3.drawImage(img_scale, 0, 0, 100, 100);
           ctx_effect4.drawImage(img_scale, 0, 0, 100, 100);
-
+          ctx_effect5.drawImage(img_scale, 0, 0, 100, 100);
       };
 
       function clear_effects()
@@ -185,6 +189,7 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
         cnv = document.getElementById(\"edit_picture_cnv\");
         ctx = cnv.getContext(\"2d\");
         img = document.getElementById(\"pic_to_redraw\");
+        cnv.getContext('2d').filter = null;
         ctx.drawImage(img, 0, 0, 500, 500);
       }
 
@@ -221,6 +226,15 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
         ctx = cnv.getContext(\"2d\");
         img = document.getElementById(\"pic_to_redraw\");
         cnv.getContext('2d').filter = 'sepia(83%)';
+        ctx.drawImage(img, 0, 0, 500, 500);
+      }
+
+      function apply_effect5()
+      {
+        cnv = document.getElementById(\"edit_picture_cnv\");
+        ctx = cnv.getContext(\"2d\");
+        img = document.getElementById(\"pic_to_redraw\");
+        cnv.getContext('2d').filter = 'sepia(83%) invert(100%)';
         ctx.drawImage(img, 0, 0, 500, 500);
       }
 
@@ -265,7 +279,7 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 </html>
 ";
         
-        $__internal_8519c3bb175deefe95baf741e82a60d822a5c20e601e6ae92c3f4862204dfa44->leave($__internal_8519c3bb175deefe95baf741e82a60d822a5c20e601e6ae92c3f4862204dfa44_prof);
+        $__internal_0de77eae25cb7d7fb8a2ede1fb0408176a8a1fc677b8b6bf8edca75efc6f202b->leave($__internal_0de77eae25cb7d7fb8a2ede1fb0408176a8a1fc677b8b6bf8edca75efc6f202b_prof);
 
     }
 
@@ -281,7 +295,7 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 
     public function getDebugInfo()
     {
-        return array (  118 => 65,  114 => 64,  110 => 63,  61 => 17,  57 => 16,  53 => 15,  49 => 14,  43 => 11,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
+        return array (  119 => 66,  115 => 65,  111 => 64,  61 => 17,  57 => 16,  53 => 15,  49 => 14,  43 => 11,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
     }
 }
 /* <html>*/
@@ -312,7 +326,7 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 /*             <span class="icon-bar"></span>*/
 /*             <span class="icon-bar"></span> */
 /*           </button>*/
-/*           <a class="navbar-brand" href="#"><div class="logo">FakeGram</div></a>*/
+/*           <a class="navbar-brand" href="/"><div class="logo">FakeGram</div></a>*/
 /*         </div>*/
 /*         <div class="collapse navbar-collapse" id="myNavbar">*/
 /*           <ul class="nav navbar-nav navbar-right">*/
@@ -320,7 +334,7 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 /*             <li><a href="/Login"><span class="glyphicon glyphicon-log-in"></span> Logowanie</a></li>*/
 /*           </ul>*/
 /*           <ul class="nav navbar-nav navbar-right nav-pages">*/
-/*             <li class="active"><a href="#">Strona Główna</a></li>*/
+/*             <li class="active"><a href="/">Strona Główna</a></li>*/
 /*             <li><a href="/Profile">Moje zdjęcia </a></li>*/
 /*             <li><a href="/upload">Dodaj Zdjęcie</a></li> */
 /*             <li><a href="/Panel">Ustawienia</a></li> */
@@ -339,6 +353,7 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 /*                   <div class="effect_tile" onclick="apply_effect2();"><canvas id="effect2_canvas" width="100px" height="100px"></canvas></div>*/
 /*                   <div class="effect_tile" onclick="apply_effect3();"><canvas id="effect3_canvas" width="100px" height="100px"></canvas></div>*/
 /*                   <div class="effect_tile" onclick="apply_effect4();"><canvas id="effect4_canvas" width="100px" height="100px"></canvas></div>*/
+/*                   <div class="effect_tile" onclick="apply_effect5();"><canvas id="effect5_canvas" width="100px" height="100px"></canvas></div>*/
 /*                 </div>*/
 /*                 <button class="btn" onclick="save();">Save Photo</button>*/
 /*             </div> */
@@ -391,17 +406,20 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 /*           var effect2 = document.getElementById("effect2_canvas");*/
 /*           var effect3 = document.getElementById("effect3_canvas");*/
 /*           var effect4 = document.getElementById("effect4_canvas");*/
+/*           var effect5 = document.getElementById("effect5_canvas");*/
 /* */
 /*           var ctx_effect0 = effect0.getContext("2d");*/
 /*           var ctx_effect1 = effect1.getContext("2d");*/
 /*           var ctx_effect2 = effect2.getContext("2d");*/
 /*           var ctx_effect3 = effect3.getContext("2d");*/
 /*           var ctx_effect4 = effect4.getContext("2d");*/
+/*           var ctx_effect5 = effect5.getContext("2d");*/
 /* */
 /*           effect1.getContext('2d').filter = 'blur(2px) opacity(60%)';*/
 /*           effect2.getContext('2d').filter = 'invert(30%)';*/
 /*           effect3.getContext('2d').filter = 'saturate(76%)';*/
 /*           effect4.getContext('2d').filter = 'sepia(83%)';*/
+/*           effect5.getContext('2d').filter = 'sepia(83%) invert(100%)';*/
 /* */
 /*           var img_scale = document.getElementById("pic_to_redraw_scale");*/
 /*           ctx_effect0.drawImage(img_scale, 0, 0, 100, 100);*/
@@ -409,7 +427,7 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 /*           ctx_effect2.drawImage(img_scale, 0, 0, 100, 100);*/
 /*           ctx_effect3.drawImage(img_scale, 0, 0, 100, 100);*/
 /*           ctx_effect4.drawImage(img_scale, 0, 0, 100, 100);*/
-/* */
+/*           ctx_effect5.drawImage(img_scale, 0, 0, 100, 100);*/
 /*       };*/
 /* */
 /*       function clear_effects()*/
@@ -417,6 +435,7 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 /*         cnv = document.getElementById("edit_picture_cnv");*/
 /*         ctx = cnv.getContext("2d");*/
 /*         img = document.getElementById("pic_to_redraw");*/
+/*         cnv.getContext('2d').filter = null;*/
 /*         ctx.drawImage(img, 0, 0, 500, 500);*/
 /*       }*/
 /* */
@@ -453,6 +472,15 @@ class __TwigTemplate_b4244353220f9f345ae5f4de5b110c79d587dcfdcd570c9b4fad25df645
 /*         ctx = cnv.getContext("2d");*/
 /*         img = document.getElementById("pic_to_redraw");*/
 /*         cnv.getContext('2d').filter = 'sepia(83%)';*/
+/*         ctx.drawImage(img, 0, 0, 500, 500);*/
+/*       }*/
+/* */
+/*       function apply_effect5()*/
+/*       {*/
+/*         cnv = document.getElementById("edit_picture_cnv");*/
+/*         ctx = cnv.getContext("2d");*/
+/*         img = document.getElementById("pic_to_redraw");*/
+/*         cnv.getContext('2d').filter = 'sepia(83%) invert(100%)';*/
 /*         ctx.drawImage(img, 0, 0, 500, 500);*/
 /*       }*/
 /* */
