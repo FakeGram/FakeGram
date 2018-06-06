@@ -1,15 +1,5 @@
-<html>
-	<head>
-		<title>Profile</title>
-		<meta charset="utf-8">
-	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
-  <link rel="stylesheet" href="{{ asset('assets/css/photo.css') }}" />
-	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{% include 'header.html.twig' %}
 
-	</head>
-	<body>
 	<div class="container-fluid">
 		<div class="PhotoContainer">
 			<img src="/{{pic['pic']}}" class="Photo"/>
@@ -71,5 +61,4 @@
 		
 	</div>
 	
-	</body>
-</html>
+{% include 'footer.html.twig' %}

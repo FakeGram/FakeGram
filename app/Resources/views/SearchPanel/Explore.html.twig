@@ -1,15 +1,6 @@
-<html>
-	<head>
-		<title>Profile</title>
-		<meta charset="utf-8">
-	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
-  <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}" />
-	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{% include 'header.html.twig' %}
 
-	</head>
-	<body>
+
 	<div style="width:900px;margin-left:auto;margin-right:auto;">
 	<form action ="/Search" method="post">
 		<input type="text" class ='form-control inputs' id = "SearchedArgument" name ="SearchedArgument" placeholder="{{placeholder}}" >
@@ -36,5 +27,5 @@
 		</div>
 		
 	</div>
-	</body>
-	</html>
+
+{% include 'footer.html.twig' %}

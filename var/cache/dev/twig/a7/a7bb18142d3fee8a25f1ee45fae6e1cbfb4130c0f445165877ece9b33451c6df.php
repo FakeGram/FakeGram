@@ -15,29 +15,13 @@ class __TwigTemplate_ec7317e18f5cd49e7f6e65bc77ca4dd97c4208e976c7135b6617455518d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_fa0c02fad43da2c74ecb81d1b4b3f72034d5b5d9748f1fb94ea7dc26c2dafaad = $this->env->getExtension("native_profiler");
-        $__internal_fa0c02fad43da2c74ecb81d1b4b3f72034d5b5d9748f1fb94ea7dc26c2dafaad->enter($__internal_fa0c02fad43da2c74ecb81d1b4b3f72034d5b5d9748f1fb94ea7dc26c2dafaad_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Login/Register.html.twig"));
+        $__internal_fd9df7a00a2161643d4624176cd750ae8553817b5a83b4a8906c142af90134d1 = $this->env->getExtension("native_profiler");
+        $__internal_fd9df7a00a2161643d4624176cd750ae8553817b5a83b4a8906c142af90134d1->enter($__internal_fd9df7a00a2161643d4624176cd750ae8553817b5a83b4a8906c142af90134d1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Login/Register.html.twig"));
 
         // line 1
-        echo "<html>
-\t<head>
-\t\t<title>Login ver. 0.00001</title>
-\t\t<meta charset=\"utf-8\">
-\t<link rel=\"stylesheet\" href=\"";
-        // line 5
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/bootstrap.min.css"), "html", null, true);
-        echo "\" />
-\t<script src=\"";
-        // line 6
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/js/jquery.min.js"), "html", null, true);
-        echo "\"></script>
-\t<script src=\"";
-        // line 7
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/js/bootstrap.min.js"), "html", null, true);
-        echo "\"></script>
-\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
-\t</head>
-\t<body>
+        $this->loadTemplate("header.html.twig", "Login/Register.html.twig", 1)->display($context);
+        // line 2
+        echo "
 \t<div class=\"container\">
   <h2>Rejestracja</h2>
   <p>Wypełnij dobrze wszystkie pola to spotkasz bagiennego trola.</p>
@@ -63,16 +47,17 @@ class __TwigTemplate_ec7317e18f5cd49e7f6e65bc77ca4dd97c4208e976c7135b6617455518d
     </div>
     <button type=\"submit\" class=\"btn btn-default\">Zaloguj</button>
     <label>";
-        // line 35
+        // line 27
         echo twig_escape_filter($this->env, (isset($context["err_comm"]) ? $context["err_comm"] : $this->getContext($context, "err_comm")), "html", null, true);
         echo "</label> <!-- Może się przydać  -->
   </form>
 </div>
-\t</body>
-</html>
+
 ";
+        // line 31
+        $this->loadTemplate("footer.html.twig", "Login/Register.html.twig", 31)->display($context);
         
-        $__internal_fa0c02fad43da2c74ecb81d1b4b3f72034d5b5d9748f1fb94ea7dc26c2dafaad->leave($__internal_fa0c02fad43da2c74ecb81d1b4b3f72034d5b5d9748f1fb94ea7dc26c2dafaad_prof);
+        $__internal_fd9df7a00a2161643d4624176cd750ae8553817b5a83b4a8906c142af90134d1->leave($__internal_fd9df7a00a2161643d4624176cd750ae8553817b5a83b4a8906c142af90134d1_prof);
 
     }
 
@@ -88,19 +73,11 @@ class __TwigTemplate_ec7317e18f5cd49e7f6e65bc77ca4dd97c4208e976c7135b6617455518d
 
     public function getDebugInfo()
     {
-        return array (  67 => 35,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
+        return array (  58 => 31,  51 => 27,  24 => 2,  22 => 1,);
     }
 }
-/* <html>*/
-/* 	<head>*/
-/* 		<title>Login ver. 0.00001</title>*/
-/* 		<meta charset="utf-8">*/
-/* 	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />*/
-/* 	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>*/
-/* 	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>*/
-/* 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*/
-/* 	</head>*/
-/* 	<body>*/
+/* {% include 'header.html.twig' %}*/
+/* */
 /* 	<div class="container">*/
 /*   <h2>Rejestracja</h2>*/
 /*   <p>Wypełnij dobrze wszystkie pola to spotkasz bagiennego trola.</p>*/
@@ -128,6 +105,6 @@ class __TwigTemplate_ec7317e18f5cd49e7f6e65bc77ca4dd97c4208e976c7135b6617455518d
 /*     <label>{{err_comm}}</label> <!-- Może się przydać  -->*/
 /*   </form>*/
 /* </div>*/
-/* 	</body>*/
-/* </html>*/
+/* */
+/* {% include 'footer.html.twig' %}*/
 /* */

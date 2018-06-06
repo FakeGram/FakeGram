@@ -1,20 +1,5 @@
-<html>
-	<head>
-		<title>Login</title>
-		<meta charset="utf-8">
-	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
-  <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}" />
-	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{% include 'header.html.twig' %}
 
-  </form>
-  <form action="/">
-    <button type="submit" class="btn btn-default">Strona Główna</button>
-  </form>
-	</head>
-	
-  <body>
 	<div class="container-fluid">
     <div class="login-form">
       <h2 class="log-in">Zaloguj się !</h2>
@@ -35,5 +20,6 @@
       </form>
   </div>
 </div>
-	</body>
-</html>
+
+
+{% include 'footer.html.twig' %}

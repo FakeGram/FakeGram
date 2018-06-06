@@ -15,8 +15,8 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_87a0657314a6e3d5315315be3e9c0f4301721b3aaba0a015121202570aec5f06 = $this->env->getExtension("native_profiler");
-        $__internal_87a0657314a6e3d5315315be3e9c0f4301721b3aaba0a015121202570aec5f06->enter($__internal_87a0657314a6e3d5315315be3e9c0f4301721b3aaba0a015121202570aec5f06_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "header.html.twig"));
+        $__internal_c5cc86c427eada89c669df922e8d396731980e34fabc55df48f4dc04f60e2feb = $this->env->getExtension("native_profiler");
+        $__internal_c5cc86c427eada89c669df922e8d396731980e34fabc55df48f4dc04f60e2feb->enter($__internal_c5cc86c427eada89c669df922e8d396731980e34fabc55df48f4dc04f60e2feb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "header.html.twig"));
 
         // line 1
         echo "<html>
@@ -34,43 +34,48 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>-->
     
-
-    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
     <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
     <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
+    <script src=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/js/owl.carousel.js"), "html", null, true);
+        echo "\"></script>
 
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-
-
-
+    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
     <link rel=\"stylesheet\" href=\"";
-        // line 16
+        // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/image_upload.css"), "html", null, true);
         echo "\" />
     <link rel=\"stylesheet\" href=\"";
-        // line 17
+        // line 13
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/header_and_footer.css"), "html", null, true);
         echo "\" />
     <link rel=\"stylesheet\" href=\"";
-        // line 18
+        // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/style.css"), "html", null, true);
         echo "\" />
     <link rel=\"stylesheet\" href=\"";
-        // line 19
+        // line 15
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/edit_picture.css"), "html", null, true);
         echo "\" />
     <link rel=\"stylesheet\" href=\"";
-        // line 20
+        // line 16
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/owl.carousel.css"), "html", null, true);
         echo "\" />
     <link rel=\"stylesheet\" href=\"";
-        // line 21
+        // line 17
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/owl.theme.default.css"), "html", null, true);
         echo "\" />
-    <script src=\"";
-        // line 22
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/js/owl.carousel.js"), "html", null, true);
-        echo "\"></script>
+    <link rel=\"stylesheet\" href=\"";
+        // line 18
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/user_panel.css"), "html", null, true);
+        echo "\" />
+    <link rel=\"stylesheet\" href=\"";
+        // line 19
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/profile.css"), "html", null, true);
+        echo "\" />
+    
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
     </head>
     <body>
     <!-- HEADER potem do innego pliku wyjebać -->
@@ -87,31 +92,31 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
         <div class=\"collapse navbar-collapse\" id=\"myNavbar\">
           <ul class=\"nav navbar-nav navbar-right\">
             ";
-        // line 38
+        // line 37
         if ($this->getAttribute((isset($context["session"]) ? $context["session"] : null), "CurrentUser", array(), "any", true, true)) {
-            // line 39
+            // line 38
             echo "            <li><a href=\"/Logout\"><span class=\"glyphicon glyphicon-log-out\"></span> Wyloguj</a></li>
             ";
         } else {
-            // line 41
+            // line 40
             echo "            <li><a href=\"/Registration\"><span class=\"glyphicon glyphicon-user\"></span> Rejestracja</a></li>
             <li><a href=\"/Login\"><span class=\"glyphicon glyphicon-log-in\"></span> Logowanie</a></li>
             ";
         }
-        // line 44
+        // line 43
         echo "          </ul>
           <ul class=\"nav navbar-nav navbar-right nav-pages\">
             <li class=\"active\"><a href=\"#\">Strona Główna</a></li>
             <li><a href=\"/Explore\">Odkrywaj</a></li>
             <li><a href=\"/Profile\">Moje zdjęcia </a></li>
             ";
-        // line 49
+        // line 48
         if ($this->getAttribute((isset($context["session"]) ? $context["session"] : null), "CurrentUser", array(), "any", true, true)) {
-            // line 50
+            // line 49
             echo "            <li><a onclick=\"showModal()\" style=\"cursor:pointer;\">Dodaj Zdjęcie</a></li> 
             ";
         }
-        // line 52
+        // line 51
         echo "            <li><a href=\"/Panel\">Ustawienia</a></li> 
           </ul>
         </div>
@@ -155,7 +160,7 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
     </script>
     <!-- |||||||||||||||||||||||||||||||||||| -->";
         
-        $__internal_87a0657314a6e3d5315315be3e9c0f4301721b3aaba0a015121202570aec5f06->leave($__internal_87a0657314a6e3d5315315be3e9c0f4301721b3aaba0a015121202570aec5f06_prof);
+        $__internal_c5cc86c427eada89c669df922e8d396731980e34fabc55df48f4dc04f60e2feb->leave($__internal_c5cc86c427eada89c669df922e8d396731980e34fabc55df48f4dc04f60e2feb_prof);
 
     }
 
@@ -171,7 +176,7 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
 
     public function getDebugInfo()
     {
-        return array (  115 => 52,  111 => 50,  109 => 49,  102 => 44,  97 => 41,  93 => 39,  91 => 38,  72 => 22,  68 => 21,  64 => 20,  60 => 19,  56 => 18,  52 => 17,  48 => 16,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
+        return array (  120 => 51,  116 => 49,  114 => 48,  107 => 43,  102 => 40,  98 => 38,  96 => 37,  75 => 19,  71 => 18,  67 => 17,  63 => 16,  59 => 15,  55 => 14,  51 => 13,  47 => 12,  41 => 9,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
     }
 }
 /* <html>*/
@@ -180,22 +185,21 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
 /*     <script src="{{ asset('assets/js/jquery.min.js') }}"></script>*/
 /*     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>-->*/
 /*     */
-/* */
-/*     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">*/
 /*     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*/
 /*     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>*/
+/*     <script src="{{ asset('assets/js/owl.carousel.js') }}"></script>*/
 /* */
-/*     <meta name="viewport" content="width=device-width, initial-scale=1">*/
-/* */
-/* */
-/* */
+/*     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">*/
 /*     <link rel="stylesheet" href="{{ asset('assets/css/image_upload.css') }}" />*/
 /*     <link rel="stylesheet" href="{{ asset('assets/css/header_and_footer.css') }}" />*/
 /*     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />*/
 /*     <link rel="stylesheet" href="{{ asset('assets/css/edit_picture.css') }}" />*/
 /*     <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.css') }}" />*/
 /*     <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.css') }}" />*/
-/*     <script src="{{ asset('assets/js/owl.carousel.js') }}"></script>*/
+/*     <link rel="stylesheet" href="{{ asset('assets/css/user_panel.css') }}" />*/
+/*     <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}" />*/
+/*     */
+/*     <meta name="viewport" content="width=device-width, initial-scale=1">*/
 /*     </head>*/
 /*     <body>*/
 /*     <!-- HEADER potem do innego pliku wyjebać -->*/

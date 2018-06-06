@@ -1,19 +1,5 @@
-<html>
-	<head>
-		<title>Login ver. 0.00001</title>
-		<meta charset="utf-8">
-	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
-	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{% include 'header.html.twig' %}
 
-  </form>
-  <form action="/">
-    <button type="submit" class="btn btn-default">Strona Główna</button>
-  </form>
-
-	</head>
-	<body>
 	<div class="container">
   <h2>Rejestracja</h2>
   <p>Wypełnij dobrze wszystkie pola to spotkasz bagiennego trola.</p>
@@ -41,5 +27,5 @@
     <label>{{err_comm}}</label> <!-- Może się przydać  -->
   </form>
 </div>
-	</body>
-</html>
+
+{% include 'footer.html.twig' %}
