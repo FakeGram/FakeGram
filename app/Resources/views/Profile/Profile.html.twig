@@ -1,15 +1,4 @@
-<html>
-	<head>
-		<title>Profile</title>
-		<meta charset="utf-8">
-	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
-  <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}" />
-	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-	</head>
-	<body>
+{% include 'header.html.twig' %}
 	<div class="container-fluid">
 	
 		<div>
@@ -20,12 +9,13 @@
 		
 		<label><img width=100px height=100px src="data:image/jpeg;base64,{{user['avatar']}}"/></label>
 		{% if loggedIn==TRUE %}
-			<form action="/Profile/{{user['login']}}/Follow" method="POST">
-					<input type="hidden" name="CurrentUser" value='{{CurrentUserLogin}}'/>
-					<input type="hidden" name="UserToFollow" value="{{user['login']}}"/>
-					<input type="submit" value="Follow"/>
-			</form>
+			
+					<div style="display:none;" id="CurrentUser" >{{CurrentUserLogin}}'</div>
+					<div style="display:none" id="UserToFollow">{{user['login']}}"</div>
+					<button onclick="follow();">Follow"</button>
+			
 				{% endif %}
+				
 		</div>
 		<div>
 			{% if pictures %}
@@ -48,5 +38,27 @@
 		</div>
 		
 	</div>
-	</body>
-	</html>
+	
+	
+	<script>
+		function follow()
+		{
+			var currentuser=document.getElementById("CurrentUser");
+			var usertofollow=document.getElementById("UserToFollow");
+			///Profile/{{user['login']}}/Follow
+			var action="/Profile/"+usertofollow+"/Follow";
+			$.ajax({
+			url:action,
+			type:'POST',
+			data:
+			{
+				CurrentUser:currentuser,
+				UserToFollow:usertofollow
+			}
+			});
+			
+		}
+	</script>
+	{% include 'footer.html.twig' %}
+	
+	

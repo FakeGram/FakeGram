@@ -424,7 +424,7 @@ class Profile extends Controller
 			$DoctrineManager->flush();
 		}
 		
-		return $this->redirect('../../Profile/'.$_POST['UserToFollow']);
+		
 	}
 
 }
