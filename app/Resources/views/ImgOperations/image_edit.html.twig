@@ -1,48 +1,4 @@
-<html>
-    <head>
-    <!--<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>-->
-    
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="{{ asset('assets/js/owl.carousel.js') }}"></script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ asset('assets/css/header_and_footer.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/edit_picture.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.css') }}" />
-    </head>
-    <body>
-    <!-- HEADER potem do innego pliku wyjebać -->
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span> 
-          </button>
-          <a class="navbar-brand" href="/"><div class="logo">FakeGram</div></a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/Registration"><span class="glyphicon glyphicon-user"></span> Rejestracja</a></li>
-            <li><a href="/Login"><span class="glyphicon glyphicon-log-in"></span> Logowanie</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right nav-pages">
-            <li class="active"><a href="/">Strona Główna</a></li>
-            <li><a href="/Profile">Moje zdjęcia </a></li>
-            <li><a href="/upload">Dodaj Zdjęcie</a></li> 
-            <li><a href="/Panel">Ustawienia</a></li> 
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- |||||||||||||||||||||||||||||||||||| -->
+{% include 'header.html.twig' %}
 
         <div class="container-fluid">
             <div class="edit_picture_tile">
@@ -66,27 +22,7 @@
             <img id="pic_to_redraw_scale" style="display: none;" width="100px" height="100px" src="{{pic_name}}" />
         </div>
 
-        <!-- FOOTER potem do innego pliku wyjebać -->
-        <div class="footer">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <div class="FooterLogo">FakeGram</div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top: 2%;">
-                    <p>Projekt z przedmiotu "systemy multimedialne". Politechnika Śląska, Wydział Elektryczny. 2018 r.</p>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <ul>
-                        Wykonali:
-                        <li>Konrad Sladkowski</li>
-                        <li>Krzysztof Szwej</li>
-                        <li>Dominik Żurawski</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- |||||||||||||||||||||||||||||||||||| -->
-    </body>
+
     <script type="text/javascript">
     
         var cnv;
@@ -222,4 +158,5 @@
       });
 
     </script>
-</html>
+
+{% include 'footer.html.twig' %}

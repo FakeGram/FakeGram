@@ -98,31 +98,32 @@ class pic_uploader extends Controller
             $statement->persist($pic);
             $statement->flush();
 
-            
-            $words=explode(' ', $desc);
-            $tags=array();
-            foreach ($words as $word)
+            if($desc!='')
             {
-                if($word[0]=='#') array_push($tags, $word);
-            }
-            foreach ($tags as $tag)
-            {
-                if($tag[strlen($tag)-1]==','||$tag[strlen($tag)-1]=='.') $tag=substr($tag, 0, strlen($tag)-2);
-            }
+                $words=explode(' ', $desc);
+                $tags=array();
+                foreach ($words as $word)
+                {
+                    if($word[0]=='#') array_push($tags, $word);
+                }
+                foreach ($tags as $tag)
+                {
+                    if($tag[strlen($tag)-1]==','||$tag[strlen($tag)-1]=='.') $tag=substr($tag, 0, strlen($tag)-2);
+                }
 
-            $PicId=$statement->getRepository('AppBundle:pic')->findOneByPic($target_file)->getId();
+                $PicId=$statement->getRepository('AppBundle:pic')->findOneByPic($target_file)->getId();
 
-            
-            foreach($tags as $tag)
-            {
-                $tagObject = new tags();
-                $tagObject->setTag($tag);
-                $tagObject->setOf("pic");
-                $tagObject->setContentid($PicId);
-                $statement->persist($tagObject);
-                $statement->flush();
+                
+                foreach($tags as $tag)
+                {
+                    $tagObject = new tags();
+                    $tagObject->setTag($tag);
+                    $tagObject->setOf("pic");
+                    $tagObject->setContentid($PicId);
+                    $statement->persist($tagObject);
+                    $statement->flush();
+                }
             }
-
             //csdv
 
 

@@ -1,0 +1,93 @@
+<html>
+    <head>
+    <!--<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>-->
+    
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <link rel="stylesheet" href="{{ asset('assets/css/image_upload.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/header_and_footer.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/edit_picture.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.css') }}" />
+    <script src="{{ asset('assets/js/owl.carousel.js') }}"></script>
+    </head>
+    <body>
+    <!-- HEADER potem do innego pliku wyjebać -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+          <a class="navbar-brand" href="#"><div class="logo">FakeGram</div></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            {% if session.CurrentUser is defined %}
+            <li><a href="/Logout"><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
+            {% else %}
+            <li><a href="/Registration"><span class="glyphicon glyphicon-user"></span> Rejestracja</a></li>
+            <li><a href="/Login"><span class="glyphicon glyphicon-log-in"></span> Logowanie</a></li>
+            {% endif %}
+          </ul>
+          <ul class="nav navbar-nav navbar-right nav-pages">
+            <li class="active"><a href="#">Strona Główna</a></li>
+            <li><a href="/Explore">Odkrywaj</a></li>
+            <li><a href="/Profile">Moje zdjęcia </a></li>
+            {% if session.CurrentUser is defined %}
+            <li><a onclick="showModal()" style="cursor:pointer;">Dodaj Zdjęcie</a></li> 
+            {% endif %}
+            <li><a href="/Panel">Ustawienia</a></li> 
+          </ul>
+        </div>
+        <div id="Modal" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="hideModal()">&times;</span>
+              <form action="/pic_upload" method="post" enctype="multipart/form-data">
+                <div class="custom-file">
+                  <input type="file" name="img" id="js-upload-files" accept="image/jpeg" class="form-control" required>
+                  <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                </div>
+                <div class="pic_description">
+                  <input type="text" name="desc" id="pic_desc" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
+            </form>
+            </div>
+        </div>
+        <form class="form-horizontal" action ="/Search" method="post">
+          <div class= form-inline>
+            <input type="text" class ='form-control inputs' id = "SearchedArgument" name ="SearchedArgument" placeholder="Wyszukaj Użytkownika" >
+            <button type="submit" class = "btn btn-default buttons" id="btnSubmit">Wyszukaj</button>
+          </div>
+        </form>
+      </div>
+    </nav>
+    <script type="text/javascript">
+      var modal = document.getElementById('Modal');
+      var containers = document.getElementsByClassName("container-fluid");
+      function showModal(){
+        modal.style.display="block";
+      }
+      function hideModal(){
+        modal.style.display="none";
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+      }
+    </script>
+    <!-- |||||||||||||||||||||||||||||||||||| -->
