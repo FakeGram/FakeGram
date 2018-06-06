@@ -10,13 +10,22 @@
 
 	</head>
 	<body>
-	<div style="width:900px;margin-left:auto;margin-right:auto;">
+	<div class="container-fluid">
+	
 		<div>
 		<label>{{user['login']}}</label>
 		<label>{{user['email']}}</label>
 		<label>{{user['nameAndSurrname']}}</label>
 		<label>{{user['about']}}</label>
+		
 		<label><img width=100px height=100px src="data:image/jpeg;base64,{{user['avatar']}}"/></label>
+		{% if loggedIn==TRUE %}
+			<form action="/Profile/{{CurrentUserLogin}}/Follow" method="POST">
+					<input type="hidden" name="CurrentUser" value='{{CurrentUserLogin}}'/>
+					<input type="hidden" name="UserToFollow" value="{{user['login']}}"/>
+					<input type="submit" value="Follow"/>
+			</form>
+				{% endif %}
 		</div>
 		<div>
 			{% if pictures %}

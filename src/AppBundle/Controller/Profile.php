@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\pics;
 use AppBundle\Entity\comment;
 use AppBundle\Entity\likes;
+use AppBundle\Entity\subscriptions;
 class Profile extends Controller
  {
 	/**
@@ -62,17 +63,25 @@ class Profile extends Controller
 			 $i++;
 		 }
 		 
-		 
+		if(isset($_SESSION["CurrentUser"])){
+			
+			$loggedIn=true;
+			$currentUserLogin=$_SESSION["CurrentUser"]->getLogin();
+		}
+		else{
+			$loggedIn=false;
+			$currentUserLogin='none';
+		}
 		 
 		 if(isset($pictures))
 		 return $this->render('Profile/Profile.html.twig', array( 
-			'pictures'=> $pictures,'user'=>$usr  // Tablica do wysyłania zmiennych do widoku 
+			'pictures'=> $pictures,'user'=>$usr,'loggedIn'=>$loggedIn,'CurrentUserLogin'=>$currentUserLogin    // Tablica do wysyłania zmiennych do widoku 
 				));
 		else
 		{
 			$pictures='';
 			return $this->render('Profile/Profile.html.twig', array( 
-			'pictures'=> $pictures,'user'=>$usr // Tablica do wysyłania zmiennych do widoku 
+			'pictures'=> $pictures,'user'=>$usr,'loggedIn'=>$loggedIn,'CurrentUserLogin'=>$currentUserLogin   // Tablica do wysyłania zmiennych do widoku 
 				));
 		}
 		}
@@ -124,17 +133,24 @@ class Profile extends Controller
 			 $i++;
 		 }
 		 
-		 
+		 if(isset($_SESSION["CurrentUser"])){
+			$loggedIn=true;
+			$currentUserLogin=$_SESSION["CurrentUser"]->getLogin();
+		}
+		else{
+			$loggedIn=false;
+			$currentUserLogin='none';
+		}
 		 
 		 if(isset($pictures))
 		 return $this->render('Profile/Profile.html.twig', array( 
-			'pictures'=> $pictures,'user'=>$usr  // Tablica do wysyłania zmiennych do widoku 
+			'pictures'=> $pictures,'user'=>$usr,'loggedIn'=>$loggedIn,'CurrentUserLogin'=>$currentUserLogin  // Tablica do wysyłania zmiennych do widoku 
 				));
 		else
 		{
 			$pictures='';
 			return $this->render('Profile/Profile.html.twig', array( 
-			'pictures'=> $pictures,'user'=>$usr  // Tablica do wysyłania zmiennych do widoku 
+			'pictures'=> $pictures,'user'=>$usr,'loggedIn'=>$loggedIn,'CurrentUserLogin'=>$currentUserLogin  // Tablica do wysyłania zmiennych do widoku 
 				));
 		}
 	 }
@@ -359,6 +375,36 @@ class Profile extends Controller
 		// Wyszukiwanie po tagach można machnać tak,że sprawdzi się w if'ie czy pierwsza litera jest haszem 
 		return $this->redirect("/Profile/".$_POST['SearchedArgument']);
 
+	}
+	
+	/**
+     * @Route("/Profile/{login}/Follow")
+     */
+	public function Follow()
+	{
+		
+		
+		$follows=$this->getDoctrine()
+		->getRepository('AppBundle:subscriptions')
+		->findByIdsubscriber($_POST['UserToFollow']);
+		foreach($follows as $follow){
+			if($follow->getIdSub2()==$_POST['CurrentUser']) $followed=true;
+		}
+		
+		if(!isset($followed)){
+			$followed=false;
+		}
+		if($followed==false){
+			$foll=new subscriptions();
+			$foll->setIdSubscriber($_POST['UserToFollow']);
+			$foll->setIdSub2($_POST['CurrentUser']);
+			$DoctrineManager=$this->getDoctrine()->getManager();
+			$DoctrineManager->persist($foll);
+			$DoctrineManager->flush();
+			echo 'dupa';
+		}
+		var_dump($followed);
+		return $this->redirect('../../Profile/'.$_POST['UserToFollow']);
 	}
 
 }

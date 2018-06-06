@@ -15,8 +15,8 @@ class __TwigTemplate_6a731edbb971c3a76fe5abcf9c5a0867144996e461029c487674218eb56
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_81caaf1256790dc3a3e7d90e34c8940c7583c67845e65237ea309ebba1b273e8 = $this->env->getExtension("native_profiler");
-        $__internal_81caaf1256790dc3a3e7d90e34c8940c7583c67845e65237ea309ebba1b273e8->enter($__internal_81caaf1256790dc3a3e7d90e34c8940c7583c67845e65237ea309ebba1b273e8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
+        $__internal_c5eb212b6796fd8b4b31d164f009921f0389eb2790712d190737bc64a2473ce2 = $this->env->getExtension("native_profiler");
+        $__internal_c5eb212b6796fd8b4b31d164f009921f0389eb2790712d190737bc64a2473ce2->enter($__internal_c5eb212b6796fd8b4b31d164f009921f0389eb2790712d190737bc64a2473ce2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
 
         // line 1
         echo "<html>
@@ -68,13 +68,50 @@ class __TwigTemplate_6a731edbb971c3a76fe5abcf9c5a0867144996e461029c487674218eb56
           </ul>
           <ul class=\"nav navbar-nav navbar-right nav-pages\">
             <li class=\"active\"><a href=\"#\">Strona Główna</a></li>
+            <li><a href=\"/Explore\">Odkrywaj</a></li>
             <li><a href=\"/Profile\">Moje zdjęcia </a></li>
-            <li><a href=\"/upload\">Dodaj Zdjęcie</a></li> 
+            <li><a onclick=\"showModal()\" style=\"cursor:pointer;\">Dodaj Zdjęcie</a></li> 
             <li><a href=\"/Panel\">Ustawienia</a></li> 
           </ul>
         </div>
+        <div id=\"Modal\" class=\"modal\">
+            <div class=\"modal-content\">
+              <span class=\"close\" onclick=\"hideModal()\">&times;</span>
+              <form action=\"/pic_upload\" method=\"post\" enctype=\"multipart/form-data\">
+                <div class=\"custom-file\">
+                  <input type=\"file\" name=\"img\" id=\"js-upload-files\" accept=\"image/jpeg\" class=\"form-control\" required>
+                  <label class=\"custom-file-label\" for=\"validatedCustomFile\">Choose file...</label>
+                </div>
+                <div class=\"pic_description\">
+                  <input type=\"text\" name=\"desc\" id=\"pic_desc\" class=\"form-control\">
+                </div>
+                <button type=\"submit\" class=\"btn btn-sm btn-primary\" id=\"js-upload-submit\">Upload files</button>
+            </form>
+            </div>
+        </div>
+        <form class=\"form-horizontal\" action =\"/Search\" method=\"post\">
+          <div class= form-inline>
+            <input type=\"text\" class ='form-control inputs' id = \"SearchedArgument\" name =\"SearchedArgument\" placeholder=\"Wyszukaj Użytkownika\" >
+            <button type=\"submit\" class = \"btn btn-default buttons\" id=\"btnSubmit\">Wyszukaj</button>
+          </div>
+        </form>
       </div>
     </nav>
+    <script type=\"text/javascript\">
+      var modal = document.getElementById('Modal');
+      var containers = document.getElementsByClassName(\"container-fluid\");
+      function showModal(){
+        modal.style.display=\"block\";
+      }
+      function hideModal(){
+        modal.style.display=\"none\";
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = \"none\";
+        }
+      }
+    </script>
     <!-- |||||||||||||||||||||||||||||||||||| -->
 
         <div class=\"container-fluid\">
@@ -112,7 +149,7 @@ class __TwigTemplate_6a731edbb971c3a76fe5abcf9c5a0867144996e461029c487674218eb56
         </div>
 
         <!-- FOOTER potem do innego pliku wyjebać -->
-        <div class=\"footer\">
+        <div class=\"footer container-fluid\">
             <div class=\"row\">
                 <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\">
                     <div class=\"FooterLogo\">FakeGram</div>
@@ -135,7 +172,7 @@ class __TwigTemplate_6a731edbb971c3a76fe5abcf9c5a0867144996e461029c487674218eb56
 </html>
 ";
         
-        $__internal_81caaf1256790dc3a3e7d90e34c8940c7583c67845e65237ea309ebba1b273e8->leave($__internal_81caaf1256790dc3a3e7d90e34c8940c7583c67845e65237ea309ebba1b273e8_prof);
+        $__internal_c5eb212b6796fd8b4b31d164f009921f0389eb2790712d190737bc64a2473ce2->leave($__internal_c5eb212b6796fd8b4b31d164f009921f0389eb2790712d190737bc64a2473ce2_prof);
 
     }
 
@@ -188,13 +225,50 @@ class __TwigTemplate_6a731edbb971c3a76fe5abcf9c5a0867144996e461029c487674218eb56
 /*           </ul>*/
 /*           <ul class="nav navbar-nav navbar-right nav-pages">*/
 /*             <li class="active"><a href="#">Strona Główna</a></li>*/
+/*             <li><a href="/Explore">Odkrywaj</a></li>*/
 /*             <li><a href="/Profile">Moje zdjęcia </a></li>*/
-/*             <li><a href="/upload">Dodaj Zdjęcie</a></li> */
+/*             <li><a onclick="showModal()" style="cursor:pointer;">Dodaj Zdjęcie</a></li> */
 /*             <li><a href="/Panel">Ustawienia</a></li> */
 /*           </ul>*/
 /*         </div>*/
+/*         <div id="Modal" class="modal">*/
+/*             <div class="modal-content">*/
+/*               <span class="close" onclick="hideModal()">&times;</span>*/
+/*               <form action="/pic_upload" method="post" enctype="multipart/form-data">*/
+/*                 <div class="custom-file">*/
+/*                   <input type="file" name="img" id="js-upload-files" accept="image/jpeg" class="form-control" required>*/
+/*                   <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>*/
+/*                 </div>*/
+/*                 <div class="pic_description">*/
+/*                   <input type="text" name="desc" id="pic_desc" class="form-control">*/
+/*                 </div>*/
+/*                 <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>*/
+/*             </form>*/
+/*             </div>*/
+/*         </div>*/
+/*         <form class="form-horizontal" action ="/Search" method="post">*/
+/*           <div class= form-inline>*/
+/*             <input type="text" class ='form-control inputs' id = "SearchedArgument" name ="SearchedArgument" placeholder="Wyszukaj Użytkownika" >*/
+/*             <button type="submit" class = "btn btn-default buttons" id="btnSubmit">Wyszukaj</button>*/
+/*           </div>*/
+/*         </form>*/
 /*       </div>*/
 /*     </nav>*/
+/*     <script type="text/javascript">*/
+/*       var modal = document.getElementById('Modal');*/
+/*       var containers = document.getElementsByClassName("container-fluid");*/
+/*       function showModal(){*/
+/*         modal.style.display="block";*/
+/*       }*/
+/*       function hideModal(){*/
+/*         modal.style.display="none";*/
+/*       }*/
+/*       window.onclick = function(event) {*/
+/*         if (event.target == modal) {*/
+/*             modal.style.display = "none";*/
+/*         }*/
+/*       }*/
+/*     </script>*/
 /*     <!-- |||||||||||||||||||||||||||||||||||| -->*/
 /* */
 /*         <div class="container-fluid">*/
@@ -232,7 +306,7 @@ class __TwigTemplate_6a731edbb971c3a76fe5abcf9c5a0867144996e461029c487674218eb56
 /*         </div>*/
 /* */
 /*         <!-- FOOTER potem do innego pliku wyjebać -->*/
-/*         <div class="footer">*/
+/*         <div class="footer container-fluid">*/
 /*             <div class="row">*/
 /*                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">*/
 /*                     <div class="FooterLogo">FakeGram</div>*/

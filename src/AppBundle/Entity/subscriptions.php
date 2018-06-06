@@ -19,13 +19,13 @@ class subscriptions
      */
      private $id;
       /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=64)
      */
-     private $id_subscriber;
+     private $idsubscriber;
      /**
-     * @ORM\Column(type="ineger")
+     * @ORM\Column(type="string", length=64)
      */
-     private $id_sub2;
+     private $idsub2;
     
     
 
@@ -44,13 +44,13 @@ class subscriptions
     /**
      * Set idSubscriber
      *
-     * @param integer $idSubscriber
+     * @param string $idSubscriber
      *
      * @return subscriptions
      */
     public function setIdSubscriber($idSubscriber)
     {
-        $this->id_subscriber = $idSubscriber;
+        $this->idsubscriber = $idSubscriber;
     
         return $this;
     }
@@ -58,23 +58,23 @@ class subscriptions
     /**
      * Get idSubscriber
      *
-     * @return integer
+     * @return string
      */
     public function getIdSubscriber()
     {
-        return $this->id_subscriber;
+        return $this->idsubscriber;
     }
 
     /**
      * Set idSub2
      *
-     * @param \ineger $idSub2
+     * @param string $idSub2
      *
      * @return subscriptions
      */
-    public function setIdSub2(\ineger $idSub2)
+    public function setIdSub2(string $idSub2)
     {
-        $this->id_sub2 = $idSub2;
+        $this->idsub2 = $idSub2;
     
         return $this;
     }
@@ -82,10 +82,10 @@ class subscriptions
     /**
      * Get idSub2
      *
-     * @return \ineger
+     * @return string
      */
     public function getIdSub2()
     {
-        return $this->id_sub2;
+        return $this->idsub2;
     }
 }

@@ -15,8 +15,8 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c6229f4963810ea8dc439df8360019200d9660792af5e38ac25bb0f54d63baba = $this->env->getExtension("native_profiler");
-        $__internal_c6229f4963810ea8dc439df8360019200d9660792af5e38ac25bb0f54d63baba->enter($__internal_c6229f4963810ea8dc439df8360019200d9660792af5e38ac25bb0f54d63baba_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Profile.html.twig"));
+        $__internal_9859e4da589ffeb478a2a51240ec5387ba86c1adf96fbda0108a02a121a9a9b6 = $this->env->getExtension("native_profiler");
+        $__internal_9859e4da589ffeb478a2a51240ec5387ba86c1adf96fbda0108a02a121a9a9b6->enter($__internal_9859e4da589ffeb478a2a51240ec5387ba86c1adf96fbda0108a02a121a9a9b6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Profile.html.twig"));
 
         // line 1
         echo "<html>
@@ -43,47 +43,69 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
 
 \t</head>
 \t<body>
-\t<div style=\"width:900px;margin-left:auto;margin-right:auto;\">
+\t<div class=\"container-fluid\">
+\t
 \t\t<div>
 \t\t<label>";
-        // line 15
+        // line 16
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "login", array(), "array"), "html", null, true);
         echo "</label>
 \t\t<label>";
-        // line 16
+        // line 17
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "email", array(), "array"), "html", null, true);
         echo "</label>
 \t\t<label>";
-        // line 17
+        // line 18
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "nameAndSurrname", array(), "array"), "html", null, true);
         echo "</label>
 \t\t<label>";
-        // line 18
+        // line 19
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "about", array(), "array"), "html", null, true);
         echo "</label>
+\t\t
 \t\t<label><img width=100px height=100px src=\"data:image/jpeg;base64,";
-        // line 19
+        // line 21
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "avatar", array(), "array"), "html", null, true);
         echo "\"/></label>
-\t\t</div>
+\t\t";
+        // line 22
+        if (((isset($context["loggedIn"]) ? $context["loggedIn"] : $this->getContext($context, "loggedIn")) == true)) {
+            // line 23
+            echo "\t\t\t<form action=\"/Profile/";
+            echo twig_escape_filter($this->env, (isset($context["CurrentUserLogin"]) ? $context["CurrentUserLogin"] : $this->getContext($context, "CurrentUserLogin")), "html", null, true);
+            echo "/Follow\" method=\"POST\">
+\t\t\t\t\t<input type=\"hidden\" name=\"CurrentUser\" value='";
+            // line 24
+            echo twig_escape_filter($this->env, (isset($context["CurrentUserLogin"]) ? $context["CurrentUserLogin"] : $this->getContext($context, "CurrentUserLogin")), "html", null, true);
+            echo "'/>
+\t\t\t\t\t<input type=\"hidden\" name=\"UserToFollow\" value=\"";
+            // line 25
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "login", array(), "array"), "html", null, true);
+            echo "\"/>
+\t\t\t\t\t<input type=\"submit\" value=\"Follow\"/>
+\t\t\t</form>
+\t\t\t\t";
+        }
+        // line 29
+        echo "\t\t</div>
 \t\t<div>
 \t\t\t";
-        // line 22
+        // line 31
         if ((isset($context["pictures"]) ? $context["pictures"] : $this->getContext($context, "pictures"))) {
-            // line 23
+            // line 32
             echo "\t\t\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["pictures"]) ? $context["pictures"] : $this->getContext($context, "pictures")));
             foreach ($context['_seq'] as $context["_key"] => $context["pic"]) {
-                // line 24
+                // line 33
                 echo "\t\t\t\t\t<div class=\"PicturesMainContainer\">
 \t\t\t\t\t\t<a href=\"/Profile/Photo/";
-                // line 25
+                // line 34
                 echo twig_escape_filter($this->env, $this->getAttribute($context["pic"], "id", array(), "array"), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t<div class=\"PicturesContainer\">
 \t\t\t\t\t\t\t<img src=\"/";
-                // line 27
+                // line 36
                 echo twig_escape_filter($this->env, $this->getAttribute($context["pic"], "pic", array(), "array"), "html", null, true);
                 echo "\" class=\"Pictures\"/>
 \t\t\t\t\t\t</div>
@@ -98,21 +120,21 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pic'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 36
+            // line 45
             echo "\t\t\t";
         } else {
-            // line 37
+            // line 46
             echo "\t\t\t\t<label>Brak zdjęć</label>
 \t\t\t";
         }
-        // line 39
+        // line 48
         echo "\t\t</div>
 \t\t
 \t</div>
 \t</body>
 \t</html>";
         
-        $__internal_c6229f4963810ea8dc439df8360019200d9660792af5e38ac25bb0f54d63baba->leave($__internal_c6229f4963810ea8dc439df8360019200d9660792af5e38ac25bb0f54d63baba_prof);
+        $__internal_9859e4da589ffeb478a2a51240ec5387ba86c1adf96fbda0108a02a121a9a9b6->leave($__internal_9859e4da589ffeb478a2a51240ec5387ba86c1adf96fbda0108a02a121a9a9b6_prof);
 
     }
 
@@ -128,7 +150,7 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
 
     public function getDebugInfo()
     {
-        return array (  109 => 39,  105 => 37,  102 => 36,  87 => 27,  82 => 25,  79 => 24,  74 => 23,  72 => 22,  66 => 19,  62 => 18,  58 => 17,  54 => 16,  50 => 15,  40 => 8,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
+        return array (  131 => 48,  127 => 46,  124 => 45,  109 => 36,  104 => 34,  101 => 33,  96 => 32,  94 => 31,  90 => 29,  83 => 25,  79 => 24,  74 => 23,  72 => 22,  68 => 21,  63 => 19,  59 => 18,  55 => 17,  51 => 16,  40 => 8,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
     }
 }
 /* <html>*/
@@ -143,13 +165,22 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
 /* */
 /* 	</head>*/
 /* 	<body>*/
-/* 	<div style="width:900px;margin-left:auto;margin-right:auto;">*/
+/* 	<div class="container-fluid">*/
+/* 	*/
 /* 		<div>*/
 /* 		<label>{{user['login']}}</label>*/
 /* 		<label>{{user['email']}}</label>*/
 /* 		<label>{{user['nameAndSurrname']}}</label>*/
 /* 		<label>{{user['about']}}</label>*/
+/* 		*/
 /* 		<label><img width=100px height=100px src="data:image/jpeg;base64,{{user['avatar']}}"/></label>*/
+/* 		{% if loggedIn==TRUE %}*/
+/* 			<form action="/Profile/{{CurrentUserLogin}}/Follow" method="POST">*/
+/* 					<input type="hidden" name="CurrentUser" value='{{CurrentUserLogin}}'/>*/
+/* 					<input type="hidden" name="UserToFollow" value="{{user['login']}}"/>*/
+/* 					<input type="submit" value="Follow"/>*/
+/* 			</form>*/
+/* 				{% endif %}*/
 /* 		</div>*/
 /* 		<div>*/
 /* 			{% if pictures %}*/
