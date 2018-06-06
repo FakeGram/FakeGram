@@ -15,8 +15,8 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c5cc86c427eada89c669df922e8d396731980e34fabc55df48f4dc04f60e2feb = $this->env->getExtension("native_profiler");
-        $__internal_c5cc86c427eada89c669df922e8d396731980e34fabc55df48f4dc04f60e2feb->enter($__internal_c5cc86c427eada89c669df922e8d396731980e34fabc55df48f4dc04f60e2feb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "header.html.twig"));
+        $__internal_93ba727db78f31d32fecbda7351bd3064c65671e450270ea3da794dd49952d38 = $this->env->getExtension("native_profiler");
+        $__internal_93ba727db78f31d32fecbda7351bd3064c65671e450270ea3da794dd49952d38->enter($__internal_93ba727db78f31d32fecbda7351bd3064c65671e450270ea3da794dd49952d38_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "header.html.twig"));
 
         // line 1
         echo "<html>
@@ -74,7 +74,15 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
         // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/profile.css"), "html", null, true);
         echo "\" />
-    
+    <link rel=\"stylesheet\" href=\"";
+        // line 20
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/photo.css"), "html", null, true);
+        echo "\" />
+    <link rel=\"stylesheet\" href=\"";
+        // line 21
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/login.css"), "html", null, true);
+        echo "\" />
+
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
     </head>
     <body>
@@ -87,36 +95,44 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
             <span class=\"icon-bar\"></span>
             <span class=\"icon-bar\"></span> 
           </button>
-          <a class=\"navbar-brand\" href=\"#\"><div class=\"logo\">FakeGram</div></a>
+          <a class=\"navbar-brand\" href=\"/\"><div class=\"logo\">FakeGram</div></a>
         </div>
         <div class=\"collapse navbar-collapse\" id=\"myNavbar\">
+          <ul class=\"nav navbar-nav navbar-left search-bar\">
+            <form class=\"form-horizontal\" action =\"/Search\" method=\"post\">
+            <div class= form-inline>
+              <input type=\"text\" class ='form-control inputs' id = \"SearchedArgument\" name =\"SearchedArgument\" placeholder=\"Wyszukaj Użytkownika\" >
+              <button type=\"submit\" class = \"btn btn-default buttons\" id=\"btnSubmit\">Wyszukaj</button>
+            </div>
+            </form>
+          </ul>
           <ul class=\"nav navbar-nav navbar-right\">
             ";
-        // line 37
+        // line 47
         if ($this->getAttribute((isset($context["session"]) ? $context["session"] : null), "CurrentUser", array(), "any", true, true)) {
-            // line 38
+            // line 48
             echo "            <li><a href=\"/Logout\"><span class=\"glyphicon glyphicon-log-out\"></span> Wyloguj</a></li>
             ";
         } else {
-            // line 40
+            // line 50
             echo "            <li><a href=\"/Registration\"><span class=\"glyphicon glyphicon-user\"></span> Rejestracja</a></li>
             <li><a href=\"/Login\"><span class=\"glyphicon glyphicon-log-in\"></span> Logowanie</a></li>
             ";
         }
-        // line 43
+        // line 53
         echo "          </ul>
           <ul class=\"nav navbar-nav navbar-right nav-pages\">
-            <li class=\"active\"><a href=\"#\">Strona Główna</a></li>
+            <li class=\"active\"><a href=\"/\">Strona Główna</a></li>
             <li><a href=\"/Explore\">Odkrywaj</a></li>
             <li><a href=\"/Profile\">Moje zdjęcia </a></li>
             ";
-        // line 48
+        // line 58
         if ($this->getAttribute((isset($context["session"]) ? $context["session"] : null), "CurrentUser", array(), "any", true, true)) {
-            // line 49
+            // line 59
             echo "            <li><a onclick=\"showModal()\" style=\"cursor:pointer;\">Dodaj Zdjęcie</a></li> 
             ";
         }
-        // line 51
+        // line 61
         echo "            <li><a href=\"/Panel\">Ustawienia</a></li> 
           </ul>
         </div>
@@ -135,12 +151,6 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
             </form>
             </div>
         </div>
-        <form class=\"form-horizontal\" action =\"/Search\" method=\"post\">
-          <div class= form-inline>
-            <input type=\"text\" class ='form-control inputs' id = \"SearchedArgument\" name =\"SearchedArgument\" placeholder=\"Wyszukaj Użytkownika\" >
-            <button type=\"submit\" class = \"btn btn-default buttons\" id=\"btnSubmit\">Wyszukaj</button>
-          </div>
-        </form>
       </div>
     </nav>
     <script type=\"text/javascript\">
@@ -160,7 +170,7 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
     </script>
     <!-- |||||||||||||||||||||||||||||||||||| -->";
         
-        $__internal_c5cc86c427eada89c669df922e8d396731980e34fabc55df48f4dc04f60e2feb->leave($__internal_c5cc86c427eada89c669df922e8d396731980e34fabc55df48f4dc04f60e2feb_prof);
+        $__internal_93ba727db78f31d32fecbda7351bd3064c65671e450270ea3da794dd49952d38->leave($__internal_93ba727db78f31d32fecbda7351bd3064c65671e450270ea3da794dd49952d38_prof);
 
     }
 
@@ -176,7 +186,7 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
 
     public function getDebugInfo()
     {
-        return array (  120 => 51,  116 => 49,  114 => 48,  107 => 43,  102 => 40,  98 => 38,  96 => 37,  75 => 19,  71 => 18,  67 => 17,  63 => 16,  59 => 15,  55 => 14,  51 => 13,  47 => 12,  41 => 9,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
+        return array (  136 => 61,  132 => 59,  130 => 58,  123 => 53,  118 => 50,  114 => 48,  112 => 47,  83 => 21,  79 => 20,  75 => 19,  71 => 18,  67 => 17,  63 => 16,  59 => 15,  55 => 14,  51 => 13,  47 => 12,  41 => 9,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
     }
 }
 /* <html>*/
@@ -198,7 +208,9 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
 /*     <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.css') }}" />*/
 /*     <link rel="stylesheet" href="{{ asset('assets/css/user_panel.css') }}" />*/
 /*     <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}" />*/
-/*     */
+/*     <link rel="stylesheet" href="{{ asset('assets/css/photo.css') }}" />*/
+/*     <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}" />*/
+/* */
 /*     <meta name="viewport" content="width=device-width, initial-scale=1">*/
 /*     </head>*/
 /*     <body>*/
@@ -211,9 +223,17 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
 /*             <span class="icon-bar"></span>*/
 /*             <span class="icon-bar"></span> */
 /*           </button>*/
-/*           <a class="navbar-brand" href="#"><div class="logo">FakeGram</div></a>*/
+/*           <a class="navbar-brand" href="/"><div class="logo">FakeGram</div></a>*/
 /*         </div>*/
 /*         <div class="collapse navbar-collapse" id="myNavbar">*/
+/*           <ul class="nav navbar-nav navbar-left search-bar">*/
+/*             <form class="form-horizontal" action ="/Search" method="post">*/
+/*             <div class= form-inline>*/
+/*               <input type="text" class ='form-control inputs' id = "SearchedArgument" name ="SearchedArgument" placeholder="Wyszukaj Użytkownika" >*/
+/*               <button type="submit" class = "btn btn-default buttons" id="btnSubmit">Wyszukaj</button>*/
+/*             </div>*/
+/*             </form>*/
+/*           </ul>*/
 /*           <ul class="nav navbar-nav navbar-right">*/
 /*             {% if session.CurrentUser is defined %}*/
 /*             <li><a href="/Logout"><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>*/
@@ -223,7 +243,7 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
 /*             {% endif %}*/
 /*           </ul>*/
 /*           <ul class="nav navbar-nav navbar-right nav-pages">*/
-/*             <li class="active"><a href="#">Strona Główna</a></li>*/
+/*             <li class="active"><a href="/">Strona Główna</a></li>*/
 /*             <li><a href="/Explore">Odkrywaj</a></li>*/
 /*             <li><a href="/Profile">Moje zdjęcia </a></li>*/
 /*             {% if session.CurrentUser is defined %}*/
@@ -247,12 +267,6 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
 /*             </form>*/
 /*             </div>*/
 /*         </div>*/
-/*         <form class="form-horizontal" action ="/Search" method="post">*/
-/*           <div class= form-inline>*/
-/*             <input type="text" class ='form-control inputs' id = "SearchedArgument" name ="SearchedArgument" placeholder="Wyszukaj Użytkownika" >*/
-/*             <button type="submit" class = "btn btn-default buttons" id="btnSubmit">Wyszukaj</button>*/
-/*           </div>*/
-/*         </form>*/
 /*       </div>*/
 /*     </nav>*/
 /*     <script type="text/javascript">*/

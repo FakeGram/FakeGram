@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/photo.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}" />
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
@@ -32,9 +32,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span> 
           </button>
-          <a class="navbar-brand" href="#"><div class="logo">FakeGram</div></a>
+          <a class="navbar-brand" href="/"><div class="logo">FakeGram</div></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-left search-bar">
+            <form class="form-horizontal" action ="/Search" method="post">
+            <div class= form-inline>
+              <input type="text" class ='form-control inputs' id = "SearchedArgument" name ="SearchedArgument" placeholder="Wyszukaj Użytkownika" >
+              <button type="submit" class = "btn btn-default buttons" id="btnSubmit">Wyszukaj</button>
+            </div>
+            </form>
+          </ul>
           <ul class="nav navbar-nav navbar-right">
             {% if session.CurrentUser is defined %}
             <li><a href="/Logout"><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
@@ -44,7 +52,7 @@
             {% endif %}
           </ul>
           <ul class="nav navbar-nav navbar-right nav-pages">
-            <li class="active"><a href="#">Strona Główna</a></li>
+            <li class="active"><a href="/">Strona Główna</a></li>
             <li><a href="/Explore">Odkrywaj</a></li>
             <li><a href="/Profile">Moje zdjęcia </a></li>
             {% if session.CurrentUser is defined %}
@@ -68,12 +76,6 @@
             </form>
             </div>
         </div>
-        <form class="form-horizontal" action ="/Search" method="post">
-          <div class= form-inline>
-            <input type="text" class ='form-control inputs' id = "SearchedArgument" name ="SearchedArgument" placeholder="Wyszukaj Użytkownika" >
-            <button type="submit" class = "btn btn-default buttons" id="btnSubmit">Wyszukaj</button>
-          </div>
-        </form>
       </div>
     </nav>
     <script type="text/javascript">
