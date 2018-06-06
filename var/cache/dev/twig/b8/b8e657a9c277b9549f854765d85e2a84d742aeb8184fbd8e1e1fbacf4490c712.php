@@ -15,8 +15,8 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_30fb8b238536abb7e946c934590f31e4f9d789873342b0262651c1cb0bba3393 = $this->env->getExtension("native_profiler");
-        $__internal_30fb8b238536abb7e946c934590f31e4f9d789873342b0262651c1cb0bba3393->enter($__internal_30fb8b238536abb7e946c934590f31e4f9d789873342b0262651c1cb0bba3393_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Profile.html.twig"));
+        $__internal_c838c310e9388dab51c42c7afff68305e0f6ef9dce1f7d33a75f5d048fbaf691 = $this->env->getExtension("native_profiler");
+        $__internal_c838c310e9388dab51c42c7afff68305e0f6ef9dce1f7d33a75f5d048fbaf691->enter($__internal_c838c310e9388dab51c42c7afff68305e0f6ef9dce1f7d33a75f5d048fbaf691_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Profile.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "Profile/Profile.html.twig", 1)->display($context);
@@ -56,12 +56,12 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
 \t\t\t\t\t<div style=\"display:none;\" id=\"CurrentUser\" >";
             // line 16
             echo twig_escape_filter($this->env, (isset($context["CurrentUserLogin"]) ? $context["CurrentUserLogin"] : $this->getContext($context, "CurrentUserLogin")), "html", null, true);
-            echo "</div>
+            echo "'</div>
 \t\t\t\t\t<div style=\"display:none\" id=\"UserToFollow\">";
             // line 17
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "login", array(), "array"), "html", null, true);
-            echo "</div>
-\t\t\t\t\t<button class=\"btn\" onclick=\"follow();\">Follow</button>
+            echo "\"</div>
+\t\t\t\t\t<button onclick=\"follow();\">Follow</button>
 \t\t\t
 \t\t\t\t";
         }
@@ -117,8 +117,8 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
 \t<script>
 \t\tfunction follow()
 \t\t{
-\t\t\tvar currentuser=document.getElementById(\"CurrentUser\").innerHTML;
-\t\t\tvar usertofollow=document.getElementById(\"UserToFollow\").innerHTML;
+\t\t\tvar currentuser=document.getElementById(\"CurrentUser\");
+\t\t\tvar usertofollow=document.getElementById(\"UserToFollow\");
 \t\t\t///Profile/";
         // line 52
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "login", array(), "array"), "html", null, true);
@@ -133,7 +133,7 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
 \t\t\t\tUserToFollow:usertofollow
 \t\t\t}
 \t\t\t});
-\t\t\talert(usertofollow);
+\t\t\talert('dupa');
 \t\t}
 \t</script>
 
@@ -144,7 +144,7 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
         echo "
 ";
         
-        $__internal_30fb8b238536abb7e946c934590f31e4f9d789873342b0262651c1cb0bba3393->leave($__internal_30fb8b238536abb7e946c934590f31e4f9d789873342b0262651c1cb0bba3393_prof);
+        $__internal_c838c310e9388dab51c42c7afff68305e0f6ef9dce1f7d33a75f5d048fbaf691->leave($__internal_c838c310e9388dab51c42c7afff68305e0f6ef9dce1f7d33a75f5d048fbaf691_prof);
 
     }
 
@@ -178,9 +178,9 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
 /* 		<label><img width=100px height=100px src="data:image/jpeg;base64,{{user['avatar']}}"/></label>*/
 /* 		{% if loggedIn==TRUE %}*/
 /* 			*/
-/* 					<div style="display:none;" id="CurrentUser" >{{CurrentUserLogin}}</div>*/
-/* 					<div style="display:none" id="UserToFollow">{{user['login']}}</div>*/
-/* 					<button class="btn" onclick="follow();">Follow</button>*/
+/* 					<div style="display:none;" id="CurrentUser" >{{CurrentUserLogin}}'</div>*/
+/* 					<div style="display:none" id="UserToFollow">{{user['login']}}"</div>*/
+/* 					<button onclick="follow();">Follow</button>*/
 /* 			*/
 /* 				{% endif %}*/
 /* 				*/
@@ -212,8 +212,8 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
 /* 	<script>*/
 /* 		function follow()*/
 /* 		{*/
-/* 			var currentuser=document.getElementById("CurrentUser").innerHTML;*/
-/* 			var usertofollow=document.getElementById("UserToFollow").innerHTML;*/
+/* 			var currentuser=document.getElementById("CurrentUser");*/
+/* 			var usertofollow=document.getElementById("UserToFollow");*/
 /* 			///Profile/{{user['login']}}/Follow*/
 /* 			var action="/Profile/"+usertofollow+"/Follow";*/
 /* 			$.ajax({*/
@@ -225,7 +225,7 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
 /* 				UserToFollow:usertofollow*/
 /* 			}*/
 /* 			});*/
-/* 			alert(usertofollow);*/
+/* 			alert('dupa');*/
 /* 		}*/
 /* 	</script>*/
 /* */
