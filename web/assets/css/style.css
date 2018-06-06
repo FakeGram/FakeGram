@@ -5,3 +5,15 @@
 	margin-top: 30px;
 }
 
+.tile
+{
+  width: 50%;
+  margin: 50px 25%;
+  background-color: #fafafa;
+  padding: 45px 10%;
+}
+
+.curved
+{
+	border-radius: 5px;
+}
