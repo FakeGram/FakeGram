@@ -13,9 +13,9 @@
 		<label><img width=100px height=100px src="data:image/jpeg;base64,{{user['avatar']}}"/></label>
 		{% if loggedIn==TRUE %}
 			
-					<div style="display:none;" id="CurrentUser" >{{CurrentUserLogin}}'</div>
-					<div style="display:none" id="UserToFollow">{{user['login']}}"</div>
-					<button onclick="follow();">Follow</button>
+					<div style="display:none;" id="CurrentUser" >{{CurrentUserLogin}}</div>
+					<div style="display:none" id="UserToFollow">{{user['login']}}</div>
+					<button class="btn" onclick="follow();">Follow</button>
 			
 				{% endif %}
 				
@@ -47,8 +47,8 @@
 	<script>
 		function follow()
 		{
-			var currentuser=document.getElementById("CurrentUser");
-			var usertofollow=document.getElementById("UserToFollow");
+			var currentuser=document.getElementById("CurrentUser").innerHTML;
+			var usertofollow=document.getElementById("UserToFollow").innerHTML;
 			///Profile/{{user['login']}}/Follow
 			var action="/Profile/"+usertofollow+"/Follow";
 			$.ajax({
@@ -60,7 +60,7 @@
 				UserToFollow:usertofollow
 			}
 			});
-			alert('dupa');
+			alert(usertofollow);
 		}
 	</script>
 

@@ -15,76 +15,77 @@ class __TwigTemplate_dc310243bd0ad949dc02d284d8dae3ad0316cbc371146a86addbac06e96
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d39cad8d3c0bc9330037583f3d66a35c6c67fa850e6108424b1bbb0cd7f60690 = $this->env->getExtension("native_profiler");
-        $__internal_d39cad8d3c0bc9330037583f3d66a35c6c67fa850e6108424b1bbb0cd7f60690->enter($__internal_d39cad8d3c0bc9330037583f3d66a35c6c67fa850e6108424b1bbb0cd7f60690_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Profile.html.twig"));
+        $__internal_f673b85cf45f8fc8478d5cc15a7f6953df7db077071698e48af1dcc0d7874ac6 = $this->env->getExtension("native_profiler");
+        $__internal_f673b85cf45f8fc8478d5cc15a7f6953df7db077071698e48af1dcc0d7874ac6->enter($__internal_f673b85cf45f8fc8478d5cc15a7f6953df7db077071698e48af1dcc0d7874ac6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Profile.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "Profile/Profile.html.twig", 1)->display($context);
         // line 2
         echo "
+
+
 \t<div class=\"container-fluid\">
 \t
 \t\t<div>
 \t\t<label>";
-        // line 6
+        // line 8
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "login", array(), "array"), "html", null, true);
         echo "</label>
 \t\t<label>";
-        // line 7
+        // line 9
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "email", array(), "array"), "html", null, true);
         echo "</label>
 \t\t<label>";
-        // line 8
+        // line 10
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "nameAndSurrname", array(), "array"), "html", null, true);
         echo "</label>
 \t\t<label>";
-        // line 9
+        // line 11
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "about", array(), "array"), "html", null, true);
         echo "</label>
 \t\t
 \t\t<label><img width=100px height=100px src=\"data:image/jpeg;base64,";
-        // line 11
+        // line 13
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "avatar", array(), "array"), "html", null, true);
         echo "\"/></label>
 \t\t";
-        // line 12
+        // line 14
         if (((isset($context["loggedIn"]) ? $context["loggedIn"] : $this->getContext($context, "loggedIn")) == true)) {
-            // line 13
-            echo "\t\t\t<form action=\"/Profile/";
-            echo twig_escape_filter($this->env, (isset($context["CurrentUserLogin"]) ? $context["CurrentUserLogin"] : $this->getContext($context, "CurrentUserLogin")), "html", null, true);
-            echo "/Follow\" method=\"POST\">
-\t\t\t\t\t<input type=\"hidden\" name=\"CurrentUser\" value='";
-            // line 14
-            echo twig_escape_filter($this->env, (isset($context["CurrentUserLogin"]) ? $context["CurrentUserLogin"] : $this->getContext($context, "CurrentUserLogin")), "html", null, true);
-            echo "'/>
-\t\t\t\t\t<input type=\"hidden\" name=\"UserToFollow\" value=\"";
             // line 15
+            echo "\t\t\t
+\t\t\t\t\t<div style=\"display:none;\" id=\"CurrentUser\" >";
+            // line 16
+            echo twig_escape_filter($this->env, (isset($context["CurrentUserLogin"]) ? $context["CurrentUserLogin"] : $this->getContext($context, "CurrentUserLogin")), "html", null, true);
+            echo "'</div>
+\t\t\t\t\t<div style=\"display:none\" id=\"UserToFollow\">";
+            // line 17
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "login", array(), "array"), "html", null, true);
-            echo "\"/>
-\t\t\t\t\t<input type=\"submit\" value=\"Follow\"/>
-\t\t\t</form>
+            echo "\"</div>
+\t\t\t\t\t<button class=\"btn\" onclick=\"follow();\">Follow</button>
+\t\t\t
 \t\t\t\t";
         }
-        // line 19
-        echo "\t\t</div>
+        // line 21
+        echo "\t\t\t\t
+\t\t</div>
 \t\t<div>
 \t\t\t";
-        // line 21
+        // line 24
         if ((isset($context["pictures"]) ? $context["pictures"] : $this->getContext($context, "pictures"))) {
-            // line 22
+            // line 25
             echo "\t\t\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["pictures"]) ? $context["pictures"] : $this->getContext($context, "pictures")));
             foreach ($context['_seq'] as $context["_key"] => $context["pic"]) {
-                // line 23
+                // line 26
                 echo "\t\t\t\t\t<div class=\"PicturesMainContainer\">
 \t\t\t\t\t\t<a href=\"/Profile/Photo/";
-                // line 24
+                // line 27
                 echo twig_escape_filter($this->env, $this->getAttribute($context["pic"], "id", array(), "array"), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t<div class=\"PicturesContainer\">
 \t\t\t\t\t\t\t<img src=\"/";
-                // line 26
+                // line 29
                 echo twig_escape_filter($this->env, $this->getAttribute($context["pic"], "pic", array(), "array"), "html", null, true);
                 echo "\" class=\"Pictures\"/>
 \t\t\t\t\t\t</div>
@@ -99,23 +100,51 @@ class __TwigTemplate_dc310243bd0ad949dc02d284d8dae3ad0316cbc371146a86addbac06e96
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pic'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 35
+            // line 38
             echo "\t\t\t";
         } else {
-            // line 36
+            // line 39
             echo "\t\t\t\t<label>Brak zdjęć</label>
 \t\t\t";
         }
-        // line 38
+        // line 41
         echo "\t\t</div>
 \t\t
 \t</div>
 
+\t
+\t
+\t<script>
+\t\tfunction follow()
+\t\t{
+\t\t\tvar currentuser=document.getElementById(\"CurrentUser\").innerHTML;
+\t\t\tvar usertofollow=document.getElementById(\"UserToFollow\").innerHTML;
+\t\t\t///Profile/";
+        // line 52
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "login", array(), "array"), "html", null, true);
+        echo "/Follow
+\t\t\tvar action=\"/Profile/\"+usertofollow+\"/Follow\";
+\t\t\t\$.ajax({
+\t\t\turl:action,
+\t\t\ttype:'POST',
+\t\t\tdata:
+\t\t\t{
+\t\t\t\tCurrentUser:currentuser,
+\t\t\t\tUserToFollow:usertofollow
+\t\t\t}
+\t\t\t});
+\t\t\talert(usertofollow);
+\t\t}
+\t</script>
+
 ";
-        // line 42
-        $this->loadTemplate("footer.html.twig", "Profile/Profile.html.twig", 42)->display($context);
+        // line 67
+        $this->loadTemplate("footer.html.twig", "Profile/Profile.html.twig", 67)->display($context);
+        // line 68
+        echo "
+";
         
-        $__internal_d39cad8d3c0bc9330037583f3d66a35c6c67fa850e6108424b1bbb0cd7f60690->leave($__internal_d39cad8d3c0bc9330037583f3d66a35c6c67fa850e6108424b1bbb0cd7f60690_prof);
+        $__internal_f673b85cf45f8fc8478d5cc15a7f6953df7db077071698e48af1dcc0d7874ac6->leave($__internal_f673b85cf45f8fc8478d5cc15a7f6953df7db077071698e48af1dcc0d7874ac6_prof);
 
     }
 
@@ -131,10 +160,12 @@ class __TwigTemplate_dc310243bd0ad949dc02d284d8dae3ad0316cbc371146a86addbac06e96
 
     public function getDebugInfo()
     {
-        return array (  116 => 42,  110 => 38,  106 => 36,  103 => 35,  88 => 26,  83 => 24,  80 => 23,  75 => 22,  73 => 21,  69 => 19,  62 => 15,  58 => 14,  53 => 13,  51 => 12,  47 => 11,  42 => 9,  38 => 8,  34 => 7,  30 => 6,  24 => 2,  22 => 1,);
+        return array (  144 => 68,  142 => 67,  124 => 52,  111 => 41,  107 => 39,  104 => 38,  89 => 29,  84 => 27,  81 => 26,  76 => 25,  74 => 24,  69 => 21,  62 => 17,  58 => 16,  55 => 15,  53 => 14,  49 => 13,  44 => 11,  40 => 10,  36 => 9,  32 => 8,  24 => 2,  22 => 1,);
     }
 }
 /* {% include 'header.html.twig' %}*/
+/* */
+/* */
 /* */
 /* 	<div class="container-fluid">*/
 /* 	*/
@@ -146,12 +177,13 @@ class __TwigTemplate_dc310243bd0ad949dc02d284d8dae3ad0316cbc371146a86addbac06e96
 /* 		*/
 /* 		<label><img width=100px height=100px src="data:image/jpeg;base64,{{user['avatar']}}"/></label>*/
 /* 		{% if loggedIn==TRUE %}*/
-/* 			<form action="/Profile/{{CurrentUserLogin}}/Follow" method="POST">*/
-/* 					<input type="hidden" name="CurrentUser" value='{{CurrentUserLogin}}'/>*/
-/* 					<input type="hidden" name="UserToFollow" value="{{user['login']}}"/>*/
-/* 					<input type="submit" value="Follow"/>*/
-/* 			</form>*/
+/* 			*/
+/* 					<div style="display:none;" id="CurrentUser" >{{CurrentUserLogin}}'</div>*/
+/* 					<div style="display:none" id="UserToFollow">{{user['login']}}"</div>*/
+/* 					<button class="btn" onclick="follow();">Follow</button>*/
+/* 			*/
 /* 				{% endif %}*/
+/* 				*/
 /* 		</div>*/
 /* 		<div>*/
 /* 			{% if pictures %}*/
@@ -175,4 +207,28 @@ class __TwigTemplate_dc310243bd0ad949dc02d284d8dae3ad0316cbc371146a86addbac06e96
 /* 		*/
 /* 	</div>*/
 /* */
+/* 	*/
+/* 	*/
+/* 	<script>*/
+/* 		function follow()*/
+/* 		{*/
+/* 			var currentuser=document.getElementById("CurrentUser").innerHTML;*/
+/* 			var usertofollow=document.getElementById("UserToFollow").innerHTML;*/
+/* 			///Profile/{{user['login']}}/Follow*/
+/* 			var action="/Profile/"+usertofollow+"/Follow";*/
+/* 			$.ajax({*/
+/* 			url:action,*/
+/* 			type:'POST',*/
+/* 			data:*/
+/* 			{*/
+/* 				CurrentUser:currentuser,*/
+/* 				UserToFollow:usertofollow*/
+/* 			}*/
+/* 			});*/
+/* 			alert(usertofollow);*/
+/* 		}*/
+/* 	</script>*/
+/* */
 /* {% include 'footer.html.twig' %}*/
+/* */
+/* */

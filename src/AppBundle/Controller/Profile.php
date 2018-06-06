@@ -414,7 +414,6 @@ class Profile extends Controller
 			$DoctrineManager=$this->getDoctrine()->getManager();
 			$DoctrineManager->persist($foll);
 			$DoctrineManager->flush();
-			echo 'dupa';
 		}
 		else{
 			$DoctrineManager=$this->getDoctrine()->getManager();
