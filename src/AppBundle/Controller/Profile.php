@@ -213,6 +213,11 @@ class Profile extends Controller
 		->getRepository('AppBundle:likes')
 		->findByPicid($PhotoId);
 		$like=count($likes);
+		foreach($likes as $like1)
+		{
+			if($like1->getLogin()==$_SESSION['CurrentUser']->getLogin()) $liked="1";
+		}
+		if(!isset($liked)) $liked="0";
 		$comms=$this->GetDoctrine()
 		->getRepository('AppBundle:comment')
 		->findByPicid($pictures['id']);
@@ -242,22 +247,22 @@ class Profile extends Controller
 		{
 			if(isset($comments))
 			return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>true,'tags'=>$tags,'login'=>$_SESSION['CurrentUser']->getLogin(),'likes'=>$like  // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>true,'tags'=>$tags,'login'=>$_SESSION['CurrentUser']->getLogin(),'likes'=>$like,'liked'=>$liked  // Tablica do wysyłania zmiennych do widoku 
 					));
 			else 
 				return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>true,'tags'=>$tags,'login'=>$_SESSION['CurrentUser']->getLogin(),'likes'=>$like // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>true,'tags'=>$tags,'login'=>$_SESSION['CurrentUser']->getLogin(),'likes'=>$like,'liked'=>$liked // Tablica do wysyłania zmiennych do widoku 
 					));
 		}
 		else
 		{
 			if(isset($comments))
 			return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>false,'tags'=>$tags,'likes'=>$like  // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>false,'tags'=>$tags,'likes'=>$like,'liked'=>$liked  // Tablica do wysyłania zmiennych do widoku 
 					));
 			else 
 				return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>false,'tags'=>$tags,'likes'=>$like  // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>false,'tags'=>$tags,'likes'=>$like,'liked'=>$liked  // Tablica do wysyłania zmiennych do widoku 
 					));
 		}
 	 }
