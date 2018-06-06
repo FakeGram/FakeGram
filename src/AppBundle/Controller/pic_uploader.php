@@ -86,7 +86,7 @@ class pic_uploader extends Controller
             {
             $desc=$_POST['desc'];
 
-            $DoctrineManager = $this->getDoctrine()->getManager();
+            //$DoctrineManager = $this->getDoctrine()->getManager();
             //$Login=$DoctrineManager->getRepository('AppBundle:user')->findOneBylogin($_SESSION["CurrentUser"]->getLogin());
             $Login=$_SESSION["CurrentUser"]->getLogin();
             $pic = new pic();
@@ -110,10 +110,20 @@ class pic_uploader extends Controller
                 if($tag[strlen($tag)-1]==','||$tag[strlen($tag)-1]=='.') $tag=substr($tag, 0, strlen($tag)-2);
             }
 
-            $PicId=$DoctrineManager->getRepository('AppBundle:pic')->findOneBypic($target_file);
-            $PicId=$PicId->getId();
+            $PicId=$statement->getRepository('AppBundle:pic')->findOneByPic($target_file)->getId();
 
             
+            foreach($tags as $tag)
+            {
+                $tagObject = new tags();
+                $tagObject->setTag($tag);
+                $tagObject->setOf("pic");
+                $tagObject->setContentid($PicId);
+                $statement->persist($tagObject);
+                $statement->flush();
+            }
+
+            //csdv
 
 
                 return $this->render('ImgOperations/image_edit.html.twig', array(
