@@ -301,19 +301,29 @@ class Profile extends Controller
 		$likes=$this->GetDoctrine()
 		->getRepository('AppBundle:likes')
 		->findByPicid($PhotoId);
-		
+		$DoctrineManager = $this->getDoctrine()->getManager();
 		foreach($likes as $like)
 		{
-			if($like->getLogin()==$login) $fail=TRUE;
+			if($like->getLogin()==$login) {
+				$fail=TRUE;
+				$index=$like->getId();
+			}
 		}
-		if(isset($fail)) return new response('Co za dużo lajków to niezdrowo!');
-		$DoctrineManager = $this->getDoctrine()->getManager();
-		$like=new likes();
-		$like->setPicId($PhotoId);
-		$like->setLogin($login);
+		if(!isset($fail)) {
+			$like=new likes();
+			$like->setPicId($PhotoId);
+			$like->setLogin($login);
 		
-		$DoctrineManager->persist($like);
-		$DoctrineManager->flush();
+			$DoctrineManager->persist($like);
+			$DoctrineManager->flush();
+		}
+		else{
+			$like=$DoctrineManager->getRepository('AppBundle:likes')->findOneById($index);
+			$DoctrineManager->remove($like);
+			$DoctrineManager->flush();
+		}
+		
+		
 		
 		
 		return $this->redirect("/Profile/Photo/".$PhotoId);
@@ -388,7 +398,10 @@ class Profile extends Controller
 		->getRepository('AppBundle:subscriptions')
 		->findByIdsubscriber($_POST['UserToFollow']);
 		foreach($follows as $follow){
-			if($follow->getIdSub2()==$_POST['CurrentUser']) $followed=true;
+			if($follow->getIdSub2()==$_POST['CurrentUser']) {
+				$followed=true;
+				$index=$follow->getId();
+			}
 		}
 		
 		if(!isset($followed)){
@@ -403,7 +416,14 @@ class Profile extends Controller
 			$DoctrineManager->flush();
 			echo 'dupa';
 		}
-		var_dump($followed);
+		else{
+			$DoctrineManager=$this->getDoctrine()->getManager();
+			$foll=$DoctrineManager->getRepository('AppBundle:subscriptions')
+			->findOneById($index);
+			$DoctrineManager->remove($foll);
+			$DoctrineManager->flush();
+		}
+		
 		return $this->redirect('../../Profile/'.$_POST['UserToFollow']);
 	}
 

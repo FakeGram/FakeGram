@@ -10,7 +10,7 @@
 		
 		<label><img width=100px height=100px src="data:image/jpeg;base64,{{user['avatar']}}"/></label>
 		{% if loggedIn==TRUE %}
-			<form action="/Profile/{{CurrentUserLogin}}/Follow" method="POST">
+			<form action="/Profile/{{user['login']}}/Follow" method="POST">
 					<input type="hidden" name="CurrentUser" value='{{CurrentUserLogin}}'/>
 					<input type="hidden" name="UserToFollow" value="{{user['login']}}"/>
 					<input type="submit" value="Follow"/>
