@@ -683,7 +683,11 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
+<<<<<<< HEAD
         $instance->setNamespace('sf2orm_default_253c01df0674d6052397746ac87ae6542d43db250beebe1534cbfc37e8bf30c5');
+=======
+        $instance->setNamespace('sf2orm_default_f9ca12a70d737c5bc17a73fc929ee50f8f6d58d8f699a8ead9ef0dffa9b48849');
+>>>>>>> 931aa1d9cb6c54036b5c52d49443a0af2684cb14
 
         return $instance;
     }
@@ -700,7 +704,11 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_query_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
+<<<<<<< HEAD
         $instance->setNamespace('sf2orm_default_253c01df0674d6052397746ac87ae6542d43db250beebe1534cbfc37e8bf30c5');
+=======
+        $instance->setNamespace('sf2orm_default_f9ca12a70d737c5bc17a73fc929ee50f8f6d58d8f699a8ead9ef0dffa9b48849');
+>>>>>>> 931aa1d9cb6c54036b5c52d49443a0af2684cb14
 
         return $instance;
     }
@@ -717,7 +725,11 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_result_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
+<<<<<<< HEAD
         $instance->setNamespace('sf2orm_default_253c01df0674d6052397746ac87ae6542d43db250beebe1534cbfc37e8bf30c5');
+=======
+        $instance->setNamespace('sf2orm_default_f9ca12a70d737c5bc17a73fc929ee50f8f6d58d8f699a8ead9ef0dffa9b48849');
+>>>>>>> 931aa1d9cb6c54036b5c52d49443a0af2684cb14
 
         return $instance;
     }
@@ -1961,7 +1973,11 @@ class appDevDebugProjectContainer extends Container
 
         $e = new \Symfony\Component\Security\Http\AccessMap();
 
+<<<<<<< HEAD
         return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($e, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => new \Symfony\Component\Security\Core\User\InMemoryUserProvider()), 'main', $a, $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5b1840fa47fab2.05773045', $a, $c), 3 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $e, $c)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), new \Symfony\Component\Security\Http\HttpUtils($d, $d), 'main', NULL, NULL, NULL, $a, false));
+=======
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($e, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => new \Symfony\Component\Security\Core\User\InMemoryUserProvider()), 'main', $a, $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5b184a0f204fc1.88477226', $a, $c), 3 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $e, $c)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), new \Symfony\Component\Security\Http\HttpUtils($d, $d), 'main', NULL, NULL, NULL, $a, false));
+>>>>>>> 931aa1d9cb6c54036b5c52d49443a0af2684cb14
     }
 
     /**
@@ -3267,7 +3283,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
+<<<<<<< HEAD
         $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5b1840fa47fab2.05773045')), true);
+=======
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5b184a0f204fc1.88477226')), true);
+>>>>>>> 931aa1d9cb6c54036b5c52d49443a0af2684cb14
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
