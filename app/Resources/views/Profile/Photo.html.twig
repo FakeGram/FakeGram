@@ -24,7 +24,8 @@
 			</div>
 			<div class="CommentsContainer">
 				<div class="Likes">
-					Likes:{{likes}}
+					Likes:<div id="likes">{{likes}}</div>
+					<div style="display:none;" id="liked">{{liked}}</div>
 				</div>
 				{% for comm in comms %}
 					<div class="Comment">
@@ -76,6 +77,27 @@
 				
 			}
 			});
+			var liked=document.getElementById("liked").innerHTML;
+			
+			
+			var count=parseInt(document.getElementById("likes").innerHTML);
+			
+			if(liked=="0")
+			{
+				
+				document.getElementById("likes").innerHTML=count+1;
+				liked="1";
+				document.getElementById("liked").innerHTML=liked;
+				
+			}
+			else
+			{
+				
+				document.getElementById("likes").innerHTML=count-1;
+				liked="0";
+				document.getElementById("liked").innerHTML=liked;
+			}
+			
 		}
 	</script>
 {% include 'footer.html.twig' %}
