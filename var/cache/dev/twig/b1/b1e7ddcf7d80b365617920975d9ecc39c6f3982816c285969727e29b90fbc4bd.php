@@ -15,8 +15,8 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_fc5b2ade38d4d795eea7ded42738b2c4e7e3715aaa0213efac18ceab8ba22e33 = $this->env->getExtension("native_profiler");
-        $__internal_fc5b2ade38d4d795eea7ded42738b2c4e7e3715aaa0213efac18ceab8ba22e33->enter($__internal_fc5b2ade38d4d795eea7ded42738b2c4e7e3715aaa0213efac18ceab8ba22e33_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Photo.html.twig"));
+        $__internal_b00911583174bd3f9281bb3fd33db403dadde2c0ccfddc6dd24900c16db943bc = $this->env->getExtension("native_profiler");
+        $__internal_b00911583174bd3f9281bb3fd33db403dadde2c0ccfddc6dd24900c16db943bc->enter($__internal_b00911583174bd3f9281bb3fd33db403dadde2c0ccfddc6dd24900c16db943bc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Photo.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "Profile/Photo.html.twig", 1)->display($context);
@@ -131,28 +131,46 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
         if (((isset($context["loggedIn"]) ? $context["loggedIn"] : $this->getContext($context, "loggedIn")) == true)) {
             // line 53
             echo "\t\t\t\t\t<div class=\"LikeButton\">
-\t\t\t\t\t\t<form  action=\"/Profile/Photo/AddLike/";
+\t\t\t\t\t\t<div style=\"display:none;\" id=\"picId\">";
             // line 54
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["pic"]) ? $context["pic"] : $this->getContext($context, "pic")), "id", array(), "array"), "html", null, true);
-            echo "/";
+            echo "</div>
+\t\t\t\t\t\t<div style=\"display:none;\" id=\"login\">";
+            // line 55
             echo twig_escape_filter($this->env, (isset($context["login"]) ? $context["login"] : $this->getContext($context, "login")), "html", null, true);
-            echo "\" method=\"post\">
-\t\t\t\t\t\t\t<input type=\"submit\" class=\"CommentInputButton\" value=\"<3\"/>
-\t\t\t\t\t\t</form>
+            echo "</div>
+\t\t\t\t\t\t<button onclick=\"like();\"><3</button>
+\t\t\t\t\t\t\t
 \t\t\t\t\t</div>
 \t\t\t\t";
         }
-        // line 59
+        // line 60
         echo "\t\t\t</div>
 \t\t</div>
 \t\t
 \t</div>
-\t
+\t</div>
+\t<script>
+\t\tfunction like()
+\t\t{
+\t\t\tvar id=document.getElementById(\"picId\").innerHTML;
+\t\t\tvar login=document.getElementById(\"login\").innerHTML;
+\t\t\tvar action=\"/Profile/Photo/AddLike/\"+id+\"/\"+login;
+\t\t\t\$.ajax({
+\t\t\t\turl:action,
+\t\t\ttype:'POST',
+\t\t\tdata:
+\t\t\t{
+\t\t\t\t
+\t\t\t}
+\t\t\t});
+\t\t}
+\t</script>
 ";
-        // line 64
-        $this->loadTemplate("footer.html.twig", "Profile/Photo.html.twig", 64)->display($context);
+        // line 81
+        $this->loadTemplate("footer.html.twig", "Profile/Photo.html.twig", 81)->display($context);
         
-        $__internal_fc5b2ade38d4d795eea7ded42738b2c4e7e3715aaa0213efac18ceab8ba22e33->leave($__internal_fc5b2ade38d4d795eea7ded42738b2c4e7e3715aaa0213efac18ceab8ba22e33_prof);
+        $__internal_b00911583174bd3f9281bb3fd33db403dadde2c0ccfddc6dd24900c16db943bc->leave($__internal_b00911583174bd3f9281bb3fd33db403dadde2c0ccfddc6dd24900c16db943bc_prof);
 
     }
 
@@ -168,7 +186,7 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
 
     public function getDebugInfo()
     {
-        return array (  153 => 64,  146 => 59,  136 => 54,  133 => 53,  130 => 52,  121 => 46,  118 => 45,  115 => 44,  104 => 39,  98 => 36,  92 => 33,  87 => 30,  83 => 29,  78 => 27,  72 => 23,  63 => 21,  59 => 20,  51 => 15,  47 => 14,  43 => 13,  37 => 10,  29 => 5,  24 => 2,  22 => 1,);
+        return array (  171 => 81,  148 => 60,  140 => 55,  136 => 54,  133 => 53,  130 => 52,  121 => 46,  118 => 45,  115 => 44,  104 => 39,  98 => 36,  92 => 33,  87 => 30,  83 => 29,  78 => 27,  72 => 23,  63 => 21,  59 => 20,  51 => 15,  47 => 14,  43 => 13,  37 => 10,  29 => 5,  24 => 2,  22 => 1,);
     }
 }
 /* {% include 'header.html.twig' %}*/
@@ -224,14 +242,31 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
 /* 				{% endif %}*/
 /* 				{% if loggedIn==TRUE %}*/
 /* 					<div class="LikeButton">*/
-/* 						<form  action="/Profile/Photo/AddLike/{{pic['id']}}/{{login}}" method="post">*/
-/* 							<input type="submit" class="CommentInputButton" value="<3"/>*/
-/* 						</form>*/
+/* 						<div style="display:none;" id="picId">{{pic['id']}}</div>*/
+/* 						<div style="display:none;" id="login">{{login}}</div>*/
+/* 						<button onclick="like();"><3</button>*/
+/* 							*/
 /* 					</div>*/
 /* 				{% endif %}*/
 /* 			</div>*/
 /* 		</div>*/
 /* 		*/
 /* 	</div>*/
-/* 	*/
+/* 	</div>*/
+/* 	<script>*/
+/* 		function like()*/
+/* 		{*/
+/* 			var id=document.getElementById("picId").innerHTML;*/
+/* 			var login=document.getElementById("login").innerHTML;*/
+/* 			var action="/Profile/Photo/AddLike/"+id+"/"+login;*/
+/* 			$.ajax({*/
+/* 				url:action,*/
+/* 			type:'POST',*/
+/* 			data:*/
+/* 			{*/
+/* 				*/
+/* 			}*/
+/* 			});*/
+/* 		}*/
+/* 	</script>*/
 /* {% include 'footer.html.twig' %}*/
