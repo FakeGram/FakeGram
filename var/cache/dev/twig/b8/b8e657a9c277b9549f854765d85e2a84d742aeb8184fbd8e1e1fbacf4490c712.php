@@ -15,8 +15,8 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_9859e4da589ffeb478a2a51240ec5387ba86c1adf96fbda0108a02a121a9a9b6 = $this->env->getExtension("native_profiler");
-        $__internal_9859e4da589ffeb478a2a51240ec5387ba86c1adf96fbda0108a02a121a9a9b6->enter($__internal_9859e4da589ffeb478a2a51240ec5387ba86c1adf96fbda0108a02a121a9a9b6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Profile.html.twig"));
+        $__internal_0b6e5be4f314d0b78855f854adfaaf06115c93a374736757d6a1adab7ee09ce7 = $this->env->getExtension("native_profiler");
+        $__internal_0b6e5be4f314d0b78855f854adfaaf06115c93a374736757d6a1adab7ee09ce7->enter($__internal_0b6e5be4f314d0b78855f854adfaaf06115c93a374736757d6a1adab7ee09ce7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Profile.html.twig"));
 
         // line 1
         echo "<html>
@@ -72,7 +72,7 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
         if (((isset($context["loggedIn"]) ? $context["loggedIn"] : $this->getContext($context, "loggedIn")) == true)) {
             // line 23
             echo "\t\t\t<form action=\"/Profile/";
-            echo twig_escape_filter($this->env, (isset($context["CurrentUserLogin"]) ? $context["CurrentUserLogin"] : $this->getContext($context, "CurrentUserLogin")), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "login", array(), "array"), "html", null, true);
             echo "/Follow\" method=\"POST\">
 \t\t\t\t\t<input type=\"hidden\" name=\"CurrentUser\" value='";
             // line 24
@@ -134,7 +134,7 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
 \t</body>
 \t</html>";
         
-        $__internal_9859e4da589ffeb478a2a51240ec5387ba86c1adf96fbda0108a02a121a9a9b6->leave($__internal_9859e4da589ffeb478a2a51240ec5387ba86c1adf96fbda0108a02a121a9a9b6_prof);
+        $__internal_0b6e5be4f314d0b78855f854adfaaf06115c93a374736757d6a1adab7ee09ce7->leave($__internal_0b6e5be4f314d0b78855f854adfaaf06115c93a374736757d6a1adab7ee09ce7_prof);
 
     }
 
@@ -175,7 +175,7 @@ class __TwigTemplate_91d124ba1764c33137338f34ca5c8faf33de06c133ef2f9ae2e94c49c12
 /* 		*/
 /* 		<label><img width=100px height=100px src="data:image/jpeg;base64,{{user['avatar']}}"/></label>*/
 /* 		{% if loggedIn==TRUE %}*/
-/* 			<form action="/Profile/{{CurrentUserLogin}}/Follow" method="POST">*/
+/* 			<form action="/Profile/{{user['login']}}/Follow" method="POST">*/
 /* 					<input type="hidden" name="CurrentUser" value='{{CurrentUserLogin}}'/>*/
 /* 					<input type="hidden" name="UserToFollow" value="{{user['login']}}"/>*/
 /* 					<input type="submit" value="Follow"/>*/

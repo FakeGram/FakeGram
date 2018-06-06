@@ -15,8 +15,8 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_0307d2fab9368fdf6ee26f57def39e489ee087152c7a4ff2e4ec5fd91d7edd6d = $this->env->getExtension("native_profiler");
-        $__internal_0307d2fab9368fdf6ee26f57def39e489ee087152c7a4ff2e4ec5fd91d7edd6d->enter($__internal_0307d2fab9368fdf6ee26f57def39e489ee087152c7a4ff2e4ec5fd91d7edd6d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Photo.html.twig"));
+        $__internal_31d478ca13082d645093cc65e2df4924ec080e8946a90df2b55a51d7ed23f73c = $this->env->getExtension("native_profiler");
+        $__internal_31d478ca13082d645093cc65e2df4924ec080e8946a90df2b55a51d7ed23f73c->enter($__internal_31d478ca13082d645093cc65e2df4924ec080e8946a90df2b55a51d7ed23f73c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Photo.html.twig"));
 
         // line 1
         echo "<html>
@@ -43,7 +43,7 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
 
 \t</head>
 \t<body>
-\t<div class=\"Container\">
+\t<div class=\"container-fluid\">
 \t\t<div class=\"PhotoContainer\">
 \t\t\t<img src=\"/";
         // line 15
@@ -172,7 +172,7 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
 \t</body>
 </html>";
         
-        $__internal_0307d2fab9368fdf6ee26f57def39e489ee087152c7a4ff2e4ec5fd91d7edd6d->leave($__internal_0307d2fab9368fdf6ee26f57def39e489ee087152c7a4ff2e4ec5fd91d7edd6d_prof);
+        $__internal_31d478ca13082d645093cc65e2df4924ec080e8946a90df2b55a51d7ed23f73c->leave($__internal_31d478ca13082d645093cc65e2df4924ec080e8946a90df2b55a51d7ed23f73c_prof);
 
     }
 
@@ -203,7 +203,7 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
 /* */
 /* 	</head>*/
 /* 	<body>*/
-/* 	<div class="Container">*/
+/* 	<div class="container-fluid">*/
 /* 		<div class="PhotoContainer">*/
 /* 			<img src="/{{pic['pic']}}" class="Photo"/>*/
 /* 		</div>*/
