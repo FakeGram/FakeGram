@@ -1,0 +1,25 @@
+{% include 'header.html.twig' %}
+
+
+	<div style="width:900px;margin-left:auto;margin-right:auto;">
+
+		<div>
+			{% if users %}
+				{% for user in users %}
+					<div class="PicturesMainContainer">
+						<a href="/Profile/{{user['login']}}">
+						<div class="PicturesContainer">
+							<img width=100px height=100px src="data:image/jpeg;base64,{{user['avatar']}}" />
+						</div>
+						</a>
+						<label>{{user['login']}}</label>
+					</div>
+				{% endfor %}
+			{% else %}
+				<label>Brak użytkowników</label>
+			{% endif %}
+		</div>
+		
+	</div>
+
+{% include 'footer.html.twig' %}

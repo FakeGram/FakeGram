@@ -15,175 +15,100 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_af39b892ae0a338e02bb396314cabffc1961f9d8a128a9ee802c5b9f16a08296 = $this->env->getExtension("native_profiler");
-        $__internal_af39b892ae0a338e02bb396314cabffc1961f9d8a128a9ee802c5b9f16a08296->enter($__internal_af39b892ae0a338e02bb396314cabffc1961f9d8a128a9ee802c5b9f16a08296_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserPanel/UserPanel.html.twig"));
+        $__internal_094a7f7a9afc64f32c52affc0f08a0e6944ff2efb8df9f892f94551106bd6a17 = $this->env->getExtension("native_profiler");
+        $__internal_094a7f7a9afc64f32c52affc0f08a0e6944ff2efb8df9f892f94551106bd6a17->enter($__internal_094a7f7a9afc64f32c52affc0f08a0e6944ff2efb8df9f892f94551106bd6a17_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserPanel/UserPanel.html.twig"));
 
         // line 1
-        echo "<!DOCTYPE html>
-<html lang=\"en\">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset=\"utf-8\">
-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
-  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
-  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
+        $this->loadTemplate("header.html.twig", "UserPanel/UserPanel.html.twig", 1)->display($context);
+        // line 2
+        echo "
 
-<form action=\"/Logout\">
-    <button type=\"submit\" class=\"btn btn-default\">Wyloguj się</button>
-  </form>
-  <form action=\"/\">
-    <button type=\"submit\" class=\"btn btn-default\">Strona Główna</button>
-  </form>
 
-</head>
-<body>
- 
- <div class=\"container-fluid\">
-  <h1>Witaj ";
-        // line 22
+  <div class=\"container-fluid\">
+
+    <div class=\"tile curved\">
+    <h1>Witaj ";
+        // line 8
         echo twig_escape_filter($this->env, (isset($context["login"]) ? $context["login"] : $this->getContext($context, "login")), "html", null, true);
         echo "!</h1>
-  <p>Resize the browser window to see the effect.</p>
-  
-  <div class=\"row\">
-    <div class=\"col-sm-4\" style=\"background-color:lavender;\">.Login: ";
-        // line 26
-        echo twig_escape_filter($this->env, (isset($context["login"]) ? $context["login"] : $this->getContext($context, "login")), "html", null, true);
-        echo "</div>
-    <div class=\"col-sm-8\" style=\"background-color:lavenderblush;\">Email: ";
-        // line 27
-        echo twig_escape_filter($this->env, (isset($context["email"]) ? $context["email"] : $this->getContext($context, "email")), "html", null, true);
-        echo "</div>
-  </div>
-</div>
 
-<!-- Tutaj avatary zdjęcia etc -->
+      <form class=\"\" action=\"/UserLoginUpdated\" method=\"post\">
+        <div class=\"form-group\">
+            <label for=\"login\">Edytuj Nazwę Użytkownika:</label>
+          <input type=\"edtLogin\" class=\"form-control inputs\" id=\"edtLogin\" name=\"edtLogin\">
+        </div>
+        <div class=\"form-group\"> 
+            <button type=\"submit\" class=\"btn btn-default buttons\">Wyślij</button>
+        </div>
+      </form>
 
-<div class=\"container\">
-  <div class=\"panel-group\">
-    <div class=\"panel panel-default\">
-      
-      <!--
-      <div class=\"panel-heading\">Sample Tekst !</div>
-      <div class=\"panel-body\">Panel Content</div> -->
+
+
+
+      <form class=\"\" action=\"/UserEmailUpdated\" method=\"post\">
+        <div class=\"form-group\">
+          <label for=\"email\">Edytuj Adres e-Mail:</label>
+          <input type=\"email\" class=\"form-control inputs\" id=\"edtEmail\" name=\"edtEmail\">
+        </div>
+        <div class=\"form-group\"> 
+            <button type=\"submit\" class=\"btn btn-default buttons\">Wyślij</button>
+        </div>
+      </form>
+
+
+   
+
+      <form class=\"\" action=\"/UserPassUpdated\" method=\"post\">
+        <div class=\"form-group\">
+          <label for=\"Hasło\">Nowe Hasło</label>
+          <input type=\"password\" class=\"form-control inputs\" id=\"edtPass\" name=\"edtPass\">
+        </div>
+        <div class=\"form-group\" style=\"margin-top: 20px;\">
+          <label for=\"Hasło\">Powtórz Hasło</label>
+          <input type=\"password\" class=\"form-control inputs\" id=\"edtPass2\" name=\"edtPass2\">
+        </div>
+        <div class=\"form-group\"> 
+            <button type=\"submit\" class=\"btn btn-default\">Wyślij</button>
+        </div>
+      </form>
+
+
     
-<!-- Ponieżej formularze Edycji Danych -->
-
-    <form class=\"form-inline\" action=\"/UserLoginUpdated\" method=\"post\">
-  <div class=\"form-group\">
-    <label for=\"login\">Edytuj Nazwę Użytkownika:</label>
-    <input type=\"edtLogin\" class=\"form-control\" id=\"edtLogin\" name=\"edtLogin\">
-  </div>
- <div class=\"form-group\"> 
-    <div class=\"col-sm-offset-0 col-sm-10\">
-      <button type=\"submit\" class=\"btn btn-default\">Wyślij</button>
-
-  </div>
-</div>
-  </form>
-
-</br>
-
-<form class=\"form-inline\" action=\"/UserEmailUpdated\" method=\"post\">
-
-    <div class=\"form-group\">
-    <label for=\"email\">Edytuj Adres e-Mail:</label>
-    <input type=\"email\" class=\"form-control\" id=\"edtEmail\" name=\"edtEmail\">
-  </div>
-   <div class=\"form-group\"> 
-    <div class=\"col-sm-offset-0 col-sm-10\">
-      <button type=\"submit\" class=\"btn btn-default\">Wyślij</button>
-    </div>
-  </div>
-  </form>
-
-</br>
-
-<form class=\"form-inline\" action=\"/UserPassUpdated\" method=\"post\">
-
-  <div class=\"form-group\">
-    <label for=\"Hasło\">Nowe Hasło</label>
-    <input type=\"password\" class=\"form-control\" id=\"edtPass\" name=\"edtPass\">
-  </div>
-
-</br></br>
-
-  <div class=\"form-group\">
-
-    <label for=\"Hasło\">Powtórz Hasło</label>
-    <input type=\"password\" class=\"form-control\" id=\"edtPass2\" name=\"edtPass2\">
-  </div>
-    <div class=\"form-group\"> 
-    <div class=\"col-sm-offset-0 col-sm-10\">
-      <button type=\"submit\" class=\"btn btn-default\">Wyślij</button>
-    </div>
-  </div>
-</form>
-
-</br>
-
-<form class=\"form-inline\" action =\"/UserAvatarUpdated\" method=\"post\" enctype=\"multipart/form-data\">
-  <label for=\"avatar\">Twój  Avatar: <img height=\"100\" width=\"100\" src=\"data:image/jpeg;base64,";
-        // line 97
+    <div class=\"bottom_part\">
+      <div class=\"left\">
+        <form class=\"form-inline\" action =\"/UserAvatarUpdated\" method=\"post\" enctype=\"multipart/form-data\">
+          <label for=\"avatar\">Twój  Avatar:</label>
+          <img height=\"100\" width=\"100\" src=\"data:image/jpeg;base64,";
+        // line 56
         echo twig_escape_filter($this->env, (isset($context["Actual_avatar"]) ? $context["Actual_avatar"] : $this->getContext($context, "Actual_avatar")), "html", null, true);
-        echo "\" /> </br></br>Edytuj Avatara</label>
-  <input type=\"file\" name=\"avatar\" accept=\"image/jpeg,image/gif,image/jpg,image/png\"> </br>
-  <button type= \"submit\" class=\"btn btn-default\">Zmień avatar</button>
-</br>
-  <label> ";
-        // line 101
+        echo "\" class=\"avatar\"/>
+          <input type=\"file\" name=\"avatar\" accept=\"image/jpeg,image/gif,image/jpg,image/png\" class=\"load_avatar\">
+          <button type= \"submit\" class=\"btn btn-default\">Zmień avatar</button>
+          <label> ";
+        // line 59
         echo twig_escape_filter($this->env, (isset($context["err_comm"]) ? $context["err_comm"] : $this->getContext($context, "err_comm")), "html", null, true);
         echo " </label>
-
-</form>
-<form class=\"form-inline\" action=\"/UserAboutUpdated\" method=\"post\" id=\"aboutForm\">
-  <label for=\"About Me\">Opis O Mnie</label>
-  <textarea rows =\"25\" cols = \"90\" form =\"aboutForm\" name=\"edtAbout\" id=\"edtAbout\">";
-        // line 106
+        </form>
+      </div>
+      <div class=\"right\">
+        <form class=\"form-inline\" action=\"/UserAboutUpdated\" method=\"post\" id=\"aboutForm\">
+          <label for=\"About Me\" class=\"about\">Opis O Mnie:</label>
+          <textarea form =\"aboutForm\" name=\"edtAbout\" id=\"edtAbout\" class=\"text\">";
+        // line 65
         echo twig_escape_filter($this->env, (isset($context["about"]) ? $context["about"] : $this->getContext($context, "about")), "html", null, true);
         echo "</textarea>
-<input type= \"submit\" class=\"btn btn-default\" >Edytuj Opis</button>
-</form>
-
-</div> <!-- koniec kontenera -->
-
-<!--
-    <div class=\"panel panel-primary\">
-      <div class=\"panel-heading\">Panel with panel-primary class</div>
-      <div class=\"panel-body\">Panel Content</div>
-    </div>
-
-    <div class=\"panel panel-success\">
-      <div class=\"panel-heading\">Panel with panel-success class</div>
-      <div class=\"panel-body\">Panel Content</div>
-    </div>
-
-    <div class=\"panel panel-info\">
-      <div class=\"panel-heading\">Panel with panel-info class</div>
-      <div class=\"panel-body\">Panel Content</div>
-    </div>
-
-    <div class=\"panel panel-warning\">
-      <div class=\"panel-heading\">Panel with panel-warning class</div>
-      <div class=\"panel-body\">Panel Content</div>
-    </div>
-
-    <div class=\"panel panel-danger\">
-      <div class=\"panel-heading\">Panel with panel-danger class</div>
-      <div class=\"panel-body\">Panel Content</div>
+          <input type= \"submit\" class=\"btn btn-default\" value=\"Edytuj Opis\">
+        </form>
+      </div>
     </div>
   </div>
--->
-
-
 </div>
 
-</body>
-</html>
 ";
+        // line 73
+        $this->loadTemplate("footer.html.twig", "UserPanel/UserPanel.html.twig", 73)->display($context);
         
-        $__internal_af39b892ae0a338e02bb396314cabffc1961f9d8a128a9ee802c5b9f16a08296->leave($__internal_af39b892ae0a338e02bb396314cabffc1961f9d8a128a9ee802c5b9f16a08296_prof);
+        $__internal_094a7f7a9afc64f32c52affc0f08a0e6944ff2efb8df9f892f94551106bd6a17->leave($__internal_094a7f7a9afc64f32c52affc0f08a0e6944ff2efb8df9f892f94551106bd6a17_prof);
 
     }
 
@@ -199,151 +124,79 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
 
     public function getDebugInfo()
     {
-        return array (  144 => 106,  136 => 101,  129 => 97,  56 => 27,  52 => 26,  45 => 22,  22 => 1,);
+        return array (  109 => 73,  98 => 65,  89 => 59,  83 => 56,  32 => 8,  24 => 2,  22 => 1,);
     }
 }
-/* <!DOCTYPE html>*/
-/* <html lang="en">*/
-/* <head>*/
-/*   <title>Bootstrap Example</title>*/
-/*   <meta charset="utf-8">*/
-/*   <meta name="viewport" content="width=device-width, initial-scale=1">*/
-/*   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">*/
-/*   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*/
-/*   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>*/
+/* {% include 'header.html.twig' %}*/
 /* */
-/* <form action="/Logout">*/
-/*     <button type="submit" class="btn btn-default">Wyloguj się</button>*/
-/*   </form>*/
-/*   <form action="/">*/
-/*     <button type="submit" class="btn btn-default">Strona Główna</button>*/
-/*   </form>*/
 /* */
-/* </head>*/
-/* <body>*/
-/*  */
-/*  <div class="container-fluid">*/
-/*   <h1>Witaj {{login}}!</h1>*/
-/*   <p>Resize the browser window to see the effect.</p>*/
-/*   */
-/*   <div class="row">*/
-/*     <div class="col-sm-4" style="background-color:lavender;">.Login: {{login}}</div>*/
-/*     <div class="col-sm-8" style="background-color:lavenderblush;">Email: {{email}}</div>*/
-/*   </div>*/
-/* </div>*/
 /* */
-/* <!-- Tutaj avatary zdjęcia etc -->*/
+/*   <div class="container-fluid">*/
 /* */
-/* <div class="container">*/
-/*   <div class="panel-group">*/
-/*     <div class="panel panel-default">*/
-/*       */
-/*       <!--*/
-/*       <div class="panel-heading">Sample Tekst !</div>*/
-/*       <div class="panel-body">Panel Content</div> -->*/
+/*     <div class="tile curved">*/
+/*     <h1>Witaj {{login}}!</h1>*/
+/* */
+/*       <form class="" action="/UserLoginUpdated" method="post">*/
+/*         <div class="form-group">*/
+/*             <label for="login">Edytuj Nazwę Użytkownika:</label>*/
+/*           <input type="edtLogin" class="form-control inputs" id="edtLogin" name="edtLogin">*/
+/*         </div>*/
+/*         <div class="form-group"> */
+/*             <button type="submit" class="btn btn-default buttons">Wyślij</button>*/
+/*         </div>*/
+/*       </form>*/
+/* */
+/* */
+/* */
+/* */
+/*       <form class="" action="/UserEmailUpdated" method="post">*/
+/*         <div class="form-group">*/
+/*           <label for="email">Edytuj Adres e-Mail:</label>*/
+/*           <input type="email" class="form-control inputs" id="edtEmail" name="edtEmail">*/
+/*         </div>*/
+/*         <div class="form-group"> */
+/*             <button type="submit" class="btn btn-default buttons">Wyślij</button>*/
+/*         </div>*/
+/*       </form>*/
+/* */
+/* */
+/*    */
+/* */
+/*       <form class="" action="/UserPassUpdated" method="post">*/
+/*         <div class="form-group">*/
+/*           <label for="Hasło">Nowe Hasło</label>*/
+/*           <input type="password" class="form-control inputs" id="edtPass" name="edtPass">*/
+/*         </div>*/
+/*         <div class="form-group" style="margin-top: 20px;">*/
+/*           <label for="Hasło">Powtórz Hasło</label>*/
+/*           <input type="password" class="form-control inputs" id="edtPass2" name="edtPass2">*/
+/*         </div>*/
+/*         <div class="form-group"> */
+/*             <button type="submit" class="btn btn-default">Wyślij</button>*/
+/*         </div>*/
+/*       </form>*/
+/* */
+/* */
 /*     */
-/* <!-- Ponieżej formularze Edycji Danych -->*/
-/* */
-/*     <form class="form-inline" action="/UserLoginUpdated" method="post">*/
-/*   <div class="form-group">*/
-/*     <label for="login">Edytuj Nazwę Użytkownika:</label>*/
-/*     <input type="edtLogin" class="form-control" id="edtLogin" name="edtLogin">*/
-/*   </div>*/
-/*  <div class="form-group"> */
-/*     <div class="col-sm-offset-0 col-sm-10">*/
-/*       <button type="submit" class="btn btn-default">Wyślij</button>*/
-/* */
+/*     <div class="bottom_part">*/
+/*       <div class="left">*/
+/*         <form class="form-inline" action ="/UserAvatarUpdated" method="post" enctype="multipart/form-data">*/
+/*           <label for="avatar">Twój  Avatar:</label>*/
+/*           <img height="100" width="100" src="data:image/jpeg;base64,{{Actual_avatar}}" class="avatar"/>*/
+/*           <input type="file" name="avatar" accept="image/jpeg,image/gif,image/jpg,image/png" class="load_avatar">*/
+/*           <button type= "submit" class="btn btn-default">Zmień avatar</button>*/
+/*           <label> {{err_comm}} </label>*/
+/*         </form>*/
+/*       </div>*/
+/*       <div class="right">*/
+/*         <form class="form-inline" action="/UserAboutUpdated" method="post" id="aboutForm">*/
+/*           <label for="About Me" class="about">Opis O Mnie:</label>*/
+/*           <textarea form ="aboutForm" name="edtAbout" id="edtAbout" class="text">{{about}}</textarea>*/
+/*           <input type= "submit" class="btn btn-default" value="Edytuj Opis">*/
+/*         </form>*/
+/*       </div>*/
+/*     </div>*/
 /*   </div>*/
 /* </div>*/
-/*   </form>*/
 /* */
-/* </br>*/
-/* */
-/* <form class="form-inline" action="/UserEmailUpdated" method="post">*/
-/* */
-/*     <div class="form-group">*/
-/*     <label for="email">Edytuj Adres e-Mail:</label>*/
-/*     <input type="email" class="form-control" id="edtEmail" name="edtEmail">*/
-/*   </div>*/
-/*    <div class="form-group"> */
-/*     <div class="col-sm-offset-0 col-sm-10">*/
-/*       <button type="submit" class="btn btn-default">Wyślij</button>*/
-/*     </div>*/
-/*   </div>*/
-/*   </form>*/
-/* */
-/* </br>*/
-/* */
-/* <form class="form-inline" action="/UserPassUpdated" method="post">*/
-/* */
-/*   <div class="form-group">*/
-/*     <label for="Hasło">Nowe Hasło</label>*/
-/*     <input type="password" class="form-control" id="edtPass" name="edtPass">*/
-/*   </div>*/
-/* */
-/* </br></br>*/
-/* */
-/*   <div class="form-group">*/
-/* */
-/*     <label for="Hasło">Powtórz Hasło</label>*/
-/*     <input type="password" class="form-control" id="edtPass2" name="edtPass2">*/
-/*   </div>*/
-/*     <div class="form-group"> */
-/*     <div class="col-sm-offset-0 col-sm-10">*/
-/*       <button type="submit" class="btn btn-default">Wyślij</button>*/
-/*     </div>*/
-/*   </div>*/
-/* </form>*/
-/* */
-/* </br>*/
-/* */
-/* <form class="form-inline" action ="/UserAvatarUpdated" method="post" enctype="multipart/form-data">*/
-/*   <label for="avatar">Twój  Avatar: <img height="100" width="100" src="data:image/jpeg;base64,{{Actual_avatar}}" /> </br></br>Edytuj Avatara</label>*/
-/*   <input type="file" name="avatar" accept="image/jpeg,image/gif,image/jpg,image/png"> </br>*/
-/*   <button type= "submit" class="btn btn-default">Zmień avatar</button>*/
-/* </br>*/
-/*   <label> {{err_comm}} </label>*/
-/* */
-/* </form>*/
-/* <form class="form-inline" action="/UserAboutUpdated" method="post" id="aboutForm">*/
-/*   <label for="About Me">Opis O Mnie</label>*/
-/*   <textarea rows ="25" cols = "90" form ="aboutForm" name="edtAbout" id="edtAbout">{{about}}</textarea>*/
-/* <input type= "submit" class="btn btn-default" >Edytuj Opis</button>*/
-/* </form>*/
-/* */
-/* </div> <!-- koniec kontenera -->*/
-/* */
-/* <!--*/
-/*     <div class="panel panel-primary">*/
-/*       <div class="panel-heading">Panel with panel-primary class</div>*/
-/*       <div class="panel-body">Panel Content</div>*/
-/*     </div>*/
-/* */
-/*     <div class="panel panel-success">*/
-/*       <div class="panel-heading">Panel with panel-success class</div>*/
-/*       <div class="panel-body">Panel Content</div>*/
-/*     </div>*/
-/* */
-/*     <div class="panel panel-info">*/
-/*       <div class="panel-heading">Panel with panel-info class</div>*/
-/*       <div class="panel-body">Panel Content</div>*/
-/*     </div>*/
-/* */
-/*     <div class="panel panel-warning">*/
-/*       <div class="panel-heading">Panel with panel-warning class</div>*/
-/*       <div class="panel-body">Panel Content</div>*/
-/*     </div>*/
-/* */
-/*     <div class="panel panel-danger">*/
-/*       <div class="panel-heading">Panel with panel-danger class</div>*/
-/*       <div class="panel-body">Panel Content</div>*/
-/*     </div>*/
-/*   </div>*/
-/* -->*/
-/* */
-/* */
-/* </div>*/
-/* */
-/* </body>*/
-/* </html>*/
-/* */
+/* {% include 'footer.html.twig' %}*/

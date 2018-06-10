@@ -15,60 +15,40 @@ class __TwigTemplate_b63f82be47dc35fe5e2803eea46b8195e58a2174349be0d17add09a67b2
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_334f23edc5afb4e3d2cbec7d505197907b4989b44f8c5577e3519e3d845ebf12 = $this->env->getExtension("native_profiler");
-        $__internal_334f23edc5afb4e3d2cbec7d505197907b4989b44f8c5577e3519e3d845ebf12->enter($__internal_334f23edc5afb4e3d2cbec7d505197907b4989b44f8c5577e3519e3d845ebf12_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Explore.html.twig"));
+        $__internal_11fb012e890291ac4c5c4a40f23a53138882e00a6203d5bc120f7253cb8e8314 = $this->env->getExtension("native_profiler");
+        $__internal_11fb012e890291ac4c5c4a40f23a53138882e00a6203d5bc120f7253cb8e8314->enter($__internal_11fb012e890291ac4c5c4a40f23a53138882e00a6203d5bc120f7253cb8e8314_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Explore.html.twig"));
 
         // line 1
-        echo "<html>
-\t<head>
-\t\t<title>Profile</title>
-\t\t<meta charset=\"utf-8\">
-\t<link rel=\"stylesheet\" href=\"";
-        // line 5
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/bootstrap.min.css"), "html", null, true);
-        echo "\" />
-  <link rel=\"stylesheet\" href=\"";
-        // line 6
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/profile.css"), "html", null, true);
-        echo "\" />
-\t<script src=\"";
-        // line 7
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/js/jquery.min.js"), "html", null, true);
-        echo "\"></script>
-\t<script src=\"";
-        // line 8
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/js/bootstrap.min.js"), "html", null, true);
-        echo "\"></script>
-\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
+        $this->loadTemplate("header.html.twig", "SearchPanel/Explore.html.twig", 1)->display($context);
+        // line 2
+        echo "
 
-\t</head>
-\t<body>
 \t<div style=\"width:900px;margin-left:auto;margin-right:auto;\">
 \t<form action =\"/Search\" method=\"post\">
 \t\t<input type=\"text\" class ='form-control inputs' id = \"SearchedArgument\" name =\"SearchedArgument\" placeholder=\"";
-        // line 15
+        // line 6
         echo twig_escape_filter($this->env, (isset($context["placeholder"]) ? $context["placeholder"] : $this->getContext($context, "placeholder")), "html", null, true);
         echo "\" >
 \t\t<button type=\"submit\" class = \"btn btn-default buttons\">Wyszukaj</button>
 \t</form>
 \t\t<div>
 \t\t\t";
-        // line 19
+        // line 10
         if ((isset($context["pictures"]) ? $context["pictures"] : $this->getContext($context, "pictures"))) {
-            // line 20
+            // line 11
             echo "\t\t\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["pictures"]) ? $context["pictures"] : $this->getContext($context, "pictures")));
             foreach ($context['_seq'] as $context["_key"] => $context["pic"]) {
-                // line 21
+                // line 12
                 echo "\t\t\t\t\t<div class=\"PicturesMainContainer\">
 \t\t\t\t\t\t<a href=\"/Profile/Photo/";
-                // line 22
+                // line 13
                 echo twig_escape_filter($this->env, $this->getAttribute($context["pic"], "id", array(), "array"), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t<div class=\"PicturesContainer\">
 \t\t\t\t\t\t\t<img src=\"/";
-                // line 24
+                // line 15
                 echo twig_escape_filter($this->env, $this->getAttribute($context["pic"], "pic", array(), "array"), "html", null, true);
                 echo "\" class=\"Pictures\"/>
 \t\t\t\t\t\t</div>
@@ -83,21 +63,23 @@ class __TwigTemplate_b63f82be47dc35fe5e2803eea46b8195e58a2174349be0d17add09a67b2
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pic'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 33
+            // line 24
             echo "\t\t\t";
         } else {
-            // line 34
+            // line 25
             echo "\t\t\t\t<label>Brak zdjęć</label>
 \t\t\t";
         }
-        // line 36
+        // line 27
         echo "\t\t</div>
 \t\t
-\t</div>
-\t</body>
-\t</html>";
+\t</form>
+
+";
+        // line 31
+        $this->loadTemplate("footer.html.twig", "SearchPanel/Explore.html.twig", 31)->display($context);
         
-        $__internal_334f23edc5afb4e3d2cbec7d505197907b4989b44f8c5577e3519e3d845ebf12->leave($__internal_334f23edc5afb4e3d2cbec7d505197907b4989b44f8c5577e3519e3d845ebf12_prof);
+        $__internal_11fb012e890291ac4c5c4a40f23a53138882e00a6203d5bc120f7253cb8e8314->leave($__internal_11fb012e890291ac4c5c4a40f23a53138882e00a6203d5bc120f7253cb8e8314_prof);
 
     }
 
@@ -113,21 +95,12 @@ class __TwigTemplate_b63f82be47dc35fe5e2803eea46b8195e58a2174349be0d17add09a67b2
 
     public function getDebugInfo()
     {
-        return array (  94 => 36,  90 => 34,  87 => 33,  72 => 24,  67 => 22,  64 => 21,  59 => 20,  57 => 19,  50 => 15,  40 => 8,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
+        return array (  80 => 31,  74 => 27,  70 => 25,  67 => 24,  52 => 15,  47 => 13,  44 => 12,  39 => 11,  37 => 10,  30 => 6,  24 => 2,  22 => 1,);
     }
 }
-/* <html>*/
-/* 	<head>*/
-/* 		<title>Profile</title>*/
-/* 		<meta charset="utf-8">*/
-/* 	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />*/
-/*   <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}" />*/
-/* 	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>*/
-/* 	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>*/
-/* 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*/
+/* {% include 'header.html.twig' %}*/
 /* */
-/* 	</head>*/
-/* 	<body>*/
+/* */
 /* 	<div style="width:900px;margin-left:auto;margin-right:auto;">*/
 /* 	<form action ="/Search" method="post">*/
 /* 		<input type="text" class ='form-control inputs' id = "SearchedArgument" name ="SearchedArgument" placeholder="{{placeholder}}" >*/
@@ -153,6 +126,6 @@ class __TwigTemplate_b63f82be47dc35fe5e2803eea46b8195e58a2174349be0d17add09a67b2
 /* 			{% endif %}*/
 /* 		</div>*/
 /* 		*/
-/* 	</div>*/
-/* 	</body>*/
-/* 	</html>*/
+/* 	</form>*/
+/* */
+/* {% include 'footer.html.twig' %}*/

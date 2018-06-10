@@ -15,39 +15,13 @@ class __TwigTemplate_46427c3423d61a3a59b760a0d91f6af20b08947d714d26f93cefd6a9b20
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_4b43c6cca6c495c05e1f8d299b1595f6ad2d1875f3da8f55c228439ba57f4f86 = $this->env->getExtension("native_profiler");
-        $__internal_4b43c6cca6c495c05e1f8d299b1595f6ad2d1875f3da8f55c228439ba57f4f86->enter($__internal_4b43c6cca6c495c05e1f8d299b1595f6ad2d1875f3da8f55c228439ba57f4f86_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Login/Login.html.twig"));
+        $__internal_60ec0f2c7c46440bbbaef9187363d46d675af8901826239d045c6f7fa97e3887 = $this->env->getExtension("native_profiler");
+        $__internal_60ec0f2c7c46440bbbaef9187363d46d675af8901826239d045c6f7fa97e3887->enter($__internal_60ec0f2c7c46440bbbaef9187363d46d675af8901826239d045c6f7fa97e3887_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Login/Login.html.twig"));
 
         // line 1
-        echo "<html>
-\t<head>
-\t\t<title>Login</title>
-\t\t<meta charset=\"utf-8\">
-\t<link rel=\"stylesheet\" href=\"";
-        // line 5
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/bootstrap.min.css"), "html", null, true);
-        echo "\" />
-  <link rel=\"stylesheet\" href=\"";
-        // line 6
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/css/login.css"), "html", null, true);
-        echo "\" />
-\t<script src=\"";
-        // line 7
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/js/jquery.min.js"), "html", null, true);
-        echo "\"></script>
-\t<script src=\"";
-        // line 8
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("assets/js/bootstrap.min.js"), "html", null, true);
-        echo "\"></script>
-\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
-
-  </form>
-  <form action=\"/\">
-    <button type=\"submit\" class=\"btn btn-default\">Strona Główna</button>
-  </form>
-\t</head>
-\t
-  <body>
+        $this->loadTemplate("header.html.twig", "Login/Login.html.twig", 1)->display($context);
+        // line 2
+        echo "
 \t<div class=\"container-fluid\">
     <div class=\"login-form\">
       <h2 class=\"log-in\">Zaloguj się !</h2>
@@ -65,17 +39,19 @@ class __TwigTemplate_46427c3423d61a3a59b760a0d91f6af20b08947d714d26f93cefd6a9b20
         </div>
         <button class=\"log-submit\" type=\"submit\" class=\"btn btn-default\">Zaloguj</button>
         <label>";
-        // line 34
+        // line 19
         echo twig_escape_filter($this->env, (isset($context["err_comm"]) ? $context["err_comm"] : $this->getContext($context, "err_comm")), "html", null, true);
         echo "</label>
       </form>
   </div>
 </div>
-\t</body>
-</html>
+
+
 ";
+        // line 25
+        $this->loadTemplate("footer.html.twig", "Login/Login.html.twig", 25)->display($context);
         
-        $__internal_4b43c6cca6c495c05e1f8d299b1595f6ad2d1875f3da8f55c228439ba57f4f86->leave($__internal_4b43c6cca6c495c05e1f8d299b1595f6ad2d1875f3da8f55c228439ba57f4f86_prof);
+        $__internal_60ec0f2c7c46440bbbaef9187363d46d675af8901826239d045c6f7fa97e3887->leave($__internal_60ec0f2c7c46440bbbaef9187363d46d675af8901826239d045c6f7fa97e3887_prof);
 
     }
 
@@ -91,26 +67,11 @@ class __TwigTemplate_46427c3423d61a3a59b760a0d91f6af20b08947d714d26f93cefd6a9b20
 
     public function getDebugInfo()
     {
-        return array (  69 => 34,  40 => 8,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
+        return array (  52 => 25,  43 => 19,  24 => 2,  22 => 1,);
     }
 }
-/* <html>*/
-/* 	<head>*/
-/* 		<title>Login</title>*/
-/* 		<meta charset="utf-8">*/
-/* 	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />*/
-/*   <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}" />*/
-/* 	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>*/
-/* 	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>*/
-/* 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*/
+/* {% include 'header.html.twig' %}*/
 /* */
-/*   </form>*/
-/*   <form action="/">*/
-/*     <button type="submit" class="btn btn-default">Strona Główna</button>*/
-/*   </form>*/
-/* 	</head>*/
-/* 	*/
-/*   <body>*/
 /* 	<div class="container-fluid">*/
 /*     <div class="login-form">*/
 /*       <h2 class="log-in">Zaloguj się !</h2>*/
@@ -131,6 +92,6 @@ class __TwigTemplate_46427c3423d61a3a59b760a0d91f6af20b08947d714d26f93cefd6a9b20
 /*       </form>*/
 /*   </div>*/
 /* </div>*/
-/* 	</body>*/
-/* </html>*/
 /* */
+/* */
+/* {% include 'footer.html.twig' %}*/

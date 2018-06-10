@@ -159,7 +159,7 @@ class Profile extends Controller
      * @Route("/Profile/Photo/{PhotoId}")
      */
 	 
-	 public function Photo($PhotoId)
+	 	 public function Photo($PhotoId)
 	 {
 		 $err_comm='';
 		 
@@ -213,6 +213,11 @@ class Profile extends Controller
 		->getRepository('AppBundle:likes')
 		->findByPicid($PhotoId);
 		$like=count($likes);
+		foreach($likes as $like1)
+		{
+			if($like1->getLogin()==$_SESSION['CurrentUser']->getLogin()) $liked="1";
+		}
+		if(!isset($liked)) $liked="0";
 		$comms=$this->GetDoctrine()
 		->getRepository('AppBundle:comment')
 		->findByPicid($pictures['id']);
@@ -242,25 +247,26 @@ class Profile extends Controller
 		{
 			if(isset($comments))
 			return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>true,'tags'=>$tags,'login'=>$_SESSION['CurrentUser']->getLogin(),'likes'=>$like  // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>true,'tags'=>$tags,'login'=>$_SESSION['CurrentUser']->getLogin(),'likes'=>$like,'liked'=>$liked  // Tablica do wysyłania zmiennych do widoku 
 					));
 			else 
 				return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>true,'tags'=>$tags,'login'=>$_SESSION['CurrentUser']->getLogin(),'likes'=>$like // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>true,'tags'=>$tags,'login'=>$_SESSION['CurrentUser']->getLogin(),'likes'=>$like,'liked'=>$liked // Tablica do wysyłania zmiennych do widoku 
 					));
 		}
 		else
 		{
 			if(isset($comments))
 			return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>false,'tags'=>$tags,'likes'=>$like  // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>$comments,'loggedIn'=>false,'tags'=>$tags,'likes'=>$like,'liked'=>$liked  // Tablica do wysyłania zmiennych do widoku 
 					));
 			else 
 				return $this->render('Profile/Photo.html.twig', array( 
-				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>false,'tags'=>$tags,'likes'=>$like  // Tablica do wysyłania zmiennych do widoku 
+				'pic'=> $pictures,'usr'=>$user,'comms'=>'','loggedIn'=>false,'tags'=>$tags,'likes'=>$like,'liked'=>$liked  // Tablica do wysyłania zmiennych do widoku 
 					));
 		}
 	 }
+
 
  	/**
      * @Route("/Profile/Photo/NewComment/{PhotoId}")
@@ -358,6 +364,10 @@ class Profile extends Controller
 			 $i++;
 	    }
 
+	    $Repository = $this->getDoctrine()->getRepository('AppBundle:tags');
+
+
+
 	    if(isset($pictures))
 		 return $this->render('SearchPanel/Explore.html.twig', array( 
 			'pictures'=> $pictures,'placeholder'=>$PlaceHolder  // Tablica do wysyłania zmiennych do widoku 
@@ -382,9 +392,72 @@ class Profile extends Controller
 			return $this->redirect("/");
 		}
 
+	/*
 		// Wyszukiwanie po tagach można machnać tak,że sprawdzi się w if'ie czy pierwsza litera jest haszem 
 		return $this->redirect("/Profile/".$_POST['SearchedArgument']);
+    */
 
+
+			$err_comm="";
+		$PlaceHolder="Wyszukaj po nazwie użytkownika "; // dodać tagi jak będą gotowe
+
+		$Repository = $this->getDoctrine()->getRepository('AppBundle:user');
+		
+		$query = $Repository->createQueryBuilder('u')
+		->where('u.login LIKE :s')
+		->setParameter('s',$_POST['SearchedArgument'].'%')
+		->getQuery();
+
+		$usrs = $query->getResult();
+		$i = 0 ; 
+	    foreach($usrs as $user)
+	    {
+			 
+			 $users[$i]['login']=$user->getLogin();
+			 $users[$i]['avatar']=$user->getAvatar();
+			if($users[$i]['avatar']!=NULL)
+			{
+				 $users[$i]['avatar']=base64_encode(stream_get_contents($users[$i]['avatar']));
+			}
+			
+			 $i++;
+	    }
+
+	
+	    $Repository = $this->getDoctrine()->getRepository('AppBundle:tags');
+	  
+	    $query = $Repository->createQueryBuilder('t')
+	    ->where('t.tag = :tag')
+	    ->setParameter('tag','#'.$_POST['SearchedArgument'])
+	    ->getQuery();
+
+	    $tgs = $query->getResult();
+/*
+	    $i=0;
+
+	    foreach ($tgs as $tag) 
+	    {
+	    	$tags[$i]['contentId']= $tag->getContentid();
+	    	$pics[$i][]
+	    }
+*/
+	    if(isset($users))
+		 return $this->render('SearchPanel/Results.html.twig', array( 
+			'users'=> $users,'placeholder'=>$PlaceHolder  // Tablica do wysyłania zmiennych do widoku 
+				));
+		else
+		{
+			$users='';
+			return $this->render('SearchPanel/Results.html.twig', array( 
+			'users'=> $users,'placeholder'=>$PlaceHolder // Tablica do wysyłania zmiennych do widoku 
+				));
+		}
+
+
+
+
+
+			
 	}
 	
 	/**
