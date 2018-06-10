@@ -15,17 +15,17 @@ class __TwigTemplate_46427c3423d61a3a59b760a0d91f6af20b08947d714d26f93cefd6a9b20
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_60ec0f2c7c46440bbbaef9187363d46d675af8901826239d045c6f7fa97e3887 = $this->env->getExtension("native_profiler");
-        $__internal_60ec0f2c7c46440bbbaef9187363d46d675af8901826239d045c6f7fa97e3887->enter($__internal_60ec0f2c7c46440bbbaef9187363d46d675af8901826239d045c6f7fa97e3887_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Login/Login.html.twig"));
+        $__internal_93e466e378a1206e8d316f5415e34e3b3f4ffda9b07f11b1da50e589fdcce924 = $this->env->getExtension("native_profiler");
+        $__internal_93e466e378a1206e8d316f5415e34e3b3f4ffda9b07f11b1da50e589fdcce924->enter($__internal_93e466e378a1206e8d316f5415e34e3b3f4ffda9b07f11b1da50e589fdcce924_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Login/Login.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "Login/Login.html.twig", 1)->display($context);
         // line 2
         echo "
-\t<div class=\"container-fluid\">
-    <div class=\"login-form\">
+  <div class=\"container-fluid\">
+    <div class=\"tile curved\">
       <h2 class=\"log-in\">Zaloguj się !</h2>
-      <form class=\"form-inline\" action=\"/execute_login\" method=\"post\">
+      <form class=\"\" action=\"/execute_login\" method=\"post\">
         <div class=\"login-group-sec\">
           <label class=\"login-label\" for=\"email\">E-mail:</label>
           <input type=\"email\" class=\"form-control\" id=\"email\" placeholder=\"Wprowadź adres E-mail\" name=\"email\">
@@ -51,7 +51,7 @@ class __TwigTemplate_46427c3423d61a3a59b760a0d91f6af20b08947d714d26f93cefd6a9b20
         // line 25
         $this->loadTemplate("footer.html.twig", "Login/Login.html.twig", 25)->display($context);
         
-        $__internal_60ec0f2c7c46440bbbaef9187363d46d675af8901826239d045c6f7fa97e3887->leave($__internal_60ec0f2c7c46440bbbaef9187363d46d675af8901826239d045c6f7fa97e3887_prof);
+        $__internal_93e466e378a1206e8d316f5415e34e3b3f4ffda9b07f11b1da50e589fdcce924->leave($__internal_93e466e378a1206e8d316f5415e34e3b3f4ffda9b07f11b1da50e589fdcce924_prof);
 
     }
 
@@ -72,10 +72,10 @@ class __TwigTemplate_46427c3423d61a3a59b760a0d91f6af20b08947d714d26f93cefd6a9b20
 }
 /* {% include 'header.html.twig' %}*/
 /* */
-/* 	<div class="container-fluid">*/
-/*     <div class="login-form">*/
+/*   <div class="container-fluid">*/
+/*     <div class="tile curved">*/
 /*       <h2 class="log-in">Zaloguj się !</h2>*/
-/*       <form class="form-inline" action="/execute_login" method="post">*/
+/*       <form class="" action="/execute_login" method="post">*/
 /*         <div class="login-group-sec">*/
 /*           <label class="login-label" for="email">E-mail:</label>*/
 /*           <input type="email" class="form-control" id="email" placeholder="Wprowadź adres E-mail" name="email">*/

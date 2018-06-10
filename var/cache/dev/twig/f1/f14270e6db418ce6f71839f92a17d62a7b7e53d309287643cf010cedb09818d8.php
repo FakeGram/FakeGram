@@ -15,8 +15,8 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_808cc5f15b901df6f330b081699058caa2e5955bd5d79e6ecb20a926e75611d8 = $this->env->getExtension("native_profiler");
-        $__internal_808cc5f15b901df6f330b081699058caa2e5955bd5d79e6ecb20a926e75611d8->enter($__internal_808cc5f15b901df6f330b081699058caa2e5955bd5d79e6ecb20a926e75611d8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Photo.html.twig"));
+        $__internal_f80182828b5ce349de355d820ff20e1c25283a0e5870421fcfec700e2c0adaad = $this->env->getExtension("native_profiler");
+        $__internal_f80182828b5ce349de355d820ff20e1c25283a0e5870421fcfec700e2c0adaad->enter($__internal_f80182828b5ce349de355d820ff20e1c25283a0e5870421fcfec700e2c0adaad_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Photo.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "Profile/Photo.html.twig", 1)->display($context);
@@ -73,34 +73,38 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 \t\t\t</div>
 \t\t\t<div class=\"CommentsContainer\">
 \t\t\t\t<div class=\"Likes\">
-\t\t\t\t\tLikes:";
+\t\t\t\t\tLikes:<label id=\"likes\">";
         // line 27
         echo twig_escape_filter($this->env, (isset($context["likes"]) ? $context["likes"] : $this->getContext($context, "likes")), "html", null, true);
-        echo "
+        echo "</label>
+\t\t\t\t\t<div style=\"display:none;\" id=\"liked\">";
+        // line 28
+        echo twig_escape_filter($this->env, (isset($context["liked"]) ? $context["liked"] : $this->getContext($context, "liked")), "html", null, true);
+        echo "</div>
 \t\t\t\t</div>
 \t\t\t\t";
-        // line 29
+        // line 30
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["comms"]) ? $context["comms"] : $this->getContext($context, "comms")));
         foreach ($context['_seq'] as $context["_key"] => $context["comm"]) {
-            // line 30
+            // line 31
             echo "\t\t\t\t\t<div class=\"Comment\">
 \t\t\t\t\t
 \t\t\t\t\t<div class=\"Date\">
 \t\t\t\t\t\t";
-            // line 33
+            // line 34
             echo twig_escape_filter($this->env, $this->getAttribute($context["comm"], "date", array(), "array"), "html", null, true);
             echo " 
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"Author\">
 \t\t\t\t\t\t";
-            // line 36
+            // line 37
             echo twig_escape_filter($this->env, $this->getAttribute($context["comm"], "login", array(), "array"), "html", null, true);
             echo " 
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"Content\">
 \t\t\t\t\t\t";
-            // line 39
+            // line 40
             echo twig_escape_filter($this->env, $this->getAttribute($context["comm"], "content", array(), "array"), "html", null, true);
             echo " 
 \t\t\t\t\t</div>
@@ -111,13 +115,13 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comm'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 44
+        // line 45
         echo "\t\t\t\t";
         if (((isset($context["loggedIn"]) ? $context["loggedIn"] : $this->getContext($context, "loggedIn")) == true)) {
-            // line 45
+            // line 46
             echo "\t\t\t\t\t<div class=\"CommentAdd\">
 \t\t\t\t\t\t<form class=\"CommentInput\" action=\"/Profile/Photo/NewComment/";
-            // line 46
+            // line 47
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["pic"]) ? $context["pic"] : $this->getContext($context, "pic")), "id", array(), "array"), "html", null, true);
             echo "\" method=\"post\">
 \t\t\t\t\t\t\t<input type=\"text\" class=\"CommentInputContent\"  name=\"CommentContent\" id=\"CommentContent\">
@@ -126,33 +130,72 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 \t\t\t\t\t</div>
 \t\t\t\t";
         }
-        // line 52
+        // line 53
         echo "\t\t\t\t";
         if (((isset($context["loggedIn"]) ? $context["loggedIn"] : $this->getContext($context, "loggedIn")) == true)) {
-            // line 53
-            echo "\t\t\t\t\t<div class=\"LikeButton\">
-\t\t\t\t\t\t<form  action=\"/Profile/Photo/AddLike/";
             // line 54
+            echo "\t\t\t\t\t<div class=\"LikeButton\">
+\t\t\t\t\t\t<div style=\"display:none;\" id=\"picId\">";
+            // line 55
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["pic"]) ? $context["pic"] : $this->getContext($context, "pic")), "id", array(), "array"), "html", null, true);
-            echo "/";
+            echo "</div>
+\t\t\t\t\t\t<div style=\"display:none;\" id=\"login\">";
+            // line 56
             echo twig_escape_filter($this->env, (isset($context["login"]) ? $context["login"] : $this->getContext($context, "login")), "html", null, true);
-            echo "\" method=\"post\">
-\t\t\t\t\t\t\t<input type=\"submit\" class=\"CommentInputButton\" value=\"<3\"/>
-\t\t\t\t\t\t</form>
+            echo "</div>
+\t\t\t\t\t\t<button onclick=\"like();\"><3</button>
+\t\t\t\t\t\t\t
 \t\t\t\t\t</div>
 \t\t\t\t";
         }
-        // line 59
+        // line 61
         echo "\t\t\t</div>
 \t\t</div>
 \t\t
 \t</div>
-\t
+\t</div>
+\t<script>
+\t\tfunction like()
+\t\t{
+\t\t\tvar id=document.getElementById(\"picId\").innerHTML;
+\t\t\tvar login=document.getElementById(\"login\").innerHTML;
+\t\t\tvar action=\"/Profile/Photo/AddLike/\"+id+\"/\"+login;
+\t\t\t\$.ajax({
+\t\t\t\turl:action,
+\t\t\ttype:'POST',
+\t\t\tdata:
+\t\t\t{
+\t\t\t\t
+\t\t\t}
+\t\t\t});
+\t\t\tvar liked=document.getElementById(\"liked\").innerHTML;
+\t\t\t
+\t\t\t
+\t\t\tvar count=parseInt(document.getElementById(\"likes\").innerHTML);
+\t\t\t
+\t\t\tif(liked==\"0\")
+\t\t\t{
+\t\t\t\t
+\t\t\t\tdocument.getElementById(\"likes\").innerHTML=count+1;
+\t\t\t\tliked=\"1\";
+\t\t\t\tdocument.getElementById(\"liked\").innerHTML=liked;
+\t\t\t\t
+\t\t\t}
+\t\t\telse
+\t\t\t{
+\t\t\t\t
+\t\t\t\tdocument.getElementById(\"likes\").innerHTML=count-1;
+\t\t\t\tliked=\"0\";
+\t\t\t\tdocument.getElementById(\"liked\").innerHTML=liked;
+\t\t\t}
+\t\t\t
+\t\t}
+\t</script>
 ";
-        // line 64
-        $this->loadTemplate("footer.html.twig", "Profile/Photo.html.twig", 64)->display($context);
+        // line 103
+        $this->loadTemplate("footer.html.twig", "Profile/Photo.html.twig", 103)->display($context);
         
-        $__internal_808cc5f15b901df6f330b081699058caa2e5955bd5d79e6ecb20a926e75611d8->leave($__internal_808cc5f15b901df6f330b081699058caa2e5955bd5d79e6ecb20a926e75611d8_prof);
+        $__internal_f80182828b5ce349de355d820ff20e1c25283a0e5870421fcfec700e2c0adaad->leave($__internal_f80182828b5ce349de355d820ff20e1c25283a0e5870421fcfec700e2c0adaad_prof);
 
     }
 
@@ -168,7 +211,7 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 
     public function getDebugInfo()
     {
-        return array (  153 => 64,  146 => 59,  136 => 54,  133 => 53,  130 => 52,  121 => 46,  118 => 45,  115 => 44,  104 => 39,  98 => 36,  92 => 33,  87 => 30,  83 => 29,  78 => 27,  72 => 23,  63 => 21,  59 => 20,  51 => 15,  47 => 14,  43 => 13,  37 => 10,  29 => 5,  24 => 2,  22 => 1,);
+        return array (  196 => 103,  152 => 61,  144 => 56,  140 => 55,  137 => 54,  134 => 53,  125 => 47,  122 => 46,  119 => 45,  108 => 40,  102 => 37,  96 => 34,  91 => 31,  87 => 30,  82 => 28,  78 => 27,  72 => 23,  63 => 21,  59 => 20,  51 => 15,  47 => 14,  43 => 13,  37 => 10,  29 => 5,  24 => 2,  22 => 1,);
     }
 }
 /* {% include 'header.html.twig' %}*/
@@ -197,7 +240,8 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 /* 			</div>*/
 /* 			<div class="CommentsContainer">*/
 /* 				<div class="Likes">*/
-/* 					Likes:{{likes}}*/
+/* 					Likes:<label id="likes">{{likes}}</label>*/
+/* 					<div style="display:none;" id="liked">{{liked}}</div>*/
 /* 				</div>*/
 /* 				{% for comm in comms %}*/
 /* 					<div class="Comment">*/
@@ -224,14 +268,52 @@ class __TwigTemplate_5d47010a4446ad9b08b79ed87955a0916a89a149e2f35f5b8562b433528
 /* 				{% endif %}*/
 /* 				{% if loggedIn==TRUE %}*/
 /* 					<div class="LikeButton">*/
-/* 						<form  action="/Profile/Photo/AddLike/{{pic['id']}}/{{login}}" method="post">*/
-/* 							<input type="submit" class="CommentInputButton" value="<3"/>*/
-/* 						</form>*/
+/* 						<div style="display:none;" id="picId">{{pic['id']}}</div>*/
+/* 						<div style="display:none;" id="login">{{login}}</div>*/
+/* 						<button onclick="like();"><3</button>*/
+/* 							*/
 /* 					</div>*/
 /* 				{% endif %}*/
 /* 			</div>*/
 /* 		</div>*/
 /* 		*/
 /* 	</div>*/
-/* 	*/
+/* 	</div>*/
+/* 	<script>*/
+/* 		function like()*/
+/* 		{*/
+/* 			var id=document.getElementById("picId").innerHTML;*/
+/* 			var login=document.getElementById("login").innerHTML;*/
+/* 			var action="/Profile/Photo/AddLike/"+id+"/"+login;*/
+/* 			$.ajax({*/
+/* 				url:action,*/
+/* 			type:'POST',*/
+/* 			data:*/
+/* 			{*/
+/* 				*/
+/* 			}*/
+/* 			});*/
+/* 			var liked=document.getElementById("liked").innerHTML;*/
+/* 			*/
+/* 			*/
+/* 			var count=parseInt(document.getElementById("likes").innerHTML);*/
+/* 			*/
+/* 			if(liked=="0")*/
+/* 			{*/
+/* 				*/
+/* 				document.getElementById("likes").innerHTML=count+1;*/
+/* 				liked="1";*/
+/* 				document.getElementById("liked").innerHTML=liked;*/
+/* 				*/
+/* 			}*/
+/* 			else*/
+/* 			{*/
+/* 				*/
+/* 				document.getElementById("likes").innerHTML=count-1;*/
+/* 				liked="0";*/
+/* 				document.getElementById("liked").innerHTML=liked;*/
+/* 			}*/
+/* 			*/
+/* 		}*/
+/* 	</script>*/
 /* {% include 'footer.html.twig' %}*/

@@ -5,7 +5,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\user;
-
+use AppBundle\Entity\pics;
 
 class UserPanel extends Controller
 {
@@ -80,7 +80,7 @@ class UserPanel extends Controller
     		 
    			 }
    	  
-         $repository = $this->getDoctrine()->getRepository('AppBundle:user');
+     $repository = $this->getDoctrine()->getRepository('AppBundle:user');
 		 $loginToEdit = filter_var($_POST['edtLogin'],FILTER_SANITIZE_STRING);
          $numberOfLogins= count($repository->findBylogin($loginToEdit),COUNT_NORMAL);
         
@@ -92,8 +92,36 @@ class UserPanel extends Controller
    	    
    		//$loginToEdit = $_POST['edtLogin'];
    		
+
+
    		$EditedUser->setLogin($loginToEdit);
    		$DoctrineManager->flush();
+
+      // Aktualizacja danych w tabeli pic
+      /*
+
+      $repository = $this->getDoctrine()->getRepository('AppBundle:pic');
+      $query = $repository->createQueryBuilder('p')
+      ->update('pic','p')
+      ->set('p.login',':Login')
+      ->setParameter(':Login',$loginToEdit)
+      ->where('p.login = :l')
+      ->setParameter('l',$_SESSION["CurrentUser"]->getLogin())
+      ->getQuery();
+
+      $query->execute();
+*/
+     
+      $pics_login=$DoctrineManager
+     ->getRepository('AppBundle:pic')
+     ->findByLogin($_SESSION["CurrentUser"]->getLogin());
+
+      foreach($pics_login as $log )
+      {
+        $log->setLogin($loginToEdit);
+      }
+
+      $DoctrineManager->flush();
    		$_SESSION["CurrentUser"]=$EditedUser;
    		$_SESSION["err_comm"] = "Zaaktualizowano nazwę użytkownika! ";
    		  return $this->redirect("/Panel");
