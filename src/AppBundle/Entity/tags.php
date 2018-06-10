@@ -113,6 +113,6 @@ class tags
      */
     public function getContentid()
     {
-        return $this->contentId;
+        return $this->contentid;
     }
 }

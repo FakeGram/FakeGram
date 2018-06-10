@@ -432,24 +432,34 @@ class Profile extends Controller
 	    ->getQuery();
 
 	    $tgs = $query->getResult();
-/*
-	    $i=0;
 
+	    $i=0;
+	    $Repository=$this->getDoctrine()->getRepository('AppBundle:pic');
+	  
 	    foreach ($tgs as $tag) 
 	    {
-	    	$tags[$i]['contentId']= $tag->getContentid();
-	    	$pics[$i][]
+	    	//$tags[$i]['contentId']= $tag->getContentid();
+	    	//$tags[$i]['kindOfContent']=$tag->getOf();  Narazie tylko zdjęcia
+	    	$pic_buff=$Repository->findOneById($tag->getContentid());
+	    	$pictures[$i]['id']=$pic_buff->getId();
+	    	$pictures[$i]['pic']=$pic_buff->getPic();
+	    	$i++;
 	    }
-*/
+
+
+	    if(!isset($pictures))
+	     $pictures='';
 	    if(isset($users))
 		 return $this->render('SearchPanel/Results.html.twig', array( 
-			'users'=> $users,'placeholder'=>$PlaceHolder  // Tablica do wysyłania zmiennych do widoku 
+			'users'=> $users,'placeholder'=>$PlaceHolder,
+			'pictures'=>$pictures  // Tablica do wysyłania zmiennych do widoku 
 				));
 		else
 		{
 			$users='';
 			return $this->render('SearchPanel/Results.html.twig', array( 
-			'users'=> $users,'placeholder'=>$PlaceHolder // Tablica do wysyłania zmiennych do widoku 
+			'users'=> $users,'placeholder'=>$PlaceHolder,
+			'pictures'=>$pictures  // Tablica do wysyłania zmiennych do widoku 
 				));
 		}
 

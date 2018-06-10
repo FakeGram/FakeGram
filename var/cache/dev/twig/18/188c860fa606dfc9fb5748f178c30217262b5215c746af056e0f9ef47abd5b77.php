@@ -15,8 +15,8 @@ class __TwigTemplate_b63f82be47dc35fe5e2803eea46b8195e58a2174349be0d17add09a67b2
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_79750ef42f3d49a4f26cd586ba2f5ce0886acc944dbb40496a3b1d2787b5388c = $this->env->getExtension("native_profiler");
-        $__internal_79750ef42f3d49a4f26cd586ba2f5ce0886acc944dbb40496a3b1d2787b5388c->enter($__internal_79750ef42f3d49a4f26cd586ba2f5ce0886acc944dbb40496a3b1d2787b5388c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Explore.html.twig"));
+        $__internal_78498dc91e780006819d32aba6e110329eab8ad38941e375a848247d2903d959 = $this->env->getExtension("native_profiler");
+        $__internal_78498dc91e780006819d32aba6e110329eab8ad38941e375a848247d2903d959->enter($__internal_78498dc91e780006819d32aba6e110329eab8ad38941e375a848247d2903d959_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Explore.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "SearchPanel/Explore.html.twig", 1)->display($context);
@@ -25,32 +25,24 @@ class __TwigTemplate_b63f82be47dc35fe5e2803eea46b8195e58a2174349be0d17add09a67b2
 
 \t<div class=\"container-fluid\">
 
-\t<form action =\"/Search\" method=\"post\">
-\t\t<input type=\"text\" class ='form-control inputs' id = \"SearchedArgument\" name =\"SearchedArgument\" placeholder=\"";
-        // line 7
-        echo twig_escape_filter($this->env, (isset($context["placeholder"]) ? $context["placeholder"] : $this->getContext($context, "placeholder")), "html", null, true);
-        echo "\" >
-\t\t<button type=\"submit\" class = \"btn btn-default buttons\">Wyszukaj</button>
-\t</form>
-
 \t\t<div class=\"\">
 \t\t\t";
-        // line 12
+        // line 7
         if ((isset($context["pictures"]) ? $context["pictures"] : $this->getContext($context, "pictures"))) {
-            // line 13
+            // line 8
             echo "\t\t\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["pictures"]) ? $context["pictures"] : $this->getContext($context, "pictures")));
             foreach ($context['_seq'] as $context["_key"] => $context["pic"]) {
-                // line 14
+                // line 9
                 echo "\t\t\t\t\t<div class=\"tile curved single_pic flexible-tile\">
 \t\t\t\t\t\t\t<div class=\"PicturesContainer\">
 \t\t\t\t\t\t\t\t<a href=\"/Profile/Photo/";
-                // line 16
+                // line 11
                 echo twig_escape_filter($this->env, $this->getAttribute($context["pic"], "id", array(), "array"), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t\t\t\t<img src=\"/";
-                // line 17
+                // line 12
                 echo twig_escape_filter($this->env, $this->getAttribute($context["pic"], "pic", array(), "array"), "html", null, true);
                 echo "\" class=\"Pictures\"/>
 \t\t\t\t\t\t\t\t</a>
@@ -65,23 +57,23 @@ class __TwigTemplate_b63f82be47dc35fe5e2803eea46b8195e58a2174349be0d17add09a67b2
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pic'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 26
+            // line 21
             echo "\t\t\t";
         } else {
-            // line 27
+            // line 22
             echo "\t\t\t\t<label>Brak zdjęć</label>
 \t\t\t";
         }
-        // line 29
+        // line 24
         echo "\t\t</div>
 \t\t
 \t</div>
 
 ";
-        // line 33
-        $this->loadTemplate("footer.html.twig", "SearchPanel/Explore.html.twig", 33)->display($context);
+        // line 28
+        $this->loadTemplate("footer.html.twig", "SearchPanel/Explore.html.twig", 28)->display($context);
         
-        $__internal_79750ef42f3d49a4f26cd586ba2f5ce0886acc944dbb40496a3b1d2787b5388c->leave($__internal_79750ef42f3d49a4f26cd586ba2f5ce0886acc944dbb40496a3b1d2787b5388c_prof);
+        $__internal_78498dc91e780006819d32aba6e110329eab8ad38941e375a848247d2903d959->leave($__internal_78498dc91e780006819d32aba6e110329eab8ad38941e375a848247d2903d959_prof);
 
     }
 
@@ -97,18 +89,13 @@ class __TwigTemplate_b63f82be47dc35fe5e2803eea46b8195e58a2174349be0d17add09a67b2
 
     public function getDebugInfo()
     {
-        return array (  82 => 33,  76 => 29,  72 => 27,  69 => 26,  54 => 17,  50 => 16,  46 => 14,  41 => 13,  39 => 12,  31 => 7,  24 => 2,  22 => 1,);
+        return array (  74 => 28,  68 => 24,  64 => 22,  61 => 21,  46 => 12,  42 => 11,  38 => 9,  33 => 8,  31 => 7,  24 => 2,  22 => 1,);
     }
 }
 /* {% include 'header.html.twig' %}*/
 /* */
 /* */
 /* 	<div class="container-fluid">*/
-/* */
-/* 	<form action ="/Search" method="post">*/
-/* 		<input type="text" class ='form-control inputs' id = "SearchedArgument" name ="SearchedArgument" placeholder="{{placeholder}}" >*/
-/* 		<button type="submit" class = "btn btn-default buttons">Wyszukaj</button>*/
-/* 	</form>*/
 /* */
 /* 		<div class="">*/
 /* 			{% if pictures %}*/
