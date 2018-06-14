@@ -21,5 +21,36 @@
 		</div>
 		
 	</div>
+<<<<<<< HEAD
+=======
+						
+						<!-- TAGI -->
+	<div style="width:900px;margin-left:auto;margin-right:auto;">
+
+		<div>
+			{% if pictures %}
+				{% for pic in pictures %}
+					<div class="PicturesMainContainer">
+						<a href="/Profile/Photo/{{pic['id']}}">
+						<div class="PicturesContainer">
+							<img src="/{{pic['pic']}}" class="Pictures"/>
+						</div>
+						</a>
+						<div class="PicturesButton">
+							<button class="btn btn-default buttons"><i class="fas fa-thumbs-up likeico"></i>Lubię to!</button>
+							<button class="btn btn-default buttons"><i class="fas fa-comment-alt likeico"></i>Pokaż komentarze</button>
+						</div>
+					</div>
+				{% endfor %}
+			{% else %}
+				<label>Brak zdjęć</label>
+			{% endif %}
+			</div>
+		
+		</div>
+		
+	</div>
+
+>>>>>>> origin/Sladu
 
 {% include 'footer.html.twig' %}

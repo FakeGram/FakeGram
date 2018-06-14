@@ -29,10 +29,10 @@
 				<img src="data:image/jpeg;base64,{{usr['avatar']}}" class="Avatar"/>
 				
 				<div class="Info">
-					<label>{{usr['login']}}</label>
-					<label>{{usr['email']}}</label>
-					<label>{{usr['nameAndSurrname']}}</label>
-				</info>
+					<a href="/Profile/{{usr['login']}}">
+							<label>{{usr['login']}}</label>
+					</a>
+
 			</div>
 			</div>
 			<div class="TagsContainer">
@@ -44,7 +44,11 @@
 			</div>
 			<div class="CommentsContainer">
 				<div class="Likes">
+<<<<<<< HEAD
 					Likes:<div id="likes">{{likes}}</div>
+=======
+					Likes:<label id="likes">{{likes}}</label>
+>>>>>>> origin/Sladu
 					<div style="display:none;" id="liked">{{liked}}</div>
 				</div>
 				{% for comm in comms %}

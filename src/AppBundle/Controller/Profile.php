@@ -159,7 +159,7 @@ class Profile extends Controller
      * @Route("/Profile/Photo/{PhotoId}")
      */
 	 
-	 public function Photo($PhotoId)
+	 	 public function Photo($PhotoId)
 	 {
 		 $err_comm='';
 		 
@@ -267,6 +267,7 @@ class Profile extends Controller
 		}
 	 }
 
+
  	/**
      * @Route("/Profile/Photo/NewComment/{PhotoId}")
      */
@@ -367,6 +368,7 @@ class Profile extends Controller
 
 
 
+<<<<<<< HEAD
 	    if(isset($pictures))
 		 return $this->render('SearchPanel/Explore.html.twig', array( 
 			'pictures'=> $pictures,'placeholder'=>$PlaceHolder  // Tablica do wysyłania zmiennych do widoku 
@@ -376,8 +378,22 @@ class Profile extends Controller
 			$pictures='';
 			return $this->render('SearchPanel/Explore.html.twig', array( 
 			'pictures'=> $pictures,'placeholder'=>$PlaceHolder // Tablica do wysyłania zmiennych do widoku 
+=======
+	    if(!isset($pictures))
+	    {
+	    	$pictures='';
+	    }
+	    if(!isset($users))
+	    {
+	    	$users='';
+	    }
+
+		 return $this->render('SearchPanel/Results.html.twig', array( 
+			'pictures'=> $pictures,'placeholder'=>$PlaceHolder,
+			'users'=>$users   // Tablica do wysyłania zmiennych do widoku 
+>>>>>>> origin/Sladu
 				));
-		}
+	
 		
 	 }
 	 
@@ -421,6 +437,7 @@ class Profile extends Controller
 			
 			 $i++;
 	    }
+<<<<<<< HEAD
 
 	
 	    $Repository = $this->getDoctrine()->getRepository('AppBundle:tags');
@@ -457,6 +474,44 @@ class Profile extends Controller
 
 
 			
+=======
+
+	
+	    $Repository = $this->getDoctrine()->getRepository('AppBundle:tags');
+	  
+	    $query = $Repository->createQueryBuilder('t')
+	    ->where('t.tag = :tag')
+	    ->setParameter('tag','#'.$_POST['SearchedArgument'])
+	    ->getQuery();
+
+	    $tgs = $query->getResult();
+
+	    $i=0;
+	    $Repository=$this->getDoctrine()->getRepository('AppBundle:pic');
+	  
+	    foreach ($tgs as $tag) 
+	    {
+	    	//$tags[$i]['contentId']= $tag->getContentid();
+	    	//$tags[$i]['kindOfContent']=$tag->getOf();  Narazie tylko zdjęcia
+	    	$pic_buff=$Repository->findOneById($tag->getContentid());
+	    	$pictures[$i]['id']=$pic_buff->getId();
+	    	$pictures[$i]['pic']=$pic_buff->getPic();
+	    	$i++;
+	    }
+
+
+	    if(!isset($pictures))
+	    	 $pictures='';
+	   
+	    if(!isset($users))
+	    	$users='';
+
+		 return $this->render('SearchPanel/Results.html.twig', array( 
+			'users'=> $users,'placeholder'=>$PlaceHolder,
+			'pictures'=>$pictures  // Tablica do wysyłania zmiennych do widoku 
+				));
+		
+>>>>>>> origin/Sladu
 	}
 	
 	/**
