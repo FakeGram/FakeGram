@@ -15,8 +15,8 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d4692268f1450eec04f630c3b24158b3d794577d2d93e6ec52097d98f381c48a = $this->env->getExtension("native_profiler");
-        $__internal_d4692268f1450eec04f630c3b24158b3d794577d2d93e6ec52097d98f381c48a->enter($__internal_d4692268f1450eec04f630c3b24158b3d794577d2d93e6ec52097d98f381c48a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Explore.html.twig"));
+        $__internal_c5a79eac7c0ed24fb7adcac0936c5757259232f0d573b2aa910a7f86c7e21d0e = $this->env->getExtension("native_profiler");
+        $__internal_c5a79eac7c0ed24fb7adcac0936c5757259232f0d573b2aa910a7f86c7e21d0e->enter($__internal_c5a79eac7c0ed24fb7adcac0936c5757259232f0d573b2aa910a7f86c7e21d0e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Explore.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "SearchPanel/Explore.html.twig", 1)->display($context);
@@ -81,7 +81,7 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
         // line 33
         $this->loadTemplate("footer.html.twig", "SearchPanel/Explore.html.twig", 33)->display($context);
         
-        $__internal_d4692268f1450eec04f630c3b24158b3d794577d2d93e6ec52097d98f381c48a->leave($__internal_d4692268f1450eec04f630c3b24158b3d794577d2d93e6ec52097d98f381c48a_prof);
+        $__internal_c5a79eac7c0ed24fb7adcac0936c5757259232f0d573b2aa910a7f86c7e21d0e->leave($__internal_c5a79eac7c0ed24fb7adcac0936c5757259232f0d573b2aa910a7f86c7e21d0e_prof);
 
     }
 
