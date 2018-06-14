@@ -1,6 +1,25 @@
 {% include 'header.html.twig' %}
 
 	<div class="container-fluid">
+
+		<div class="tile curved single_pic flexible-tile">
+			<div class="PicturesInfo">
+				
+			</div>
+			<div class="PicturesContainer">
+				<a href="/Profile/Photo/{{pic['id']}}">
+					<img src="/{{pic['pic']}}" class="Pictures"/>
+				</a>
+			</div>
+			<div class="PicturesButton">
+				<button class="btn btn-default buttons"><i class="fas fa-thumbs-up likeico"></i>Lubię to!</button>
+				<button class="btn btn-default buttons"><i class="fas fa-comment-alt likeico"></i>Pokaż komentarze</button>
+			</div>
+		</div>
+
+
+
+
 		<div class="PhotoContainer">
 			<img src="/{{pic['pic']}}" class="Photo"/>
 		</div>
@@ -14,6 +33,7 @@
 					<label>{{usr['email']}}</label>
 					<label>{{usr['nameAndSurrname']}}</label>
 				</info>
+			</div>
 			</div>
 			<div class="TagsContainer">
 				<div class="Tag">

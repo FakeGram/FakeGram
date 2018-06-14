@@ -27,6 +27,16 @@
     padding-left: 10%;
 }
 
+.PicturesInfo{
+	min-width: 270px;
+    height: 55px;
+    margin-bottom: 20px;
+    vertical-align: middle;
+    padding-top: 10px;
+    border-bottom: 1px gray solid;
+    padding-left: 10%;
+}
+
 .single_pic
 {
 
