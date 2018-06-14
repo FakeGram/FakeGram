@@ -361,6 +361,56 @@ class Profile extends Controller
 			 $pictures[$i]['pic']=$pic->getPic();
 			 $pictures[$i]['date']=$pic->getDate();
 			 $pictures[$i]['tag_id']=$pic->getTagId();
+			 $kwerenda='SELECT login FROM likes WHERE picid='.$pictures[$i]['id'].';';
+			 $dm=$this->getDoctrine()->getManager();
+			 $connection = $dm->getConnection();
+			 $statement=$connection->prepare($kwerenda);
+			 $statement->execute();
+			 $logins = $statement->fetchAll();
+			 var_dump($logins);
+			 $polajkowane=false;
+			 $like=0;
+			 foreach ($logins as $login)
+			 {
+				$like++;
+				if($login['login']==$_SESSION['CurrentUser']->getLogin()) $polajkowany=true;
+			 }
+			 $kwerenda='SELECT avatar FROM user WHERE login="'.$pictures[$i]['login'].'";';
+			 $statement=$connection->prepare($kwerenda);
+			 $statement->execute();
+			 $user=$statement->fetchAll();
+			 $usr['login']=$pictures[$i]['login'];
+			 // $usr['name_and_surrname']=$user->getN
+			 var_dump($user);
+			 if(isset($user))$usr['avatar']=$user[0]->getAvatar();
+			 if(!isset($usr['avatar'])) // Warning 
+			{
+				$usr['avatar']="Brak Avatara";
+			}
+			else
+			{
+		   
+				$usr['avatar']=base64_encode(stream_get_contents($ussr['avatar']));   
+			 
+			}
+			$kwerenda='SELECT * FROM comment WHERE picid='.$pictures[$i]['id'].' DESC LIMIT 3;';
+			$statement=$connection->prepare($kwerenda);
+			$statement->execute();
+			$comms=$statement->fetchAll();
+			$comm=0;
+			foreach ($comms as $com)
+			{
+			$comm[x]['login']=$com->getLogin();
+			$comm[x]['date']=$com->getDate();
+			$comm[x]['content']=$com->getContent();
+			}
+			$pic[i]['pic']=$pictures[$i]['pic'];
+			$pic[i]['id']=$pictures[$i]['id'];
+			$pic[i]['date']=$pictures[$i]['date'];
+			$pic[i]['comm']=$comm;
+			$pic[i]['usr']=$usr;
+			$pic[i]['likes']=$like;
+			$pic[i]['liked']=$polajkowane;
 			 $i++;
 	    }
 
@@ -371,13 +421,13 @@ class Profile extends Controller
 
 	    if(isset($pictures))
 		 return $this->render('SearchPanel/Explore.html.twig', array( 
-			'pictures'=> $pictures,'placeholder'=>$PlaceHolder  // Tablica do wysyłania zmiennych do widoku 
+			'pictures'=> $pictures,'placeholder'=>$PlaceHolder,'pic'=>$pic  // Tablica do wysyłania zmiennych do widoku 
 				));
 		else
 		{
 			$pictures='';
 			return $this->render('SearchPanel/Explore.html.twig', array( 
-			'pictures'=> $pictures,'placeholder'=>$PlaceHolder)); // Tablica do wysyłania zmiennych do widoku 
+			'pictures'=> $pictures,'placeholder'=>$PlaceHolder,'pic'=>$pic)); // Tablica do wysyłania zmiennych do widoku 
 
 	    if(!isset($pictures))
 	    {
@@ -390,7 +440,7 @@ class Profile extends Controller
 
 		 return $this->render('SearchPanel/Results.html.twig', array( 
 			'pictures'=> $pictures,'placeholder'=>$PlaceHolder,
-			'users'=>$users   // Tablica do wysyłania zmiennych do widoku 
+			'users'=>$users,'pic'=>$pic   // Tablica do wysyłania zmiennych do widoku 
 
 				));
 	
