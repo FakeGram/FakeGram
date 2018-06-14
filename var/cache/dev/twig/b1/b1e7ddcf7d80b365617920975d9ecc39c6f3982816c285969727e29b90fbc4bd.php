@@ -15,8 +15,8 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_bca5fdf0b07ceeb341b9e775f757ca76c6dd281b4f33255293ef7ab058dbacfb = $this->env->getExtension("native_profiler");
-        $__internal_bca5fdf0b07ceeb341b9e775f757ca76c6dd281b4f33255293ef7ab058dbacfb->enter($__internal_bca5fdf0b07ceeb341b9e775f757ca76c6dd281b4f33255293ef7ab058dbacfb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Photo.html.twig"));
+        $__internal_0c65d822c265de98ffff3d1f6c788c01eb8bb2ac198cf5ca9127c1d86ebb4257 = $this->env->getExtension("native_profiler");
+        $__internal_0c65d822c265de98ffff3d1f6c788c01eb8bb2ac198cf5ca9127c1d86ebb4257->enter($__internal_0c65d822c265de98ffff3d1f6c788c01eb8bb2ac198cf5ca9127c1d86ebb4257_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Photo.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "Profile/Photo.html.twig", 1)->display($context);
@@ -73,10 +73,10 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
 \t\t\t</div>
 \t\t\t<div class=\"CommentsContainer\">
 \t\t\t\t<div class=\"Likes\">
-\t\t\t\t\tLikes:<div id=\"likes\">";
+\t\t\t\t\tLikes:<label id=\"likes\">";
         // line 27
         echo twig_escape_filter($this->env, (isset($context["likes"]) ? $context["likes"] : $this->getContext($context, "likes")), "html", null, true);
-        echo "</div>
+        echo "</label>
 \t\t\t\t\t<div style=\"display:none;\" id=\"liked\">";
         // line 28
         echo twig_escape_filter($this->env, (isset($context["liked"]) ? $context["liked"] : $this->getContext($context, "liked")), "html", null, true);
@@ -195,7 +195,7 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
         // line 103
         $this->loadTemplate("footer.html.twig", "Profile/Photo.html.twig", 103)->display($context);
         
-        $__internal_bca5fdf0b07ceeb341b9e775f757ca76c6dd281b4f33255293ef7ab058dbacfb->leave($__internal_bca5fdf0b07ceeb341b9e775f757ca76c6dd281b4f33255293ef7ab058dbacfb_prof);
+        $__internal_0c65d822c265de98ffff3d1f6c788c01eb8bb2ac198cf5ca9127c1d86ebb4257->leave($__internal_0c65d822c265de98ffff3d1f6c788c01eb8bb2ac198cf5ca9127c1d86ebb4257_prof);
 
     }
 
@@ -240,7 +240,7 @@ class __TwigTemplate_d454d99bc7d62b5fa4932be1a2d7fdcf4ca0202cb195bf0eb8bc6824a27
 /* 			</div>*/
 /* 			<div class="CommentsContainer">*/
 /* 				<div class="Likes">*/
-/* 					Likes:<div id="likes">{{likes}}</div>*/
+/* 					Likes:<label id="likes">{{likes}}</label>*/
 /* 					<div style="display:none;" id="liked">{{liked}}</div>*/
 /* 				</div>*/
 /* 				{% for comm in comms %}*/
