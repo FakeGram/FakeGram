@@ -15,8 +15,8 @@ class __TwigTemplate_1edd0ccabe7816df0bc84cfd9aa2ce8671cbbfa9ab811af9037b2db96e3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e6a44788bf35f559f4226433e6f2e46942d46b29693cc3271c630b8b32f80cb0 = $this->env->getExtension("native_profiler");
-        $__internal_e6a44788bf35f559f4226433e6f2e46942d46b29693cc3271c630b8b32f80cb0->enter($__internal_e6a44788bf35f559f4226433e6f2e46942d46b29693cc3271c630b8b32f80cb0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Results.html.twig"));
+        $__internal_fe41ab5f1576c41038a0a28f177b51f91d85c0cfdc828d8c73943eed75c85e6c = $this->env->getExtension("native_profiler");
+        $__internal_fe41ab5f1576c41038a0a28f177b51f91d85c0cfdc828d8c73943eed75c85e6c->enter($__internal_fe41ab5f1576c41038a0a28f177b51f91d85c0cfdc828d8c73943eed75c85e6c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Results.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "SearchPanel/Results.html.twig", 1)->display($context);
@@ -95,8 +95,8 @@ class __TwigTemplate_1edd0ccabe7816df0bc84cfd9aa2ce8671cbbfa9ab811af9037b2db96e3
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t</a>
 \t\t\t\t\t\t<div class=\"PicturesButton\">
-\t\t\t\t\t\t\t<input type=\"button\" value=\"Lubie to!\"/>
-\t\t\t\t\t\t\t<input type=\"button\" value=\"Pokaż komentarze\"/>
+\t\t\t\t\t\t\t<button class=\"btn btn-default buttons\"><i class=\"fas fa-thumbs-up likeico\"></i>Lubię to!</button>
+\t\t\t\t\t\t\t<button class=\"btn btn-default buttons\"><i class=\"fas fa-comment-alt likeico\"></i>Pokaż komentarze</button>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 \t\t\t\t";
@@ -123,7 +123,7 @@ class __TwigTemplate_1edd0ccabe7816df0bc84cfd9aa2ce8671cbbfa9ab811af9037b2db96e3
         // line 53
         $this->loadTemplate("footer.html.twig", "SearchPanel/Results.html.twig", 53)->display($context);
         
-        $__internal_e6a44788bf35f559f4226433e6f2e46942d46b29693cc3271c630b8b32f80cb0->leave($__internal_e6a44788bf35f559f4226433e6f2e46942d46b29693cc3271c630b8b32f80cb0_prof);
+        $__internal_fe41ab5f1576c41038a0a28f177b51f91d85c0cfdc828d8c73943eed75c85e6c->leave($__internal_fe41ab5f1576c41038a0a28f177b51f91d85c0cfdc828d8c73943eed75c85e6c_prof);
 
     }
 
@@ -179,8 +179,8 @@ class __TwigTemplate_1edd0ccabe7816df0bc84cfd9aa2ce8671cbbfa9ab811af9037b2db96e3
 /* 						</div>*/
 /* 						</a>*/
 /* 						<div class="PicturesButton">*/
-/* 							<input type="button" value="Lubie to!"/>*/
-/* 							<input type="button" value="Pokaż komentarze"/>*/
+/* 							<button class="btn btn-default buttons"><i class="fas fa-thumbs-up likeico"></i>Lubię to!</button>*/
+/* 							<button class="btn btn-default buttons"><i class="fas fa-comment-alt likeico"></i>Pokaż komentarze</button>*/
 /* 						</div>*/
 /* 					</div>*/
 /* 				{% endfor %}*/

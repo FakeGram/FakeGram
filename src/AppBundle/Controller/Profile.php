@@ -368,17 +368,20 @@ class Profile extends Controller
 
 
 
-	    if(isset($pictures))
-		 return $this->render('SearchPanel/Explore.html.twig', array( 
-			'pictures'=> $pictures,'placeholder'=>$PlaceHolder  // Tablica do wysyłania zmiennych do widoku 
+	    if(!isset($pictures))
+	    {
+	    	$pictures='';
+	    }
+	    if(!isset($users))
+	    {
+	    	$users='';
+	    }
+
+		 return $this->render('SearchPanel/Results.html.twig', array( 
+			'pictures'=> $pictures,'placeholder'=>$PlaceHolder,
+			'users'=>$users   // Tablica do wysyłania zmiennych do widoku 
 				));
-		else
-		{
-			$pictures='';
-			return $this->render('SearchPanel/Explore.html.twig', array( 
-			'pictures'=> $pictures,'placeholder'=>$PlaceHolder // Tablica do wysyłania zmiennych do widoku 
-				));
-		}
+	
 		
 	 }
 	 

@@ -98,19 +98,7 @@ class UserPanel extends Controller
    		$DoctrineManager->flush();
 
       // Aktualizacja danych w tabeli pic
-      /*
 
-      $repository = $this->getDoctrine()->getRepository('AppBundle:pic');
-      $query = $repository->createQueryBuilder('p')
-      ->update('pic','p')
-      ->set('p.login',':Login')
-      ->setParameter(':Login',$loginToEdit)
-      ->where('p.login = :l')
-      ->setParameter('l',$_SESSION["CurrentUser"]->getLogin())
-      ->getQuery();
-
-      $query->execute();
-*/
      
       $pics_login=$DoctrineManager
      ->getRepository('AppBundle:pic')
