@@ -109,11 +109,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
-        // app_fakegram_test
-        if ($pathinfo === '/test') {
-            return array (  '_controller' => 'AppBundle\\Controller\\FakeGram::test',  '_route' => 'app_fakegram_test',);
-        }
-
         // app_login_login
         if ($pathinfo === '/Login') {
             return array (  '_controller' => 'AppBundle\\Controller\\Login::Login',  '_route' => 'app_login_login',);

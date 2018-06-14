@@ -4,7 +4,8 @@
 
 		<div class="tile curved single_pic flexible-tile">
 			<div class="PicturesInfo">
-				
+				<img src="data:image/jpeg;base64,{{usr['avatar']}}" class="avatar" height="30px" width="30px" />
+				<label style="margin-left: 30px;">{{usr['login']}}</label>
 			</div>
 			<div class="PicturesContainer">
 				<a href="/Profile/Photo/{{pic['id']}}">
@@ -12,14 +13,46 @@
 				</a>
 			</div>
 			<div class="PicturesButton">
-				<button class="btn btn-default buttons"><i class="fas fa-thumbs-up likeico"></i>Lubię to!</button>
-				<button class="btn btn-default buttons"><i class="fas fa-comment-alt likeico"></i>Pokaż komentarze</button>
+				<button class="btn btn-default buttons" onclick="like();"><i class="fas fa-thumbs-up likeico"></i>Lubię to!</button>
+				Likes:<div id="likes" class="btn btn-default buttons">{{likes}}</div>
+			</div>
+			<div class="commentsSection">
+				{% for comm in comms %}
+					<div class="Comment">
+					
+					<div class="Date">
+						{{comm['date']}} 
+					</div>
+					<div class="Author">
+						{{comm['login']}} 
+					</div>
+					<div class="Content">
+						{{comm['content']}} 
+					</div>
+					<div style="clear:both;"></div>
+					</div>
+				{% endfor %}
+				{% if loggedIn==TRUE %}
+					<div class="CommentAdd">
+						<form class="CommentInput" action="/Profile/Photo/NewComment/{{pic['id']}}" method="post">
+							<input type="text" class="CommentInputContent"  name="CommentContent" id="CommentContent">
+							<input type="submit" class="CommentInputButton" value="Dodaj Komentarz"/>
+						</form>
+					</div>
+				{% endif %}
+				{% if loggedIn==TRUE %}
+					<div class="LikeButton">
+						<div style="display:none;" id="picId">{{pic['id']}}</div>
+						<div style="display:none;" id="login">{{login}}</div>
+							
+					</div>
+				{% endif %}
 			</div>
 		</div>
 
 
 
-
+<!--
 		<div class="PhotoContainer">
 			<img src="/{{pic['pic']}}" class="Photo"/>
 		</div>
@@ -44,11 +77,11 @@
 			</div>
 			<div class="CommentsContainer">
 				<div class="Likes">
-<<<<<<< HEAD
+
 					Likes:<div id="likes">{{likes}}</div>
-=======
+
 					Likes:<label id="likes">{{likes}}</label>
->>>>>>> origin/Sladu
+
 					<div style="display:none;" id="liked">{{liked}}</div>
 				</div>
 				{% for comm in comms %}
@@ -85,8 +118,8 @@
 			</div>
 		</div>
 		
-	</div>
-	</div>
+	</div>-->
+
 	<script>
 		function like()
 		{

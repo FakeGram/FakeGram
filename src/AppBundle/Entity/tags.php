@@ -1,18 +1,16 @@
 <?php
-
 namespace AppBundle\Entity;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Doctrine\ORM\Mapping as ORM;
-
 /**
   * @ORM\Entity
-  *	@ORM\Table(name="tags")
+  * @ORM\Table(name="tags")
   */
 class tags
 {
-	 /**
+     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -31,9 +29,6 @@ class tags
      */
      private $contentid;
     
-
-
-
     /**
      * Get id
      *
@@ -43,7 +38,6 @@ class tags
     {
         return $this->id;
     }
-
     /**
      * Set tag
      *
@@ -57,7 +51,6 @@ class tags
     
         return $this;
     }
-
     /**
      * Get tag
      *
@@ -67,7 +60,6 @@ class tags
     {
         return $this->tag;
     }
-
     /**
      * Set of
      *
@@ -81,7 +73,6 @@ class tags
     
         return $this;
     }
-
     /**
      * Get of
      *
@@ -91,7 +82,6 @@ class tags
     {
         return $this->of;
     }
-
     /**
      * Set contentId
      *
@@ -105,7 +95,6 @@ class tags
     
         return $this;
     }
-
     /**
      * Get contentId
      *

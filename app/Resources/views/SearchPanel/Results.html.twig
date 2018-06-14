@@ -21,14 +21,13 @@
 		</div>
 		
 	</div>
-<<<<<<< HEAD
-=======
+
 						
 						<!-- TAGI -->
 	<div style="width:900px;margin-left:auto;margin-right:auto;">
 
 		<div>
-			{% if pictures %}
+			{% if pictures  is defined%}
 				{% for pic in pictures %}
 					<div class="PicturesMainContainer">
 						<a href="/Profile/Photo/{{pic['id']}}">
@@ -51,6 +50,6 @@
 		
 	</div>
 
->>>>>>> origin/Sladu
+
 
 {% include 'footer.html.twig' %}

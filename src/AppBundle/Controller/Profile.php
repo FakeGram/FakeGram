@@ -368,7 +368,7 @@ class Profile extends Controller
 
 
 
-<<<<<<< HEAD
+
 	    if(isset($pictures))
 		 return $this->render('SearchPanel/Explore.html.twig', array( 
 			'pictures'=> $pictures,'placeholder'=>$PlaceHolder  // Tablica do wysyłania zmiennych do widoku 
@@ -377,8 +377,8 @@ class Profile extends Controller
 		{
 			$pictures='';
 			return $this->render('SearchPanel/Explore.html.twig', array( 
-			'pictures'=> $pictures,'placeholder'=>$PlaceHolder // Tablica do wysyłania zmiennych do widoku 
-=======
+			'pictures'=> $pictures,'placeholder'=>$PlaceHolder)); // Tablica do wysyłania zmiennych do widoku 
+
 	    if(!isset($pictures))
 	    {
 	    	$pictures='';
@@ -391,11 +391,12 @@ class Profile extends Controller
 		 return $this->render('SearchPanel/Results.html.twig', array( 
 			'pictures'=> $pictures,'placeholder'=>$PlaceHolder,
 			'users'=>$users   // Tablica do wysyłania zmiennych do widoku 
->>>>>>> origin/Sladu
+
 				));
 	
 		
 	 }
+	}
 	 
 	/**
 	*@Route("/Search")
@@ -437,7 +438,7 @@ class Profile extends Controller
 			
 			 $i++;
 	    }
-<<<<<<< HEAD
+
 
 	
 	    $Repository = $this->getDoctrine()->getRepository('AppBundle:tags');
@@ -474,7 +475,7 @@ class Profile extends Controller
 
 
 			
-=======
+
 
 	
 	    $Repository = $this->getDoctrine()->getRepository('AppBundle:tags');
@@ -511,7 +512,7 @@ class Profile extends Controller
 			'pictures'=>$pictures  // Tablica do wysyłania zmiennych do widoku 
 				));
 		
->>>>>>> origin/Sladu
+
 	}
 	
 	/**
