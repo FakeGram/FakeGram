@@ -15,8 +15,8 @@ class __TwigTemplate_9f92194dbe5e8054ab1d8f7fe85df83321d89d5641f530f2c96c4066138
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_621b4ce52cac041c74797d4cab99099a368446c11f31d2466afae0ef0cac07dd = $this->env->getExtension("native_profiler");
-        $__internal_621b4ce52cac041c74797d4cab99099a368446c11f31d2466afae0ef0cac07dd->enter($__internal_621b4ce52cac041c74797d4cab99099a368446c11f31d2466afae0ef0cac07dd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Profile.html.twig"));
+        $__internal_52cdbf55ae2724567b1198ad93c2d5597a4a05d603851d0bfe14c8f782b85875 = $this->env->getExtension("native_profiler");
+        $__internal_52cdbf55ae2724567b1198ad93c2d5597a4a05d603851d0bfe14c8f782b85875->enter($__internal_52cdbf55ae2724567b1198ad93c2d5597a4a05d603851d0bfe14c8f782b85875_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Profile/Profile.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "Profile/Profile.html.twig", 1)->display($context);
@@ -87,7 +87,7 @@ class __TwigTemplate_9f92194dbe5e8054ab1d8f7fe85df83321d89d5641f530f2c96c4066138
 \t\t\t\t\t\t\t<img src=\"/";
                 // line 29
                 echo twig_escape_filter($this->env, $this->getAttribute($context["pic"], "pic", array(), "array"), "html", null, true);
-                echo "\" class=\"Pictures\"/>
+                echo "\" class=\"Pictures\" width=700px height=700px/>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t</a>
 \t\t\t\t\t\t<div class=\"PicturesButton\">
@@ -144,7 +144,7 @@ class __TwigTemplate_9f92194dbe5e8054ab1d8f7fe85df83321d89d5641f530f2c96c4066138
         echo "
 ";
         
-        $__internal_621b4ce52cac041c74797d4cab99099a368446c11f31d2466afae0ef0cac07dd->leave($__internal_621b4ce52cac041c74797d4cab99099a368446c11f31d2466afae0ef0cac07dd_prof);
+        $__internal_52cdbf55ae2724567b1198ad93c2d5597a4a05d603851d0bfe14c8f782b85875->leave($__internal_52cdbf55ae2724567b1198ad93c2d5597a4a05d603851d0bfe14c8f782b85875_prof);
 
     }
 
@@ -191,7 +191,7 @@ class __TwigTemplate_9f92194dbe5e8054ab1d8f7fe85df83321d89d5641f530f2c96c4066138
 /* 					<div class="PicturesMainContainer">*/
 /* 						<a href="/Profile/Photo/{{pic['id']}}">*/
 /* 						<div class="PicturesContainer">*/
-/* 							<img src="/{{pic['pic']}}" class="Pictures"/>*/
+/* 							<img src="/{{pic['pic']}}" class="Pictures" width=700px height=700px/>*/
 /* 						</div>*/
 /* 						</a>*/
 /* 						<div class="PicturesButton">*/
