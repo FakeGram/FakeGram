@@ -15,14 +15,14 @@ class __TwigTemplate_1266073bb9f0e4b3ad752fcfaf7dd5e8405f0e1915e2aca3822f0860f3b
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_4facc52d981cffc58312bb89f213137f043a237bf1bd088967402b9db150b57a = $this->env->getExtension("native_profiler");
-        $__internal_4facc52d981cffc58312bb89f213137f043a237bf1bd088967402b9db150b57a->enter($__internal_4facc52d981cffc58312bb89f213137f043a237bf1bd088967402b9db150b57a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":Login:Register.html.twig"));
+        $__internal_ababad4764f5462e97b6830e192447e301230f6dd561963bfd55eeae59d1e2ff = $this->env->getExtension("native_profiler");
+        $__internal_ababad4764f5462e97b6830e192447e301230f6dd561963bfd55eeae59d1e2ff->enter($__internal_ababad4764f5462e97b6830e192447e301230f6dd561963bfd55eeae59d1e2ff_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":Login:Register.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", ":Login:Register.html.twig", 1)->display($context);
         // line 2
         echo "
-\t<div class=\"container-fluid\">
+  <div class=\"container-fluid\">
     <div class=\"tile curved\">
       <h2>Rejestracja</h2>
       <form \" action=\"/Register\" method=\"post\">
@@ -58,7 +58,7 @@ class __TwigTemplate_1266073bb9f0e4b3ad752fcfaf7dd5e8405f0e1915e2aca3822f0860f3b
         // line 32
         $this->loadTemplate("footer.html.twig", ":Login:Register.html.twig", 32)->display($context);
         
-        $__internal_4facc52d981cffc58312bb89f213137f043a237bf1bd088967402b9db150b57a->leave($__internal_4facc52d981cffc58312bb89f213137f043a237bf1bd088967402b9db150b57a_prof);
+        $__internal_ababad4764f5462e97b6830e192447e301230f6dd561963bfd55eeae59d1e2ff->leave($__internal_ababad4764f5462e97b6830e192447e301230f6dd561963bfd55eeae59d1e2ff_prof);
 
     }
 
@@ -79,7 +79,7 @@ class __TwigTemplate_1266073bb9f0e4b3ad752fcfaf7dd5e8405f0e1915e2aca3822f0860f3b
 }
 /* {% include 'header.html.twig' %}*/
 /* */
-/* 	<div class="container-fluid">*/
+/*   <div class="container-fluid">*/
 /*     <div class="tile curved">*/
 /*       <h2>Rejestracja</h2>*/
 /*       <form " action="/Register" method="post">*/

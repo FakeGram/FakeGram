@@ -15,8 +15,8 @@ class __TwigTemplate_256412f7bbff6ff208cbcf1bb86d65f0a105c3c74f657ec1f52b8000859
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7aa880a6e8af7ebf2608fa8fbc93ea349785565d8f40465f0dedd1ebcbc4f20b = $this->env->getExtension("native_profiler");
-        $__internal_7aa880a6e8af7ebf2608fa8fbc93ea349785565d8f40465f0dedd1ebcbc4f20b->enter($__internal_7aa880a6e8af7ebf2608fa8fbc93ea349785565d8f40465f0dedd1ebcbc4f20b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":ImgOperations:image_edit.html.twig"));
+        $__internal_0e9f90ef16506e80326704f98dc31ed29d15dfe0e96ecbf21d4a557a893a7ac5 = $this->env->getExtension("native_profiler");
+        $__internal_0e9f90ef16506e80326704f98dc31ed29d15dfe0e96ecbf21d4a557a893a7ac5->enter($__internal_0e9f90ef16506e80326704f98dc31ed29d15dfe0e96ecbf21d4a557a893a7ac5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":ImgOperations:image_edit.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", ":ImgOperations:image_edit.html.twig", 1)->display($context);
@@ -194,7 +194,7 @@ class __TwigTemplate_256412f7bbff6ff208cbcf1bb86d65f0a105c3c74f657ec1f52b8000859
         // line 162
         $this->loadTemplate("footer.html.twig", ":ImgOperations:image_edit.html.twig", 162)->display($context);
         
-        $__internal_7aa880a6e8af7ebf2608fa8fbc93ea349785565d8f40465f0dedd1ebcbc4f20b->leave($__internal_7aa880a6e8af7ebf2608fa8fbc93ea349785565d8f40465f0dedd1ebcbc4f20b_prof);
+        $__internal_0e9f90ef16506e80326704f98dc31ed29d15dfe0e96ecbf21d4a557a893a7ac5->leave($__internal_0e9f90ef16506e80326704f98dc31ed29d15dfe0e96ecbf21d4a557a893a7ac5_prof);
 
     }
 

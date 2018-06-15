@@ -15,14 +15,18 @@ class __TwigTemplate_20ef2a04e21284b3dad94ce0ebe7f3ec3a7d03babe5ce3c9e4c46d8443e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7c86b2fe9c23e31a4ce76c427a812a53a399da7f82f0666bcc4c96c887e22160 = $this->env->getExtension("native_profiler");
-        $__internal_7c86b2fe9c23e31a4ce76c427a812a53a399da7f82f0666bcc4c96c887e22160->enter($__internal_7c86b2fe9c23e31a4ce76c427a812a53a399da7f82f0666bcc4c96c887e22160_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Login/Login.html.twig"));
+        $__internal_d1097932c396f1ffd5d197657ce61e43fbed717bb5022ea9a10499a690a7d8d1 = $this->env->getExtension("native_profiler");
+        $__internal_d1097932c396f1ffd5d197657ce61e43fbed717bb5022ea9a10499a690a7d8d1->enter($__internal_d1097932c396f1ffd5d197657ce61e43fbed717bb5022ea9a10499a690a7d8d1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Login/Login.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "Login/Login.html.twig", 1)->display($context);
         // line 2
         echo "
+<<<<<<< HEAD
 \t<div class=\"container-fluid\">
+=======
+  <div class=\"container-fluid\">
+>>>>>>> origin/Sladu
     <div class=\"tile curved\">
       <h2 class=\"log-in\">Zaloguj się !</h2>
       <form class=\"\" action=\"/execute_login\" method=\"post\">
@@ -39,7 +43,7 @@ class __TwigTemplate_20ef2a04e21284b3dad94ce0ebe7f3ec3a7d03babe5ce3c9e4c46d8443e
         </div>
         <button class=\"log-submit\" type=\"submit\" class=\"btn btn-default\">Zaloguj</button>
         <label>";
-        // line 19
+        // line 23
         echo twig_escape_filter($this->env, (isset($context["err_comm"]) ? $context["err_comm"] : $this->getContext($context, "err_comm")), "html", null, true);
         echo "</label>
       </form>
@@ -48,10 +52,10 @@ class __TwigTemplate_20ef2a04e21284b3dad94ce0ebe7f3ec3a7d03babe5ce3c9e4c46d8443e
 
 
 ";
-        // line 25
-        $this->loadTemplate("footer.html.twig", "Login/Login.html.twig", 25)->display($context);
+        // line 29
+        $this->loadTemplate("footer.html.twig", "Login/Login.html.twig", 29)->display($context);
         
-        $__internal_7c86b2fe9c23e31a4ce76c427a812a53a399da7f82f0666bcc4c96c887e22160->leave($__internal_7c86b2fe9c23e31a4ce76c427a812a53a399da7f82f0666bcc4c96c887e22160_prof);
+        $__internal_d1097932c396f1ffd5d197657ce61e43fbed717bb5022ea9a10499a690a7d8d1->leave($__internal_d1097932c396f1ffd5d197657ce61e43fbed717bb5022ea9a10499a690a7d8d1_prof);
 
     }
 
@@ -67,12 +71,16 @@ class __TwigTemplate_20ef2a04e21284b3dad94ce0ebe7f3ec3a7d03babe5ce3c9e4c46d8443e
 
     public function getDebugInfo()
     {
-        return array (  52 => 25,  43 => 19,  24 => 2,  22 => 1,);
+        return array (  56 => 29,  47 => 23,  24 => 2,  22 => 1,);
     }
 }
 /* {% include 'header.html.twig' %}*/
 /* */
+/* <<<<<<< HEAD*/
 /* 	<div class="container-fluid">*/
+/* =======*/
+/*   <div class="container-fluid">*/
+/* >>>>>>> origin/Sladu*/
 /*     <div class="tile curved">*/
 /*       <h2 class="log-in">Zaloguj się !</h2>*/
 /*       <form class="" action="/execute_login" method="post">*/
