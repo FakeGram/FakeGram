@@ -20,43 +20,43 @@
 			</div>
 			<div class="PicturesContainer">
 				<a href="/Profile/Photo/{{p['id']}}">
-					<img src="/{{pic['pic']}}" class="Pictures"/>
+					<img src="/{{p['pic']}}" class="Pictures"/>
 				</a>
 			</div>
 			<div class="PicturesButton">
-				<button class="btn btn-default buttons" onclick="like();"><i class="fas fa-thumbs-up likeico"></i>Lubię to!</button>
-				Likes:<div id="likes" class="btn btn-default buttons">{{p['likes']}}</div>
+				<button class="btn btn-default buttons" onclick="like('{{session.CurrentUser.login}}', {{p['id']}}, {{p['liked']}} );"><i class="fas fa-thumbs-up likeico"></i>Lubię to!</button>
+				Likes:<div id="{{p['id']}}" class="btn btn-default buttons">{{p['likes']}}</div>
 				<div style="display:none;" id="pidd">{{p['id']}}</div>
 				<div style="display:none;" id="plogg">{{p['usr']['login']}}</div>
 			</div>
 			<div class="commentsSection">
-				{% for comm in p['comms'] %}
+				{% for comms in p['comm'] %}
 					<div class="Comment">
 					
 					<div class="Date">
-						{{comm['date']}} 
+						{{comms['date']}} 
 					</div>
 					<div class="Author">
-						{{comm['login']}} 
+						{{comms['login']}} 
 					</div>
 					<div class="Content">
-						{{comm['content']}} 
+						{{comms['content']}} 
 					</div>
 					<div style="clear:both;"></div>
 					</div>
 				{% endfor %}
-				{% if loggedIn==TRUE %}
+				{% if session.CurrentUser is defined %}
 					<div class="CommentAdd">
-						<form class="CommentInput" action="/Profile/Photo/NewComment/{{pic['id']}}" method="post">
+						<form class="CommentInput" action="/Profile/Photo/NewComment/{{p['id']}}" method="post">
 							<input type="text" class="CommentInputContent"  name="CommentContent" id="CommentContent">
 							<input type="submit" class="CommentInputButton" value="Dodaj Komentarz"/>
 						</form>
 					</div>
 				{% endif %}
-				{% if loggedIn==TRUE %}
+				{% if session.CurrentUser is defined %}
 					<div class="LikeButton">
 						<div style="display:none;" id="picId">{{p['id']}}</div>
-						<div style="display:none;" id="login">{{login}}</div>
+						<div style="display:none;" id="login">{{session.CurrentUser.login}}</div>
 							
 					</div>
 				{% endif %}
@@ -69,11 +69,11 @@
 		</div>
 		
 		<script>
-		function like()
+		function like(loginno, picid, likedd)
 		{
 			var id=document.getElementById("picId").innerHTML;
 			var login=document.getElementById("login").innerHTML;
-			var action="/Profile/Photo/AddLike/"+id+"/"+login;
+			var action="/Profile/Photo/AddLike/"+picid+"/"+loginno;
 			$.ajax({
 				url:action,
 			type:'POST',
@@ -82,25 +82,25 @@
 				
 			}
 			});
-			var liked=document.getElementById("liked").innerHTML;
+			var liked=document.getElementById(picid).innerHTML;
 			
 			
-			var count=parseInt(document.getElementById("likes").innerHTML);
+			var count=parseInt(document.getElementById(picid).innerHTML);
 			
-			if(liked=="0")
+			if(likedd=="0")
 			{
 				
-				document.getElementById("likes").innerHTML=count+1;
+				document.getElementById(picid).innerHTML=count+1;
 				liked="1";
-				document.getElementById("liked").innerHTML=liked;
+				document.getElementById(picid).innerHTML=liked;
 				
 			}
 			else
 			{
 				
-				document.getElementById("likes").innerHTML=count-1;
+				document.getElementById(picid).innerHTML=count-1;
 				liked="0";
-				document.getElementById("liked").innerHTML=liked;
+				document.getElementById(picid).innerHTML=liked;
 			}
 			
 		}

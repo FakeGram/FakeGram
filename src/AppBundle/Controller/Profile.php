@@ -79,28 +79,27 @@ class Profile extends Controller
 			 $usr['login']=$pictures[$i]['login'];
 			 // $usr['name_and_surrname']=$user->getN
 			 //var_dump($user);
-			 if(isset($user))$usr['avatar']=$user[0]->getAvatar();
-			 if(!isset($usr['avatar'])) // Warning 
+			 
+			 if(isset($user[0]['avatar']))
+			 {
+				 $usr['avatar']=base64_encode(($user[0]['avatar']));
+			 }
+			 else 
 			{
 				$usr['avatar']="Brak Avatara";
 			}
-			else
-			{
-		   
-				$usr['avatar']=base64_encode(stream_get_contents($ussr['avatar']));   
-			 
-			}
-			$kwerenda='SELECT * FROM comment WHERE picid='.$pictures[$i]['id'].' DESC LIMIT 3;';
+			
+			$kwerenda='SELECT * FROM comment WHERE picid='.$pictures[$i]['id'].' ORDER BY date DESC LIMIT 3;';
 			$statement=$connection->prepare($kwerenda);
 			$statement->execute();
 			$comms=$statement->fetchAll();
-			$comm=0;
+			$comm=array();
 			$x=0;
 			foreach ($comms as $com)
 			{
-			$comm[$x]['login']=$com->getLogin();
-			$comm[$x]['date']=$com->getDate();
-			$comm[$x]['content']=$com->getContent();
+			$comm[$x]['login']=$com['login'];
+			$comm[$x]['date']=$com['date'];
+			$comm[$x]['content']=$com['commentscontent'];
 			$x++;
 			}
 			$pic[$i]['pic']=$pictures[$i]['pic'];
@@ -125,13 +124,13 @@ class Profile extends Controller
 		 
 		 if(isset($pictures))
 		 return $this->render('SearchPanel/Explore.html.twig', array( 
-			'pictures'=> $pictures,'user'=>$usr,'loggedIn'=>$loggedIn,'CurrentUserLogin'=>$currentUserLogin,'pic'=>$pic    // Tablica do wysyłania zmiennych do widoku 
+			'pic'=>$pic,'loggedIn'=>$loggedIn,'placeholder'=>'placeholder'    // Tablica do wysyłania zmiennych do widoku 
 				));
 		else
 		{
 			$pictures='';
 			return $this->render('SearchPanel/Explore.html.twig', array( 
-			'pictures'=> $pictures,'user'=>$usr,'loggedIn'=>$loggedIn,'CurrentUserLogin'=>$currentUserLogin,'pic'=>$pic   // Tablica do wysyłania zmiennych do widoku 
+			'loggedIn'=>$loggedIn,'pic'=>$pic   // Tablica do wysyłania zmiennych do widoku 
 				));
 		}
 		}
@@ -170,7 +169,7 @@ class Profile extends Controller
     	}
 		 
 		 
-		 $pics = $query->getResult();
+		 
 		$i = 0 ; 
 	    foreach($pics as $pi)
 	    {
@@ -186,7 +185,7 @@ class Profile extends Controller
 			 $statement=$connection->prepare($kwerenda);
 			 $statement->execute();
 			 $logins = $statement->fetchAll();
-			 var_dump($logins);
+			 //var_dump($logins);
 			 $polajkowane=false;
 			 $like=0;
 			 foreach ($logins as $login)
@@ -200,36 +199,34 @@ class Profile extends Controller
 			 $user=$statement->fetchAll();
 			 $usr['login']=$pictures[$i]['login'];
 			 // $usr['name_and_surrname']=$user->getN
-			 var_dump($user);
-			 if(isset($user))$usr['avatar']=$user[0]->getAvatar();
-			 if(!isset($usr['avatar'])) // Warning 
+			 //var_dump($user);
+			 if(isset($user[0]['avatar']))
+			 {
+				 $usr['avatar']=base64_encode(($user[0]['avatar']));
+			 }
+			 else 
 			{
 				$usr['avatar']="Brak Avatara";
 			}
-			else
-			{
-		   
-				$usr['avatar']=base64_encode(stream_get_contents($ussr['avatar']));   
-			 
-			}
-			$kwerenda='SELECT * FROM comment WHERE picid='.$pictures[$i]['id'].' DESC LIMIT 3;';
+			$kwerenda='SELECT * FROM comment WHERE picid='.$pictures[$i]['id'].' Order BY date DESC LIMIT 3;';
 			$statement=$connection->prepare($kwerenda);
 			$statement->execute();
 			$comms=$statement->fetchAll();
-			$comm=0;
+			$comm=array();
+			$x=0;
 			foreach ($comms as $com)
 			{
-			$comm[x]['login']=$com->getLogin();
-			$comm[x]['date']=$com->getDate();
-			$comm[x]['content']=$com->getContent();
+			$comm[$x]['login']=$com['login'];
+			$comm[$x]['date']=$com['date'];
+			$comm[$x]['content']=$com['commentscontent'];
 			}
-			$pic[i]['pic']=$pictures[$i]['pic'];
-			$pic[i]['id']=$pictures[$i]['id'];
-			$pic[i]['date']=$pictures[$i]['date'];
-			$pic[i]['comm']=$comm;
-			$pic[i]['usr']=$usr;
-			$pic[i]['likes']=$like;
-			$pic[i]['liked']=$polajkowane;
+			$pic[$i]['pic']=$pictures[$i]['pic'];
+			$pic[$i]['id']=$pictures[$i]['id'];
+			$pic[$i]['date']=$pictures[$i]['date'];
+			$pic[$i]['comm']=$comm;
+			$pic[$i]['usr']=$usr;
+			$pic[$i]['likes']=$like;
+			$pic[$i]['liked']=$polajkowane;
 			 $i++;
 	    }
 		 
@@ -244,13 +241,13 @@ class Profile extends Controller
 		 
 		 if(isset($pictures))
 		 return $this->render('SearchPanel/Explore.html.twig', array( 
-			'pictures'=> $pictures,'user'=>$usr,'loggedIn'=>$loggedIn,'CurrentUserLogin'=>$currentUserLogin,'pic'=>$pic  // Tablica do wysyłania zmiennych do widoku 
+			'loggedIn'=>$loggedIn,'placeholder'=>'placeholder','pic'=>$pic  // Tablica do wysyłania zmiennych do widoku 
 				));
 		else
 		{
 			$pictures='';
 			return $this->render('SearchPanel/Explore.html.twig', array( 
-			'pictures'=> $pictures,'user'=>$usr,'loggedIn'=>$loggedIn,'CurrentUserLogin'=>$currentUserLogin,'pic'=>$pic  // Tablica do wysyłania zmiennych do widoku 
+			'loggedIn'=>$loggedIn,'placeholder'=>'placeholder','pic'=>$pic  // Tablica do wysyłania zmiennych do widoku 
 				));
 		}
 	 }
