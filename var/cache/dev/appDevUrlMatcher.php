@@ -173,17 +173,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\Profile::Search',  '_route' => 'app_profile_search',);
         }
 
-        if (0 === strpos($pathinfo, '/P')) {
-            // app_profile_follow
-            if (0 === strpos($pathinfo, '/Profile') && preg_match('#^/Profile/(?P<login>[^/]++)/Follow$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_follow')), array (  '_controller' => 'AppBundle\\Controller\\Profile::Follow',));
-            }
+        // app_profile_follow
+        if (0 === strpos($pathinfo, '/Profile') && preg_match('#^/Profile/(?P<login>[^/]++)/Follow$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_follow')), array (  '_controller' => 'AppBundle\\Controller\\Profile::Follow',));
+        }
 
-            // app_userpanel_panel
-            if ($pathinfo === '/Panel') {
-                return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::Panel',  '_route' => 'app_userpanel_panel',);
-            }
+        // app_profile_following
+        if ($pathinfo === '/Following') {
+            return array (  '_controller' => 'AppBundle\\Controller\\Profile::Following',  '_route' => 'app_profile_following',);
+        }
 
+        // app_userpanel_panel
+        if ($pathinfo === '/Panel') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserPanel::Panel',  '_route' => 'app_userpanel_panel',);
         }
 
         if (0 === strpos($pathinfo, '/User')) {
