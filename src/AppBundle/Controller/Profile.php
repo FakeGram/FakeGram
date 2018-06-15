@@ -124,11 +124,11 @@ class Profile extends Controller
 		 
 		 if(isset($pictures))
 		 return $this->render('SearchPanel/Explore.html.twig', array( 
-			'pic'=>$pic,'loggedIn'=>$loggedIn,'placeholder'=>'placeholder'    // Tablica do wysyłania zmiennych do widoku 
+			'pic'=>$pic,'loggedIn'=>$loggedIn,'placeholder'=>'placeholder','set'=>'prof'    // Tablica do wysyłania zmiennych do widoku 
 				));
 		else
 		{
-			$pictures='';
+			$pic='';
 			return $this->render('SearchPanel/Explore.html.twig', array( 
 			'loggedIn'=>$loggedIn,'pic'=>$pic   // Tablica do wysyłania zmiennych do widoku 
 				));
@@ -186,12 +186,12 @@ class Profile extends Controller
 			 $statement->execute();
 			 $logins = $statement->fetchAll();
 			 //var_dump($logins);
-			 $polajkowane=false;
+			 $polajkowane=0;
 			 $like=0;
 			 foreach ($logins as $login)
 			 {
 				$like++;
-				if($login['login']==$_SESSION['CurrentUser']->getLogin()) $polajkowany=true;
+				if($login['login']==$_SESSION['CurrentUser']->getLogin()) $polajkowany=1;
 			 }
 			 $kwerenda='SELECT avatar FROM user WHERE login="'.$pictures[$i]['login'].'";';
 			 $statement=$connection->prepare($kwerenda);
@@ -456,12 +456,12 @@ class Profile extends Controller
 			 $statement->execute();
 			 $logins = $statement->fetchAll();
 			 //var_dump($logins);
-			 $polajkowane=false;
+			 $polajkowane=0;
 			 $like=0;
 			 foreach ($logins as $login)
 			 {
 				$like++;
-				if($login['login']==$_SESSION['CurrentUser']->getLogin()) $polajkowany=true;
+				if($login['login']==$_SESSION['CurrentUser']->getLogin()) $polajkowany=1;
 			 }
 			 $kwerenda='SELECT avatar FROM user WHERE login="'.$pictures[$i]['login'].'";';
 			 $statement=$connection->prepare($kwerenda);
@@ -695,12 +695,12 @@ class Profile extends Controller
 			 $statement->execute();
 			 $logins = $statement->fetchAll();
 			 //var_dump($logins);
-			 $polajkowane=false;
+			 $polajkowane=0;
 			 $like=0;
 			 foreach ($logins as $login)
 			 {
 				$like++;
-				if($login['login']==$_SESSION['CurrentUser']->getLogin()) $polajkowany=true;
+				if($login['login']==$_SESSION['CurrentUser']->getLogin()) $polajkowany=1;
 			 }
 			 $kwerenda='SELECT avatar FROM user WHERE login="'.$pictures[$i]['login'].'";';
 			 $statement=$connection->prepare($kwerenda);

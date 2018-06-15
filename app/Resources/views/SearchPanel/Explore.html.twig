@@ -3,13 +3,6 @@
 
 	<div class="container-fluid">
 
-
-	<form action ="/Search" method="post">
-		<input type="text" class ='form-control inputs' id = "SearchedArgument" name ="SearchedArgument" placeholder="{{placeholder}}" >
-		<button type="submit" class = "btn btn-default buttons">Wyszukaj</button>
-	</form>
-
-
 		<div class="">
 			{% if pic %}
 				{% for p in pic %}
@@ -26,8 +19,14 @@
 			<div class="PicturesButton">
 				<button class="btn btn-default buttons" onclick="like('{{session.CurrentUser.login}}', {{p['id']}}, {{p['liked']}} );"><i class="fas fa-thumbs-up likeico"></i>Lubię to!</button>
 				Likes:<div id="{{p['id']}}" class="btn btn-default buttons">{{p['likes']}}</div>
+				{% if set is defined %}
+				{% if set == "prof" %}
+				<a class="btn btn-default buttons" href="/reedit/{{p['pic']}}" >Edytuj</a>
+				{% endif %}
+				{% endif %}
 				<div style="display:none;" id="pidd">{{p['id']}}</div>
 				<div style="display:none;" id="plogg">{{p['usr']['login']}}</div>
+				<div style="display:none;" id="check{{p['id']}}">{{p['liked']}}</div>
 			</div>
 			<div class="commentsSection">
 				{% for comms in p['comm'] %}
@@ -82,25 +81,25 @@
 				
 			}
 			});
-			var liked=document.getElementById(picid).innerHTML;
+			var liked=document.getElementById("check"+picid).innerHTML;
 			
 			
 			var count=parseInt(document.getElementById(picid).innerHTML);
 			
-			if(likedd=="0")
+			if(liked==1)
 			{
 				
-				document.getElementById(picid).innerHTML=count+1;
-				liked="1";
-				document.getElementById(picid).innerHTML=liked;
+				document.getElementById(picid).innerHTML=count-1;
+				liked=0;
+				document.getElementById("check"+picid).innerHTML=0;
 				
 			}
 			else
 			{
 				
-				document.getElementById(picid).innerHTML=count-1;
-				liked="0";
-				document.getElementById(picid).innerHTML=liked;
+				document.getElementById(picid).innerHTML=count+1;
+				liked=1;
+				document.getElementById("check"+picid).innerHTML=1;
 			}
 			
 		}

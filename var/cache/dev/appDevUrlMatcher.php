@@ -236,6 +236,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\pic_uploader::save_edited',  '_route' => 'app_pic_uploader_save_edited',);
         }
 
+        // app_pic_uploader_reedit
+        if (0 === strpos($pathinfo, '/reedit') && preg_match('#^/reedit/(?P<route>[^/]++)/(?P<picname>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_pic_uploader_reedit')), array (  '_controller' => 'AppBundle\\Controller\\pic_uploader::reedit',));
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

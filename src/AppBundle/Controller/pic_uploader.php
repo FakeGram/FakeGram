@@ -148,7 +148,7 @@ class pic_uploader extends Controller
         $pic = substr($pic,strpos($pic,",")+1);
         $pic = base64_decode($pic);
         $pic_name=$_POST['name'];
-
+        if(substr($pic_name, 0, 8)=='/images/') $pic_name=substr($pic_name, 8);//chuj wi
         $user=$_SESSION['CurrentUser']->getLogin();
         $DoctrineManager = $this->getDoctrine()->getManager();
         $picNameToCompare = $this->getDoctrine()->getRepository('AppBundle:pic')->findOneByPic($pic_name)->getPic();
@@ -162,68 +162,19 @@ class pic_uploader extends Controller
             //$fp = fopen($pic_name, 'w');
             //fwrite($fp, $file);
             file_put_contents($pic_name, $pic);
-            return $this->render('Profile/Profile.html');
+            //return $this->render('Profile/Profile.html');
         }
 
+    }
 
-/*
-        $target_dir = "images/";
-        $target_file = $target_dir . basename($_FILES["img"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        // Check if image file is a actual image or fake image
-        if(isset($_POST["submit"])) {
-            $check = getimagesize($_FILES["img"]["tmp_name"]);
-            if($check !== false) {
-                echo "Plik jest obrazem- " . $check["mime"] . ".";
-                $uploadOk = 1;
-            } else {
-                echo "Plik nie jest obrazem.";
-                $uploadOk = 0;
-            }
-        }
-        
-        if ($_FILES["img"]["size"] > 5000000) {
-            echo "Twój plik jest za duży.";
-            $uploadOk = 0;
-        }
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") 
-        {
-            $uploadOk = 0;
-        }
-        if ($uploadOk == 0)
-        {
-            return $this->render('image_upload.html', array(
-            'err' => 'Wystąpiły pewne problemy z obrazem'));
-        } 
-        else
-        {
-            if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) 
-            {
-            $desc=$_POST['desc'];
-
-            $DoctrineManager = $this->getDoctrine()->getManager();
-            //$Login=$DoctrineManager->getRepository('AppBundle:user')->findOneBylogin($_SESSION["CurrentUser"]->getLogin());
-            $Login=$_SESSION["CurrentUser"]->getLogin();
-            $pic = new pic();
-            $pic->setLogin($Login);
-            $pic->setPic($target_file);
-            $pic->setDescription($desc);
-        
-            $statement=$this->getDoctrine()->getManager();
-            $statement->persist($pic);
-            $statement->flush();
-
-                return $this->render('ImgOperations/image_edit.html.twig', array(
-            'err' => 'success', 'pic_name' => $target_file));
-            }
-            else
-            {
-                return $this->render('ImgOperations/image_upload.html', array(
-                'err' => 'Wystąpiły pewne problemy z obrazem'));
-            }
-        }*/
-
+     /**
+     * @Route("/reedit/{route}/{picname}")
+     */
+    public function reedit($route, $picname)
+    {
+        $picname='/'.$route.'/'.$picname;
+        return $this->render('ImgOperations/image_edit.html.twig', array(
+            'err' => 'success', 'pic_name' => $picname));
     }
 }
 ?>

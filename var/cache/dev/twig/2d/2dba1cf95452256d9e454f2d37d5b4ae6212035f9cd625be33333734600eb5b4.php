@@ -15,14 +15,14 @@ class __TwigTemplate_5eb4ba09329e1857eabbfe7ef685f00bf51f8817b07dde5ee4eae05f95c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f44b3bfbbf9294e75c92a4795ec0874832da4812f462a6422aaa59f6ed3bb312 = $this->env->getExtension("native_profiler");
-        $__internal_f44b3bfbbf9294e75c92a4795ec0874832da4812f462a6422aaa59f6ed3bb312->enter($__internal_f44b3bfbbf9294e75c92a4795ec0874832da4812f462a6422aaa59f6ed3bb312_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Results.html.twig"));
+        $__internal_e5e60e452272212f6ab7a04af848c470dda2382e97bf267687b085e3b2b92781 = $this->env->getExtension("native_profiler");
+        $__internal_e5e60e452272212f6ab7a04af848c470dda2382e97bf267687b085e3b2b92781->enter($__internal_e5e60e452272212f6ab7a04af848c470dda2382e97bf267687b085e3b2b92781_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Results.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "SearchPanel/Results.html.twig", 1)->display($context);
         // line 2
         echo "
-
+<div class=\"container-fluid\">
 \t<div style=\"width:900px;margin-left:auto;margin-right:auto;\">
 
 \t\t<div>
@@ -82,37 +82,41 @@ class __TwigTemplate_5eb4ba09329e1857eabbfe7ef685f00bf51f8817b07dde5ee4eae05f95c
             $context['_seq'] = twig_ensure_traversable((isset($context["pictures"]) ? $context["pictures"] : $this->getContext($context, "pictures")));
             foreach ($context['_seq'] as $context["_key"] => $context["pic"]) {
                 // line 31
-                echo "\t\t\t\t\t<div class=\"PicturesMainContainer\">
-\t\t\t\t\t\t<a href=\"/Profile/Photo/";
-                // line 32
+                echo "\t\t\t\t\t<div class=\"tile curved single_pic flexible-tile\">
+\t\t\t\t\t\t<!--<div class=\"PicturesInfo\">
+\t\t\t\t\t\t\t
+\t\t\t\t\t\t</div>-->
+\t\t\t\t\t\t<div class=\"PicturesContainer\">
+\t\t\t\t\t\t\t<a href=\"/Profile/Photo/";
+                // line 36
                 echo twig_escape_filter($this->env, $this->getAttribute($context["pic"], "id", array(), "array"), "html", null, true);
                 echo "\">
-\t\t\t\t\t\t<div class=\"PicturesContainer\">
-\t\t\t\t\t\t\t<img src=\"/";
-                // line 34
+\t\t\t\t\t\t\t\t<img src=\"/";
+                // line 37
                 echo twig_escape_filter($this->env, $this->getAttribute($context["pic"], "pic", array(), "array"), "html", null, true);
                 echo "\" class=\"Pictures\"/>
+\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t</div>
-\t\t\t\t\t\t</a>
-\t\t\t\t\t\t<div class=\"PicturesButton\">
+\t\t\t\t\t\t
+\t\t\t\t\t\t<!--<div class=\"PicturesButton\">
 \t\t\t\t\t\t\t<button class=\"btn btn-default buttons\"><i class=\"fas fa-thumbs-up likeico\"></i>Lubię to!</button>
 \t\t\t\t\t\t\t<button class=\"btn btn-default buttons\"><i class=\"fas fa-comment-alt likeico\"></i>Pokaż komentarze</button>
-\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>-->
 \t\t\t\t\t</div>
 \t\t\t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pic'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 43
+            // line 47
             echo "\t\t\t";
         } else {
-            // line 44
+            // line 48
             echo "\t\t\t\t<label>Brak zdjęć</label>
 \t\t\t";
         }
-        // line 46
-        echo "\t\t\t</div>
+        // line 50
+        echo "\t\t</div>
 \t\t
 \t\t</div>
 \t\t
@@ -120,10 +124,10 @@ class __TwigTemplate_5eb4ba09329e1857eabbfe7ef685f00bf51f8817b07dde5ee4eae05f95c
 
 
 ";
-        // line 53
-        $this->loadTemplate("footer.html.twig", "SearchPanel/Results.html.twig", 53)->display($context);
+        // line 57
+        $this->loadTemplate("footer.html.twig", "SearchPanel/Results.html.twig", 57)->display($context);
         
-        $__internal_f44b3bfbbf9294e75c92a4795ec0874832da4812f462a6422aaa59f6ed3bb312->leave($__internal_f44b3bfbbf9294e75c92a4795ec0874832da4812f462a6422aaa59f6ed3bb312_prof);
+        $__internal_e5e60e452272212f6ab7a04af848c470dda2382e97bf267687b085e3b2b92781->leave($__internal_e5e60e452272212f6ab7a04af848c470dda2382e97bf267687b085e3b2b92781_prof);
 
     }
 
@@ -139,12 +143,12 @@ class __TwigTemplate_5eb4ba09329e1857eabbfe7ef685f00bf51f8817b07dde5ee4eae05f95c
 
     public function getDebugInfo()
     {
-        return array (  124 => 53,  115 => 46,  111 => 44,  108 => 43,  93 => 34,  88 => 32,  85 => 31,  80 => 30,  78 => 29,  68 => 21,  64 => 19,  61 => 18,  52 => 15,  46 => 12,  41 => 10,  38 => 9,  33 => 8,  31 => 7,  24 => 2,  22 => 1,);
+        return array (  128 => 57,  119 => 50,  115 => 48,  112 => 47,  96 => 37,  92 => 36,  85 => 31,  80 => 30,  78 => 29,  68 => 21,  64 => 19,  61 => 18,  52 => 15,  46 => 12,  41 => 10,  38 => 9,  33 => 8,  31 => 7,  24 => 2,  22 => 1,);
     }
 }
 /* {% include 'header.html.twig' %}*/
 /* */
-/* */
+/* <div class="container-fluid">*/
 /* 	<div style="width:900px;margin-left:auto;margin-right:auto;">*/
 /* */
 /* 		<div>*/
@@ -172,22 +176,26 @@ class __TwigTemplate_5eb4ba09329e1857eabbfe7ef685f00bf51f8817b07dde5ee4eae05f95c
 /* 		<div>*/
 /* 			{% if pictures is defined %}*/
 /* 				{% for pic in pictures %}*/
-/* 					<div class="PicturesMainContainer">*/
-/* 						<a href="/Profile/Photo/{{pic['id']}}">*/
+/* 					<div class="tile curved single_pic flexible-tile">*/
+/* 						<!--<div class="PicturesInfo">*/
+/* 							*/
+/* 						</div>-->*/
 /* 						<div class="PicturesContainer">*/
-/* 							<img src="/{{pic['pic']}}" class="Pictures"/>*/
+/* 							<a href="/Profile/Photo/{{pic['id']}}">*/
+/* 								<img src="/{{pic['pic']}}" class="Pictures"/>*/
+/* 							</a>*/
 /* 						</div>*/
-/* 						</a>*/
-/* 						<div class="PicturesButton">*/
+/* 						*/
+/* 						<!--<div class="PicturesButton">*/
 /* 							<button class="btn btn-default buttons"><i class="fas fa-thumbs-up likeico"></i>Lubię to!</button>*/
 /* 							<button class="btn btn-default buttons"><i class="fas fa-comment-alt likeico"></i>Pokaż komentarze</button>*/
-/* 						</div>*/
+/* 						</div>-->*/
 /* 					</div>*/
 /* 				{% endfor %}*/
 /* 			{% else %}*/
 /* 				<label>Brak zdjęć</label>*/
 /* 			{% endif %}*/
-/* 			</div>*/
+/* 		</div>*/
 /* 		*/
 /* 		</div>*/
 /* 		*/

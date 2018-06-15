@@ -7,6 +7,5 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class FakeGram extends Controller
 {
-
 }
 ?>

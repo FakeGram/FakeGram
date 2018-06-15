@@ -1,6 +1,6 @@
 {% include 'header.html.twig' %}
 
-
+<div class="container-fluid">
 	<div style="width:900px;margin-left:auto;margin-right:auto;">
 
 		<div>
@@ -28,22 +28,26 @@
 		<div>
 			{% if pictures is defined %}
 				{% for pic in pictures %}
-					<div class="PicturesMainContainer">
-						<a href="/Profile/Photo/{{pic['id']}}">
+					<div class="tile curved single_pic flexible-tile">
+						<!--<div class="PicturesInfo">
+							
+						</div>-->
 						<div class="PicturesContainer">
-							<img src="/{{pic['pic']}}" class="Pictures"/>
+							<a href="/Profile/Photo/{{pic['id']}}">
+								<img src="/{{pic['pic']}}" class="Pictures"/>
+							</a>
 						</div>
-						</a>
-						<div class="PicturesButton">
+						
+						<!--<div class="PicturesButton">
 							<button class="btn btn-default buttons"><i class="fas fa-thumbs-up likeico"></i>Lubię to!</button>
 							<button class="btn btn-default buttons"><i class="fas fa-comment-alt likeico"></i>Pokaż komentarze</button>
-						</div>
+						</div>-->
 					</div>
 				{% endfor %}
 			{% else %}
 				<label>Brak zdjęć</label>
 			{% endif %}
-			</div>
+		</div>
 		
 		</div>
 		

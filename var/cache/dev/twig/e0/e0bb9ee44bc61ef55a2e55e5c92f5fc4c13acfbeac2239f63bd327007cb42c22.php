@@ -15,8 +15,8 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_14a86a616abe115e3fac02731645d3d4534b0f1a143824913e96dac7626bb81f = $this->env->getExtension("native_profiler");
-        $__internal_14a86a616abe115e3fac02731645d3d4534b0f1a143824913e96dac7626bb81f->enter($__internal_14a86a616abe115e3fac02731645d3d4534b0f1a143824913e96dac7626bb81f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Explore.html.twig"));
+        $__internal_aa22c3278b5b0394c24266ce3040fdda3e8371f8db6c320a5607eee5ea6499fa = $this->env->getExtension("native_profiler");
+        $__internal_aa22c3278b5b0394c24266ce3040fdda3e8371f8db6c320a5607eee5ea6499fa->enter($__internal_aa22c3278b5b0394c24266ce3040fdda3e8371f8db6c320a5607eee5ea6499fa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Explore.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "SearchPanel/Explore.html.twig", 1)->display($context);
@@ -25,88 +25,108 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 
 \t<div class=\"container-fluid\">
 
-
-\t<form action =\"/Search\" method=\"post\">
-\t\t<input type=\"text\" class ='form-control inputs' id = \"SearchedArgument\" name =\"SearchedArgument\" placeholder=\"";
-        // line 8
-        echo twig_escape_filter($this->env, (isset($context["placeholder"]) ? $context["placeholder"] : $this->getContext($context, "placeholder")), "html", null, true);
-        echo "\" >
-\t\t<button type=\"submit\" class = \"btn btn-default buttons\">Wyszukaj</button>
-\t</form>
-
-
 \t\t<div class=\"\">
 \t\t\t";
-        // line 14
+        // line 7
         if ((isset($context["pic"]) ? $context["pic"] : $this->getContext($context, "pic"))) {
-            // line 15
+            // line 8
             echo "\t\t\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["pic"]) ? $context["pic"] : $this->getContext($context, "pic")));
             foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
-                // line 16
+                // line 9
                 echo "\t\t\t\t\t<div class=\"tile curved single_pic flexible-tile\">
 \t\t\t<div class=\"PicturesInfo\">
 \t\t\t\t<img src=\"data:image/jpeg;base64,";
-                // line 18
+                // line 11
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["p"], "usr", array(), "array"), "avatar", array(), "array"), "html", null, true);
                 echo "\" class=\"avatar\" height=\"30px\" width=\"30px\" />
 \t\t\t\t<label style=\"margin-left: 30px;\">";
-                // line 19
+                // line 12
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["p"], "usr", array(), "array"), "login", array(), "array"), "html", null, true);
                 echo "</label>
 \t\t\t</div>
 \t\t\t<div class=\"PicturesContainer\">
 \t\t\t\t<a href=\"/Profile/Photo/";
-                // line 22
+                // line 15
                 echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "id", array(), "array"), "html", null, true);
                 echo "\">
 \t\t\t\t\t<img src=\"/";
-                // line 23
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["pic"]) ? $context["pic"] : $this->getContext($context, "pic")), "pic", array(), "array"), "html", null, true);
+                // line 16
+                echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "pic", array(), "array"), "html", null, true);
                 echo "\" class=\"Pictures\"/>
 \t\t\t\t</a>
 \t\t\t</div>
 \t\t\t<div class=\"PicturesButton\">
-\t\t\t\t<button class=\"btn btn-default buttons\" onclick=\"like();\"><i class=\"fas fa-thumbs-up likeico\"></i>Lubię to!</button>
-\t\t\t\tLikes:<div id=\"likes\" class=\"btn btn-default buttons\">";
-                // line 28
+\t\t\t\t<button class=\"btn btn-default buttons\" onclick=\"like('";
+                // line 20
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["session"]) ? $context["session"] : $this->getContext($context, "session")), "CurrentUser", array()), "login", array()), "html", null, true);
+                echo "', ";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "id", array(), "array"), "html", null, true);
+                echo ", ";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "liked", array(), "array"), "html", null, true);
+                echo " );\"><i class=\"fas fa-thumbs-up likeico\"></i>Lubię to!</button>
+\t\t\t\tLikes:<div id=\"";
+                // line 21
+                echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "id", array(), "array"), "html", null, true);
+                echo "\" class=\"btn btn-default buttons\">";
                 echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "likes", array(), "array"), "html", null, true);
                 echo "</div>
-\t\t\t\t<div style=\"display:none;\" id=\"pidd\">";
-                // line 29
+\t\t\t\t";
+                // line 22
+                if (array_key_exists("set", $context)) {
+                    // line 23
+                    echo "\t\t\t\t";
+                    if (((isset($context["set"]) ? $context["set"] : $this->getContext($context, "set")) == "prof")) {
+                        // line 24
+                        echo "\t\t\t\t<a class=\"btn btn-default buttons\" href=\"/reedit/";
+                        echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "pic", array(), "array"), "html", null, true);
+                        echo "\" >Edytuj</a>
+\t\t\t\t";
+                    }
+                    // line 26
+                    echo "\t\t\t\t";
+                }
+                // line 27
+                echo "\t\t\t\t<div style=\"display:none;\" id=\"pidd\">";
                 echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "id", array(), "array"), "html", null, true);
                 echo "</div>
 \t\t\t\t<div style=\"display:none;\" id=\"plogg\">";
-                // line 30
+                // line 28
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["p"], "usr", array(), "array"), "login", array(), "array"), "html", null, true);
+                echo "</div>
+\t\t\t\t<div style=\"display:none;\" id=\"check";
+                // line 29
+                echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "id", array(), "array"), "html", null, true);
+                echo "\">";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "liked", array(), "array"), "html", null, true);
                 echo "</div>
 \t\t\t</div>
 \t\t\t<div class=\"commentsSection\">
 \t\t\t\t";
-                // line 33
+                // line 32
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["p"], "comms", array(), "array"));
-                foreach ($context['_seq'] as $context["_key"] => $context["comm"]) {
-                    // line 34
+                $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["p"], "comm", array(), "array"));
+                foreach ($context['_seq'] as $context["_key"] => $context["comms"]) {
+                    // line 33
                     echo "\t\t\t\t\t<div class=\"Comment\">
 \t\t\t\t\t
 \t\t\t\t\t<div class=\"Date\">
 \t\t\t\t\t\t";
-                    // line 37
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["comm"], "date", array(), "array"), "html", null, true);
+                    // line 36
+                    echo twig_escape_filter($this->env, $this->getAttribute($context["comms"], "date", array(), "array"), "html", null, true);
                     echo " 
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"Author\">
 \t\t\t\t\t\t";
-                    // line 40
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["comm"], "login", array(), "array"), "html", null, true);
+                    // line 39
+                    echo twig_escape_filter($this->env, $this->getAttribute($context["comms"], "login", array(), "array"), "html", null, true);
                     echo " 
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"Content\">
 \t\t\t\t\t\t";
-                    // line 43
-                    echo twig_escape_filter($this->env, $this->getAttribute($context["comm"], "content", array(), "array"), "html", null, true);
+                    // line 42
+                    echo twig_escape_filter($this->env, $this->getAttribute($context["comms"], "content", array(), "array"), "html", null, true);
                     echo " 
 \t\t\t\t\t</div>
 \t\t\t\t\t<div style=\"clear:both;\"></div>
@@ -114,16 +134,16 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 \t\t\t\t";
                 }
                 $_parent = $context['_parent'];
-                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comm'], $context['_parent'], $context['loop']);
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comms'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 48
+                // line 47
                 echo "\t\t\t\t";
-                if (((isset($context["loggedIn"]) ? $context["loggedIn"] : $this->getContext($context, "loggedIn")) == true)) {
-                    // line 49
+                if ($this->getAttribute((isset($context["session"]) ? $context["session"] : null), "CurrentUser", array(), "any", true, true)) {
+                    // line 48
                     echo "\t\t\t\t\t<div class=\"CommentAdd\">
 \t\t\t\t\t\t<form class=\"CommentInput\" action=\"/Profile/Photo/NewComment/";
-                    // line 50
-                    echo twig_escape_filter($this->env, $this->getAttribute((isset($context["pic"]) ? $context["pic"] : $this->getContext($context, "pic")), "id", array(), "array"), "html", null, true);
+                    // line 49
+                    echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "id", array(), "array"), "html", null, true);
                     echo "\" method=\"post\">
 \t\t\t\t\t\t\t<input type=\"text\" class=\"CommentInputContent\"  name=\"CommentContent\" id=\"CommentContent\">
 \t\t\t\t\t\t\t<input type=\"submit\" class=\"CommentInputButton\" value=\"Dodaj Komentarz\"/>
@@ -131,24 +151,24 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 \t\t\t\t\t</div>
 \t\t\t\t";
                 }
-                // line 56
+                // line 55
                 echo "\t\t\t\t";
-                if (((isset($context["loggedIn"]) ? $context["loggedIn"] : $this->getContext($context, "loggedIn")) == true)) {
-                    // line 57
+                if ($this->getAttribute((isset($context["session"]) ? $context["session"] : null), "CurrentUser", array(), "any", true, true)) {
+                    // line 56
                     echo "\t\t\t\t\t<div class=\"LikeButton\">
 \t\t\t\t\t\t<div style=\"display:none;\" id=\"picId\">";
-                    // line 58
-                    echo twig_escape_filter($this->env, $this->getAttribute((isset($context["pic"]) ? $context["pic"] : $this->getContext($context, "pic")), "id", array(), "array"), "html", null, true);
+                    // line 57
+                    echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "id", array(), "array"), "html", null, true);
                     echo "</div>
 \t\t\t\t\t\t<div style=\"display:none;\" id=\"login\">";
-                    // line 59
-                    echo twig_escape_filter($this->env, (isset($context["login"]) ? $context["login"] : $this->getContext($context, "login")), "html", null, true);
+                    // line 58
+                    echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["session"]) ? $context["session"] : $this->getContext($context, "session")), "CurrentUser", array()), "login", array()), "html", null, true);
                     echo "</div>
 \t\t\t\t\t\t\t
 \t\t\t\t\t</div>
 \t\t\t\t";
                 }
-                // line 63
+                // line 62
                 echo "\t\t\t</div>
 \t\t</div>
 \t\t\t\t";
@@ -156,22 +176,22 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 66
+            // line 65
             echo "\t\t\t";
         } else {
-            // line 67
+            // line 66
             echo "\t\t\t\t<label>Brak zdjęć</label>
 \t\t\t";
         }
-        // line 69
+        // line 68
         echo "\t\t</div>
 \t\t
 \t\t<script>
-\t\tfunction like()
+\t\tfunction like(loginno, picid, likedd)
 \t\t{
 \t\t\tvar id=document.getElementById(\"picId\").innerHTML;
 \t\t\tvar login=document.getElementById(\"login\").innerHTML;
-\t\t\tvar action=\"/Profile/Photo/AddLike/\"+id+\"/\"+login;
+\t\t\tvar action=\"/Profile/Photo/AddLike/\"+picid+\"/\"+loginno;
 \t\t\t\$.ajax({
 \t\t\t\turl:action,
 \t\t\ttype:'POST',
@@ -180,35 +200,35 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 \t\t\t\t
 \t\t\t}
 \t\t\t});
-\t\t\tvar liked=document.getElementById(\"liked\").innerHTML;
+\t\t\tvar liked=document.getElementById(\"check\"+picid).innerHTML;
 \t\t\t
 \t\t\t
-\t\t\tvar count=parseInt(document.getElementById(\"likes\").innerHTML);
+\t\t\tvar count=parseInt(document.getElementById(picid).innerHTML);
 \t\t\t
-\t\t\tif(liked==\"0\")
+\t\t\tif(liked==1)
 \t\t\t{
 \t\t\t\t
-\t\t\t\tdocument.getElementById(\"likes\").innerHTML=count+1;
-\t\t\t\tliked=\"1\";
-\t\t\t\tdocument.getElementById(\"liked\").innerHTML=liked;
+\t\t\t\tdocument.getElementById(picid).innerHTML=count-1;
+\t\t\t\tliked=0;
+\t\t\t\tdocument.getElementById(\"check\"+picid).innerHTML=0;
 \t\t\t\t
 \t\t\t}
 \t\t\telse
 \t\t\t{
 \t\t\t\t
-\t\t\t\tdocument.getElementById(\"likes\").innerHTML=count-1;
-\t\t\t\tliked=\"0\";
-\t\t\t\tdocument.getElementById(\"liked\").innerHTML=liked;
+\t\t\t\tdocument.getElementById(picid).innerHTML=count+1;
+\t\t\t\tliked=1;
+\t\t\t\tdocument.getElementById(\"check\"+picid).innerHTML=1;
 \t\t\t}
 \t\t\t
 \t\t}
 \t</script>
 
 ";
-        // line 109
-        $this->loadTemplate("footer.html.twig", "SearchPanel/Explore.html.twig", 109)->display($context);
+        // line 108
+        $this->loadTemplate("footer.html.twig", "SearchPanel/Explore.html.twig", 108)->display($context);
         
-        $__internal_14a86a616abe115e3fac02731645d3d4534b0f1a143824913e96dac7626bb81f->leave($__internal_14a86a616abe115e3fac02731645d3d4534b0f1a143824913e96dac7626bb81f_prof);
+        $__internal_aa22c3278b5b0394c24266ce3040fdda3e8371f8db6c320a5607eee5ea6499fa->leave($__internal_aa22c3278b5b0394c24266ce3040fdda3e8371f8db6c320a5607eee5ea6499fa_prof);
 
     }
 
@@ -224,20 +244,13 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 
     public function getDebugInfo()
     {
-        return array (  209 => 109,  167 => 69,  163 => 67,  160 => 66,  152 => 63,  145 => 59,  141 => 58,  138 => 57,  135 => 56,  126 => 50,  123 => 49,  120 => 48,  109 => 43,  103 => 40,  97 => 37,  92 => 34,  88 => 33,  82 => 30,  78 => 29,  74 => 28,  66 => 23,  62 => 22,  56 => 19,  52 => 18,  48 => 16,  43 => 15,  41 => 14,  32 => 8,  24 => 2,  22 => 1,);
+        return array (  229 => 108,  187 => 68,  183 => 66,  180 => 65,  172 => 62,  165 => 58,  161 => 57,  158 => 56,  155 => 55,  146 => 49,  143 => 48,  140 => 47,  129 => 42,  123 => 39,  117 => 36,  112 => 33,  108 => 32,  100 => 29,  96 => 28,  91 => 27,  88 => 26,  82 => 24,  79 => 23,  77 => 22,  71 => 21,  63 => 20,  56 => 16,  52 => 15,  46 => 12,  42 => 11,  38 => 9,  33 => 8,  31 => 7,  24 => 2,  22 => 1,);
     }
 }
 /* {% include 'header.html.twig' %}*/
 /* */
 /* */
 /* 	<div class="container-fluid">*/
-/* */
-/* */
-/* 	<form action ="/Search" method="post">*/
-/* 		<input type="text" class ='form-control inputs' id = "SearchedArgument" name ="SearchedArgument" placeholder="{{placeholder}}" >*/
-/* 		<button type="submit" class = "btn btn-default buttons">Wyszukaj</button>*/
-/* 	</form>*/
-/* */
 /* */
 /* 		<div class="">*/
 /* 			{% if pic %}*/
@@ -249,43 +262,49 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 /* 			</div>*/
 /* 			<div class="PicturesContainer">*/
 /* 				<a href="/Profile/Photo/{{p['id']}}">*/
-/* 					<img src="/{{pic['pic']}}" class="Pictures"/>*/
+/* 					<img src="/{{p['pic']}}" class="Pictures"/>*/
 /* 				</a>*/
 /* 			</div>*/
 /* 			<div class="PicturesButton">*/
-/* 				<button class="btn btn-default buttons" onclick="like();"><i class="fas fa-thumbs-up likeico"></i>Lubię to!</button>*/
-/* 				Likes:<div id="likes" class="btn btn-default buttons">{{p['likes']}}</div>*/
+/* 				<button class="btn btn-default buttons" onclick="like('{{session.CurrentUser.login}}', {{p['id']}}, {{p['liked']}} );"><i class="fas fa-thumbs-up likeico"></i>Lubię to!</button>*/
+/* 				Likes:<div id="{{p['id']}}" class="btn btn-default buttons">{{p['likes']}}</div>*/
+/* 				{% if set is defined %}*/
+/* 				{% if set == "prof" %}*/
+/* 				<a class="btn btn-default buttons" href="/reedit/{{p['pic']}}" >Edytuj</a>*/
+/* 				{% endif %}*/
+/* 				{% endif %}*/
 /* 				<div style="display:none;" id="pidd">{{p['id']}}</div>*/
 /* 				<div style="display:none;" id="plogg">{{p['usr']['login']}}</div>*/
+/* 				<div style="display:none;" id="check{{p['id']}}">{{p['liked']}}</div>*/
 /* 			</div>*/
 /* 			<div class="commentsSection">*/
-/* 				{% for comm in p['comms'] %}*/
+/* 				{% for comms in p['comm'] %}*/
 /* 					<div class="Comment">*/
 /* 					*/
 /* 					<div class="Date">*/
-/* 						{{comm['date']}} */
+/* 						{{comms['date']}} */
 /* 					</div>*/
 /* 					<div class="Author">*/
-/* 						{{comm['login']}} */
+/* 						{{comms['login']}} */
 /* 					</div>*/
 /* 					<div class="Content">*/
-/* 						{{comm['content']}} */
+/* 						{{comms['content']}} */
 /* 					</div>*/
 /* 					<div style="clear:both;"></div>*/
 /* 					</div>*/
 /* 				{% endfor %}*/
-/* 				{% if loggedIn==TRUE %}*/
+/* 				{% if session.CurrentUser is defined %}*/
 /* 					<div class="CommentAdd">*/
-/* 						<form class="CommentInput" action="/Profile/Photo/NewComment/{{pic['id']}}" method="post">*/
+/* 						<form class="CommentInput" action="/Profile/Photo/NewComment/{{p['id']}}" method="post">*/
 /* 							<input type="text" class="CommentInputContent"  name="CommentContent" id="CommentContent">*/
 /* 							<input type="submit" class="CommentInputButton" value="Dodaj Komentarz"/>*/
 /* 						</form>*/
 /* 					</div>*/
 /* 				{% endif %}*/
-/* 				{% if loggedIn==TRUE %}*/
+/* 				{% if session.CurrentUser is defined %}*/
 /* 					<div class="LikeButton">*/
-/* 						<div style="display:none;" id="picId">{{pic['id']}}</div>*/
-/* 						<div style="display:none;" id="login">{{login}}</div>*/
+/* 						<div style="display:none;" id="picId">{{p['id']}}</div>*/
+/* 						<div style="display:none;" id="login">{{session.CurrentUser.login}}</div>*/
 /* 							*/
 /* 					</div>*/
 /* 				{% endif %}*/
@@ -298,11 +317,11 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 /* 		</div>*/
 /* 		*/
 /* 		<script>*/
-/* 		function like()*/
+/* 		function like(loginno, picid, likedd)*/
 /* 		{*/
 /* 			var id=document.getElementById("picId").innerHTML;*/
 /* 			var login=document.getElementById("login").innerHTML;*/
-/* 			var action="/Profile/Photo/AddLike/"+id+"/"+login;*/
+/* 			var action="/Profile/Photo/AddLike/"+picid+"/"+loginno;*/
 /* 			$.ajax({*/
 /* 				url:action,*/
 /* 			type:'POST',*/
@@ -311,25 +330,25 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 /* 				*/
 /* 			}*/
 /* 			});*/
-/* 			var liked=document.getElementById("liked").innerHTML;*/
+/* 			var liked=document.getElementById("check"+picid).innerHTML;*/
 /* 			*/
 /* 			*/
-/* 			var count=parseInt(document.getElementById("likes").innerHTML);*/
+/* 			var count=parseInt(document.getElementById(picid).innerHTML);*/
 /* 			*/
-/* 			if(liked=="0")*/
+/* 			if(liked==1)*/
 /* 			{*/
 /* 				*/
-/* 				document.getElementById("likes").innerHTML=count+1;*/
-/* 				liked="1";*/
-/* 				document.getElementById("liked").innerHTML=liked;*/
+/* 				document.getElementById(picid).innerHTML=count-1;*/
+/* 				liked=0;*/
+/* 				document.getElementById("check"+picid).innerHTML=0;*/
 /* 				*/
 /* 			}*/
 /* 			else*/
 /* 			{*/
 /* 				*/
-/* 				document.getElementById("likes").innerHTML=count-1;*/
-/* 				liked="0";*/
-/* 				document.getElementById("liked").innerHTML=liked;*/
+/* 				document.getElementById(picid).innerHTML=count+1;*/
+/* 				liked=1;*/
+/* 				document.getElementById("check"+picid).innerHTML=1;*/
 /* 			}*/
 /* 			*/
 /* 		}*/

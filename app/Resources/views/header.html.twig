@@ -56,11 +56,12 @@
           <ul class="nav navbar-nav navbar-right nav-pages">
             <li class="active"><a href="/">Strona Główna</a></li>
             <li><a href="/Explore">Odkrywaj</a></li>
-            <li><a href="/Profile">Moje zdjęcia </a></li>
             {% if session.CurrentUser is defined %}
             <li><a onclick="showModal()" style="cursor:pointer;">Dodaj Zdjęcie</a></li> 
-            {% endif %}
+            <li><a href="/Following">Subskrypcje</a></li>
+            <li><a href="/Profile">Moje zdjęcia</a></li>
             <li><a href="/Panel">Ustawienia</a></li> 
+            {% endif %}
           </ul>
         </div>
         <div id="Modal" class="modal">
