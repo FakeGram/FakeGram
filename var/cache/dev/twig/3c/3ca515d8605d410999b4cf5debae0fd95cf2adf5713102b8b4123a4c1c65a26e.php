@@ -15,8 +15,8 @@ class __TwigTemplate_3ab1710fd2be8a48d48a81f30b6d388f18a92665f61bfeeedc14c49810a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_0b36dac4608e154337d8f11b47ee0e8d03c50b23a28fe23aca57294511ff51df = $this->env->getExtension("native_profiler");
-        $__internal_0b36dac4608e154337d8f11b47ee0e8d03c50b23a28fe23aca57294511ff51df->enter($__internal_0b36dac4608e154337d8f11b47ee0e8d03c50b23a28fe23aca57294511ff51df_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "header.html.twig"));
+        $__internal_b25b44398a90564338ed27df3395cdd6a1d6ca1dbf66d4ba07f6eb0e4b7085ac = $this->env->getExtension("native_profiler");
+        $__internal_b25b44398a90564338ed27df3395cdd6a1d6ca1dbf66d4ba07f6eb0e4b7085ac->enter($__internal_b25b44398a90564338ed27df3395cdd6a1d6ca1dbf66d4ba07f6eb0e4b7085ac_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "header.html.twig"));
 
         // line 1
         echo "<html>
@@ -126,17 +126,18 @@ class __TwigTemplate_3ab1710fd2be8a48d48a81f30b6d388f18a92665f61bfeeedc14c49810a
           <ul class=\"nav navbar-nav navbar-right nav-pages\">
             <li class=\"active\"><a href=\"/\">Strona Główna</a></li>
             <li><a href=\"/Explore\">Odkrywaj</a></li>
-            <li><a href=\"/Profile\">Moje zdjęcia </a></li>
             ";
-        // line 60
+        // line 59
         if ($this->getAttribute((isset($context["session"]) ? $context["session"] : null), "CurrentUser", array(), "any", true, true)) {
-            // line 61
+            // line 60
             echo "            <li><a onclick=\"showModal()\" style=\"cursor:pointer;\">Dodaj Zdjęcie</a></li> 
+            <li><a href=\"/Following\">Subskrypcje</a></li>
+            <li><a href=\"/Profile\">Moje zdjęcia</a></li>
+            <li><a href=\"/Panel\">Ustawienia</a></li> 
             ";
         }
-        // line 63
-        echo "            <li><a href=\"/Panel\">Ustawienia</a></li> 
-          </ul>
+        // line 65
+        echo "          </ul>
         </div>
         <div id=\"Modal\" class=\"modal\">
             <div class=\"modal-content\">
@@ -173,7 +174,7 @@ class __TwigTemplate_3ab1710fd2be8a48d48a81f30b6d388f18a92665f61bfeeedc14c49810a
     </script>
     <!-- |||||||||||||||||||||||||||||||||||| -->";
         
-        $__internal_0b36dac4608e154337d8f11b47ee0e8d03c50b23a28fe23aca57294511ff51df->leave($__internal_0b36dac4608e154337d8f11b47ee0e8d03c50b23a28fe23aca57294511ff51df_prof);
+        $__internal_b25b44398a90564338ed27df3395cdd6a1d6ca1dbf66d4ba07f6eb0e4b7085ac->leave($__internal_b25b44398a90564338ed27df3395cdd6a1d6ca1dbf66d4ba07f6eb0e4b7085ac_prof);
 
     }
 
@@ -189,7 +190,7 @@ class __TwigTemplate_3ab1710fd2be8a48d48a81f30b6d388f18a92665f61bfeeedc14c49810a
 
     public function getDebugInfo()
     {
-        return array (  138 => 63,  134 => 61,  132 => 60,  125 => 55,  120 => 52,  116 => 50,  114 => 49,  84 => 22,  80 => 21,  76 => 20,  72 => 19,  68 => 18,  64 => 17,  60 => 16,  56 => 15,  52 => 14,  48 => 13,  41 => 9,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
+        return array (  140 => 65,  133 => 60,  131 => 59,  125 => 55,  120 => 52,  116 => 50,  114 => 49,  84 => 22,  80 => 21,  76 => 20,  72 => 19,  68 => 18,  64 => 17,  60 => 16,  56 => 15,  52 => 14,  48 => 13,  41 => 9,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
     }
 }
 /* <html>*/
@@ -250,11 +251,12 @@ class __TwigTemplate_3ab1710fd2be8a48d48a81f30b6d388f18a92665f61bfeeedc14c49810a
 /*           <ul class="nav navbar-nav navbar-right nav-pages">*/
 /*             <li class="active"><a href="/">Strona Główna</a></li>*/
 /*             <li><a href="/Explore">Odkrywaj</a></li>*/
-/*             <li><a href="/Profile">Moje zdjęcia </a></li>*/
 /*             {% if session.CurrentUser is defined %}*/
 /*             <li><a onclick="showModal()" style="cursor:pointer;">Dodaj Zdjęcie</a></li> */
-/*             {% endif %}*/
+/*             <li><a href="/Following">Subskrypcje</a></li>*/
+/*             <li><a href="/Profile">Moje zdjęcia</a></li>*/
 /*             <li><a href="/Panel">Ustawienia</a></li> */
+/*             {% endif %}*/
 /*           </ul>*/
 /*         </div>*/
 /*         <div id="Modal" class="modal">*/
