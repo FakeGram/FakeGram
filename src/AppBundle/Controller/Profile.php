@@ -1,6 +1,5 @@
 <?php
 namespace AppBundle\Controller;
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -33,8 +32,6 @@ class Profile extends Controller
 		 ->getRepository('AppBundle:user')->
 		 findOneByLogin($_SESSION["CurrentUser"]->getLogin());
 		 
-
-
 		 $usr['login']=$user->getLogin();
 		 $usr['email']=$user->getEmail();
 		 $usr['nameAndSurrname']=$user->getNameAndSurrname();
@@ -145,7 +142,6 @@ class Profile extends Controller
 	 {
 		 $err_comm='';
 		 
-
 		 $pics=$this->GetDoctrine()
 		->getRepository('AppBundle:pic')
         ->findByLogin($Login);
@@ -368,20 +364,16 @@ class Profile extends Controller
 					));
 		}
 	 }
-
-
  	/**
      * @Route("/Profile/Photo/NewComment/{PhotoId}")
      */
 	 public function AddComment($PhotoId)
 	 {
-
 	 	if(!isset($_SESSION["CurrentUser"]))
 		 {
 			 return new Response("Nie jesteś zalogowany");
 		 }
 		 
-
 		 $DoctrineManager = $this->getDoctrine()->getManager();
 		$comment = new comment();
 		$commentcont= $_POST["CommentContent"];
@@ -390,10 +382,8 @@ class Profile extends Controller
 		$comment->setpicid($PhotoId);
 		$comment->setTagId("tag");
 		//$comment->setTagId("0"); // narazie bez taga
-
 		$DoctrineManager->persist($comment);
 		$DoctrineManager->flush();
-
 		return $this->redirect("/Profile/Photo/".$PhotoId);
 	}
 	
@@ -436,7 +426,6 @@ class Profile extends Controller
 		
 		return $this->redirect("/Profile/Photo/".$PhotoId);
 	}
-
 	/**
      * @Route("/Explore")
      */
@@ -445,14 +434,12 @@ class Profile extends Controller
 		
 		$err_comm="";
 		$PlaceHolder="Wyszukaj po nazwie użytkownika "; // dodać tagi jak będą gotowe
-
 		$Repository = $this->getDoctrine()->getRepository('AppBundle:pic');
 		
 		$query = $Repository->createQueryBuilder('p')
 		->orderBy('p.date','DESC')
 		->setMaxResults(20) // Tutaj można zmieniać ilość wyświetlanych zdjęć. 
 		->getQuery();
-
 		$pics = $query->getResult();
 		$i = 0 ; 
 	    foreach($pics as $pi)
@@ -515,12 +502,7 @@ class Profile extends Controller
 			$pic[i]['liked']=$polajkowane;
 			 $i++;
 	    }
-
 	    $Repository = $this->getDoctrine()->getRepository('AppBundle:tags');
-
-
-
-
 	    if(isset($pictures))
 		 return $this->render('SearchPanel/Explore.html.twig', array( 
 			'pictures'=> $pictures,'placeholder'=>$PlaceHolder,'pic'=>$pic  // Tablica do wysyłania zmiennych do widoku 
@@ -530,7 +512,6 @@ class Profile extends Controller
 			$pictures='';
 			return $this->render('SearchPanel/Explore.html.twig', array( 
 			'pictures'=> $pictures,'placeholder'=>$PlaceHolder,'pic'=>$pic)); // Tablica do wysyłania zmiennych do widoku 
-
 	    if(!isset($pictures))
 	    {
 	    	$pictures='';
@@ -539,11 +520,9 @@ class Profile extends Controller
 	    {
 	    	$users='';
 	    }
-
 		 return $this->render('SearchPanel/Results.html.twig', array( 
 			'pictures'=> $pictures,'placeholder'=>$PlaceHolder,
 			'users'=>$users,'pic'=>$pic   // Tablica do wysyłania zmiennych do widoku 
-
 				));
 	
 		
@@ -591,44 +570,6 @@ class Profile extends Controller
 			 $i++;
 	    }
 
-
-	
-	    $Repository = $this->getDoctrine()->getRepository('AppBundle:tags');
-	  
-	    $query = $Repository->createQueryBuilder('t')
-	    ->where('t.tag = :tag')
-	    ->setParameter('tag','#'.$_POST['SearchedArgument'])
-	    ->getQuery();
-
-	    $tgs = $query->getResult();
-/*
-	    $i=0;
-
-	    foreach ($tgs as $tag) 
-	    {
-	    	$tags[$i]['contentId']= $tag->getContentid();
-	    	$pics[$i][]
-	    }
-*/
-	    if(isset($users))
-		 return $this->render('SearchPanel/Results.html.twig', array( 
-			'users'=> $users,'placeholder'=>$PlaceHolder  // Tablica do wysyłania zmiennych do widoku 
-				));
-		else
-		{
-			$users='';
-			return $this->render('SearchPanel/Results.html.twig', array( 
-			'users'=> $users,'placeholder'=>$PlaceHolder // Tablica do wysyłania zmiennych do widoku 
-				));
-		}
-
-
-
-
-
-			
-
-
 	
 	    $Repository = $this->getDoctrine()->getRepository('AppBundle:tags');
 	  
@@ -664,7 +605,6 @@ class Profile extends Controller
 			'pictures'=>$pictures  // Tablica do wysyłania zmiennych do widoku 
 				));
 		
-
 	}
 	
 	/**
@@ -705,5 +645,4 @@ class Profile extends Controller
 		
 		
 	}
-
 }

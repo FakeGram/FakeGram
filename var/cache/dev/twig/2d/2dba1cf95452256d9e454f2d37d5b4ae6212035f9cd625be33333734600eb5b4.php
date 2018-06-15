@@ -15,8 +15,8 @@ class __TwigTemplate_5eb4ba09329e1857eabbfe7ef685f00bf51f8817b07dde5ee4eae05f95c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7c187161975fdb8f1e56db2c3b42b55e409ee776be414e1bf7c9aadab03f0344 = $this->env->getExtension("native_profiler");
-        $__internal_7c187161975fdb8f1e56db2c3b42b55e409ee776be414e1bf7c9aadab03f0344->enter($__internal_7c187161975fdb8f1e56db2c3b42b55e409ee776be414e1bf7c9aadab03f0344_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Results.html.twig"));
+        $__internal_f44b3bfbbf9294e75c92a4795ec0874832da4812f462a6422aaa59f6ed3bb312 = $this->env->getExtension("native_profiler");
+        $__internal_f44b3bfbbf9294e75c92a4795ec0874832da4812f462a6422aaa59f6ed3bb312->enter($__internal_f44b3bfbbf9294e75c92a4795ec0874832da4812f462a6422aaa59f6ed3bb312_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Results.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "SearchPanel/Results.html.twig", 1)->display($context);
@@ -28,7 +28,7 @@ class __TwigTemplate_5eb4ba09329e1857eabbfe7ef685f00bf51f8817b07dde5ee4eae05f95c
 \t\t<div>
 \t\t\t";
         // line 7
-        if ((isset($context["users"]) ? $context["users"] : $this->getContext($context, "users"))) {
+        if (array_key_exists("users", $context)) {
             // line 8
             echo "\t\t\t\t";
             $context['_parent'] = $context;
@@ -68,29 +68,28 @@ class __TwigTemplate_5eb4ba09329e1857eabbfe7ef685f00bf51f8817b07dde5ee4eae05f95c
         echo "\t\t</div>
 \t\t
 \t</div>
-
 \t\t\t\t\t\t
 \t\t\t\t\t\t<!-- TAGI -->
 \t<div style=\"width:900px;margin-left:auto;margin-right:auto;\">
 
 \t\t<div>
 \t\t\t";
-        // line 30
+        // line 29
         if (array_key_exists("pictures", $context)) {
-            // line 31
+            // line 30
             echo "\t\t\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["pictures"]) ? $context["pictures"] : $this->getContext($context, "pictures")));
             foreach ($context['_seq'] as $context["_key"] => $context["pic"]) {
-                // line 32
+                // line 31
                 echo "\t\t\t\t\t<div class=\"PicturesMainContainer\">
 \t\t\t\t\t\t<a href=\"/Profile/Photo/";
-                // line 33
+                // line 32
                 echo twig_escape_filter($this->env, $this->getAttribute($context["pic"], "id", array(), "array"), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t<div class=\"PicturesContainer\">
 \t\t\t\t\t\t\t<img src=\"/";
-                // line 35
+                // line 34
                 echo twig_escape_filter($this->env, $this->getAttribute($context["pic"], "pic", array(), "array"), "html", null, true);
                 echo "\" class=\"Pictures\"/>
 \t\t\t\t\t\t</div>
@@ -105,14 +104,14 @@ class __TwigTemplate_5eb4ba09329e1857eabbfe7ef685f00bf51f8817b07dde5ee4eae05f95c
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pic'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 44
+            // line 43
             echo "\t\t\t";
         } else {
-            // line 45
+            // line 44
             echo "\t\t\t\t<label>Brak zdjęć</label>
 \t\t\t";
         }
-        // line 47
+        // line 46
         echo "\t\t\t</div>
 \t\t
 \t\t</div>
@@ -120,12 +119,11 @@ class __TwigTemplate_5eb4ba09329e1857eabbfe7ef685f00bf51f8817b07dde5ee4eae05f95c
 \t</div>
 
 
-
 ";
-        // line 55
-        $this->loadTemplate("footer.html.twig", "SearchPanel/Results.html.twig", 55)->display($context);
+        // line 53
+        $this->loadTemplate("footer.html.twig", "SearchPanel/Results.html.twig", 53)->display($context);
         
-        $__internal_7c187161975fdb8f1e56db2c3b42b55e409ee776be414e1bf7c9aadab03f0344->leave($__internal_7c187161975fdb8f1e56db2c3b42b55e409ee776be414e1bf7c9aadab03f0344_prof);
+        $__internal_f44b3bfbbf9294e75c92a4795ec0874832da4812f462a6422aaa59f6ed3bb312->leave($__internal_f44b3bfbbf9294e75c92a4795ec0874832da4812f462a6422aaa59f6ed3bb312_prof);
 
     }
 
@@ -141,7 +139,7 @@ class __TwigTemplate_5eb4ba09329e1857eabbfe7ef685f00bf51f8817b07dde5ee4eae05f95c
 
     public function getDebugInfo()
     {
-        return array (  126 => 55,  116 => 47,  112 => 45,  109 => 44,  94 => 35,  89 => 33,  86 => 32,  81 => 31,  79 => 30,  68 => 21,  64 => 19,  61 => 18,  52 => 15,  46 => 12,  41 => 10,  38 => 9,  33 => 8,  31 => 7,  24 => 2,  22 => 1,);
+        return array (  124 => 53,  115 => 46,  111 => 44,  108 => 43,  93 => 34,  88 => 32,  85 => 31,  80 => 30,  78 => 29,  68 => 21,  64 => 19,  61 => 18,  52 => 15,  46 => 12,  41 => 10,  38 => 9,  33 => 8,  31 => 7,  24 => 2,  22 => 1,);
     }
 }
 /* {% include 'header.html.twig' %}*/
@@ -150,7 +148,7 @@ class __TwigTemplate_5eb4ba09329e1857eabbfe7ef685f00bf51f8817b07dde5ee4eae05f95c
 /* 	<div style="width:900px;margin-left:auto;margin-right:auto;">*/
 /* */
 /* 		<div>*/
-/* 			{% if users %}*/
+/* 			{% if users is defined %}*/
 /* 				{% for user in users %}*/
 /* 					<div class="PicturesMainContainer">*/
 /* 						<a href="/Profile/{{user['login']}}">*/
@@ -167,13 +165,12 @@ class __TwigTemplate_5eb4ba09329e1857eabbfe7ef685f00bf51f8817b07dde5ee4eae05f95c
 /* 		</div>*/
 /* 		*/
 /* 	</div>*/
-/* */
 /* 						*/
 /* 						<!-- TAGI -->*/
 /* 	<div style="width:900px;margin-left:auto;margin-right:auto;">*/
 /* */
 /* 		<div>*/
-/* 			{% if pictures  is defined%}*/
+/* 			{% if pictures is defined %}*/
 /* 				{% for pic in pictures %}*/
 /* 					<div class="PicturesMainContainer">*/
 /* 						<a href="/Profile/Photo/{{pic['id']}}">*/
@@ -195,7 +192,6 @@ class __TwigTemplate_5eb4ba09329e1857eabbfe7ef685f00bf51f8817b07dde5ee4eae05f95c
 /* 		</div>*/
 /* 		*/
 /* 	</div>*/
-/* */
 /* */
 /* */
 /* {% include 'footer.html.twig' %}*/
