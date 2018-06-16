@@ -15,8 +15,8 @@ class __TwigTemplate_6ef376e73ccfe211727cf5e2e324ad0a873429e42c7f47af6f8d468dbc8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_bdbdc6db007e1005baecee9a8bc31f8d43f04f6c08911bd1b75079c1159f3f2c = $this->env->getExtension("native_profiler");
-        $__internal_bdbdc6db007e1005baecee9a8bc31f8d43f04f6c08911bd1b75079c1159f3f2c->enter($__internal_bdbdc6db007e1005baecee9a8bc31f8d43f04f6c08911bd1b75079c1159f3f2c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "footer.html.twig"));
+        $__internal_b18f44059c5481f360615466cb9d094dab9f994dd074fbc525f656b7b9d4922d = $this->env->getExtension("native_profiler");
+        $__internal_b18f44059c5481f360615466cb9d094dab9f994dd074fbc525f656b7b9d4922d->enter($__internal_b18f44059c5481f360615466cb9d094dab9f994dd074fbc525f656b7b9d4922d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "footer.html.twig"));
 
         // line 1
         echo "        <!-- FOOTER potem do innego pliku wyjebać -->
@@ -43,7 +43,7 @@ class __TwigTemplate_6ef376e73ccfe211727cf5e2e324ad0a873429e42c7f47af6f8d468dbc8
 </html>
 ";
         
-        $__internal_bdbdc6db007e1005baecee9a8bc31f8d43f04f6c08911bd1b75079c1159f3f2c->leave($__internal_bdbdc6db007e1005baecee9a8bc31f8d43f04f6c08911bd1b75079c1159f3f2c_prof);
+        $__internal_b18f44059c5481f360615466cb9d094dab9f994dd074fbc525f656b7b9d4922d->leave($__internal_b18f44059c5481f360615466cb9d094dab9f994dd074fbc525f656b7b9d4922d_prof);
 
     }
 
