@@ -229,7 +229,7 @@ class Profile extends Controller
 			$pic[$i]['liked']=$polajkowane;
 			 $i++;
 	    }
-		 
+		 if(!isset($pic)) $pic=0;
 		 if(isset($_SESSION["CurrentUser"])){
 			$loggedIn=true;
 			$currentUserLogin=$_SESSION["CurrentUser"]->getLogin();
@@ -657,7 +657,10 @@ class Profile extends Controller
      */
 	 public function Following()
 	 {
-		
+		if(!isset($_SESSION))
+		{
+			return new Response("Nie jesteś zalogowany");
+		}
 		$err_comm="";
 		$PlaceHolder="Wyszukaj po nazwie użytkownika "; // dodać tagi jak będą gotowe
 		$Repository = $this->getDoctrine()->getRepository('AppBundle:pic');
@@ -670,8 +673,10 @@ class Profile extends Controller
 			$foll.="'".$fl->getIdsubscriber()."',";
 		}
 		$i=strlen($foll);
-		$foll[$i-1]=' ';
-		echo $foll;
+		if($i>0) 
+		{
+			$foll[$i-1]=' ';
+		
 		
 		$query = $Repository->createQueryBuilder('p')
 		->where('p.login IN('.$foll.')')
@@ -746,8 +751,9 @@ class Profile extends Controller
 			$pic[$i]['liked']=$polajkowane;
 			 $i++;
 	    }
-	    $Repository = $this->getDoctrine()->getRepository('AppBundle:tags');
-		
+	    //$Repository = $this->getDoctrine()->getRepository('AppBundle:tags');
+	 }
+	 if(!isset($pic)) $pic=0;
 	    if(isset($pictures))
 		 return $this->render('SearchPanel/Explore.html.twig', array( 
 			'pictures'=> $pictures,'placeholder'=>$PlaceHolder,'pic'=>$pic  // Tablica do wysyłania zmiennych do widoku 
