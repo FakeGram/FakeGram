@@ -673,7 +673,6 @@ class Profile extends Controller
 			$foll.="'".$fl->getIdsubscriber()."',";
 		}
 		$i=strlen($foll);
-		echo $i;
 		if($i>0) 
 		{
 			$foll[$i-1]=' ';

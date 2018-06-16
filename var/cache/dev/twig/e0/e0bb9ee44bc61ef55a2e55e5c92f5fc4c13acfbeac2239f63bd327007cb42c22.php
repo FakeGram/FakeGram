@@ -15,8 +15,8 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_82b2c2bf199a3093ddde5d9b0d7c1a94cccf51f3198f4167ea1d741ca2e2446b = $this->env->getExtension("native_profiler");
-        $__internal_82b2c2bf199a3093ddde5d9b0d7c1a94cccf51f3198f4167ea1d741ca2e2446b->enter($__internal_82b2c2bf199a3093ddde5d9b0d7c1a94cccf51f3198f4167ea1d741ca2e2446b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Explore.html.twig"));
+        $__internal_8513f0116902c0207112ecbcb6a4927c8f36a6a238d3049d4830f84a4ec553eb = $this->env->getExtension("native_profiler");
+        $__internal_8513f0116902c0207112ecbcb6a4927c8f36a6a238d3049d4830f84a4ec553eb->enter($__internal_8513f0116902c0207112ecbcb6a4927c8f36a6a238d3049d4830f84a4ec553eb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SearchPanel/Explore.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "SearchPanel/Explore.html.twig", 1)->display($context);
@@ -45,21 +45,27 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
                 // line 12
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["p"], "usr", array(), "array"), "login", array(), "array"), "html", null, true);
                 echo "</label>
+\t\t\t\t<button class=\"btn btn-default buttons\" onclick=\"follow('";
+                // line 13
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["p"], "usr", array(), "array"), "login", array(), "array"), "html", null, true);
+                echo "', '";
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["session"]) ? $context["session"] : $this->getContext($context, "session")), "CurrentUser", array()), "login", array()), "html", null, true);
+                echo "');\">Subskrybuj!</button>
 \t\t\t</div>
 \t\t\t<div class=\"PicturesContainer\">
 \t\t\t\t<a href=\"/Profile/Photo/";
-                // line 15
+                // line 16
                 echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "id", array(), "array"), "html", null, true);
                 echo "\">
 \t\t\t\t\t<img src=\"/";
-                // line 16
+                // line 17
                 echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "pic", array(), "array"), "html", null, true);
                 echo "\" class=\"Pictures\"/>
 \t\t\t\t</a>
 \t\t\t</div>
 \t\t\t<div class=\"PicturesButton\">
 \t\t\t\t<button class=\"btn btn-default buttons\" onclick=\"like('";
-                // line 20
+                // line 21
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["session"]) ? $context["session"] : $this->getContext($context, "session")), "CurrentUser", array()), "login", array()), "html", null, true);
                 echo "', ";
                 echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "id", array(), "array"), "html", null, true);
@@ -67,36 +73,36 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
                 echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "liked", array(), "array"), "html", null, true);
                 echo " );\"><i class=\"fas fa-thumbs-up likeico\"></i>Lubię to!</button>
 \t\t\t\tLikes:<div id=\"";
-                // line 21
+                // line 22
                 echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "id", array(), "array"), "html", null, true);
                 echo "\" class=\"btn btn-default buttons\">";
                 echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "likes", array(), "array"), "html", null, true);
                 echo "</div>
 \t\t\t\t";
-                // line 22
+                // line 23
                 if (array_key_exists("set", $context)) {
-                    // line 23
+                    // line 24
                     echo "\t\t\t\t";
                     if (((isset($context["set"]) ? $context["set"] : $this->getContext($context, "set")) == "prof")) {
-                        // line 24
+                        // line 25
                         echo "\t\t\t\t<a class=\"btn btn-default buttons\" href=\"/reedit/";
                         echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "pic", array(), "array"), "html", null, true);
                         echo "\" >Edytuj</a>
 \t\t\t\t";
                     }
-                    // line 26
+                    // line 27
                     echo "\t\t\t\t";
                 }
-                // line 27
+                // line 28
                 echo "\t\t\t\t<div style=\"display:none;\" id=\"pidd\">";
                 echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "id", array(), "array"), "html", null, true);
                 echo "</div>
 \t\t\t\t<div style=\"display:none;\" id=\"plogg\">";
-                // line 28
+                // line 29
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["p"], "usr", array(), "array"), "login", array(), "array"), "html", null, true);
                 echo "</div>
 \t\t\t\t<div style=\"display:none;\" id=\"check";
-                // line 29
+                // line 30
                 echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "id", array(), "array"), "html", null, true);
                 echo "\">";
                 echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "liked", array(), "array"), "html", null, true);
@@ -104,28 +110,28 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 \t\t\t</div>
 \t\t\t<div class=\"commentsSection\">
 \t\t\t\t";
-                // line 32
+                // line 33
                 $context['_parent'] = $context;
                 $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["p"], "comm", array(), "array"));
                 foreach ($context['_seq'] as $context["_key"] => $context["comms"]) {
-                    // line 33
+                    // line 34
                     echo "\t\t\t\t\t<div class=\"Comment\">
 \t\t\t\t\t
 \t\t\t\t\t<div class=\"Date\">
 \t\t\t\t\t\t";
-                    // line 36
+                    // line 37
                     echo twig_escape_filter($this->env, $this->getAttribute($context["comms"], "date", array(), "array"), "html", null, true);
                     echo " 
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"Author\">
 \t\t\t\t\t\t";
-                    // line 39
+                    // line 40
                     echo twig_escape_filter($this->env, $this->getAttribute($context["comms"], "login", array(), "array"), "html", null, true);
                     echo " 
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"Content\">
 \t\t\t\t\t\t";
-                    // line 42
+                    // line 43
                     echo twig_escape_filter($this->env, $this->getAttribute($context["comms"], "content", array(), "array"), "html", null, true);
                     echo " 
 \t\t\t\t\t</div>
@@ -136,13 +142,13 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comms'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 47
+                // line 48
                 echo "\t\t\t\t";
                 if ($this->getAttribute((isset($context["session"]) ? $context["session"] : null), "CurrentUser", array(), "any", true, true)) {
-                    // line 48
+                    // line 49
                     echo "\t\t\t\t\t<div class=\"CommentAdd\">
 \t\t\t\t\t\t<form class=\"CommentInput\" action=\"/Profile/Photo/NewComment/";
-                    // line 49
+                    // line 50
                     echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "id", array(), "array"), "html", null, true);
                     echo "\" method=\"post\">
 \t\t\t\t\t\t\t<input type=\"text\" class=\"CommentInputContent\"  name=\"CommentContent\" id=\"CommentContent\">
@@ -151,24 +157,24 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 \t\t\t\t\t</div>
 \t\t\t\t";
                 }
-                // line 55
+                // line 56
                 echo "\t\t\t\t";
                 if ($this->getAttribute((isset($context["session"]) ? $context["session"] : null), "CurrentUser", array(), "any", true, true)) {
-                    // line 56
+                    // line 57
                     echo "\t\t\t\t\t<div class=\"LikeButton\">
 \t\t\t\t\t\t<div style=\"display:none;\" id=\"picId\">";
-                    // line 57
+                    // line 58
                     echo twig_escape_filter($this->env, $this->getAttribute($context["p"], "id", array(), "array"), "html", null, true);
                     echo "</div>
 \t\t\t\t\t\t<div style=\"display:none;\" id=\"login\">";
-                    // line 58
+                    // line 59
                     echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["session"]) ? $context["session"] : $this->getContext($context, "session")), "CurrentUser", array()), "login", array()), "html", null, true);
                     echo "</div>
 \t\t\t\t\t\t\t
 \t\t\t\t\t</div>
 \t\t\t\t";
                 }
-                // line 62
+                // line 63
                 echo "\t\t\t</div>
 \t\t</div>
 \t\t\t\t";
@@ -176,14 +182,14 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 65
+            // line 66
             echo "\t\t\t";
         } else {
-            // line 66
+            // line 67
             echo "\t\t\t\t<label>Brak zdjęć</label>
 \t\t\t";
         }
-        // line 68
+        // line 69
         echo "\t\t</div>
 \t\t
 \t\t<script>
@@ -193,7 +199,7 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 \t\t\tvar login=document.getElementById(\"login\").innerHTML;
 \t\t\tvar action=\"/Profile/Photo/AddLike/\"+picid+\"/\"+loginno;
 \t\t\t\$.ajax({
-\t\t\t\turl:action,
+\t\t\turl:action,
 \t\t\ttype:'POST',
 \t\t\tdata:
 \t\t\t{
@@ -222,13 +228,28 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 \t\t\t}
 \t\t\t
 \t\t}
+
+
+\t\tfunction follow(user1, user2)
+\t\t{
+\t\t\tvar action=\"/Profile/\"+user1+\"/Follow\";
+\t\t\t\$.ajax({
+\t\t\turl:action,
+\t\t\ttype:'POST',
+\t\t\tdata:
+\t\t\t{
+\t\t\t\tUserToFollow: user1,
+\t\t\t\tCurrentUser: user2,
+\t\t\t}
+\t\t\t});
+\t\t}
 \t</script>
 
 ";
-        // line 108
-        $this->loadTemplate("footer.html.twig", "SearchPanel/Explore.html.twig", 108)->display($context);
+        // line 124
+        $this->loadTemplate("footer.html.twig", "SearchPanel/Explore.html.twig", 124)->display($context);
         
-        $__internal_82b2c2bf199a3093ddde5d9b0d7c1a94cccf51f3198f4167ea1d741ca2e2446b->leave($__internal_82b2c2bf199a3093ddde5d9b0d7c1a94cccf51f3198f4167ea1d741ca2e2446b_prof);
+        $__internal_8513f0116902c0207112ecbcb6a4927c8f36a6a238d3049d4830f84a4ec553eb->leave($__internal_8513f0116902c0207112ecbcb6a4927c8f36a6a238d3049d4830f84a4ec553eb_prof);
 
     }
 
@@ -244,7 +265,7 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 
     public function getDebugInfo()
     {
-        return array (  229 => 108,  187 => 68,  183 => 66,  180 => 65,  172 => 62,  165 => 58,  161 => 57,  158 => 56,  155 => 55,  146 => 49,  143 => 48,  140 => 47,  129 => 42,  123 => 39,  117 => 36,  112 => 33,  108 => 32,  100 => 29,  96 => 28,  91 => 27,  88 => 26,  82 => 24,  79 => 23,  77 => 22,  71 => 21,  63 => 20,  56 => 16,  52 => 15,  46 => 12,  42 => 11,  38 => 9,  33 => 8,  31 => 7,  24 => 2,  22 => 1,);
+        return array (  250 => 124,  193 => 69,  189 => 67,  186 => 66,  178 => 63,  171 => 59,  167 => 58,  164 => 57,  161 => 56,  152 => 50,  149 => 49,  146 => 48,  135 => 43,  129 => 40,  123 => 37,  118 => 34,  114 => 33,  106 => 30,  102 => 29,  97 => 28,  94 => 27,  88 => 25,  85 => 24,  83 => 23,  77 => 22,  69 => 21,  62 => 17,  58 => 16,  50 => 13,  46 => 12,  42 => 11,  38 => 9,  33 => 8,  31 => 7,  24 => 2,  22 => 1,);
     }
 }
 /* {% include 'header.html.twig' %}*/
@@ -259,6 +280,7 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 /* 			<div class="PicturesInfo">*/
 /* 				<img src="data:image/jpeg;base64,{{p['usr']['avatar']}}" class="avatar" height="30px" width="30px" />*/
 /* 				<label style="margin-left: 30px;">{{p['usr']['login']}}</label>*/
+/* 				<button class="btn btn-default buttons" onclick="follow('{{p['usr']['login']}}', '{{session.CurrentUser.login}}');">Subskrybuj!</button>*/
 /* 			</div>*/
 /* 			<div class="PicturesContainer">*/
 /* 				<a href="/Profile/Photo/{{p['id']}}">*/
@@ -323,7 +345,7 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 /* 			var login=document.getElementById("login").innerHTML;*/
 /* 			var action="/Profile/Photo/AddLike/"+picid+"/"+loginno;*/
 /* 			$.ajax({*/
-/* 				url:action,*/
+/* 			url:action,*/
 /* 			type:'POST',*/
 /* 			data:*/
 /* 			{*/
@@ -351,6 +373,21 @@ class __TwigTemplate_fc27fa76e7cd9841c637eadd59af72d80238f3f690ff003d2ecab9c6b26
 /* 				document.getElementById("check"+picid).innerHTML=1;*/
 /* 			}*/
 /* 			*/
+/* 		}*/
+/* */
+/* */
+/* 		function follow(user1, user2)*/
+/* 		{*/
+/* 			var action="/Profile/"+user1+"/Follow";*/
+/* 			$.ajax({*/
+/* 			url:action,*/
+/* 			type:'POST',*/
+/* 			data:*/
+/* 			{*/
+/* 				UserToFollow: user1,*/
+/* 				CurrentUser: user2,*/
+/* 			}*/
+/* 			});*/
 /* 		}*/
 /* 	</script>*/
 /* */
