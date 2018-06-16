@@ -17,7 +17,10 @@
 	width:350px;
 }
 
-
+.CommentInputButton
+{
+	width: 130px;
+}
 
 .UserInfoContainer{
 	width:350px;
@@ -77,6 +80,3 @@
 	width:257;
 }
 
-.CommentInputButton{
-	width:25px;
-}
