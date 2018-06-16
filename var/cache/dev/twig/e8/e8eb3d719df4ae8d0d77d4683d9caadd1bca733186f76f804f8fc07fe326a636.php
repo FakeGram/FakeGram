@@ -15,8 +15,8 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b6a90057572d3a1fc31bf824de339fd9d86999ec5c4abb8a0f89ae2001f79bae = $this->env->getExtension("native_profiler");
-        $__internal_b6a90057572d3a1fc31bf824de339fd9d86999ec5c4abb8a0f89ae2001f79bae->enter($__internal_b6a90057572d3a1fc31bf824de339fd9d86999ec5c4abb8a0f89ae2001f79bae_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserPanel/UserPanel.html.twig"));
+        $__internal_840bfd0a23d38548b51864eebc6e01f98cefbed6647889141b4a548a448d9d62 = $this->env->getExtension("native_profiler");
+        $__internal_840bfd0a23d38548b51864eebc6e01f98cefbed6647889141b4a548a448d9d62->enter($__internal_840bfd0a23d38548b51864eebc6e01f98cefbed6647889141b4a548a448d9d62_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserPanel/UserPanel.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "UserPanel/UserPanel.html.twig", 1)->display($context);
@@ -38,7 +38,7 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
           <input type=\"edtLogin\" class=\"form-control inputs\" id=\"edtLogin\" name=\"edtLogin\">
         </div>
         <div class=\"form-group\"> 
-            <button type=\"submit\" class=\"btn btn-default buttons\">Wyślij</button>
+            <button type=\"submit\" class=\"btn btn-default buttons\">Zatwierdź zmianę</button>
         </div>
       </form>
 
@@ -51,7 +51,7 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
           <input type=\"email\" class=\"form-control inputs\" id=\"edtEmail\" name=\"edtEmail\">
         </div>
         <div class=\"form-group\"> 
-            <button type=\"submit\" class=\"btn btn-default buttons\">Wyślij</button>
+            <button type=\"submit\" class=\"btn btn-default buttons\">Zatwierdź zmianę</button>
         </div>
       </form>
 
@@ -68,7 +68,7 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
           <input type=\"password\" class=\"form-control inputs\" id=\"edtPass2\" name=\"edtPass2\">
         </div>
         <div class=\"form-group\"> 
-            <button type=\"submit\" class=\"btn btn-default\">Wyślij</button>
+            <button type=\"submit\" class=\"btn btn-default\">Zatwierdź zmianę</button>
         </div>
       </form>
 
@@ -108,7 +108,7 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
         // line 73
         $this->loadTemplate("footer.html.twig", "UserPanel/UserPanel.html.twig", 73)->display($context);
         
-        $__internal_b6a90057572d3a1fc31bf824de339fd9d86999ec5c4abb8a0f89ae2001f79bae->leave($__internal_b6a90057572d3a1fc31bf824de339fd9d86999ec5c4abb8a0f89ae2001f79bae_prof);
+        $__internal_840bfd0a23d38548b51864eebc6e01f98cefbed6647889141b4a548a448d9d62->leave($__internal_840bfd0a23d38548b51864eebc6e01f98cefbed6647889141b4a548a448d9d62_prof);
 
     }
 
@@ -142,7 +142,7 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
 /*           <input type="edtLogin" class="form-control inputs" id="edtLogin" name="edtLogin">*/
 /*         </div>*/
 /*         <div class="form-group"> */
-/*             <button type="submit" class="btn btn-default buttons">Wyślij</button>*/
+/*             <button type="submit" class="btn btn-default buttons">Zatwierdź zmianę</button>*/
 /*         </div>*/
 /*       </form>*/
 /* */
@@ -155,7 +155,7 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
 /*           <input type="email" class="form-control inputs" id="edtEmail" name="edtEmail">*/
 /*         </div>*/
 /*         <div class="form-group"> */
-/*             <button type="submit" class="btn btn-default buttons">Wyślij</button>*/
+/*             <button type="submit" class="btn btn-default buttons">Zatwierdź zmianę</button>*/
 /*         </div>*/
 /*       </form>*/
 /* */
@@ -172,7 +172,7 @@ class __TwigTemplate_0c42680e482ae8cefe73efc353a7a1145aff21796d9b938466cdab10890
 /*           <input type="password" class="form-control inputs" id="edtPass2" name="edtPass2">*/
 /*         </div>*/
 /*         <div class="form-group"> */
-/*             <button type="submit" class="btn btn-default">Wyślij</button>*/
+/*             <button type="submit" class="btn btn-default">Zatwierdź zmianę</button>*/
 /*         </div>*/
 /*       </form>*/
 /* */
