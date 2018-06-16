@@ -17,7 +17,7 @@ class Profile extends Controller
 	 {
 		 if(!isset($_SESSION["CurrentUser"]))
 		 {
-			 return new Response("Nie jesteś zalogowany");
+			 return $this->redirect("/Login");
 		 }
 		else
 		{
@@ -370,7 +370,7 @@ class Profile extends Controller
 	 {
 	 	if(!isset($_SESSION["CurrentUser"]))
 		 {
-			 return new Response("Nie jesteś zalogowany");
+			 return $this->redirect("/Login");
 		 }
 		 
 		 $DoctrineManager = $this->getDoctrine()->getManager();
@@ -393,7 +393,7 @@ class Profile extends Controller
 	{
 		if(!isset($_SESSION["CurrentUser"]))
 		{
-			 return new Response("Nie jesteś zalogowany");
+			 return $this->redirect("/Login");
 		}
 		$likes=$this->GetDoctrine()
 		->getRepository('AppBundle:likes')
@@ -659,7 +659,7 @@ class Profile extends Controller
 	 {
 		if(!isset($_SESSION))
 		{
-			return new Response("Nie jesteś zalogowany");
+			return $this->redirect("/Login");
 		}
 		$err_comm="";
 		$PlaceHolder="Wyszukaj po nazwie użytkownika "; // dodać tagi jak będą gotowe

@@ -15,8 +15,8 @@ class __TwigTemplate_3ab1710fd2be8a48d48a81f30b6d388f18a92665f61bfeeedc14c49810a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_0b36dac4608e154337d8f11b47ee0e8d03c50b23a28fe23aca57294511ff51df = $this->env->getExtension("native_profiler");
-        $__internal_0b36dac4608e154337d8f11b47ee0e8d03c50b23a28fe23aca57294511ff51df->enter($__internal_0b36dac4608e154337d8f11b47ee0e8d03c50b23a28fe23aca57294511ff51df_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "header.html.twig"));
+        $__internal_4ae5034e84bb6ff01ed48068381d71569a951a116646ad82df80936ce4836eeb = $this->env->getExtension("native_profiler");
+        $__internal_4ae5034e84bb6ff01ed48068381d71569a951a116646ad82df80936ce4836eeb->enter($__internal_4ae5034e84bb6ff01ed48068381d71569a951a116646ad82df80936ce4836eeb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "header.html.twig"));
 
         // line 1
         echo "<html>
@@ -126,17 +126,18 @@ class __TwigTemplate_3ab1710fd2be8a48d48a81f30b6d388f18a92665f61bfeeedc14c49810a
           <ul class=\"nav navbar-nav navbar-right nav-pages\">
             <li class=\"active\"><a href=\"/\">Strona Główna</a></li>
             <li><a href=\"/Explore\">Odkrywaj</a></li>
-            <li><a href=\"/Profile\">Moje zdjęcia </a></li>
             ";
-        // line 60
+        // line 59
         if ($this->getAttribute((isset($context["session"]) ? $context["session"] : null), "CurrentUser", array(), "any", true, true)) {
-            // line 61
+            // line 60
             echo "            <li><a onclick=\"showModal()\" style=\"cursor:pointer;\">Dodaj Zdjęcie</a></li> 
+            <li><a href=\"/Following\">Subskrypcje</a></li>
+            <li><a href=\"/Profile\">Moje zdjęcia</a></li>
+            <li><a href=\"/Panel\">Ustawienia</a></li> 
             ";
         }
-        // line 63
-        echo "            <li><a href=\"/Panel\">Ustawienia</a></li> 
-          </ul>
+        // line 65
+        echo "          </ul>
         </div>
         <div id=\"Modal\" class=\"modal\">
             <div class=\"modal-content\">
@@ -144,13 +145,13 @@ class __TwigTemplate_3ab1710fd2be8a48d48a81f30b6d388f18a92665f61bfeeedc14c49810a
               <form action=\"/pic_upload\" method=\"post\" enctype=\"multipart/form-data\">
                 <div class=\"custom-file\">
                   <input type=\"file\" name=\"img\" id=\"js-upload-files\" accept=\"image/jpeg\" class=\"form-control\" required>
-                  <label class=\"custom-file-label\" for=\"validatedCustomFile\">załaduj zdjęcie</label>
+                  <label class=\"custom-file-label\" for=\"validatedCustomFile\">Załaduj zdjęcie</label>
                 </div>
                 <div class=\"pic_description\">
                   <input type=\"text\" name=\"desc\" id=\"pic_desc\" class=\"form-control\">
-                  <label class=\"custom-file-label\" for=\"validatedCustomFile\">Opisz ten swój obrazek</label>
+                  <label class=\"custom-file-label\" for=\"validatedCustomFile\">Dodaj opis obrazu</label>
                 </div>
-                <button type=\"submit\" class=\"btn btn-default buttons btn_upload\" id=\"js-upload-submit\">Upload files</button>
+                <button type=\"submit\" class=\"btn btn-default buttons btn_upload\" id=\"js-upload-submit\">Wgraj plik</button>
             </form>
             </div>
         </div>
@@ -173,7 +174,7 @@ class __TwigTemplate_3ab1710fd2be8a48d48a81f30b6d388f18a92665f61bfeeedc14c49810a
     </script>
     <!-- |||||||||||||||||||||||||||||||||||| -->";
         
-        $__internal_0b36dac4608e154337d8f11b47ee0e8d03c50b23a28fe23aca57294511ff51df->leave($__internal_0b36dac4608e154337d8f11b47ee0e8d03c50b23a28fe23aca57294511ff51df_prof);
+        $__internal_4ae5034e84bb6ff01ed48068381d71569a951a116646ad82df80936ce4836eeb->leave($__internal_4ae5034e84bb6ff01ed48068381d71569a951a116646ad82df80936ce4836eeb_prof);
 
     }
 
@@ -189,7 +190,7 @@ class __TwigTemplate_3ab1710fd2be8a48d48a81f30b6d388f18a92665f61bfeeedc14c49810a
 
     public function getDebugInfo()
     {
-        return array (  138 => 63,  134 => 61,  132 => 60,  125 => 55,  120 => 52,  116 => 50,  114 => 49,  84 => 22,  80 => 21,  76 => 20,  72 => 19,  68 => 18,  64 => 17,  60 => 16,  56 => 15,  52 => 14,  48 => 13,  41 => 9,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
+        return array (  140 => 65,  133 => 60,  131 => 59,  125 => 55,  120 => 52,  116 => 50,  114 => 49,  84 => 22,  80 => 21,  76 => 20,  72 => 19,  68 => 18,  64 => 17,  60 => 16,  56 => 15,  52 => 14,  48 => 13,  41 => 9,  34 => 5,  30 => 4,  26 => 3,  22 => 1,);
     }
 }
 /* <html>*/
@@ -250,11 +251,12 @@ class __TwigTemplate_3ab1710fd2be8a48d48a81f30b6d388f18a92665f61bfeeedc14c49810a
 /*           <ul class="nav navbar-nav navbar-right nav-pages">*/
 /*             <li class="active"><a href="/">Strona Główna</a></li>*/
 /*             <li><a href="/Explore">Odkrywaj</a></li>*/
-/*             <li><a href="/Profile">Moje zdjęcia </a></li>*/
 /*             {% if session.CurrentUser is defined %}*/
 /*             <li><a onclick="showModal()" style="cursor:pointer;">Dodaj Zdjęcie</a></li> */
-/*             {% endif %}*/
+/*             <li><a href="/Following">Subskrypcje</a></li>*/
+/*             <li><a href="/Profile">Moje zdjęcia</a></li>*/
 /*             <li><a href="/Panel">Ustawienia</a></li> */
+/*             {% endif %}*/
 /*           </ul>*/
 /*         </div>*/
 /*         <div id="Modal" class="modal">*/
@@ -263,13 +265,13 @@ class __TwigTemplate_3ab1710fd2be8a48d48a81f30b6d388f18a92665f61bfeeedc14c49810a
 /*               <form action="/pic_upload" method="post" enctype="multipart/form-data">*/
 /*                 <div class="custom-file">*/
 /*                   <input type="file" name="img" id="js-upload-files" accept="image/jpeg" class="form-control" required>*/
-/*                   <label class="custom-file-label" for="validatedCustomFile">załaduj zdjęcie</label>*/
+/*                   <label class="custom-file-label" for="validatedCustomFile">Załaduj zdjęcie</label>*/
 /*                 </div>*/
 /*                 <div class="pic_description">*/
 /*                   <input type="text" name="desc" id="pic_desc" class="form-control">*/
-/*                   <label class="custom-file-label" for="validatedCustomFile">Opisz ten swój obrazek</label>*/
+/*                   <label class="custom-file-label" for="validatedCustomFile">Dodaj opis obrazu</label>*/
 /*                 </div>*/
-/*                 <button type="submit" class="btn btn-default buttons btn_upload" id="js-upload-submit">Upload files</button>*/
+/*                 <button type="submit" class="btn btn-default buttons btn_upload" id="js-upload-submit">Wgraj plik</button>*/
 /*             </form>*/
 /*             </div>*/
 /*         </div>*/

@@ -15,18 +15,16 @@ class __TwigTemplate_138c6afac2638d836987a99fbf10d59cd6a80e393a7f20ae5c4bcd28d04
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_4ad4a3bee65c8b3c58bf12e8f46bb32d7fc82021c3cf2207e064d674057b9da4 = $this->env->getExtension("native_profiler");
-        $__internal_4ad4a3bee65c8b3c58bf12e8f46bb32d7fc82021c3cf2207e064d674057b9da4->enter($__internal_4ad4a3bee65c8b3c58bf12e8f46bb32d7fc82021c3cf2207e064d674057b9da4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Login/Login.html.twig"));
+        $__internal_1165265b9e61e70a709eba57158853468d3d63e7f1abc62e29c0ef135675fa9c = $this->env->getExtension("native_profiler");
+        $__internal_1165265b9e61e70a709eba57158853468d3d63e7f1abc62e29c0ef135675fa9c->enter($__internal_1165265b9e61e70a709eba57158853468d3d63e7f1abc62e29c0ef135675fa9c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Login/Login.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "Login/Login.html.twig", 1)->display($context);
         // line 2
         echo "
-<<<<<<< HEAD
+
 \t<div class=\"container-fluid\">
-=======
   <div class=\"container-fluid\">
->>>>>>> origin/Sladu
     <div class=\"tile curved\">
       <h2 class=\"log-in\">Zaloguj się !</h2>
       <form class=\"\" action=\"/execute_login\" method=\"post\">
@@ -42,11 +40,17 @@ class __TwigTemplate_138c6afac2638d836987a99fbf10d59cd6a80e393a7f20ae5c4bcd28d04
           <label class=\"\"><input type=\"checkbox\" name=\"remember\"> Zapamiętaj mnie</label>
         </div>
         <button class=\"log-submit\" type=\"submit\" class=\"btn btn-default\">Zaloguj</button>
-        <label>";
-        // line 23
-        echo twig_escape_filter($this->env, (isset($context["err_comm"]) ? $context["err_comm"] : $this->getContext($context, "err_comm")), "html", null, true);
-        echo "</label>
-      </form>
+       ";
+        // line 21
+        if (array_key_exists("err_comm", $context)) {
+            // line 22
+            echo "        <label>";
+            echo twig_escape_filter($this->env, (isset($context["err_comm"]) ? $context["err_comm"] : $this->getContext($context, "err_comm")), "html", null, true);
+            echo "</label>
+        ";
+        }
+        // line 24
+        echo "      </form>
   </div>
 </div>
 
@@ -55,7 +59,7 @@ class __TwigTemplate_138c6afac2638d836987a99fbf10d59cd6a80e393a7f20ae5c4bcd28d04
         // line 29
         $this->loadTemplate("footer.html.twig", "Login/Login.html.twig", 29)->display($context);
         
-        $__internal_4ad4a3bee65c8b3c58bf12e8f46bb32d7fc82021c3cf2207e064d674057b9da4->leave($__internal_4ad4a3bee65c8b3c58bf12e8f46bb32d7fc82021c3cf2207e064d674057b9da4_prof);
+        $__internal_1165265b9e61e70a709eba57158853468d3d63e7f1abc62e29c0ef135675fa9c->leave($__internal_1165265b9e61e70a709eba57158853468d3d63e7f1abc62e29c0ef135675fa9c_prof);
 
     }
 
@@ -71,16 +75,14 @@ class __TwigTemplate_138c6afac2638d836987a99fbf10d59cd6a80e393a7f20ae5c4bcd28d04
 
     public function getDebugInfo()
     {
-        return array (  56 => 29,  47 => 23,  24 => 2,  22 => 1,);
+        return array (  60 => 29,  53 => 24,  47 => 22,  45 => 21,  24 => 2,  22 => 1,);
     }
 }
 /* {% include 'header.html.twig' %}*/
 /* */
-/* <<<<<<< HEAD*/
+/* */
 /* 	<div class="container-fluid">*/
-/* =======*/
 /*   <div class="container-fluid">*/
-/* >>>>>>> origin/Sladu*/
 /*     <div class="tile curved">*/
 /*       <h2 class="log-in">Zaloguj się !</h2>*/
 /*       <form class="" action="/execute_login" method="post">*/
@@ -96,7 +98,9 @@ class __TwigTemplate_138c6afac2638d836987a99fbf10d59cd6a80e393a7f20ae5c4bcd28d04
 /*           <label class=""><input type="checkbox" name="remember"> Zapamiętaj mnie</label>*/
 /*         </div>*/
 /*         <button class="log-submit" type="submit" class="btn btn-default">Zaloguj</button>*/
+/*        {%if err_comm is defined%}*/
 /*         <label>{{err_comm}}</label>*/
+/*         {% endif %}*/
 /*       </form>*/
 /*   </div>*/
 /* </div>*/
