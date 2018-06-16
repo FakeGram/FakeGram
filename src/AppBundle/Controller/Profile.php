@@ -434,7 +434,10 @@ class Profile extends Controller
 		$err_comm="";
 		$PlaceHolder="Wyszukaj po nazwie użytkownika "; // dodać tagi jak będą gotowe
 		$Repository = $this->getDoctrine()->getRepository('AppBundle:pic');
-		
+		if(!isset($_SESSION))
+		{
+			return $this->redirect("/Login");
+		}
 		$query = $Repository->createQueryBuilder('p')
 		->orderBy('p.date','DESC')
 		->setMaxResults(20) // Tutaj można zmieniać ilość wyświetlanych zdjęć. 
