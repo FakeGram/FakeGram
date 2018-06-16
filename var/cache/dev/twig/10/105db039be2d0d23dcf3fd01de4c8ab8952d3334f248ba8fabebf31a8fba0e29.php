@@ -15,8 +15,8 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f5ee9fe31d236f8a330ec0ea1f86f17b0e8577be34dfbabfb0896af4d59b446a = $this->env->getExtension("native_profiler");
-        $__internal_f5ee9fe31d236f8a330ec0ea1f86f17b0e8577be34dfbabfb0896af4d59b446a->enter($__internal_f5ee9fe31d236f8a330ec0ea1f86f17b0e8577be34dfbabfb0896af4d59b446a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "header.html.twig"));
+        $__internal_b561c102b196a3cffa51ab824f2346f748fa768d8f95a8647676b3de3d76cd24 = $this->env->getExtension("native_profiler");
+        $__internal_b561c102b196a3cffa51ab824f2346f748fa768d8f95a8647676b3de3d76cd24->enter($__internal_b561c102b196a3cffa51ab824f2346f748fa768d8f95a8647676b3de3d76cd24_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "header.html.twig"));
 
         // line 1
         echo "<html>
@@ -145,13 +145,13 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
               <form action=\"/pic_upload\" method=\"post\" enctype=\"multipart/form-data\">
                 <div class=\"custom-file\">
                   <input type=\"file\" name=\"img\" id=\"js-upload-files\" accept=\"image/jpeg\" class=\"form-control\" required>
-                  <label class=\"custom-file-label\" for=\"validatedCustomFile\">załaduj zdjęcie</label>
+                  <label class=\"custom-file-label\" for=\"validatedCustomFile\">Załaduj zdjęcie</label>
                 </div>
                 <div class=\"pic_description\">
                   <input type=\"text\" name=\"desc\" id=\"pic_desc\" class=\"form-control\">
-                  <label class=\"custom-file-label\" for=\"validatedCustomFile\">Opisz ten swój obrazek</label>
+                  <label class=\"custom-file-label\" for=\"validatedCustomFile\">Dodaj opis obrazu</label>
                 </div>
-                <button type=\"submit\" class=\"btn btn-default buttons btn_upload\" id=\"js-upload-submit\">Upload files</button>
+                <button type=\"submit\" class=\"btn btn-default buttons btn_upload\" id=\"js-upload-submit\">Wgraj plik</button>
             </form>
             </div>
         </div>
@@ -174,7 +174,7 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
     </script>
     <!-- |||||||||||||||||||||||||||||||||||| -->";
         
-        $__internal_f5ee9fe31d236f8a330ec0ea1f86f17b0e8577be34dfbabfb0896af4d59b446a->leave($__internal_f5ee9fe31d236f8a330ec0ea1f86f17b0e8577be34dfbabfb0896af4d59b446a_prof);
+        $__internal_b561c102b196a3cffa51ab824f2346f748fa768d8f95a8647676b3de3d76cd24->leave($__internal_b561c102b196a3cffa51ab824f2346f748fa768d8f95a8647676b3de3d76cd24_prof);
 
     }
 
@@ -265,13 +265,13 @@ class __TwigTemplate_0c5b351d49bab3497bcd4132075af7850a5d8964b0f5ab83d65227933cc
 /*               <form action="/pic_upload" method="post" enctype="multipart/form-data">*/
 /*                 <div class="custom-file">*/
 /*                   <input type="file" name="img" id="js-upload-files" accept="image/jpeg" class="form-control" required>*/
-/*                   <label class="custom-file-label" for="validatedCustomFile">załaduj zdjęcie</label>*/
+/*                   <label class="custom-file-label" for="validatedCustomFile">Załaduj zdjęcie</label>*/
 /*                 </div>*/
 /*                 <div class="pic_description">*/
 /*                   <input type="text" name="desc" id="pic_desc" class="form-control">*/
-/*                   <label class="custom-file-label" for="validatedCustomFile">Opisz ten swój obrazek</label>*/
+/*                   <label class="custom-file-label" for="validatedCustomFile">Dodaj opis obrazu</label>*/
 /*                 </div>*/
-/*                 <button type="submit" class="btn btn-default buttons btn_upload" id="js-upload-submit">Upload files</button>*/
+/*                 <button type="submit" class="btn btn-default buttons btn_upload" id="js-upload-submit">Wgraj plik</button>*/
 /*             </form>*/
 /*             </div>*/
 /*         </div>*/
