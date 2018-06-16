@@ -18,7 +18,7 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
         ]);*/
     
-        if(isset($_SESSION))
+        if(isset($_SESSION['CurrentUser']))
         {
                     $err_comm="";
                     $PlaceHolder="Wyszukaj po nazwie użytkownika "; // dodać tagi jak będą gotowe
@@ -119,11 +119,11 @@ class DefaultController extends Controller
                         'pictures'=> $pictures,'placeholder'=>$PlaceHolder,
                         'users'=>$users,'pic'=>$pic   // Tablica do wysyłania zmiennych do widoku 
                             ));
-                 }
+                    }
         }
         else
         {
-            return $this->render('SearchPanel/Login.html.twig');
+            return $this->render('Login/Login.html.twig');
         }
     }
 }
