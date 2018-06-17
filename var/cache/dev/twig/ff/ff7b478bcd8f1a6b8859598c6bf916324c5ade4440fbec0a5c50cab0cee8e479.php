@@ -15,8 +15,8 @@ class __TwigTemplate_cefacaf88f166508eef79b3fc936eb3c3207f4ce766c9fa0590f366eaa1
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_57c0f85a83c47de5195c6518f0335ddd6eada1dc732e87c2d2f517a8f300ab41 = $this->env->getExtension("native_profiler");
-        $__internal_57c0f85a83c47de5195c6518f0335ddd6eada1dc732e87c2d2f517a8f300ab41->enter($__internal_57c0f85a83c47de5195c6518f0335ddd6eada1dc732e87c2d2f517a8f300ab41_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserPanel/UserPanel.html.twig"));
+        $__internal_b2b81f6ecec29f089dc517dc515c82102c2f5f011f059a075ddf02cba74cad24 = $this->env->getExtension("native_profiler");
+        $__internal_b2b81f6ecec29f089dc517dc515c82102c2f5f011f059a075ddf02cba74cad24->enter($__internal_b2b81f6ecec29f089dc517dc515c82102c2f5f011f059a075ddf02cba74cad24_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserPanel/UserPanel.html.twig"));
 
         // line 1
         $this->loadTemplate("header.html.twig", "UserPanel/UserPanel.html.twig", 1)->display($context);
@@ -108,7 +108,7 @@ class __TwigTemplate_cefacaf88f166508eef79b3fc936eb3c3207f4ce766c9fa0590f366eaa1
         // line 73
         $this->loadTemplate("footer.html.twig", "UserPanel/UserPanel.html.twig", 73)->display($context);
         
-        $__internal_57c0f85a83c47de5195c6518f0335ddd6eada1dc732e87c2d2f517a8f300ab41->leave($__internal_57c0f85a83c47de5195c6518f0335ddd6eada1dc732e87c2d2f517a8f300ab41_prof);
+        $__internal_b2b81f6ecec29f089dc517dc515c82102c2f5f011f059a075ddf02cba74cad24->leave($__internal_b2b81f6ecec29f089dc517dc515c82102c2f5f011f059a075ddf02cba74cad24_prof);
 
     }
 

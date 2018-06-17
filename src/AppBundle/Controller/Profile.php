@@ -470,12 +470,13 @@ class Profile extends Controller
 			 $statement=$connection->prepare($kwerenda);
 			 $statement->execute();
 			 $user=$statement->fetchAll();
+			 //var_dump($user);
 			 $usr['login']=$pictures[$i]['login'];
 			 // $usr['name_and_surrname']=$user->getN
 			 //var_dump($user);
-			 if(isset($user['avatar']))
+			 if(isset($user[0]['avatar']))
 			 {
-				 $usr['avatar']=base64_encode(stream_get_contents($user['avatar']));
+				 $usr['avatar']=base64_encode(($user[0]['avatar']));
 				 
 			 }
 			 
@@ -717,9 +718,9 @@ class Profile extends Controller
 			 $usr['login']=$pictures[$i]['login'];
 			 // $usr['name_and_surrname']=$user->getN
 			 //var_dump($user);
-			 if(isset($user['avatar']))
+			 if(isset($user[0]['avatar']))
 			 {
-				 $usr['avatar']=base64_encode(($user['avatar']));
+				 $usr['avatar']=base64_encode(($user[0]['avatar']));
 				 
 			 }
 			 

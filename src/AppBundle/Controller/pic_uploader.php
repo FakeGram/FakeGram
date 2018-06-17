@@ -104,6 +104,7 @@ class pic_uploader extends Controller
                 $tags=array();
                 foreach ($words as $word)
                 {
+					if(isset($word[0]))
                     if($word[0]=='#') array_push($tags, $word);
                 }
                 foreach ($tags as $tag)
